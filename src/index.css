@@ -1,0 +1,543 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --rgb-primary-color: 130,130,130;
+  --rgb-primary-color2: 40,241,254;
+  --rgb-primary-color3: 40,241,254;
+  --rgb-primary-color4: 40,241,254;
+  --color-primary: rgb(var(--rgb-primary-color));
+  --color-primary2: rgb(var(--rgb-primary-color2));
+  --color-primary3: rgb(var(--rgb-primary-color3));
+  --color-primary4: rgb(var(--rgb-primary-color4));
+
+  --ease-out: cubic-bezier(0.215,0.61,0.355,1);
+  --ease-in: cubic-bezier(0.75,0,1,1);
+  --ease-in-out: cubic-bezier(0.645,0.045,0.355,1);
+  --ease: cubic-bezier(0.44,0.21,0,1);
+  --gradient-primary: linear-gradient(92.72deg,var(--color-primary) 0%,#ffff 100%);
+  --gradient-primary2: linear-gradient(92.72deg,var(--color-primary2) 0%,#092e06 100%);
+  --gradient-primary3: linear-gradient(92.72deg,var(--color-primary3) 0%, #765eed 100%);
+  --gradient-primary4: linear-gradient(92.72deg,var(--color-primary4) 0%, #f9ff18 100%);
+
+
+
+}
+.gradient-01 {
+  background-image: linear-gradient(to top, #3033d0 0%, #330867 100%);
+     filter: blur(115px);
+  position: absolute;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  text-rendering:optimizeLegibility;
+
+}
+
+
+
+.circular--portrait {
+  position: absolute;
+
+  top: 370px; /* Utilisez une valeur fixe pour la hauteur souhaitée */
+  left: 48%;
+ transform: translate(-50%, -50%);
+
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  z-index: 999;
+ cursor: pointer;
+
+
+}
+
+
+.circular--portrait img {
+
+  transition: transform 0.3s ease; /* Transition pour l'effet de zoom */
+max-width: 100%; /* La largeur maximale de l'image est définie à 100% */
+height: auto; /* La hauteur est automatiquement ajustée pour maintenir les proportions */
+  position: relative;
+  top: -25%;
+  left: 0px;
+
+
+
+}
+
+.about-title{
+  background: linear-gradient(180deg,#fff4f4 0%,rgba(255,255,255,.7) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  display: block;
+
+}
+.circular--portrait img:hover{
+
+  transform: scale(1.2); /* Zoom au survol */
+  filter: grayscale(1);/*6*/
+  /*7 - Transition */
+transition-property: filter width; 
+transition-duration: .3s;
+transition-timing-function: ease;
+
+}
+
+
+html{
+    height: 100%;
+    margin: 0;
+  padding: 0;
+    background-size: cover;
+
+    scroll-behavior: smooth;
+  }
+
+  .scrolled {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: #2c2c2c;
+    /* Ajoutez d'autres styles si nécessaire */
+  }
+
+  .arriere{
+    background:radial-gradient(ellipse at 40% 0%, #387bdf10, transparent 75%), radial-gradient(ellipse at 60% 0%, #387bdf10, transparent 75%);
+    
+  }
+  .card-text{
+    text-wrap:balance;
+  }
+  body {
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-size: cover;
+    overflow-x: hidden;
+    
+
+  background-image: radial-gradient(circle at center,rgba(255,255,255,0.008)0,rgba(255,255,255,0.005) 1px, transparent 1px),
+  linear-gradient(to right, rgba(255,255,255,0.01) 1px, transparent 1px),
+  linear-gradient(to bottom, rgba(255,255,255,0.01) 1px, transparent 1px);
+
+  
+  background-size: 30px 30px;
+  background-attachment: fixed;
+  background-color: #000000;
+
+
+  
+  }
+  
+
+
+.ul-nav{
+  backdrop-filter: blur(12px) saturate(1.7);
+
+  list-style-type: none;
+  display: flex;
+  right: 30px;
+  position:relative;
+  margin: 0;
+  border-radius: 50px;
+  transition: all .2s linear;
+  padding: calc(16px - 10px) calc(16px - 6px);
+  margin: 0 3px;
+  align-items: center; /* Ajustement pour aligner verticalement les éléments */
+
+}
+
+.ul-nav li{
+  padding: 10px 0 10px 0;
+  margin: 0px 20px 0px 20px;
+  text-decoration: none;
+  display: flex;
+  position: relative;
+  display: list-item;
+  text-align: -webkit-match-parent;
+}
+
+.active{
+  background: hsla(0, 0%, 65%, 0.8);
+      padding: 10px 20px; /* Ajustez le padding selon vos préférences */
+  border-radius: 24px;
+  text-decoration: none;
+  transition: all .2s ease-in-out;
+  display: flex;
+  align-items: center;
+  font-size: 1.3rem;
+/*   background: hsla(0, 0%, 40%, 0.8);
+ */
+ 
+}
+
+
+.blur_class{
+  background: hsla(0, 0%, 13%, 0.8);
+/*   background: hsla(45, 17%, 95%, .8);
+ */
+  -webkit-backdrop-filter: blur(20px) saturate(1.7);
+  
+}
+
+
+
+.nav{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1600px;
+  margin: 2rem auto 0;
+  position: fixed;
+  max-width: 100%;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+
+
+}
+header{
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  padding: 0 1rem;
+  overflow: hidden;
+  
+}
+.subtitle{
+  color: rgb(253, 253, 253);
+  text-decoration: none;
+  position: relative;
+  right: 7%;
+  font-size: clamp(.875rem, .7985rem + .3265vw, 1.125rem);
+
+}
+
+.line {
+  position: relative;
+}
+
+.line::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: rgb(255, 255, 255);
+  transform-origin: bottom right;
+  transform: scaleX(0);
+  transition: transform 0.5s ease;
+}
+
+.line:hover::before {
+  transform-origin: bottom left;
+  transform: scaleX(1);
+}
+
+
+.a-list{
+  font-size: clamp(.875rem, .7985rem + .3265vw, 1.125rem);
+  border-radius: 1.5rem;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  transition: all .2s ease-in-out;
+  display: flex;
+  align-items: center;
+  font-size: 1.3rem;
+
+}
+.slash{
+font-size: 14px;
+color: #f0f0f0;
+/* color: #034d43;
+ */
+ box-shadow: inset 0 0 0 2px rgba(243, 243, 243, 0.123);
+
+ width: 24px;
+height: 24px;
+display: flex;
+align-items: center;
+justify-content: center;
+border-radius: 6px;
+margin-left: calc(14px - 8px);
+}
+.circular--portrait img:hover{
+  transform: scale(1.2); /* Zoom au survol */
+  filter: grayscale(1);/*6*/
+  /*7 - Transition */
+transition-property: filter width; 
+transition-duration: .3s;
+transition-timing-function: ease;
+
+}
+
+
+.text-gradient-primary1 {
+  background: var(--gradient-primary);
+  -webkit-background1-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+.text-gradient-primary2 {
+  background: var(--gradient-primary2);
+  -webkit-background1-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.text-gradient-primary3 {
+  background: var(--gradient-primary3);
+  -webkit-background1-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+.text-gradient-primary4 {
+  background: var(--gradient-primary4);
+  -webkit-background1-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+
+
+
+@font-face {
+  font-family: "Aeonik Pro Medium";
+  src: url("https://db.onlinewebfonts.com/t/81c9cfcec66a1bb46e90e184f4d04641.eot");
+  src: url("https://db.onlinewebfonts.com/t/81c9cfcec66a1bb46e90e184f4d04641.eot?#iefix")format("embedded-opentype"),
+  url("https://db.onlinewebfonts.com/t/81c9cfcec66a1bb46e90e184f4d04641.woff2")format("woff2"),
+  url("https://db.onlinewebfonts.com/t/81c9cfcec66a1bb46e90e184f4d04641.woff")format("woff"),
+  url("https://db.onlinewebfonts.com/t/81c9cfcec66a1bb46e90e184f4d04641.ttf")format("truetype"),
+  url("https://db.onlinewebfonts.com/t/81c9cfcec66a1bb46e90e184f4d04641.svg#Aeonik Pro Medium")format("svg");
+}
+.badge{
+  isolation: isolate;
+  overflow: hidden;
+  align-items: center;
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  border-radius: 32px;
+  box-shadow: inset 0px -2px 11px #2700d21f;
+  display: flex;
+  margin: 0 auto 12px;
+  padding: 6px 14px 6px 15px;
+  position: relative;
+  width: -moz-max-content;
+  width: max-content;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 
+  "Segoe UI", "Roboto", "Oxygen", 
+  "Ubuntu", "Cantarell", "Fira Sans", 
+  "Droid Sans", "Helvetica Neue", sans-serif;
+}
+
+
+.badge-text{
+  
+  background: linear-gradient(0deg,rgba(255,255,255,.4),rgba(255,255,255,.4)),linear-gradient(90.01deg,#9ca3ff .01%,#9ca3ff 50.01%,#9cb2ff 100%);
+  background-blend-mode: normal,screen;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+.Btn {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: transparent;
+  position: relative;
+  /* overflow: hidden; */
+  margin-top: 30px;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: all .3s;
+}
+
+.svgContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  backdrop-filter: blur(0px);
+  letter-spacing: 0.8px;
+  border-radius: 10px;
+  transition: all .3s;
+  border: 1px solid rgba(156, 156, 156, 0.466);
+}
+
+.BG {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: #181818;
+  z-index: -1;
+  border-radius: 10px;
+  pointer-events: none;
+  transition: all .3s;
+}
+
+.Btn:hover .BG {
+  transform: rotate(35deg);
+  transform-origin: bottom;
+}
+
+.Btn:hover .svgContainer {
+  background-color: rgba(156, 156, 156, 0.466);
+  backdrop-filter: blur(4px);
+}
+
+
+#parcours {
+  
+  background:radial-gradient(ellipse at 40% 0%, #387bdf10, transparent 75%), radial-gradient(ellipse at 60% 0%, #387bdf10, transparent 75%);
+  max-width: 800px;
+  margin: -42px auto;
+  z-index: 2;
+  padding: 40px 30px 100px 30px;
+  background-size: cover;
+  /* Pour la classe shadow-lg */
+box-shadow: 100px 100px 10px rgba(0, 0, 0, 0.2);
+
+/* Pour la classe invisible */
+visibility: hidden;
+
+/* Pour la classe sm:visible */
+@media (min-width: 640px) {
+  visibility: visible;
+}
+
+/* Pour la classe [mask-image:linear-gradient(to_bottom,white,white,transparent)] */
+mask-image: linear-gradient(to bottom, white, white, transparent);
+
+/* Pour la classe transition duration-1000 */
+transition-duration: 1000ms;
+
+/* Pour la classe relative */
+position: relative;
+
+/* Pour la classe z-40 */
+z-index: 40;
+
+/* Pour la classe opacity-100 */
+opacity: 1;
+
+/* Pour la classe transforme (je suppose qu'il y a une faute de frappe, je corrige en transform) */
+transform: none; /* Réinitialise toute transformation appliquée précédemment */
+
+  margin-bottom: 200px; /* Fait empiéter légèrement sur la section suivante */
+
+
+}
+
+#parcours h3 {
+  background: linear-gradient(180deg,#fff4f4 0%,rgba(94, 94, 94, 0.7) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  display: block;
+  font-size: 3.5em;
+  padding-bottom: 30px;
+}
+
+#parcours h4 {
+  font-size: 2em;
+  background: linear-gradient(180deg,#fff4f4 0%,rgba(255, 255, 255, 0.7) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  display: block;
+  margin-left: 20px;
+}
+
+#parcours h6 {
+  font-style: italic;
+  font-size: 15px;
+  background: linear-gradient(180deg,#fff4f4 0%,rgba(255,255,255,.7) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  display: block;
+  margin-left: 20px;
+ 
+}
+
+#parcours p {
+  color: white;
+
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 1.9em;
+  margin-left: 20px;
+}
+.timeline {
+  border-top: 3px solid;
+  border-image: linear-gradient(to right, rgb(255, 255, 255), rgb(255, 255, 255));
+  border-image-slice: 1;
+  margin: 0;
+  padding: 40px;
+  position: relative;
+}
+
+.timeline:nth-child(1):after {
+  content: "▲";
+  color: #ff4e50;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  box-sizing: content-box !important;
+}
+
+.timeline:nth-child(1) {
+  border-bottom: 3px solid;
+  border-top: none;
+  width: 80%;
+}
+
+.timeline:nth-child(2) {
+  border-top: none;
+}
+.timeline:nth-child(odd) {
+  border-right: 3px solid;
+  padding-left: 0;
+}
+.timeline:nth-child(even) {
+  border-left: 3px solid;
+  padding-left: 0;
+}
+.gras {
+  font-weight: bold;
+}
+
