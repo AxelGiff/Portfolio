@@ -2,6 +2,20 @@ import { cn } from "./lib/utils.tsx";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import React from "react";
+import IconBxlReact from "./lib/icons/react.jsx";
+import IconBxlMySQL from "./lib/icons/mySQL.jsx";
+import IconBxlJavascript from "./lib/icons/js.jsx";
+import IconLanguagePhp from "./lib/icons/php.jsx";
+import IconBxlCss3 from "./lib/icons/css.jsx";
+import IconHtml5 from "./lib/icons/html.jsx";
+import IconWordpress from "./lib/icons/wordPress.jsx";
+import IconBxlPostgresql from "./lib/icons/postgreSQL.jsx";
+import IconBxlTailwindCss from "./lib/icons/tailwind.jsx";
+import IconFigma from "./lib/icons/figma.jsx";
+import IconNotion from "./lib/icons/notion.jsx";
+import IconNodejs from "./lib/icons/node.jsx";
+import IconBxlVuejs from "./lib/icons/vue.jsx";
+
 
 export const HoverEffect = ({
   items,
@@ -103,13 +117,55 @@ export const CardTitle = ({
   const isSpecialTitle =
     children === 'React' || children === 'PHP' || children === 'PostgreSQL' || children === 'Tailwind CSS';
 
+  let logo;
+
+  // Ajouter les logos correspondants à chaque titre
+  switch (children) {
+    case 'React':
+      logo = <IconBxlReact />;
+      break;
+    case 'PHP':
+      logo = <IconLanguagePhp />;
+      break;
+    case 'PostgreSQL':
+      logo = <IconBxlPostgresql />;
+      break;
+    case 'Tailwind CSS':
+      logo = <IconBxlTailwindCss />;
+      break;
+     
+      case 'Figma - Photoshop':
+      logo = <IconFigma />;
+      break;
+      case 'Vue.js':
+      logo = <IconBxlVuejs />;
+      break;
+      case 'Node.js':
+      logo = <IconNodejs />;
+      break;
+      case 'WordPress':
+      logo = <IconWordpress />;
+      break;
+      case 'Notion':
+      logo = <IconNotion />;
+      break;
+    
+    default:
+      break;
+  }
+
   const titleClass = cn(
-    'text-zinc-100 font-bold tracking-wide mt-4',
+    'text-zinc-100 font-bold tracking-wide mt-4 flex items-center', // Ajout de 'flex items-center' pour aligner le logo à côté du titre
     isSpecialTitle && 'text-gradient-primary3',
     className
   );
 
-  return <h4 className={titleClass}>{children}</h4>;
+  return (
+    <div className={titleClass}>
+      <h4>{children}</h4>
+      {logo && <div className="ml-2">{logo}</div>} {/* Affichage du logo s'il est défini */}
+    </div>
+  );
 };
 export const CardDescription = ({
   className,

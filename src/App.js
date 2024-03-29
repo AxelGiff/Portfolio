@@ -5,6 +5,8 @@ import Avatar from './Avatar.jsx';
 import LandingPage from './LandingPage.jsx';
 import About from './About.jsx';
 import History from './History.jsx';
+import Projects from './Projects.jsx';
+import Contact from './Contact.jsx';
 
 function App() {
   return (
@@ -18,38 +20,9 @@ function App() {
 
 
     <About />
-      <section id="contact">
-        <h2>Contact Section</h2>
-        {/* Votre contenu Contact */}
-      </section>
-
-      {/* Ajoutez plus de contenu au besoin */}
-
-      {/* Ajoutez du contenu en bas de la page pour pouvoir faire défiler vers le bas */}
-      <div style={{ height: '100vh' }}>
-        <p>Scroll down to test the navigation</p>
-      </div>
-      <section >
-        <h2>About Section</h2>
-        {/* Votre contenu About */}
-      </section>
-
-      <section id="projects">
-        <h2>Projects Section</h2>
-        {/* Votre contenu Projects */}
-      </section>
-
-      <section id="contact">
-        <h2>Contact Section</h2>
-        {/* Votre contenu Contact */}
-      </section>
-
-      {/* Ajoutez plus de contenu au besoin */}
-
-      {/* Ajoutez du contenu en bas de la page pour pouvoir faire défiler vers le bas */}
-      <div style={{ height: '100vh' }}>
-        <p>Scroll down to test the navigation</p>
-      </div>
+    
+    <Projects />
+     <Contact />
     </div>
   );
 }
