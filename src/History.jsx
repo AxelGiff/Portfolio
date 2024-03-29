@@ -2,7 +2,10 @@ import React from 'react'
 
 export default function History() {
   return (
+    <div>            <div class="gradient-02 z-[-1]  right-1/4 top-[1240px] w-1/2 h-full opacity-30"></div>
+    
     <div className="bg-hsla-45-17-95-80 backdrop-blur-xl backdrop-saturate-17 backdrop-filter-contrast-170 backdrop-filter px-10 border border-gray-800 animate-border-width bg-gradient-to-r from-[rgba(17,17,17,0)] via-white to-[rgba(17,17,17,0)]" id="parcours">
+    
     <div  className="flex flex-col items-center">
     <span>  <img src={require("../src/images/icons8-paper-plane-50.png")} alt="plane" style={{ width: '30px', height: '30px', marginRight: '5px' }} />
 </span>
@@ -40,5 +43,6 @@ export default function History() {
                 During high school, I studied <span className='text-gradient-primary3'>Computer Science</span> extensively, engaging in various activities such as <br /><span className='text-gradient-primary3'>building my own PC</span>, creating <span className='text-gradient-primary3'>video/photo edits</span>, & troubleshooting. However, there was still one area I hadn't ventured into: <span className='text-gradient-primary4'>coding</span>.<br/>
              </p>
           </div>
+      </div>
       </div>  )
 }

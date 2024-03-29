@@ -56,7 +56,7 @@ const Header = () => {
           </a>
         </li>
         <li className="nav-li">
-        <a href="#projects" className={`a-list ${activeLink === 'Projects' ? 'active' : ''}`} onClick={(e) => handleLinkClick(e, 'Projects')}>
+        <a href="#project-container" className={`a-list ${activeLink === 'Projects' ? 'active' : ''}`} onClick={(e) => handleLinkClick(e, 'Projects')}>
             Projects
           </a>
         </li>

@@ -29,13 +29,19 @@
      filter: blur(115px);
   position: absolute;
 }
+.gradient-02 {
+/*   
+ */  background-image: linear-gradient(to top, #c3673ccf 0%, #2f38ae 100%);
+     filter: blur(115px);
+  position: absolute;
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing: grayscale;
-
+scroll-behavior: smooth;
   text-rendering:optimizeLegibility;
 
 }
@@ -541,3 +547,308 @@ transform: none; /* Réinitialise toute transformation appliquée précédemment
   font-weight: bold;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.project-card{
+  display: block;
+background-color: white; /*3*/
+box-shadow: 0px 5px 20px #999;
+
+
+}
+
+
+
+.project-image img {
+  width: 50%;
+  object-fit: cover;
+    /*5 - Méthode de centrage en fonction de la taille de l'image */
+  transform: translate(-50%, -50%);
+  filter: grayscale(1);/*6*/
+    /*7 - Transition */
+  transition-property: filter width; 
+  transition-duration: .3s;
+  transition-timing-function: ease;
+}
+
+.box{
+  padding: 30px;
+  
+}
+.projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  
+}
+
+.project {
+  flex-basis: 50%;
+  box-sizing: border-box;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project img {
+  max-width: 100%;
+  height: auto;
+}
+
+.project-description {
+  text-align: center;
+}
+
+.portfolio-container {
+   display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+  gap: 0; 
+ 
+}
+
+.project {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 300px;
+  
+  
+}
+
+
+
+ .project img {
+  
+  display: block;
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  transition-property: filter width; 
+  transition-duration: .229s;
+  transition-timing-function:ease;
+  filter:blur(1);/*6*/
+  background-color: rgba(0, 0, 0, 0.7);
+
+  
+
+}
+
+.project-info {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+color: #fff;
+padding: 0.5rem;
+transition: opacity 0.3s ease-in-out;
+}
+
+
+
+.project-title{
+  white-space: nowrap; /* Empêche le texte de se couper sur plusieurs lignes */
+
+  letter-spacing: 2px;
+   background:linear-gradient(180deg,#fff4f4 0%,rgba(0, 124, 248, 0.908) 100%);
+   font-size: 2rem;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: opacity 0.3s;
+  text-shadow: 1px  rgba(0,0,0,0.9); /* Légère ombre */
+
+
+}
+
+.project {
+  transform: translateY(50px);
+  transition: opacity 1s, transform 1s;
+}
+
+
+  .project-visible {
+    transform: translateY(0);
+  }
+
+.project-desc{
+color: #ffffff;
+white-space: nowrap; /* Empêche le texte de se couper sur plusieurs lignes */
+
+font-size: 1.2rem;
+  text-align: center;
+  margin-top: -2%;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.5); /* Légère ombre */
+
+}
+
+
+/* .container-project{
+  background-color: rgb(4, 58, 51);
+  display: grid;
+  gap: 0;
+  grid-template-columns: repeat(auto-fill,minmax(40rem,1fr));
+  grid-template-rows: repeat(auto-fill,minmax(600px,1fr));
+
+} */
+
+.container-project img{
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition-property: filter width; 
+  transition-duration: .229s;
+  transition-timing-function:ease;
+  filter:blur(1);/*6*/
+}
+
+/******** */
+.container-project {
+ 
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px;
+  padding-bottom: 100px;
+}
+
+.grid-item {
+
+  width: 100%;
+  object-fit: cover;
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0px 5px 20px #757575b0;
+  transition: transform 0.3s;
+}
+
+/* .empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 2px; 
+  background-color: #333; 
+  margin: 0 auto;
+
+} */
+
+
+/* .empty:first-child::before {
+  content: "";
+  position: absolute;
+  top: -10px; 
+  left: calc(50% - 10px); 
+  width: 20px; 
+  height: 20px;
+  background-color: white; 
+  border-radius: 50%; 
+} */
+
+.grid-item img {
+  width: 100%;
+  filter:blur(10px) brightness(65%) grayscale(1);
+  height: 100%; /* Modifié pour remplir la case */
+  object-fit: cover;
+  transition: filter 0.3s; /* Ajout de la transition ici */
+
+}
+/* .empty::before {
+  content: "";
+  position: absolute;
+  top: -20px; 
+  left: calc(50% - 10px); 
+  width: 20px; 
+  height: 20px;
+  border: 2px solid black;
+  border-radius: 50%; 
+  z-index: 1;
+  background-color: transparent; 
+}
+ */
+
+.line-with-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 2px; /* Largeur de la ligne */
+  height: 100%; /* Hauteur de la ligne */
+  background-color: #f8f8f8; /* Couleur de la ligne */
+  margin: 0 auto; /* Centre horizontalement */
+}
+
+.circle {
+  position: absolute;
+  top: -20px; /* Ajustez la position verticale du cercle */
+  left: calc(50% - 10px); /* Centre horizontalement le cercle */
+  width: 20px; /* Diamètre du cercle */
+  height: 20px;
+  border: 2px solid #ffffff; /* Bordure du cercle */
+  border-radius: 50%; /* Forme du cercle */
+  z-index: 1; /* Assurez-vous que le cercle est au-dessus de la ligne */
+  background-color: transparent; /* Couleur de fond transparente */
+}
+
+.circle.one-fifth{
+  top: 25%;
+}
+
+.circle.two-fifth{
+  top: 50%;
+}
+.circle.three-fifth{
+  top: 75%;
+}
+.circle.four-fifth{
+  top: 100%;
+}
+
+.emoji{
+  color: inherit;
+}
+.grid-item:hover img{
+  filter:blur(0px);
+
+/*     filter:blur(10px) saturate(0) grayscale(1);
+ */
+}
+
+.grid-item:hover  {
+  cursor: pointer;
+
+  transform: scale(1.05);
+  filter:blur(0px);
+  filter: drop-shadow(0 0 0.75rem rgb(20, 107, 220));
+
+  
+  
+}
+.grid-item:hover .project-info  {
+  opacity: 0; /* Fait disparaître le titre au survol */
+  
+}

@@ -12,31 +12,31 @@ export const projects = [
   {
     title: "React",
     description:
-      "A technology company that builds economic infrastructure for the internet.",
+      "I started studying React on my own to be able to make it my main language",
     link: "https://fr.legacy.reactjs.org",
   },
   {
     title: "Tailwind CSS",
     description:
-      "A streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries, and more on thousands of internet-connected devices.",
+      "Since 2022, I started using tailwind which has helped me enormously in simplifying the css",
     link: "https://tailwindcss.com",
   },
   {
     title: "Vue.js",
     description:
-      "A multinational technology company that specializes in Internet-related services and products.",
+      "A framework that I have studied and can master",
     link: "https://vuejs.org",
   },
   {
     title: "PHP",
     description:
-      "A technology company that focuses on building products that advance Facebook's mission of bringing the world closer together.",
+      "This is the backend language that I master the most (for now). I would therefore like to be able to switch to Laravel or Symfony",
     link: "https://www.php.net/manual/fr/intro-whatis.php",
   },
   {
     title: "PostgreSQL",
     description:
-      "A multinational technology company focusing on e-commerce, cloud computing, digital streaming, and artificial intelligence.",
+      "I love carrying out my projects using postgreSQL which brings a certain complexity to the project",
     link: "https://www.postgresql.org",
   },
   {
@@ -48,18 +48,18 @@ export const projects = [
   {
     title: "Figma - Photoshop",
     description:
-      "A multinational technology company that develops, manufactures, licenses, supports, and sells computer software, consumer electronics, personal computers, and related services.",
+      "Since I was a teenager, I have always been attracted to digital design.Since I was a teenager, I have always been attracted to digital design.",
     link: "https://microsoft.com",
   },{
     title: "Notion",
     description:
-      "A multinational technology company that develops, manufactures, licenses, supports, and sells computer software, consumer electronics, personal computers, and related services.",
+      "A superb project management tool that I master perfectly to monitor my personal or professional life by creating no-code databases",
     link: "https://microsoft.com",
   },
   {
     title: "WordPress",
     description:
-      "A multinational technology company that develops, manufactures, licenses, supports, and sells computer software, consumer electronics, personal computers, and related services.",
+      `I was able to use the Divi plugin to redesign a website and the Yoast plugin to optimize its SEO.I would like to discover other low-code platforms like webflow to create websites`,
     link: "https://microsoft.com",
   },
 ];
