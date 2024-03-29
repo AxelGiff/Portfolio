@@ -13,7 +13,7 @@ export default function About() {
   return (
     <section id="about-container">
         <BadgeTextGradient text="About" />
-    <h1 className='about-title text-white text-5xl block text-center block mb-32'>Discover me</h1>
+    <h1 className='about-title text-white text-5xl block text-center block mb-32'>Discover</h1>
     
     
       <div className="flex flex-col items-center gap-12 m-48 sm:mt-0 sm:gap-24">
