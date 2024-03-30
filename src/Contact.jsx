@@ -1,7 +1,6 @@
 import React from 'react'
 import BadgeTextGradient from './BadgeGradient.tsx';
 import IconCafeOutline from './lib/icons/cafe.jsx';
-import {SignupFormDemo} from './FormContact.tsx';
 
 export default function Contact() {
   return (
@@ -9,7 +8,8 @@ export default function Contact() {
 
     <BadgeTextGradient text="Contact" />
 <h1 className='about-title text-white text-5xl block text-center block mb-32'> Want a coffee  ? </h1>  
-<SignupFormDemo />
+<div class="gradient-02 absolute z-[-1] right-3/4 left-1/4 bottom-0 w-1/2 h-[80%] opacity-30"></div>
+
 </section>
   )
 }

@@ -61,7 +61,7 @@ const Header = () => {
           </a>
         </li>
         <li className="nav-li">
-        <a href="#contact" className={`a-list ${activeLink === 'Contact' ? 'active' : ''}`} onClick={(e) => handleLinkClick(e, 'Contact')}>
+        <a href="#contact-container" className={`a-list ${activeLink === 'Contact' ? 'active' : ''}`} onClick={(e) => handleLinkClick(e, 'Contact')}>
             Contact
           </a>
         </li>
