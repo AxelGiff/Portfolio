@@ -9,7 +9,7 @@ export default function Projects() {
     <BadgeTextGradient text="Projects" />
 <h1 className='about-title text-white text-5xl block text-center  block mb-32'>My work</h1>
 <div className="container-project max-w-5xl mx-auto  px-8">
-        <ProjectCard link="#" img={require("./images/screen_dash_admin_pres.png")} title="Perform Vision" desc="Web App | Providing in-house"   iconsToShow={["HTML", "Tailwind", "PHP","PostgreSQL","JS"]}
+        <ProjectCard id="1" img={require("./images/screen_dash_admin_pres.png")} title="Perform Vision" desc="Web App | Providing in-house"   iconsToShow={["HTML", "Tailwind", "PHP","PostgreSQL","JS"]}
  />
         
        
@@ -24,8 +24,8 @@ export default function Projects() {
             <div class="circle one-fifth"></div>
           </div></div>
 
-        <ProjectCard link="#" img={require("./images/Netcards.PNG")} title="Netcards" desc="Web App | Education" iconsToShow={["HTML", "Tailwind", "JS","PHP","MySQL"]}/>
-        <ProjectCard link="#" img={require("./images/SafePage.PNG")} title="SafePage" desc="Blog | Welfare & Healthy" iconsToShow={["HTML", "CSS", "JS"]}/>
+        <ProjectCard id="2" img={require("./images/Netcards.PNG")} title="Netcards" desc="Web App | Education" iconsToShow={["HTML", "Tailwind", "JS","PHP","MySQL"]}/>
+        <ProjectCard id="3" img={require("./images/SafePage.PNG")} title="SafePage" desc="Blog | Welfare & Healthy" iconsToShow={["HTML", "CSS", "JS"]}/>
         <div class="empty"><div class="line-with-circle">
             <div class="circle two-fifth"></div>
           </div></div>
@@ -33,8 +33,8 @@ export default function Projects() {
             <div class="circle three-fifth"></div>
           </div></div>
 
-        <ProjectCard link="#" img={require("./images/todolist.PNG")} title="Todo List" desc="Web App | Productivity Management" iconsToShow={["React", "JavaScript", "CSS"]}/>
-        <ProjectCard link="#" img={require("./images/refonte_LUTC_stage.png")} title="Level Up Tech Consulting" desc="Website | Digital Accessibility" iconsToShow={["WordPress", "Figma", "HTML","CSS", "Notion"]}/>
+        <ProjectCard id="4" img={require("./images/todolist.PNG")} title="Todo List" desc="Web App | Productivity Management" iconsToShow={["React", "JavaScript", "CSS"]}/>
+        <ProjectCard id="5" img={require("./images/refonte_LUTC_stage.png")} title="Level Up Tech Consulting" desc="Website | Digital Accessibility" iconsToShow={["WordPress", "Figma", "HTML","CSS", "Notion"]}/>
         <div class="empty"><div class="line-with-circle">
             <div class="circle four-fifth"></div>
           </div></div>

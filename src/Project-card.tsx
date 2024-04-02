@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom'; // Importez Link depuis react-router-dom
+
 import IconBxlReact from "./lib/icons/react.jsx";
 import IconBxlMySQL from "./lib/icons/mySQL.jsx";
 import IconBxlJavascript from "./lib/icons/js.jsx";
@@ -11,7 +13,7 @@ import IconBxlTailwindCss from "./lib/icons/tailwind.jsx";
 import IconFigma from "./lib/icons/figma.jsx";
 import IconNotion from "./lib/icons/notion.jsx";
 
-export default function ProjectCard({ link, img, alt, title, desc,iconsToShow }) {
+export default function ProjectCard({ id, img, alt, title, desc,iconsToShow }) {
 
   const icons=[
     {
@@ -72,7 +74,6 @@ export default function ProjectCard({ link, img, alt, title, desc,iconsToShow })
       image: <IconNotion />
     }
   ]
-  console.log("iconsToShow:", iconsToShow); // Vérifier le contenu de iconsToShow dans la console
 
   const filteredIcons = icons.filter(icon => iconsToShow.includes(icon.name));
 
@@ -81,8 +82,9 @@ export default function ProjectCard({ link, img, alt, title, desc,iconsToShow })
   ));
   return (
     <div className="grid-item">
-      <a href={link}><img src={img} alt={alt} /></a>
-      <div className="project-info">
+   <Link to={`/projects/${id}`}>
+        <img src={img} alt={alt} />
+      </Link>      <div className="project-info">
         <h2 className="project-title font-semibold  bg-clip-text text-transparent">{title}</h2>
         <p className="project-desc">{desc}</p>
         <ul className="flex flex-row items-center justify-center gap-3 mt-4">
