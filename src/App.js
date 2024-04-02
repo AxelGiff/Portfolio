@@ -7,22 +7,23 @@ import About from './About.jsx';
 import History from './History.jsx';
 import Projects from './Projects.jsx';
 import Contact from './Contact.jsx';
+import Routage from './Routage.jsx';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import ProjectDetail from './ProjectDetail'; // Créez ce composant pour afficher les détails d'un projet
+
 
 function App() {
   return (
     <div className="font-apple">
-      <Header />
+    <Header />
 
-      <LandingPage />
-      <History />
-      {/*<img alt="Product Preview" loading="lazy" width="60%" height="60%" decoding="async" data-nimg="1" className="invisible sm:visible mx-auto [mask-image:linear-gradient(to_bottom,white,white,transparent)] transition duration-1000 h-full relative z-40 opacity-10" style={{color:"transparent"}}  src={require("./images/About-img-removebg.png")} /> 
-     {  <img alt="Product Preview" loading="lazy" width="1200" height="600" decoding="async" data-nimg="1" className="invisible sm:visible mx-auto [mask-image:linear-gradient(to_bottom,white,white,transparent)] transition duration-1000 h-full relative z-40 opacity-100" style={{color:"transparent"}}  src={require("./images/fond écran olala.png")} /> */}
+      <Routes>
+ 
+        <Route path="/" element={<Routage />}/>
+  
+    <Route path="/projects/:id" element={<ProjectDetail />} />
+  </Routes>
 
-
-    <About />
-    
-    <Projects />
-     <Contact />
     </div>
   );
 }

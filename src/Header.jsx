@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
 const Header = () => {
   const [isBlurred, setIsBlurred] = useState(false);
@@ -45,23 +46,24 @@ const Header = () => {
       <nav className="nav">
       <ul className={`ul-nav ${isBlurred ? 'blur_class' : ''}`}>
         <li className="nav-li">
-        <a href="#" className={`a-list ${activeLink === 'Home' ? 'active' : ''}`} onClick={(e) => handleLinkClick(e, 'Home')}>
-            Home
-            <span className="slash">/</span>
-          </a>
+        <Link to="/#" className={`a-list ${activeLink === 'Home' ? 'active' : ''}`} onClick={(e) => handleLinkClick(e, 'Home')}>
+            Home  <span className="slash" >/</span>
+          </Link>
+         
+
         </li>
         <li className="nav-li">
-        <a href="#about-container" className={`a-list ${activeLink === 'About' ? 'active' : ''}`} onClick={(e) => handleLinkClick(e, 'About')}>
+        <Link to="/#about-container" className={`a-list ${activeLink === 'About' ? 'active' : ''}`} onClick={(e) => handleLinkClick(e, 'About')}>
             About
-          </a>
+          </Link>
         </li>
         <li className="nav-li">
-        <a href="#project-container" className={`a-list ${activeLink === 'Projects' ? 'active' : ''}`} onClick={(e) => handleLinkClick(e, 'Projects')}>
+        <Link to="/#project-container" className={`a-list ${activeLink === 'Projects' ? 'active' : ''}`} onClick={(e) => handleLinkClick(e, 'Projects')}>
             Projects
-          </a>
+          </Link>
         </li>
         <li className="nav-li">
-        <a href="#contact-container" className={`a-list ${activeLink === 'Contact' ? 'active' : ''}`} onClick={(e) => handleLinkClick(e, 'Contact')}>
+        <a href="/#contact-container" className={`a-list ${activeLink === 'Contact' ? 'active' : ''}`} onClick={(e) => handleLinkClick(e, 'Contact')}>
             Contact
           </a>
         </li>
