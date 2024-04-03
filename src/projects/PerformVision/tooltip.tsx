@@ -38,19 +38,27 @@ const people = [
     image:
       "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3540&q=80",
   },
+ 
   {
     id: 6,
-    name: "Dora",
-    designation: "The Explorer",
+    name: "Axel Giffard",
+    designation: "Web Developper",
+    image:
+    require("../../images/blanc.png"),
+  },
+  {
+    id: 7,
+    name: "Cindy Lhermite",
+    designation: "CEO & Web Designer",
     image:
       "https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3534&q=80",
   },
 ];
 
-export function AnimatedTooltipPreview() {
+export function AnimatedTooltipPreview({number,old}) {
   return (
     <div className="flex flex-row items-center gap-6 justify-center mb-10 mt-6 w-full">
-      <AnimatedTooltip items={people.slice(0,5)} />
+      <AnimatedTooltip items={people.slice(old,number)} />
     </div>
   );
 }
