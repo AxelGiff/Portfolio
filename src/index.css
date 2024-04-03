@@ -35,6 +35,19 @@
      filter: blur(115px);
   position: absolute;
 }
+
+.gradient-pv {
+  background-image: linear-gradient(to top, #202C2E 0%, #427D9D 100%);
+     filter: blur(115px);
+  position: absolute;
+}
+.gradient-lutc{
+  background-image: linear-gradient(to top, #742020 0%, #C48C49 100%);
+     filter: blur(115px);
+  position: absolute;
+}
+
+
 * {
   margin: 0;
   padding: 0;
