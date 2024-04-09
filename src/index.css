@@ -41,6 +41,11 @@
      filter: blur(115px);
   position: absolute;
 }
+.gradient-nc {
+  background-image: linear-gradient(to top, #202C2E 0%, #036bff 100%);
+     filter: blur(115px);
+  position: absolute;
+}
 .gradient-lutc{
   background-image: linear-gradient(to top, #742020 0%, #C48C49 100%);
      filter: blur(115px);
@@ -786,6 +791,7 @@ font-size: 1.2rem;
 
 .grid-item img {
   width: 100%;
+  
   filter:blur(10px) brightness(65%) grayscale(1);
   height: 100%; /* Modifié pour remplir la case */
   object-fit: cover;
@@ -855,7 +861,7 @@ font-size: 1.2rem;
 
 .grid-item:hover  {
   cursor: pointer;
-
+  z-index:10000;
   transform: scale(1.05);
   filter:blur(0px);
   filter: drop-shadow(0 0 0.75rem rgb(20, 107, 220));
@@ -864,6 +870,7 @@ font-size: 1.2rem;
   
 }
 .grid-item:hover .project-info  {
+  
   opacity: 0; /* Fait disparaître le titre au survol */
   
 }

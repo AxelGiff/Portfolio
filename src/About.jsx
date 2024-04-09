@@ -41,7 +41,7 @@ export default function About() {
          
       <TextGenerateEffect words={words} />;
           <div className="  mt-24  items-center "> 
-        <ButtonRotatingBackgroundGradient text="Curriculum Vitae" />
+        <ButtonRotatingBackgroundGradient text="Curriculum Vitae" link="https://cvdesignr.com/p/64f6f9140cf2c"/>
       </div>
         </div>
       </div>
