@@ -11,12 +11,12 @@ export default function AboutLUTC() {
     <section id="about-container">
       <h1 className='about-title text-white text-5xl block text-center block mt-24 mb-32'>Zoom-in</h1>
       <div className="flex flex-col sm:flex-row items-center gap-12 m-48 sm:mt-0 sm:gap-24">
-      <div class="gradient-lutc z-[-10000] right-1/4 -top-1/8 w-1/2 h-full opacity-30"></div>
+      <div class="gradient-lutc z-[-10000] left-1/4 -top-1/8 w-[60%] h-full opacity-30"></div>
 
         {/* Image on the left */}
         <div className="relative w-full sm:w-1/2 h-auto">
           <div class="gradient-01 right-1/4 -top-1/8 w-1/2 h-full opacity-30"></div>
-          <img alt="Product Preview" loading="lazy" width="2000vw" height="100vw" className="shadow-lg invisible sm:visible [mask-image:linear-gradient(to_bottom,white,white,transparent)] transition rounded-lg duration-1000 relative z-40 opacity-100" style={{color:"transparent"}}  src={require("./images/inscription.png")} /> 
+          <img alt="Product Preview" loading="lazy" width="2500vw" height="100vw" className="shadow-lg rounded-lg invisible sm:visible rounded-lg [mask-image:linear-gradient(to_bottom,white,white,transparent)] transition duration-1000 relative z-40 opacity-100" style={{color:"transparent"}}  src={require("./images/inscription.png")} /> 
         </div>
         {/* Text on the right */}
         <div className="text flex flex-col items-center justify-center z-50 sm:w-1/2">

@@ -63,7 +63,7 @@ export default function Technologies({iconsToShow,bgcolor}) {
   ));
   return (
     <div className="flex flex-col items-center">
-        <h2 className="text-white text-[1.1rem]">Technologies</h2>
+        <h2 className="text-white text-center text-[1.1rem]">Technologies</h2>
         <ul className="flex flex-row items-center justify-center  mt-4">
           {iconList}
         </ul>
