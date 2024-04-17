@@ -46,11 +46,21 @@
      filter: blur(115px);
   position: absolute;
 }
+.gradient-sp{
+  background-image: linear-gradient(to top, #ffc90686 0%, #6200ff 100%);
+     filter: blur(115px);
+  position: absolute;
+}
+
 .gradient-lutc{
   background-image: linear-gradient(to top, #742020 0%, #C48C49 100%);
      filter: blur(115px);
   position: absolute;
 }
+
+
+
+
 
 
 * {
@@ -873,4 +883,11 @@ font-size: 1.2rem;
   
   opacity: 0; /* Fait disparaître le titre au survol */
   
+}
+
+
+@media (max-width: 768px) {
+  .text-lg {
+    @apply text-base; /* Ajustez la taille de police pour les écrans de largeur maximale de 768px */
+  }
 }

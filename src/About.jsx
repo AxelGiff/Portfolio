@@ -35,11 +35,11 @@ export default function About() {
         </div>
         
 
-        <div className="text flex flex-col items-center justify-center z-50 ">
+        <div className="text-base md:text-lg  lg:text-xl flex flex-col items-center justify-center z-50 ">
        {/*  
          <p className="text-white text-lg leading-relaxed">From Paris to <strong>VsCode</strong>, I'm a professional <strong>web developer</strong> who likes coding any website, webapps with my personal <strong>UI/UX</strong> design touch. I have been studying <strong>front/back end</strong> since <strong>2021</strong>. I've always been someone who has a taste for the <strong>creation</strong> and the <strong>logical side</strong>. That's why I've decided to become a <strong>front-end developer</strong> to use my power of my brain-skills.</p> */}
          
-      <TextGenerateEffect words={words} />;
+      <TextGenerateEffect words={words} />
           <div className="  mt-24  items-center "> 
         <ButtonRotatingBackgroundGradient text="Curriculum Vitae" link="https://cvdesignr.com/p/64f6f9140cf2c"/>
       </div>

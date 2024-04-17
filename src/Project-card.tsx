@@ -84,13 +84,15 @@ export default function ProjectCard({ id, img, alt, title, desc,iconsToShow }) {
     <div className="grid-item">
    <Link to={`/projects/${id}`}>
         <img src={img} alt={alt} />
-      </Link>      <div className="project-info">
+      
+          <div className="project-info">
         <h2 className="project-title font-semibold  bg-clip-text text-transparent">{title}</h2>
         <p className="project-desc">{desc}</p>
         <ul className="flex flex-row items-center justify-center gap-3 mt-4">
           {iconList}
         </ul>
       </div>
+      </Link> 
     </div>
   );
 }
