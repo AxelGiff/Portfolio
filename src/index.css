@@ -219,6 +219,27 @@ html{
  
 }
 
+.nav ul {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap; /* Permettre le passage à la ligne des éléments sur les écrans plus petits */
+  justify-content: center; /* Centrer les éléments horizontalement */
+  padding: 0;
+  margin: 0;
+}
+
+.nav li {
+  margin:  5px 15px ; /* Ajuster l'espacement entre les éléments */
+}
+
+.nav a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  transition: all .2s ease-in-out;
+  font-size: clamp(1.3rem, 1.1rem + 0.5vw, 1.25rem); /* Utiliser une taille de police adaptable */
+  padding: 10px 15px; /* Ajuster l'espacement intérieur des éléments */
+  border-radius: 1.5rem;
+}
 
 .blur_class{
   background: hsla(0, 0%, 13%, 0.8);
@@ -311,7 +332,7 @@ display: flex;
 align-items: center;
 justify-content: center;
 border-radius: 6px;
-margin-left: calc(14px - 8px);
+margin-left: 4px; /* Ajuster la marge à gauche */
 }
 .circular--portrait img:hover{
   transform: scale(1.2); /* Zoom au survol */
@@ -891,3 +912,28 @@ font-size: 1.2rem;
     @apply text-base; /* Ajustez la taille de police pour les écrans de largeur maximale de 768px */
   }
 }
+
+
+
+
+.cv_responsive {
+  /* Taille par défaut de l'image */
+
+
+  /* Styles supplémentaires pour les écrans plus petits */
+  @media (max-width: 1024px) {
+    width: 200vw;
+    /* Réduire la largeur à 100% de la largeur de l'écran */
+  } 
+}
+
+.flex_responsive{
+  @media (max-width: 1024px) {
+    margin: 2rem;
+    /* Réduire la largeur à 100% de la largeur de l'écran */
+  } 
+}
+
+
+
+
