@@ -14,7 +14,7 @@ export default function AboutNetCards() {
   return (
     <section id="about-container">
       <h1 className='about-title text-white text-5xl block text-center block mt-24 mb-32'>Zoom-in</h1>
-      <div className="flex flex-col sm:flex-row items-center gap-12 m-48 sm:mt-0 sm:gap-24">
+      <div className="flex  flex_responsive flex-col sm:flex-row items-center gap-12 m-48 sm:mt-0 sm:gap-24">
       <div class="gradient-nc z-[-10000] right-1/4 -top-1/8 w-1/2 h-full opacity-30"></div>
 
         {/* Image on the left */}
