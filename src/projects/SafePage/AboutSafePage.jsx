@@ -10,18 +10,22 @@ import Delete from "./images/deletetodo.mp4";
 
  */
 export default function AboutSafePage() {
-  const words = `SafePage stands as my first significant project that I embarked on in 2022. It's an endeavor that was inspired by the website https://dev-perso.com/. Being familiar with personal development, I've always been inclined to create projects that resonate with me on a personal level. I firmly believe that working on projects aligned with our personal interests is crucial for sustaining motivation and commitment in the long run. Therefore, SafePage is more than just a project to me; it embodies a fusion of my passion for personal development and my skills in web development, creating a fulfilling experience for both myself and the users.`;
+  const words = <div>
+  SafePage stands as my first significant project that I embarked on in 2022. It's an endeavor that was inspired by the website{' '}
+  <a href="https://dev-perso.com/">Dev-perso</a>
+  {' '}. Being familiar with personal development, I've always been inclined to create projects that resonate with me on a personal level. I firmly believe that working on projects aligned with our personal interests is crucial for sustaining motivation and commitment in the long run. Therefore, SafePage is more than just a project to me; it embodies a fusion of my passion for personal development and my skills in web development, creating a fulfilling experience for both myself and the users.
+</div>;
 
   return (
     <section id="about-container">
       <h1 className='about-title text-white text-5xl block text-center block mt-24 mb-32'>Zoom-in</h1>
-      <div className="flex flex_responsive flex-col sm:flex-row items-center gap-12 m-48 sm:mt-0 sm:gap-24">
+      <div className="flex flex_responsive flex-col xl:flex-row items-center gap-12 m-48 sm:mt-0 sm:gap-24">
       <div class="gradient-sp z-[-10000] right-1/4 -top-1/8 w-1/2 h-full opacity-30"></div>
 
         {/* Image on the left */}
         <div className="relative w-full sm:w-1/2 h-auto">
           <div class="gradient-01 right-1/4 -top-1/8 w-1/2  h-full opacity-100"></div>
-          <img alt="Product Preview" loading="lazy" width="2500vw" height="100vw" className="shadow-lg invisible sm:visible [mask-image:linear-gradient(to_bottom,white,white,transparent)] transition duration-1000  rounded-lg relative z-40 opacity-100" style={{color:"transparent"}}  src={require("./images/ecr.png")} /> 
+          <img alt="Product Preview" loading="lazy" width="2500vw" height="100vw" className="shadow-lg invisible sm:visible [mask-image:linear-gradient(to_bottom,white,white,transparent)] transition duration-1000  rounded-lg relative z-100 bottom-8 opacity-100" style={{color:"transparent"}}  src={require("./images/ecr.png")} /> 
         </div>
         {/* Text on the right */}
         <div className="text flex flex-col items-center justify-center z-50 sm:w-1/2">
