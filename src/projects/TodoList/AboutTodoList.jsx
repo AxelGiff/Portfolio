@@ -24,8 +24,7 @@ export default function AboutTodoList() {
         </div>
         {/* Text on the right */}
         <div className="text flex flex-col items-center justify-center z-50 sm:w-1/2">
-          <TextGenerateEffect words={words} />
-          <div className="mt-24 items-center "> 
+        <p className="text-white text-lg ">{words}</p>                 <div className="mt-24 items-center "> 
             <ButtonRotatingBackgroundGradient text="View a demo" link="https://2dolist-axl.netlify.app/" />
           </div>
         </div>

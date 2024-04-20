@@ -16,12 +16,11 @@ export default function AboutPv() {
         {/* Image on the left */}
         <div className="relative w-full sm:w-1/2 h-auto">
           <div class="gradient-01 right-1/4 -top-1/8 w-1/2 h-full opacity-30"></div>
-          <img alt="Product Preview" loading="lazy" width="2000vw" height="100vw" className="shadow-lg invisible sm:visible rounded-lg [mask-image:linear-gradient(to_bottom,white,white,transparent)] transition duration-1000 relative z-40 opacity-100" style={{color:"transparent"}}  src={require("./images/dashboard_bdl_admin.png")} /> 
+          <img alt="Product Preview" loading="lazy" width="2000vw" height="100vw" className="cv_responsive shadow-lg invisible sm:visible rounded-lg [mask-image:linear-gradient(to_bottom,white,white,transparent)] transition duration-1000 relative z-40 opacity-100" style={{color:"transparent"}}  src={require("./images/dashboard_bdl_admin.png")} /> 
         </div>
         {/* Text on the right */}
         <div className="text flex flex-col items-center justify-center z-50 sm:w-1/2">
-          <TextGenerateEffect words={words} />
-          <div className="mt-24 items-center "> 
+        <p className="text-white text-lg ">{words}</p>                 <div className="mt-24 items-center "> 
             <ButtonRotatingBackgroundGradient text="Link to the Github code" link="https://github.com/AxelGiff/SAE_PerformVision" />
           </div>
         </div>

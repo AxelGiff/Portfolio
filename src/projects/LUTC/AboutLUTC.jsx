@@ -10,18 +10,17 @@ export default function AboutLUTC() {
   return (
     <section id="about-container">
       <h1 className='about-title text-white text-5xl block text-center block mt-24 mb-32'>Zoom-in</h1>
-      <div className="flex flex_responsive flex-col sm:flex-row items-center gap-12 m-48 sm:mt-0 sm:gap-24">
-      <div class="gradient-lutc z-[-10000] left-1/4 -top-1/8 w-[60%] h-full opacity-30"></div>
+      <div className="flex flex_responsive flex-col  xl:flex-row items-center gap-12 m-48 sm:mt-0 sm:gap-24">
+      <div class="gradient-lutc z-[-10000] right-1/4 -top-1/8 w-1/2 h-full opacity-30"></div>
 
         {/* Image on the left */}
         <div className="relative w-full sm:w-1/2 h-auto">
           <div class="gradient-01 right-1/4 -top-1/8 w-1/2 h-full opacity-30"></div>
-          <img alt="Product Preview" loading="lazy" width="2500vw" height="100vw" className="shadow-lg rounded-lg invisible sm:visible rounded-lg [mask-image:linear-gradient(to_bottom,white,white,transparent)] transition duration-1000 relative z-40 opacity-100" style={{color:"transparent"}}  src={require("./images/inscription.png")} /> 
+          <img alt="Product Preview" loading="lazy" width="2500vw" height="100vw" className="shadow-lg rounded-lg invisible sm:visible rounded-lg [mask-image:linear-gradient(to_bottom,white,white,transparent)] transition duration-1000 relative z-40 opacity-100" style={{color:"transparent"}}  src={require("../NetCards/images/derien.gif")} /> 
         </div>
         {/* Text on the right */}
         <div className="text flex flex-col items-center justify-center z-50 sm:w-1/2">
-          <TextGenerateEffect words={words} />
-          <div className="mt-24 items-center "> 
+        <p className="text-white text-lg ">{words}</p>          <div className="mt-24 items-center "> 
             <ButtonRotatingBackgroundGradient text="Visit the website" link="https://level-up-tech-consulting.com/" />
           </div>
         </div>
