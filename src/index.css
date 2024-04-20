@@ -922,7 +922,7 @@ font-size: 1.2rem;
 
   /* Styles supplémentaires pour les écrans plus petits */
   @media (max-width: 1024px) {
-    width: 200vw;
+    width: 300vw;
     /* Réduire la largeur à 100% de la largeur de l'écran */
   } 
 }
