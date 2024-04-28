@@ -43,7 +43,7 @@ export default function About() {
       {/* <TextGenerateEffect words={words} /> */}
       <p className="text-white text-lg ">From Paris to VsCode, I'm a professional web developer who likes coding any website, webapps with my personal UI/UX design touch. I have been studying front/back end since 2021. I've always been someone who has a taste for the creation and the logical side. That's why I've decided to become a front-end developer to use my power of my brain-skills. </p>
           <div className="  mt-24  items-center "> 
-        <ButtonRotatingBackgroundGradient text="Curriculum Vitae" link="https://cvdesignr.com/p/64f6f9140cf2c"/>
+        <ButtonRotatingBackgroundGradient text="Curriculum Vitae" link="https://www.canva.com/design/DAGDQiAnvSg/2myuL53SpgUBMUtY_LeYqg/view?utm_content=DAGDQiAnvSg&utm_campaign=designshare&utm_medium=link&utm_source=editor"/>
       </div>
         </div>
       </div>
