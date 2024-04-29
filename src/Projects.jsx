@@ -8,7 +8,7 @@ export default function Projects() {
 
     <BadgeTextGradient text="Projects" />
 <h1 className='about-title text-white text-5xl block text-center  block mb-32'>My work</h1>
-<div className="container-project max-w-5xl mx-auto  px-8">
+<div className="container-project max-w-5xl mx-auto px-8 flex flex-wrap justify-center">
         <ProjectCard id="1" img={require("./images/screen_dash_admin_pres.png")} title="Perform Vision" desc="Web App | Providing in-house"   iconsToShow={["HTML", "Tailwind", "PHP","PostgreSQL","JS"]}
  />
         

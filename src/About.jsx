@@ -23,14 +23,14 @@ export default function About() {
          */}
 
 
-<div className="flex flex-row ">
+<div className="flex flex-col sm:flex-row">
 <div class="gradient-01  right-1/4 -top-1/8 w-1/2 h-full opacity-30"></div>
 
         {/* Colonne de gauche (Image) */}
         <div className="absolute w-full grid grid-rows-auto gap-0.5ch z-1 backdrop-blur-16 h-15% flex justify-evenly items-center "></div>
-        <div className="flex flex-col items-center justify-center z-50 md:flex-row md:items-start md:justify-center">
+        <div className="flex flex-col items-center justify-center z-50 md:flex-row md:items-start md:justify-center"> 
         <img alt="left gradient" loading="lazy" width="700" height="700" decoding="async" data-nimg="1" className=" transform rotate-180 absolute left-0 top-1/8" style={{color:"transparent"}} src={require("./images/glow.png")}/>
-        <img alt="Product Preview" loading="lazy" width="3000vw" height="100vw" className="cv_responsive shadow-lg invisible sm:visible [mask-image:linear-gradient(to_bottom,white,white,transparent)] transition duration-1000  relative z-40 opacity-100" style={{color:"transparent"}}  src={require("./images/AboutCv-img.png")} /> 
+        <img alt="Product Preview" loading="lazy" width="3000vw" height="100vw" className="cv_responsive shadow-lg sm:visible [mask-image:linear-gradient(to_bottom,white,white,transparent)] transition duration-1000  relative z-40 opacity-100" style={{color:"transparent"}}  src={require("./images/AboutCv-img.png")} /> 
           
         </div>
         
@@ -41,8 +41,8 @@ export default function About() {
          <p className="text-white text-lg leading-relaxed">From Paris to <strong>VsCode</strong>, I'm a professional <strong>web developer</strong> who likes coding any website, webapps with my personal <strong>UI/UX</strong> design touch. I have been studying <strong>front/back end</strong> since <strong>2021</strong>. I've always been someone who has a taste for the <strong>creation</strong> and the <strong>logical side</strong>. That's why I've decided to become a <strong>front-end developer</strong> to use my power of my brain-skills.</p> */}
          
       {/* <TextGenerateEffect words={words} /> */}
-      <p className="text-white text-lg ">From Paris to VsCode, I'm a professional web developer who likes coding any website, webapps with my personal UI/UX design touch. I have been studying front/back end since 2021. I've always been someone who has a taste for the creation and the logical side. That's why I've decided to become a front-end developer to use my power of my brain-skills. </p>
-          <div className="  mt-24  items-center "> 
+      <p className="text-white text-[0.8rem] sm:text-lg mt-12 sm:mt-2">From Paris to VsCode, I'm a professional web developer who likes coding any website, webapps with my personal UI/UX design touch. I have been studying front/back end since 2021. I've always been someone who has a taste for the creation and the logical side. That's why I've decided to become a front-end developer to use my power of my brain-skills. </p>
+          <div className="  mt-12 mb-24 sm:mt-24  items-center "> 
         <ButtonRotatingBackgroundGradient text="Curriculum Vitae" link="https://www.canva.com/design/DAGDQiAnvSg/2myuL53SpgUBMUtY_LeYqg/view?utm_content=DAGDQiAnvSg&utm_campaign=designshare&utm_medium=link&utm_source=editor"/>
       </div>
         </div>
