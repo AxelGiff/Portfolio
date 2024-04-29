@@ -222,7 +222,6 @@ html{
 .nav ul {
   list-style-type: none;
   display: flex;
-  flex-wrap: wrap; /* Permettre le passage à la ligne des éléments sur les écrans plus petits */
   justify-content: center; /* Centrer les éléments horizontalement */
   padding: 0;
   margin: 0;
@@ -265,7 +264,28 @@ html{
 
 
 }
-
+@media only screen and (max-width: 768px) {
+  /* Styles spécifiques pour les appareils mobiles */
+  .nav a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    transition: all .2s ease-in-out;
+    font-size: clamp(.1rem, 1.1rem - 0.5vw, .7rem); /* Utiliser une taille de police adaptable */
+    padding: 10px 15px; /* Ajuster l'espacement intérieur des éléments */
+    border-radius: 1.5rem;
+  }
+  .ul-nav li{
+    padding: 10px 0 10px 0;
+    margin: 0px 7px 0px 7px;
+    text-decoration: none;
+    display: flex;
+    position: relative;
+    display: list-item;
+    text-align: -webkit-match-parent;
+  }
+  
+  /* Autres styles spécifiques aux mobiles */
+}
 header{
   top: 0;
   right: 0;
@@ -929,7 +949,7 @@ font-size: 1.2rem;
 
 .flex_responsive{
   @media (max-width: 1024px) {
-    margin: 2rem;
+    margin: 0.5rem;
     /* Réduire la largeur à 100% de la largeur de l'écran */
   } 
 }
