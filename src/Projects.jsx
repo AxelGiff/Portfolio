@@ -25,7 +25,7 @@ export default function Projects() {
           </div></div>
 
         <ProjectCard id="2" img={require("./images/Netcards.PNG")} title="Netcards" desc="Web App | Education" iconsToShow={["HTML", "Tailwind", "JS","PHP","MySQL"]}/>
-        <ProjectCard id="3" img={require("./images/SafePage.PNG")} title="SafePage" desc="Blog | Welfare & Healthy" iconsToShow={["HTML", "CSS", "JS"]}/>
+        <ProjectCard id="3" img={require("./images/SafePage.jpg")} title="SafePage" desc="Blog | Welfare & Healthy" iconsToShow={["HTML", "CSS", "JS"]}/>
         <div class="empty"><div class="line-with-circle">
             <div class="circle two-fifth"></div>
           </div></div>
@@ -34,7 +34,7 @@ export default function Projects() {
           </div></div>
 
         <ProjectCard id="4" img={require("./images/todolist.PNG")} title="Todo List" desc="Web App | Productivity Management" iconsToShow={["React", "JavaScript", "CSS"]}/>
-        <ProjectCard id="5" img={require("./images/refonte_LUTC_stage.png")} title="Level Up Tech Consulting" desc="Website | Digital Accessibility" iconsToShow={["WordPress", "Figma", "HTML","CSS", "Notion"]}/>
+        <ProjectCard id="5" img={require("./images/refonte_LUTC_stage.jpg")} title="Level Up Tech Consulting" desc="Website | Digital Accessibility" iconsToShow={["WordPress", "Figma", "HTML","CSS", "Notion"]}/>
         <div class="empty"><div class="line-with-circle">
             <div class="circle four-fifth"></div>
           </div></div>
