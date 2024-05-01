@@ -30,7 +30,7 @@ export default function About() {
         <div className="absolute w-full grid grid-rows-auto gap-0.5ch z-1 backdrop-blur-16 h-15% flex justify-evenly items-center "></div>
         <div className="flex flex-col items-center justify-center z-50 md:flex-row md:items-start md:justify-center"> 
         <img alt="left gradient" loading="lazy" width="700" height="700" decoding="async" data-nimg="1" className=" transform rotate-180 absolute left-0 top-1/8" style={{color:"transparent"}} src={require("./images/glow.png")}/>
-        <img alt="Product Preview" loading="lazy" width="3000vw" height="100vw" className="cv_responsive shadow-lg sm:visible [mask-image:linear-gradient(to_bottom,white,white,transparent)] transition duration-1000  relative z-40 opacity-100" style={{color:"transparent"}}  src={require("./images/AboutCv-img.png")} /> 
+        <img alt="Product Preview" loading="lazy" width="3000vw" height="100vw" className="cv_responsive cv_responsive_mobile shadow-lg sm:visible [mask-image:linear-gradient(to_bottom,white,white,transparent)] transition duration-1000  relative z-40 opacity-100" style={{color:"transparent"}}  src={require("./images/AboutCv-img.png")} /> 
           
         </div>
         

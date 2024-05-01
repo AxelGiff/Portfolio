@@ -923,7 +923,17 @@ font-size: 1.2rem;
   @media (max-width: 1024px) {
     width: 300vw;
     /* Réduire la largeur à 100% de la largeur de l'écran */
-  } 
+  }
+ 
+}
+
+.cv_responsive_mobile{
+  
+  @media only screen and (max-width: 768px) {
+    width: 850vw;
+  
+
+  }
 }
 
 .flex_responsive{
