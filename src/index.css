@@ -945,6 +945,33 @@ font-size: 1.2rem;
 
 
 @media only screen and (max-width: 768px) {
+
+
+
+
+  
+.line {
+  position: relative;
+  visibility: hidden;
+}
+
+.line::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: rgb(255, 255, 255);
+  transform-origin: bottom right;
+  transform: scaleX(0);
+  transition: transform 0.5s ease;
+}
+
+.line:hover::before {
+  transform-origin: bottom left;
+  transform: scaleX(1);
+}
   /* Styles spécifiques pour les appareils mobiles */
   .nav a {
     text-decoration: none;
