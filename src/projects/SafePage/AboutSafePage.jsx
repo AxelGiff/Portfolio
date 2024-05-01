@@ -25,7 +25,7 @@ export default function AboutSafePage() {
         {/* Image on the left */}
         <div className="relative w-full sm:w-1/2 h-auto">
           <div class="gradient-01 right-1/4 -top-1/8 w-1/2  h-full opacity-100"></div>
-          <img alt="Product Preview" loading="lazy" width="2500vw" height="100vw" className="shadow-lg invisible sm:visible [mask-image:linear-gradient(to_bottom,white,white,transparent)] transition duration-1000  rounded-lg relative z-100 bottom-8 opacity-100" style={{color:"transparent"}}  src={require("./images/ecr.png")} /> 
+          <img alt="Product Preview" loading="lazy" width="2500vw" height="100vw" className="shadow-lg  sm:visible [mask-image:linear-gradient(to_bottom,white,white,transparent)] transition duration-1000  rounded-lg relative z-100 bottom-8 opacity-100" style={{color:"transparent"}}  src={require("./images/ecr.png")} /> 
         </div>
         {/* Text on the right */}
         <div className="text flex flex-col items-center justify-center z-50 sm:w-1/2">

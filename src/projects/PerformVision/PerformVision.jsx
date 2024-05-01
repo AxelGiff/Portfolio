@@ -10,7 +10,7 @@ export default function PerformVision() {
     <div className="flex flex-col items-center justify-center ">
     <LandingPV />
     
-    <img src={require("./images/screen_dash_admin_pres.png")} width={1200} height={650} alt="screen dashboard perform vision" loading="lazy" className="-mt-96 -z-[-10] shadow-lg invisible sm:visible [mask-image:linear-gradient(to_bottom,white,white,transparent)] transition duration-1000 rounded-xl" />
+    <img src={require("./images/screen_dash_admin_pres.png")}  alt="screen dashboard perform vision" loading="lazy" className="-mt-96 w-[100%] h-[100%] sm:w-[1200px] sm:h-[650px] -z-[-10] shadow-lg  sm:visible [mask-image:linear-gradient(to_bottom,white,white,transparent)] transition duration-1000 rounded-xl" />
     <Technologies iconsToShow={["HTML","Tailwind","PHP","Javascript","PostgreSQL","Figma"]} />
     <AboutPv />
   </div>

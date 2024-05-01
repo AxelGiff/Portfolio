@@ -61,10 +61,11 @@ export default function Technologies({iconsToShow,bgcolor}) {
     <li key={index} className='px-3 py-2 rounded-md text-sm capitalize font-bold mr-2'><BadgeTextGradient text={icon.name} />
     </li>
   ));
+  const iconlenght=iconList.length>3 ?  "flex-col" : "flex-row"
   return (
     <div className="flex flex-col items-center">
         <h2 className="text-white text-center text-[1.1rem]">Technologies</h2>
-        <ul className="flex flex-row items-center justify-center  mt-4">
+        <ul className={`flex  items-center ${iconlenght} justify-center  mt-4`}>
           {iconList}
         </ul>
     </div>

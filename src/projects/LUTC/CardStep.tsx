@@ -6,7 +6,7 @@ import { cn } from "../../lib/utils.tsx";
 
 export function CardStackDemo() {
   return (
-    <div className="h-[40rem] gap-16  flex items-center flex-col xl:flex-row justify-center ">
+    <div className="h-[40rem] gap-32 sm:gap-16  flex items-center flex-col xl:flex-row justify-center ">
       <CardStack items={CARDS_SEO} />
       <CardStack items={CARDS_Performance} />
       <CardStack items={CARDS_Accessibilite} />

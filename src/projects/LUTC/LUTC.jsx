@@ -9,7 +9,7 @@ export default function PerformVision() {
     <div className="flex flex-col items-center justify-center ">
     <LandingLUTC />
     
-    <img src={require("./images/accueil.png")} width={1200} height={650} alt="screen dashboard perform vision" loading="lazy" className="-mt-96 -z-[-10] shadow-lg invisible sm:visible [mask-image:linear-gradient(to_bottom,white,white,transparent)] transition duration-1000 rounded-xl" />
+    <img src={require("./images/accueil.png")}  alt="screen dashboard perform vision" loading="lazy" className="-mt-96 -z-[-10] w-[100%] h-[100%] sm:w-[1200px] sm:h-[650px] shadow-lg  sm:visible [mask-image:linear-gradient(to_bottom,white,white,transparent)] transition duration-1000 rounded-xl" />
     <Technologies iconsToShow={["WordPress","Figma","CSS"]} />
     <AboutLUTC />
   </div>

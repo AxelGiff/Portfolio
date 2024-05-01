@@ -47,7 +47,7 @@ export const CardStack = ({
         return (
           <motion.div
             key={card.id}
-            className="absolute bg-gradient-to-tr from-slate-950 to-slate-900 bg-white h-60 w-60 md:h-60 md:w-96 rounded-3xl p-4 shadow-xl border border-neutral-200 dark:border-white/[0.1]  shadow-black/[0.1] dark:shadow-white/[0.05] flex flex-col justify-between"
+            className="absolute bg-gradient-to-tr from-slate-950 to-slate-900 bg-white h-90 w-60 md:h-60 md:w-96 rounded-3xl p-4 shadow-xl border border-neutral-200 dark:border-white/[0.1]  shadow-black/[0.1] dark:shadow-white/[0.05] flex flex-col justify-between"
             style={{
               transformOrigin: "top center",
             }}
@@ -61,10 +61,10 @@ export const CardStack = ({
               {card.content}
             </div>
             <div>
-              <p className="text-neutral-500 font-medium dark:text-white">
+              <p className="text-gradient-primary3 font-medium mt-4 ">
                 {card.name}
               </p>
-              <p className="text-neutral-400 font-normal dark:text-neutral-200">
+              <p className="text-neutral-400 mt-2 font-normal dark:text-neutral-200">
                 {card.designation}
               </p>
             </div>
