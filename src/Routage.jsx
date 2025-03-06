@@ -5,7 +5,6 @@ import History from './History.jsx';
 import Projects from './Projects.jsx';
 import Contact from './Contact.jsx'
 
-
 export default function Routage() {
 
   return (
