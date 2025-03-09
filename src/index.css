@@ -7,10 +7,14 @@
   --rgb-primary-color2: 40,241,254;
   --rgb-primary-color3: 40,241,254;
   --rgb-primary-color4: 40,241,254;
+  --rgb-primary-color5: 40,241,254;
+
   --color-primary: rgb(var(--rgb-primary-color));
   --color-primary2: rgb(var(--rgb-primary-color2));
   --color-primary3: rgb(var(--rgb-primary-color3));
   --color-primary4: rgb(var(--rgb-primary-color4));
+  --color-primary5: linear-gradient(92.72deg,var(--rgb-primary-color5) 0%, #f9ff18 100%);
+
 
   --ease-out: cubic-bezier(0.215,0.61,0.355,1);
   --ease-in: cubic-bezier(0.75,0,1,1);
@@ -19,7 +23,9 @@
   --gradient-primary: linear-gradient(92.72deg,var(--color-primary) 0%,#ffff 100%);
   --gradient-primary2: linear-gradient(92.72deg,var(--color-primary2) 0%,#092e06 100%);
   --gradient-primary3: linear-gradient(92.72deg,var(--color-primary3) 0%, #765eed 100%);
-  --gradient-primary4: linear-gradient(92.72deg,var(--color-primary4) 0%, #f9ff18 100%);
+  --gradient-primary4: linear-gradient(92.72deg,var(--color-prim5ry4) 0%, #f9ff18 100%);
+  --gradient-primary5: linear-gradient(92.72deg,var(--color-primary5) 0%, #073968 100%);
+
 
 
 
@@ -35,7 +41,16 @@
      filter: blur(115px);
   position: absolute;
 }
-
+.gradient-03 {
+  background-image: linear-gradient(to top, #996324 0%, #db7b0d 100%);
+     filter: blur(115px);
+  position: absolute;
+}
+.gradient-qualabout{
+  background-image: linear-gradient(to top, #3033d0 0%, #226592 100%);
+  filter: blur(115px);
+position: absolute;
+}
 .gradient-pv {
   background-image: linear-gradient(to top, #202C2E 0%, #427D9D 100%);
      filter: blur(115px);
@@ -50,6 +65,18 @@
   background-image: linear-gradient(to top, #ffc90686 0%, #6200ff 100%);
      filter: blur(115px);
   position: absolute;
+}
+
+.gradient-qual{
+  background-image: linear-gradient(to top, #163b8bbb 0%, #e7810c 100%);
+  filter: blur(115px);
+position: absolute;
+}
+
+.gradient-cnn{
+  background-image: linear-gradient(to top, #163b8bbb  0%, #0c94e7  100%);
+  filter: blur(115px);
+position: absolute;
 }
 
 .gradient-lutc{

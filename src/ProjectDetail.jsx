@@ -6,6 +6,8 @@ import LUTC from './projects/LUTC/LUTC.jsx';
 import TodoList from './projects/TodoList/TodoList.jsx';
 import NetCards from './projects/NetCards/NetCards.jsx';
 import SafePage from './projects/SafePage/SafePage.jsx';
+import Qualoto from './projects/Qualoto/Qualoto.jsx';
+import Cnn from './projects/CNN/cnn.jsx';
 
 // Importez d'autres composants de projet au besoin
 
@@ -21,20 +23,21 @@ const ProjectDetail = () => {
 
   // Utilisez des instructions conditionnelles pour afficher le contenu du projet en fonction de son ID
   let projectContent;
+
   if (id === '1') {
-    projectContent = <PerformVision />;
-  } 
-  else if(id === '2') {
-    projectContent = <NetCards />;
+    projectContent=<Qualoto />;
   }
-  else if(id === '3'){
-    projectContent = <SafePage />;
+  else if (id === '2') {
+    projectContent = <Cnn />;
+  } 
+  else if(id === '3') {
+    projectContent = <PerformVision />;
   }
   else if(id === '4'){
-    projectContent = <TodoList />;
+    projectContent = <NetCards />;
   }
   else if(id === '5'){
-    projectContent = <LUTC />;
+    projectContent = <TodoList />;
   }
 
 
