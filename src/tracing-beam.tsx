@@ -148,8 +148,8 @@ export const TracingBeam = ({
         <svg
           viewBox={`0 0 20 ${svgHeight}`}
           width="20"
-          height={svgHeight} // Set the SVG height
-          className=" ml-4 block"
+          height={1783} // Set the SVG height
+          className=" ml-[1rem] block"
           aria-hidden="true"
         >
           <motion.path
