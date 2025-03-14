@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
+import './i18n'; // Assurez-vous que ce fichier est importé
 
 
  const root = ReactDOM.createRoot(document.getElementById('root'));

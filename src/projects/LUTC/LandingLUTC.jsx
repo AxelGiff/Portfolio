@@ -16,7 +16,7 @@ export default function LandingPage() {
 
    <div className="flex justify-between gap-4">
     
-   <AnimatedTooltipPreview number="7" old="5"/>
+   <AnimatedTooltipPreview ids={[1]} />
 
 </div>
    {/*   <TextRevealCard

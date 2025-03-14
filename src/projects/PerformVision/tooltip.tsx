@@ -48,17 +48,34 @@ const people = [
   },
   {
     id: 7,
-    name: "Cindy Lhermite",
-    designation: "CEO & Web Designer",
+    name: "Samia Ouchallal",
+    designation: "Backend Developper",
     image:
-      "https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3534&q=80",
+    "",
+  },
+  {
+    id: 8,
+    name: "India Cabo",
+    designation: "Backend Developper",
+    image:
+    "",
+  },
+  {
+    id: 9,
+    name: "Fayçal Hamsek",
+    designation: "Backend Developper",
+    image:
+    "",
   },
 ];
 
-export function AnimatedTooltipPreview({number,old}) {
+export function AnimatedTooltipPreview({ ids }) {
+  // Filtrer les personnes selon les IDs fournis
+  const filteredPeople = people.filter(person => ids.includes(person.id));
+  
   return (
     <div className="flex flex-row items-center gap-6 justify-center mb-10 mt-6 w-full">
-      <AnimatedTooltip items={people.slice(old,number)} />
+      <AnimatedTooltip items={filteredPeople} />
     </div>
   );
 }
