@@ -25,10 +25,40 @@
   --gradient-primary3: linear-gradient(92.72deg,var(--color-primary3) 0%, #765eed 100%);
   --gradient-primary4: linear-gradient(92.72deg,var(--color-prim5ry4) 0%, #f9ff18 100%);
   --gradient-primary5: linear-gradient(92.72deg,var(--color-primary5) 0%, #073968 100%);
+  --info-950-100: #e68508e7;
+  --info-950-100-hover: #3b4767;
+  --info-950-100-active: #4c5b83;
+  --info-425-625: #518fff;
+  --info-425-625-hover: #98b4ff;
+  --info-425-625-active: #b4c7ff;
+  --info-975-75: #171d2e;
+  
+  
+  --background-contrast-info: var(--info-950-100);
+  --background-contrast-info-hover: var(--info-950-100-hover);
+  --background-contrast-info-active: var(--info-950-100-active);
+  --background-contrast-success: var(--success-950-100);
+  --background-contrast-success-hover: var(--success-950-100-hover);
+  --background-contrast-success-active: var(--success-950-100-active);
+}
+.fr-badge-sm {
+  font-size: .75rem;
+  line-height: 1.25rem;
+  min-height: 1.125rem;
+  padding: 0 0.375rem;
+}
 
+.fr-badge--info {
+  background-color: var(--background-contrast-info);
+  color: var(--text-default-info);
+}
 
+.fr-badge--info:hover {
+  background-color: var(--background-contrast-info-hover);
+}
 
-
+.fr-badge--info:active {
+  background-color: var(--background-contrast-info-active);
 }
 .gradient-01 {
   background-image: linear-gradient(to top, #3033d0 0%, #330867 100%);
@@ -580,7 +610,15 @@ transform: none; /* Réinitialise toute transformation appliquée précédemment
 #parcours p {
   color: white;
 
-  font-size: 25px;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.9em;
+  margin-left: 20px;
+}
+#parcours li {
+  color: white;
+
+  font-size: 20px;
   font-weight: 500;
   line-height: 1.9em;
   margin-left: 20px;
