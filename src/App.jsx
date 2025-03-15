@@ -9,8 +9,8 @@ import Projects from './Projects.jsx';
 import Contact from './Contact.jsx';
 import Routage from './Routage.jsx';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import ProjectDetail from './ProjectDetail'; // Créez ce composant pour afficher les détails d'un projet
-import LanguageSelector from './LanguageSelector';
+import ProjectDetail from './ProjectDetail.jsx'; // Créez ce composant pour afficher les détails d'un projet
+import LanguageSelector from './LanguageSelector.jsx';
 
 
 function App() {

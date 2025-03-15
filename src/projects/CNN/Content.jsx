@@ -68,9 +68,9 @@ export const MovingLine = () => {
         />
       </svg>
       <div className="flex flex-col w-full">
-        <Content image1={require("./images/Image20.png")} image2={require("./images/Image19.png")} />
-        <Content image1={require("./images/distribb2.png")} image2={require("./images/predagevalidb2.png")} />
-        <Content image1={require("./images/imageAxel.png")} image2={require("./images/imageStatham.png")} /> 
+        <Content image1={new URL("./images/Image20.png", import.meta.url).href} image2={new URL("./images/Image19.png", import.meta.url).href} />
+        <Content image1={new URL("./images/distribb2.png", import.meta.url).href} image2={new URL("./images/predagevalidb2.png", import.meta.url).href} />
+        <Content image1={new URL("./images/imageAxel.png", import.meta.url).href} image2={new URL("./images/imageStatham.png", import.meta.url).href} /> 
       </div>
     </div>
   );

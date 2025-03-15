@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import { twMerge } from "tailwind-merge";
 import { TracingBeam } from "../../tracing-beam.tsx";
 
 export function TracingBeamDemo() {
@@ -36,7 +35,6 @@ export function TracingBeamDemo() {
     );
 }
 
-
 const dummyContent = [
   {
     title: "A Mood Tracker for daily reports",
@@ -53,8 +51,7 @@ const dummyContent = [
       </>
     ),
     badge: "Moov'Page",
-    image:
-      require("./images/capt5SafePagePresent.png"),
+    image: new URL("./images/capt5SafePagePresent.png", import.meta.url).href,
   },
   {
     title: "Creating Articles for the productivity of the user",
@@ -67,8 +64,7 @@ const dummyContent = [
       </>
     ),
     badge: "Blog",
-    image:
-      require("./images/capt3ArticleSagePagePresent.png"),
+    image: new URL("./images/capt3ArticleSagePagePresent.png", import.meta.url).href,
   },
   {
     title: "An evolving project",
@@ -80,7 +76,6 @@ const dummyContent = [
       </>
     ),
     badge: "Remaster",
-    image:
-      require('./images/capt4SafePagePresent.png'),
+    image: new URL('./images/capt4SafePagePresent.png', import.meta.url).href,
   },
 ];
