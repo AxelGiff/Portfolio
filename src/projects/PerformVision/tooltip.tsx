@@ -6,8 +6,7 @@ const people = [
     id: 1,
     name: "Axel Giffard",
     designation: "FullStack Developper",
-    image:
-      require("../../images/blanc.png"),
+    image: new URL("../../images/blanc.png", import.meta.url).href,
   },
   {
     id: 2,
@@ -43,8 +42,7 @@ const people = [
     id: 6,
     name: "Axel Giffard",
     designation: "Web Developper",
-    image:
-    require("../../images/blanc.png"),
+    image: new URL("../../images/blanc.png", import.meta.url).href,
   },
   {
     id: 7,
