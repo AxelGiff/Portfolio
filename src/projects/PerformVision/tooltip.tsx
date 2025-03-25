@@ -49,21 +49,21 @@ const people = [
     name: "Samia Ouchallal",
     designation: "Backend Developper",
     image:
-    "",
+    "https://images.unsplash.com/photo-1738000033806-bef61bcd7465?q=80&w=2000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     id: 8,
     name: "India Cabo",
     designation: "Backend Developper",
     image:
-    "",
+    "https://unsplash.com/fr/photos/photographie-en-gros-plan-dune-femme-mettant-sa-main-sur-sa-bouche-l3IHXOdMyHQ",
   },
   {
     id: 9,
     name: "Fayçal Hamsek",
     designation: "Backend Developper",
     image:
-    "",
+    "https://unsplash.com/fr/photos/homme-en-veste-en-jean-bleue-debout-sur-le-terrain-pendant-la-journee-RM3XFaZuwpE",
   },
 ];
 
