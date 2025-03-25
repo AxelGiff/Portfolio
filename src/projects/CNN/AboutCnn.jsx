@@ -24,7 +24,7 @@ export default function AboutQualoto() {
         {/* Image on the left */}
         <div className="relative w-full sm:w-1/2 h-auto">
           <div class="gradient-03 right-1/4 -top-1/8 w-1/2  h-full z-[-10000] opacity-70"></div>
-          <img alt="Product Preview" loading="lazy" width="2500vw" height="150vw" className="shadow-lg z-50 sm:visible [mask-image:linear-gradient(to_bottom,white,white,transparent)] transition duration-1000  rounded-lg relative z-100 bottom-8 opacity-100" style={{color:"transparent"}}  src={new URL("./images/accueilregles.png", import.meta.url).href} /> 
+          <img alt="Product Preview" loading="lazy" width="2500vw" height="150vw" className="shadow-lg z-50 sm:visible [mask-image:linear-gradient(to_bottom,white,white,transparent)] transition duration-1000  rounded-lg relative z-100 bottom-8 opacity-100" style={{color:"transparent"}}  src={new URL("./images/faces.png", import.meta.url).href} /> 
         </div>
         {/* Text on the right */}
         <div className="text flex flex-col items-center justify-center z-50 sm:w-1/2">
