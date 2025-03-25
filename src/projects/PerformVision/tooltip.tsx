@@ -56,14 +56,14 @@ const people = [
     name: "India Cabo",
     designation: "Backend Developper",
     image:
-    "https://unsplash.com/fr/photos/photographie-en-gros-plan-dune-femme-mettant-sa-main-sur-sa-bouche-l3IHXOdMyHQ",
+    "https://images.unsplash.com/photo-1489667897015-bf7a9e45c284?q=80&w=2087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     id: 9,
     name: "Fayçal Hamsek",
     designation: "Backend Developper",
     image:
-    "https://unsplash.com/fr/photos/homme-en-veste-en-jean-bleue-debout-sur-le-terrain-pendant-la-journee-RM3XFaZuwpE",
+    "https://images.unsplash.com/photo-1584984647264-7e6f4e6d6b91?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
 ];
 
