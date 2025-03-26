@@ -11,7 +11,7 @@ export default function PerformVision() {
     <div className="flex flex-col items-center justify-center ">
     <LandingNetCards />
     
-    <img src={new URL("./images/netcards.PNG", import.meta.url).href}  alt="screen todo list" loading="lazy" className="-mt-96 -z-[-10] shadow-lg w-[100%] h-[100%] sm:w-[1200px] sm:h-[650px]  sm:visible [mask-image:linear-gradient(to_bottom,white,white,transparent)] transition duration-1000 rounded-xl" />
+    <img src={new URL("./images/netcards2.png", import.meta.url).href}  alt="capture d'écran de la landing page de netcards" loading="lazy" className="-mt-96 -z-[-10] shadow-lg w-[100%] h-[100%] sm:w-[1200px] sm:h-[650px]  sm:visible [mask-image:linear-gradient(to_bottom,white,white,transparent)] transition duration-1000 rounded-xl" />
     <Technologies iconsToShow={["HTML","CSS","MySQL","PHP","Figma"]} />
     <AboutNetCards />
     <Others />
