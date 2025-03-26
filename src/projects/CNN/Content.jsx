@@ -67,36 +67,69 @@ export const MovingLine = () => {
           strokeWidth="3"
         />
       </svg>
+
       <div className="flex flex-col w-full">
-        <Content image1={new URL("./images/Image20.png", import.meta.url).href} image2={new URL("./images/Image19.png", import.meta.url).href} />
-        <Content image1={new URL("./images/distribb2.png", import.meta.url).href} image2={new URL("./images/predagevalidb2.png", import.meta.url).href} />
-        <Content image1={new URL("./images/imageAxel.png", import.meta.url).href} image2={new URL("./images/imageStatham.png", import.meta.url).href} /> 
+        {/* Première section */}
+        <Content
+          title="Data distribution visualizations"
+          description="Showing the gender balance and age distribution within the dataset UTKFace."
+          image1={new URL("./images/Image20.png", import.meta.url).href}
+          alt1="Distribution Graph 1"
+          image2={new URL("./images/Image19.png", import.meta.url).href}
+          alt2="Distribution Graph 2"
+        />
+
+        {/* Deuxième section */}
+        <Content
+          title="Middle Section: Error Analysis & Scatter Plots"
+          description="These plots illustrate the prediction errors and compare predicted vs. actual values."
+          image1={new URL("./images/distribb2.png", import.meta.url).href}
+          alt1="Error Distribution"
+          image2={new URL("./images/predagevalidb2.png", import.meta.url).href}
+          alt2="Age Prediction Validation"
+        />
+
+        {/* Troisième section */}
+        <Content
+          title="Bottom Section: Sample Predictions"
+          description="Real-world inference on sample images for age and gender prediction."
+          image1={new URL("./images/imageAxel.png", import.meta.url).href}
+          alt1="Sample Face 1"
+          image2={new URL("./images/imageStatham.png", import.meta.url).href}
+          alt2="Sample Face 2"
+        />
       </div>
     </div>
   );
 };
 
-/* dummy content to fill up the screen */
-
-export const Content = ({ image1 = "/placeholder-image.jpg", image2 = "/placeholder-image.jpg", alt1 = "Image 1", alt2 = "Image 2" }) => {
+/* Composant Content réutilisable avec des props personnalisées */
+export const Content = ({
+  title = "Default Title",
+  description = "Default Description",
+  image1 = "/placeholder-image.jpg",
+  alt1 = "Image 1",
+  image2 = "/placeholder-image.jpg",
+  alt2 = "Image 2",
+}) => {
   return (
     <div className="content w-full mb-10">
       <p className="text-2xl font-bold text-white">
-        The path follows the scroll
+        {title}
       </p>
       <p className="text-base font-normal text-neutral-300">
-        If you look closely, you can see the path is being animated.
+        {description}
       </p>
       <div className="flex space-x-4 w-full">
-        <img 
-          src={image1} 
+        <img
+          src={image1}
           alt={alt1}
-          className="w-full h-40 md:h-96 rounded-md mt-4 object-cover shadow-lg" 
+          className="w-full h-40 md:h-96 rounded-md mt-4 object-cover shadow-lg"
         />
-        <img 
-          src={image2} 
+        <img
+          src={image2}
           alt={alt2}
-          className="w-full h-40 md:h-96 rounded-md mt-4 object-cover shadow-lg" 
+          className="w-full h-40 md:h-96 rounded-md mt-4 object-cover shadow-lg"
         />
       </div>
     </div>
