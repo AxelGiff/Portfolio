@@ -9,7 +9,6 @@ import SafePage from './projects/SafePage/SafePage.jsx';
 import Qualoto from './projects/Qualoto/Qualoto.jsx';
 import Cnn from './projects/CNN/cnn.jsx';
 
-// Importez d'autres composants de projet au besoin
 
 const ProjectDetail = () => {
   const { id } = useParams();
@@ -21,7 +20,6 @@ const ProjectDetail = () => {
     }
   }, [id]);
 
-  // Utilisez des instructions conditionnelles pour afficher le contenu du projet en fonction de son ID
   let projectContent;
 
   if (id === '1') {
@@ -45,7 +43,6 @@ const ProjectDetail = () => {
     <div ref={targetRef}>
       <h1>Project Detail Page</h1>
       <p>Project ID: {id}</p>
-      {/* Afficher le contenu du projet en fonction de son ID */}
       {projectContent}
     </div>
   );
