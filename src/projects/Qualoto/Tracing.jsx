@@ -85,7 +85,7 @@ export function TracingBeamDemo() {
   return (
     <>
       <div className="h-[20rem] md:h-[40rem] [perspective:1000px] relative b flex flex-col max-w-5xl mx-auto w-full items-start justify-start my-40">
-        <Tabs tabs={tabs} />
+      <Tabs tabs={tabs} tabClassName="text-white" />
       </div>
       <TracingBeam className="px-6">
         <div className="max-w-2xl mx-auto antialiased mt-24 pt-4 relative">
@@ -123,19 +123,9 @@ const dummyContent = [
     description: (
       <>
         <p>
-          Recently, I developed a web application on the SafePage platform,
-          specializing in personal development. This application provides users
-          with a secure platform to track and enhance their personal growth. It
-          offers various tools such as goal management, habit tracking, and
-          planning for personal development activities. SafePage thus provides
-          a friendly and secure environment to support users on their journey
-          towards personal fulfillment.
+        At Qualoto, players begin by registering with a unique username. The system enforces strict validation—rejecting duplicates or empty entries (even those with only spaces) and returning descriptive error messages in JSON. Once registered, each player receives a ticket that records their draw participation, including draw date and chosen numbers, ensuring secure and traceable access throughout the game.
         </p>
-        <p>
-          Additionally, in the future, the Moov'Page application will be
-          accessible on mobile platforms once I have mastered Swift, React
-          Native, and Kotlin for mobile app development.
-        </p>
+       
       </>
     ),
     badge: "Authentication",
@@ -146,14 +136,7 @@ const dummyContent = [
     description: (
       <>
         <p>
-          Within the SafePage platform, I'm also involved in creating
-          productivity-focused articles for users. These articles aim to provide
-          practical tips and proven strategies to help users enhance their
-          efficiency and organization in their daily lives. Collaborating
-          closely with SafePage's editorial team, I strive to produce relevant
-          and engaging content that addresses the needs and challenges of our
-          user community, assisting them in reaching their goals and maximizing
-          their potential.
+       Qualoto features a dynamic drawing system where real players and randomized bots receive lottery numbers. When a draw is initiated, every participant is assigned a ticket containing their main and bonus numbers. A dedicated form lets players manually select their numbers or use a “Flash” option for random generation. The system then simulates the draw, ensuring fair assignment of numbers and adherence to the game’s strict rules.
         </p>
       </>
     ),
@@ -165,13 +148,7 @@ const dummyContent = [
     description: (
       <>
         <p>
-          SafePage is an evolving project that I am currently working on. I am
-          continuously exploring new features and functionalities to enhance the
-          user experience and provide a more comprehensive platform for personal
-          development. By collaborating with other team members and
-          incorporating user feedback, I aim to create a dynamic and
-          user-friendly environment that empowers users to achieve their
-          personal growth goals effectively.
+        After each lottery draw, Qualoto computes a ranking to identify the top winners. The ranking algorithm compares players’ tickets with the drawn numbers—regardless of order—and allocates prizes based on predefined percentage distributions (e.g., 40%, 20%, etc.). In cases where players share identical winning numbers, the system fairly splits the prize percentage between them, ensuring an equitable distribution of gains. This robust ranking process guarantees transparency and fairness in every draw.
         </p>
       </>
     ),
