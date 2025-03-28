@@ -15,7 +15,7 @@ export default function History() {
         </div>
     
         <div className="timeline">
-          <span className="bg-violet-100 text-violet-800 text-l rounded-xl font-medium me-2 px-2.5 py-1.5 dark:bg-violet-900 m-2 dark:text-violet-100">
+          <span className=" text-l rounded-xl font-medium me-2 px-2.5 py-1.5 bg-violet-900 m-2 text-violet-100">
             Academic Experience
           </span>
           <h4 className="mt-4">
@@ -70,15 +70,17 @@ export default function History() {
         </div>
     
         <div className="timeline">
-          <span className="bg-violet-100 text-violet-100 text-l rounded-xl font-medium me-2 px-2.5 py-1.5 dark:bg-violet-900 m-2 dark:text-violet-100">Academical Experience</span>
-          <h4 className="mt-4">Destination : University <span><img src={new URL("../src/images/icons8-chapeau-de-diplôme-30.png", import.meta.url).href} style={{width: '5%', marginLeft: '10px'}} alt="univ"/></span></h4>
+        <span className=" text-l rounded-xl font-medium me-2 px-2.5 py-1.5 bg-violet-900 m-2 text-violet-100">
+            Academic Experience
+          </span>          <h4 className="mt-4">Destination : University <span><img src={new URL("../src/images/icons8-chapeau-de-diplôme-30.png", import.meta.url).href} style={{width: '5%', marginLeft: '10px'}} alt="univ"/></span></h4>
           <h6>2021-2022 & 2022-2023</h6>
           <p>First year of Bachelor's degree in <span className='text-gradient-primary3'>Computer Science</span> at Sorbonne University in Villetaneuse</p>
         </div>
      
         <div className="timeline">
-          <span className="bg-violet-100 text-violet-100 text-l rounded-xl font-medium me-2 px-2.5 py-1.5 dark:bg-violet-900 m-2 dark:text-violet-100">Academical Experience</span>
-          <h4 className="mt-4">Destination : High school <span><img src={new URL("../src/images/icons8-école-50.png", import.meta.url).href} style={{width: '5%' , marginLeft: '10px'}} alt="student"/></span></h4>
+        <span className=" text-l rounded-xl font-medium me-2 px-2.5 py-1.5 bg-violet-900 m-2 text-violet-100">
+            Academic Experience
+          </span>          <h4 className="mt-4">Destination : High school <span><img src={new URL("../src/images/icons8-école-50.png", import.meta.url).href} style={{width: '5%' , marginLeft: '10px'}} alt="student"/></span></h4>
           <h6>2018-2021</h6>
           <p>During high school, I studied <span className='text-gradient-primary3'>Computer Science</span> extensively, engaging in various activities such as <br /><span className='text-gradient-primary3'>building my own PC</span>, creating <span className='text-gradient-primary3'>video/photo edits</span>, & troubleshooting. However, there was still one area I hadn't ventured into: <span className='text-gradient-primary4'>coding</span>.<br/></p>
         </div>
