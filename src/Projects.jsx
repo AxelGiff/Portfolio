@@ -8,7 +8,7 @@ import qualotoImage from './images/Qualoto.png';
 import cnnPortfolioImage from './images/cnnPortfolio.png';
 import screenDashAdminImage from './images/screen_dash_admin_pres.png';
 import netcardsImage from './images/netcards.png';
-import todolistImage from './images/todolist.PNG';
+import todolistImage from './images/todolist.png';
 
 // Define slide data outside component to prevent recreation on each render
 const slideData = [
