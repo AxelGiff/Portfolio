@@ -14,13 +14,11 @@ export const MovingLine = () => {
 
   const ref = useRef(null);
 
-  // Track scroll progress, lies between 0 and 1.
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["end end", "start start"],
   });
 
-  // when scroll progress reached 1, path length becomes 0.
   const pathLengthValue = useTransform(scrollYProgress, [0, 1], [1, 0]);
 
   const PATH = "M0.5 0.980671L0.5 1566.02";
@@ -52,7 +50,6 @@ export const MovingLine = () => {
           </linearGradient>
         </defs>
         <motion.path
-          // animating pathLength value, goes from 1 to 0
           style={{
             pathLength: useSpring(pathLengthValue, {
               stiffness: 500,
@@ -69,7 +66,6 @@ export const MovingLine = () => {
       </svg>
 
       <div className="flex flex-col w-full">
-        {/* Première section */}
         <Content
           title="Data distribution visualizations"
           description="Showing the gender balance and age distribution within the dataset UTKFace."
@@ -79,7 +75,6 @@ export const MovingLine = () => {
           alt2="Distribution Graph 2"
         />
 
-        {/* Deuxième section */}
         <Content
           title="Middle Section: Error Analysis & Scatter Plots"
           description="These plots illustrate the prediction errors and compare predicted vs. actual values."
@@ -103,7 +98,6 @@ export const MovingLine = () => {
   );
 };
 
-/* Composant Content réutilisable avec des props personnalisées */
 export const Content = ({
   title = "Default Title",
   description = "Default Description",
