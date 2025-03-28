@@ -18,31 +18,29 @@ class ErrorBoundary extends Component {
     if (this.state.hasError) {
       return (
         <div className="error-container" style={{ 
-          padding: '20px', 
-          margin: '20px', 
+          padding: '10px',
           position: 'fixed',
           bottom: '20px',
           right: '20px',
-          background: 'rgba(0,0,0,0.7)',
-          borderRadius: '8px',
+          background: 'rgba(0,0,0,0.8)',
+          borderRadius: '5px',
           zIndex: 9999,
           color: 'white',
-          maxWidth: '300px'
+          fontSize: '12px',
+          maxWidth: '200px',
+          backdropFilter: 'blur(5px)'
         }}>
-          <p>Une erreur est survenue.</p>
+          <p>Une erreur est survenue</p>
           <button 
-            onClick={() => {
-              this.setState({ hasError: false });
-              window.location.reload();
-            }}
+            onClick={() => window.location.reload()}
             style={{
               padding: '5px 10px',
               backgroundColor: '#387ADF',
               color: 'white',
               border: 'none',
-              borderRadius: '5px',
+              borderRadius: '3px',
               cursor: 'pointer',
-              fontSize: '14px'
+              fontSize: '11px'
             }}
           >
             Recharger
