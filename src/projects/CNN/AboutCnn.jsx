@@ -11,7 +11,6 @@ export default function AboutQualoto() {
       <div className="flex flex_responsive flex-col xl:flex-row items-center gap-12 m-48 sm:mt-0 sm:gap-24">
         <div className="gradient-qualabout z-[-10000] right-1/4 -top-1/8 w-1/2 h-full opacity-30"></div>
 
-        {/* Image on the left */}
         <div className="relative w-full sm:w-1/2 h-auto">
           <div className="gradient-03 right-1/4 -top-1/8 w-1/2 h-full z-[-10000] opacity-70"></div>
           <img
@@ -26,7 +25,6 @@ export default function AboutQualoto() {
           />
         </div>
 
-        {/* Text on the right with columns */}
         <div className="text flex flex-col items-center justify-center z-50 sm:w-1/2">
           <div
             className="
@@ -73,7 +71,6 @@ export default function AboutQualoto() {
         </div>
       </div>
 
-      {/* Decorative elements */}
       <img
         alt="left gradient"
         loading="lazy"
