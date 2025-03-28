@@ -1,75 +1,116 @@
-// filepath: c:\Users\vadzt\Documents\PortFolio\src\Header.jsx
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
+import React, { useEffect, useState, useCallback, memo } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
-const Header = () => {
-  const { t } = useTranslation();
+const NavLink = memo(({ to, onClick, isActive, children }) => (
+  <li className="nav-li">
+    <Link 
+      to={to} 
+      className={`a-list ${isActive ? 'active' : ''}`} 
+      onClick={onClick}
+    >
+      {children}
+    </Link>
+  </li>
+));
+
+const Header = memo(() => {
+  const location = useLocation();
+  const navigate = useNavigate();
   
   const [isBlurred, setIsBlurred] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
   const [activeLink, setActiveLink] = useState('Home');
 
+  // Mettre à jour le lien 
+  useEffect(() => {
+    if (location.pathname === '/') {
+      if (location.hash === '#about-container') {
+        setActiveLink('About');
+      } else if (location.hash === '#project-container') {
+        setActiveLink('Projects');
+      } else if (location.hash === '#contact-container') {
+        setActiveLink('Contact');
+      } else {
+        setActiveLink('Home');
+      }
+    } else if (location.pathname.startsWith('/projects/')) {
+      setActiveLink('Projects');
+    } else if (location.pathname === '/projects') {
+      setActiveLink('Projects');
+    }
+  }, [location]);
+
+  //  blur 
   useEffect(() => {
     const handleScroll = () => {
       const { scrollTop } = document.documentElement;
-
-      if (scrollTop > 50) {
-        setIsBlurred(true);
-        setIsScrolled(true);
-      } else {
-        setIsBlurred(false);
-        setIsScrolled(false);
-      }
+      setIsBlurred(scrollTop > 50);
     };
 
     window.addEventListener('scroll', handleScroll);
-
-    // Cleanup the event listener on component unmount
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleLinkClick = (event, link) => {
-    event.preventDefault();
+  //  gérer le défilement vers les sections
+  const handleLinkClick = useCallback((e, link, target) => {
+    e.preventDefault();
     setActiveLink(link);
-    const targetUrl = event.target.getAttribute("href");
-
-    // Vous pouvez effectuer d'autres actions liées au clic ici si nécessaire
-
-    // Redirection vers l'URL cible
-    window.location.href = targetUrl;
-  };
+    
+    if (location.pathname !== '/') {
+      navigate('/');
+      // la section après un court délai
+      setTimeout(() => {
+        const element = document.querySelector(target);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      const element = document.querySelector(target);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, [location.pathname, navigate]);
 
   return (
     <header>
       <nav className="nav">
         <ul className={`ul-nav ${isBlurred ? 'blur_class' : ''}`}>
-          <li className="nav-li">
-            <Link to="/#" className={`a-list ${activeLink === 'Home' ? 'active' : ''}`} onClick={(e) => handleLinkClick(e, 'Home')}>
-              {t('Home')}  <span className="slash" >/</span>
-            </Link>
-          </li>
-          <li className="nav-li">
-            <Link to="/#about-container" className={`a-list ${activeLink === 'About' ? 'active' : ''}`} onClick={(e) => handleLinkClick(e, 'About')}>
-              {t('About')}
-            </Link>
-          </li>
-          <li className="nav-li">
-            <Link to="/#project-container" className={`a-list ${activeLink === 'Projects' ? 'active' : ''}`} onClick={(e) => handleLinkClick(e, 'Projects')}>
-              {t('Projects')}
-            </Link>
-          </li>
-          <li className="nav-li">
-            <a href="/#contact-container" className={`a-list ${activeLink === 'Contact' ? 'active' : ''}`} onClick={(e) => handleLinkClick(e, 'Contact')}>
-              {t('Contact')}
-            </a>
-          </li>
+          <NavLink 
+            to="/" 
+            isActive={activeLink === 'Home'}
+            onClick={(e) => handleLinkClick(e, 'Home', 'body')}
+          >
+            Home <span className="slash">/</span>
+          </NavLink>
+          
+          <NavLink 
+            to="/#about-container" 
+            isActive={activeLink === 'About'}
+            onClick={(e) => handleLinkClick(e, 'About', '#about-container')}
+          >
+            About
+          </NavLink>
+          
+          <NavLink 
+            to="/#project-container" 
+            isActive={activeLink === 'Projects'}
+            onClick={(e) => handleLinkClick(e, 'Projects', '#project-container')}
+          >
+            Projects
+          </NavLink>
+          
+          <NavLink 
+            to="/#contact-container" 
+            isActive={activeLink === 'Contact'}
+            onClick={(e) => handleLinkClick(e, 'Contact', '#contact-container')}
+          >
+            Contact
+          </NavLink>
         </ul>
       </nav>
     </header>
   );
-};
+});
 
 export default Header;
