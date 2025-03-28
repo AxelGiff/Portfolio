@@ -1163,7 +1163,39 @@ font-size: 1.2rem;
   grid-template-rows: repeat(auto-fill,minmax(600px,1fr));
 
 } */
+/* Ajouter à la fin du fichier */
+.page-transition-enter {
+  opacity: 0;
+}
 
+.page-transition-enter-active {
+  opacity: 1;
+  transition: opacity 300ms;
+}
+
+.page-transition-exit {
+  opacity: 1;
+}
+
+.page-transition-exit-active {
+  opacity: 0;
+  transition: opacity 300ms;
+}
+
+.background-fallback {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #000000;
+  background-image: radial-gradient(circle at center,rgba(255,255,255,0.008)0,rgba(255,255,255,0.005) 1px, transparent 1px),
+    linear-gradient(to right, rgba(255,255,255,0.01) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.01) 1px, transparent 1px);
+  background-size: 30px 30px;
+  background-attachment: fixed;
+  z-index: 10;
+}
 .container-project img{
   display: inline-block;
   width: 100%;
