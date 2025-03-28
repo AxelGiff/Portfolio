@@ -20,7 +20,7 @@ const Header = memo(() => {
   const [isBlurred, setIsBlurred] = useState(false);
   const [activeLink, setActiveLink] = useState('Home');
 
-  // Mettre à jour le lien 
+  // Ajuster l'onglet actif en fonction de l'URL
   useEffect(() => {
     if (location.pathname === '/') {
       if (location.hash === '#about-container') {
@@ -39,7 +39,7 @@ const Header = memo(() => {
     }
   }, [location]);
 
-  //  blur 
+  // Effet de flou sur défilement
   useEffect(() => {
     const handleScroll = () => {
       const { scrollTop } = document.documentElement;
@@ -50,25 +50,21 @@ const Header = memo(() => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  //  gérer le défilement vers les sections
+  // Fonction optimisée pour la navigation
   const handleLinkClick = useCallback((e, link, target) => {
     e.preventDefault();
     setActiveLink(link);
     
     if (location.pathname !== '/') {
       navigate('/');
-      // la section après un court délai
+      // Attendre que la navigation soit terminée
       setTimeout(() => {
         const element = document.querySelector(target);
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }
-      }, 100);
+        if (element) element.scrollIntoView({ behavior: 'smooth' });
+      }, 50);
     } else {
       const element = document.querySelector(target);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
+      if (element) element.scrollIntoView({ behavior: 'smooth' });
     }
   }, [location.pathname, navigate]);
 
