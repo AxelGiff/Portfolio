@@ -1,51 +1,45 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, memo, lazy, Suspense } from 'react';
 import { useParams } from 'react-router-dom';
 
-import PerformVision from './projects/PerformVision/PerformVision.jsx';
-import LUTC from './projects/LUTC/LUTC.jsx';
-import TodoList from './projects/TodoList/TodoList.jsx';
-import NetCards from './projects/NetCards/NetCards.jsx';
-import SafePage from './projects/SafePage/SafePage.jsx';
-import Qualoto from './projects/Qualoto/Qualoto.jsx';
-import Cnn from './projects/CNN/cnn.jsx';
+// Lazy load project components
+const PerformVision = lazy(() => import('./projects/PerformVision/PerformVision.jsx'));
+const LUTC = lazy(() => import('./projects/LUTC/LUTC.jsx'));
+const TodoList = lazy(() => import('./projects/TodoList/TodoList.jsx'));
+const NetCards = lazy(() => import('./projects/NetCards/NetCards.jsx'));
+const SafePage = lazy(() => import('./projects/SafePage/SafePage.jsx'));
+const Qualoto = lazy(() => import('./projects/Qualoto/Qualoto.jsx'));
+const Cnn = lazy(() => import('./projects/CNN/cnn.jsx'));
 
-
-const ProjectDetail = () => {
+const ProjectDetail = memo(() => {
   const { id } = useParams();
   const targetRef = useRef(null);
 
   useEffect(() => {
     if (targetRef.current) {
-      targetRef.current.scrollIntoView({ behavior: 'smooth' });
+      targetRef.current.scrollIntoView({ behavior: 'auto' });
     }
   }, [id]);
 
-  let projectContent;
+  // Map project IDs to components
+  const projectComponents = {
+    '1': Qualoto,
+    '2': Cnn,
+    '3': PerformVision,
+    '4': NetCards,
+    '5': TodoList,
+  };
 
-  if (id === '1') {
-    projectContent=<Qualoto />;
-  }
-  else if (id === '2') {
-    projectContent = <Cnn />;
-  } 
-  else if(id === '3') {
-    projectContent = <PerformVision />;
-  }
-  else if(id === '4'){
-    projectContent = <NetCards />;
-  }
-  else if(id === '5'){
-    projectContent = <TodoList />;
-  }
-
+  const ProjectComponent = projectComponents[id];
 
   return (
     <div ref={targetRef}>
-      <h1>Project Detail Page</h1>
-      <p>Project ID: {id}</p>
-      {projectContent}
+      {ProjectComponent && (
+        <Suspense fallback={<div style={{ minHeight: '100vh' }}></div>}>
+          <ProjectComponent />
+        </Suspense>
+      )}
     </div>
   );
-};
+});
 
 export default ProjectDetail;
