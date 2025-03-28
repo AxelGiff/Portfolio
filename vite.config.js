@@ -1,8 +1,8 @@
-// vite.config.js
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
+const { defineConfig } = require('vite');
+const react = require('@vitejs/plugin-react');
+const path = require('path');
 
-export default defineConfig({
+module.exports = defineConfig({
   plugins: [react()],
   build: {
     cssCodeSplit: true,
@@ -12,11 +12,23 @@ export default defineConfig({
         manualChunks: {
           'react-vendor': ['react', 'react-dom'],
           'framer-motion': ['framer-motion'],
+          'ui-components': ['react-router-dom'],
         }
       }
-    }
+    },
+    chunkSizeWarningLimit: 1000
   },
   optimizeDeps: {
-    include: ['react', 'react-dom', 'framer-motion']
+    include: ['react', 'react-dom', 'framer-motion', 'react-router-dom']
+  },
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, 'src')
+    }
+  },
+  experimental: {
+    renderBuiltUrl(filename) {
+      return { relative: true };
+    }
   }
 });
