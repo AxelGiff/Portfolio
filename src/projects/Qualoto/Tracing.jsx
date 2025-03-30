@@ -2,15 +2,56 @@
 import React from "react";
 import { TracingBeam } from "../../tracing-beam.tsx";
 import { Tabs } from "../../tabs.tsx";
+import { useTranslation } from 'react-i18next';
 
 export function TracingBeamDemo() {
+      const { t } = useTranslation();
+      const dummyContent = [
+        {
+          title: t('Authentication_title'),
+          description: (
+            <>
+              <p>
+                {t('Authentication_description')}
+              </p>
+             
+            </>
+          ),
+          badge: t('Authentication'),
+          image: new URL("./images/auth.png", import.meta.url).href,
+        },
+        {
+          title: t('Draw_title'),
+          description: (
+            <>
+              <p>
+                {t('Draw_description')}
+              </p>
+            </>
+          ),
+          badge: t('Draw'),
+          image: new URL("./images/tiragesort.png", import.meta.url).href,
+        },
+        {
+          title: t('Ranking_title'),
+          description: (
+            <>
+              <p>
+                {t('Ranking_description')}
+              </p>
+            </>
+          ),
+          badge: t('Ranking'),
+          image: new URL("./images/classement.png", import.meta.url).href,
+        },
+      ];
   const tabs = [
     {
-      title: "Authentication",
+      title: t('Authentication'),
       value: "Authentication",
       content: (
         <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-l md:text-4xl font-bold text-white bg-gradient-to-br from-[#1B3A6B] to-[#2C5282]">
-          <p>1. Authentication</p>
+          <p>1. {t('Authentication')}</p> 
           <img
             src={new URL("./images/auth.png", import.meta.url).href}
             alt="screen todo list"
@@ -21,11 +62,11 @@ export function TracingBeamDemo() {
       ),
     },
     {
-      title: "Grid choice",
+      title:t('Grid choice'),
       value: "Grid choice",
       content: (
         <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-l md:text-4xl font-bold text-white bg-gradient-to-br from-[#1B3A6B] to-[#2C5282]">
-          <p>2. Grid choice</p>
+          <p>2. {t('Grid choice')}</p>
           <img
             src={new URL("./images/grille.png", import.meta.url).href}
             alt="screen todo list"
@@ -36,11 +77,11 @@ export function TracingBeamDemo() {
       ),
     },
     {
-      title: "Player list",
+      title: t('Player list'),
       value: "Player list",
       content: (
         <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-l md:text-4xl font-bold text-white bg-gradient-to-br from-[#1B3A6B] to-[#2C5282]">
-          <p>3. Player list</p>
+          <p>3. {t('Player list')}</p>
           <img
             src={new URL("./images/tiragesort.png", import.meta.url).href}
             alt="screen todo list"
@@ -51,11 +92,11 @@ export function TracingBeamDemo() {
       ),
     },
     {
-      title: "Draw",
+      title: t('Draw'),
       value: "Draw",
       content: (
         <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-l md:text-4xl font-bold text-white bg-gradient-to-br from-[#1B3A6B] to-[#2C5282]">
-          <p>4. Draw</p>
+          <p>4. {t('Draw')}</p>
           <img
             src={new URL("./images/tirage.png", import.meta.url).href}
             alt="screen todo list"
@@ -66,11 +107,11 @@ export function TracingBeamDemo() {
       ),
     },
     {
-      title: "Ranking",
+      title: t('Ranking'),
       value: "Ranking",
       content: (
         <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-l md:text-4xl font-bold text-white bg-gradient-to-br from-[#1B3A6B] to-[#2C5282]">
-          <p>5. Ranking</p>
+          <p>5. {t('Ranking')}</p>
           <img
             src={new URL("./images/classement.png", import.meta.url).href}
             alt="screen todo list"
@@ -117,42 +158,3 @@ export function TracingBeamDemo() {
   );
 }
 
-const dummyContent = [
-  {
-    title: "An authentication system for tracking progress",
-    description: (
-      <>
-        <p>
-        At Qualoto, players begin by registering with a unique username. The system enforces strict validation—rejecting duplicates or empty entries (even those with only spaces) and returning descriptive error messages in JSON. Once registered, each player receives a ticket that records their draw participation, including draw date and chosen numbers, ensuring secure and traceable access throughout the game.
-        </p>
-       
-      </>
-    ),
-    badge: "Authentication",
-    image: new URL("./images/auth.png", import.meta.url).href,
-  },
-  {
-    title: "A drawing system with real players or bots",
-    description: (
-      <>
-        <p>
-       Qualoto features a dynamic drawing system where real players and randomized bots receive lottery numbers. When a draw is initiated, every participant is assigned a ticket containing their main and bonus numbers. A dedicated form lets players manually select their numbers or use a “Flash” option for random generation. The system then simulates the draw, ensuring fair assignment of numbers and adherence to the game’s strict rules.
-        </p>
-      </>
-    ),
-    badge: "Drawn",
-    image: new URL("./images/tiragesort.png", import.meta.url).href,
-  },
-  {
-    title: "A ranking system with an equitable prize distribution algorithm",
-    description: (
-      <>
-        <p>
-        After each lottery draw, Qualoto computes a ranking to identify the top winners. The ranking algorithm compares players’ tickets with the drawn numbers—regardless of order—and allocates prizes based on predefined percentage distributions (e.g., 40%, 20%, etc.). In cases where players share identical winning numbers, the system fairly splits the prize percentage between them, ensuring an equitable distribution of gains. This robust ranking process guarantees transparency and fairness in every draw.
-        </p>
-      </>
-    ),
-    badge: "Ranking",
-    image: new URL("./images/classement.png", import.meta.url).href,
-  },
-];
