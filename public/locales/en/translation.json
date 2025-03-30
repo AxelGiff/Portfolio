@@ -1,5 +1,5 @@
 {
-    "about_description": "From Paris to VsCode, I'm a professional web developer who likes coding any website, webapps with my personal UI/UX design touch. I have been studying front/back end since 2021. I've always been someone who has a taste for the creation and the logical side. That's why I've decided to become a front-end developer to use my power of my brain-skills.",
+    "about_description": "From Paris to VSCode, I am a passionate Full Stack developer who crafts complete web applications with my personal touch in both UI/UX design and back-end architecture. I've been honing my skills across all aspects of web development since 2021. My natural affinity for creativity combined with logical thinking has led me to pursue Full Stack development, where I can leverage my entire technical skillset to build robust and engaging end-to-end applications.",
     "Home":"Home",
     "About":"About",
     "Projects":"Projects",
@@ -57,7 +57,9 @@
   "troubleshooting_however": " & troubleshooting. However, there was still one area I hadn't ventured into: coding ",
   "coding": "coding",
   "Academic Experience":"Academic Experience",
-  "Professional Experience":"Professional Experience"
+  "Professional Experience":"Professional Experience",
+  "Discover me":"Discover me",
+  "Contact me":"Contact me"
 
 
 
