@@ -75,6 +75,23 @@
     "More details":"Plus de détails",
     "Want to discuss ?":"Envie de discuter ?",
     "Age & gender classiffication (CNN)":"Classification de genre et d'âge (CNN)",
+    "One month":"Un mois",
+    "Group work":"Membres",
+    "Zoom-in":"Focus",
+    "Github":"Voir sur GitHub",
+    "Features":"Fonctionnalités",
+   "Qualoto_description":"Qualoto est une application web réalisée fin 2024 comme projet universitaire et qui permet aux utilisateurs de participer à un jeu de loterie virtuelle. Le jeu est conçu pour être accessible à tous les joueurs, avec un accent mis sur la notion de qualité de développement. L'application est développée avec Django, un framework Python populaire pour la création d'applications Full Stack, ainsi qu'avec d'autres technologies comme Tailwind CSS et MySQL pour la base de données. Cela m'a permis d'adopter une approche conceptualisante du projet, qui m'a permis de développer une compréhension approfondie des technologies utilisées et de mieux comprendre les différentes étapes du développement d'une application web.",
+    "Authentication":"Authentification",
+    "Grid choice":"Choix de grille",
+    "Player list":"Liste de joueurs",
+    "Draw":"Tirage",
+    "Ranking":"Classement",
+    "Authentication_title":"Un système d'authentification pour suivre sa progression via son profil",
+    "Authentication_description":"Sur Qualoto, les joueurs commencent par s'inscrire avec un nom d'utilisateur unique. Le système applique une validation stricte — rejetant les doublons ou les entrées vides (même celles avec uniquement des espaces) et renvoyant des messages d'erreur descriptifs en JSON. Une fois inscrits, chaque joueur reçoit un ticket qui enregistre sa participation au tirage, incluant la date du tirage et les numéros choisis, garantissant un accès sécurisé et traçable tout au long du jeu.",
+    "Draw_title":"Un système de tirage avec de vrais joueurs ou des bots",
+    "Draw_description":"Qualoto dispose d'un système de tirage dynamique où joueurs réels et bots générés aléatoirement reçoivent des numéros de loterie. Lorsqu'un tirage est lancé, chaque participant se voit attribuer un ticket contenant ses numéros principaux et complémentaires. Un formulaire dédié permet aux joueurs de sélectionner manuellement leurs numéros ou d'utiliser une option \"Flash\" pour une génération aléatoire. Le système simule ensuite le tirage, garantissant une attribution équitable des numéros et le respect des règles strictes du jeu.",
+    "Ranking_title":"Un système de classement avec un algorithme de répartition des gains",
+    "Ranking_description":"Après chaque tirage de loterie, Qualoto calcule un classement pour identifier les meilleurs gagnants. L'algorithme de classement compare les tickets des joueurs avec les numéros tirés—indépendamment de l'ordre—et attribue les gains selon des distributions de pourcentage prédéfinies (par exemple, 40%, 20%, etc.). Dans les cas où des joueurs partagent des numéros gagnants identiques, le système répartit équitablement le pourcentage de gain entre eux, garantissant une distribution équitable des gains. Ce processus de classement robuste assure transparence et équité à chaque tirage.",
 
     "skills_card": {
         "react": {
