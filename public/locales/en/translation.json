@@ -59,10 +59,50 @@
   "Academic Experience":"Academic Experience",
   "Professional Experience":"Professional Experience",
   "Discover me":"Discover me",
-  "Contact me":"Contact me"
-
-
-
+  "Contact me":"Contact me",
+  "Skills":"Skills",
+  "My work":"My work",
+  "More details":"More details",
+  "Want to discuss ?":"Want to discuss ?",
+  "Age & gender classiffication (CNN)":"Age & gender classiffication (CNN)",
+  "skills_card": {
+    "react": {
+        "title": "React",
+        "description": "Self-taught React developer focusing on building interactive user interfaces with reusable components and optimized state management"
+    },
+    "tailwind": {
+        "title": "Tailwind CSS",
+        "description": "Leveraging Tailwind CSS since 2022 to create efficient, responsive designs with a streamlined development workflow"
+    },
+    "vue": {
+        "title": "Vue.js",
+        "description": "Proficient in Vue.js for developing dynamic, high-performance web applications with elegant user experiences"
+    },
+    "php": {
+        "title": "PHP",
+        "description": "Strong expertise in PHP for backend development with experience in creating robust server-side applications and APIs"
+    },
+    "postgresql": {
+        "title": "PostgreSQL",
+        "description": "Experienced in PostgreSQL database design and optimization, leveraging advanced features for complex data management solutions"
+    },
+    "node": {
+        "title": "Node.js",
+        "description": "Building scalable server-side applications with Node.js, utilizing its event-driven architecture for efficient API development"
+    },
+    "nuxt": {
+        "title": "Nuxt",
+        "description": "Expanding my Vue.js expertise with Nuxt to create optimized, SEO-friendly applications with server-side rendering capabilities"
+    },
+    "symfony": {
+        "title": "Symfony",
+        "description": "Specialized in Symfony framework for building structured, maintainable PHP applications with a focus on best practices and security"
+    },
+    "docker": {
+        "title": "Docker",
+        "description": "Implementing Docker for containerized development and deployment workflows, ensuring consistent environments across development and production"
+    }
+}
 
 
 
