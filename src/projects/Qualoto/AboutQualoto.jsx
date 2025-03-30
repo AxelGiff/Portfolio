@@ -3,17 +3,18 @@ import BadgeTextGradient from '../../BadgeGradient.tsx';
 import ButtonRotatingBackgroundGradient from '../../ButtonRotatingBackgroundGradient.tsx';
 import { TextGenerateEffect } from '../../text-generate-effect.tsx';
 import VideoComponent from '../VideoComponent.jsx';
+import { useTranslation } from 'react-i18next';
 
 export default function AboutQualoto() {
+      const { t } = useTranslation();
+  
   const words = <div>
-  SafePage stands as my first significant project that I embarked on in 2022. It's an endeavor that was inspired by the website{' '}
-  <a href="https://dev-perso.com/">Dev-perso</a>
-  {' '}. Being familiar with personal development, I've always been inclined to create projects that resonate with me on a personal level. I firmly believe that working on projects aligned with our personal interests is crucial for sustaining motivation and commitment in the long run. Therefore, SafePage is more than just a project to me; it embodies a fusion of my passion for personal development and my skills in web development, creating a fulfilling experience for both myself and the users.
+  {t('Qualoto_description')}  <br></br>
 </div>;
 
   return (
     <section id="about-container">
-      <h1 className='about-title text-white text-5xl block text-center block mt-24 mb-32'>Zoom-in</h1>
+      <h1 className='about-title text-white text-5xl block text-center block mt-24 mb-32'>{t('Zoom-in')}</h1>
       <div className="flex flex_responsive flex-col xl:flex-row items-center gap-12 m-48 sm:mt-0 sm:gap-24">
       <div class="gradient-qualabout z-[-10000] right-1/4 -top-1/8 w-1/2 h-full opacity-30"></div>
 
@@ -26,7 +27,7 @@ export default function AboutQualoto() {
         <div className="text flex flex-col items-center justify-center z-50 sm:w-1/2">
         <p className="text-white text-lg ">{words}</p>                 
         <div className="mt-24 items-center "> 
-            <ButtonRotatingBackgroundGradient text="View on GitHub" link="https://github.com/AxelGiff/Qualoto" />
+            <ButtonRotatingBackgroundGradient text={t('Github')} link="https://github.com/AxelGiff/Qualoto" /> 
           </div>
         </div>
       </div>
@@ -49,7 +50,7 @@ export default function AboutQualoto() {
      </div>
 
      </div> */}
-    <h1 className='about-title text-white text-5xl block text-center block mt-24 mb-32'>Features</h1>
+    <h1 className='about-title text-white text-5xl block text-center block mt-24 mb-32'>{t('Features')}</h1>
 
     </section>
   )
