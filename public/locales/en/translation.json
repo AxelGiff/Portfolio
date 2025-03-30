@@ -84,7 +84,8 @@
   "Ranking_description":"After each lottery draw, Qualoto computes a ranking to identify the top winners. The ranking algorithm compares players’ tickets with the drawn numbers—regardless of order—and allocates prizes based on predefined percentage distributions (e.g., 40%, 20%, etc.). In cases where players share identical winning numbers, the system fairly splits the prize percentage between them, ensuring an equitable distribution of gains. This robust ranking process guarantees transparency and fairness in every draw.",
 
   "performvision_description": "Perform Vision is an intranet site developed as part of my training at I.U.T De Villetaneuse. The objective was to create, with the help of my 4 teammates, a time and material service site allowing the management of delivery notes.",
- 
+  "Five months":"Five months",
+
  "performvision": {
           "role": {
             "title": "Roles",
@@ -141,7 +142,28 @@
         "title": "Docker",
         "description": "Implementing Docker for containerized development and deployment workflows, ensuring consistent environments across development and production"
     }
-}
+},
+
+    "cnn": {
+      "overview": {
+        "title": "Project Overview",
+        "description": "This project uses the UTKFace dataset to train Convolutional Neural Networks (CNNs) for age and gender classification. The dataset covers diverse facial images, enabling robust model performance."
+      },
+      "goal": {
+        "title": "Goal & Approach",
+        "description": "The aim is to accurately predict both age and gender from a single image. Iterative refinements focus on boosting accuracy while ensuring efficient deployment."
+      },
+      "fullstack": {
+        "title": "Full Stack with Gradio",
+        "description": "A Gradio interface was developed for a smooth user experience, reinforcing my full stack skills in front-end design and back-end integration."
+      },
+      "future": {
+        "title": "Future Improvements",
+        "description": "Possible enhancements include real-time video inference, additional facial attributes (e.g., expression), and scaling for higher traffic."
+      }
+    }
+    
+  
 
 
 
