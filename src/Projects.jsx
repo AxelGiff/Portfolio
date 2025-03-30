@@ -8,7 +8,7 @@ import qualotoImage from './images/Qualoto.png';
 import cnnPortfolioImage from './images/cnnPortfolio.png';
 import screenDashAdminImage from './images/screen_dash_admin_pres.png';
 import netcardsImage from './images/netcards.png';
-import todolistImage from './images/todolist.PNG';
+import todolistImage from './images/todolist.png';
 
 const baseSlideData = [
   {
@@ -46,7 +46,6 @@ const baseSlideData = [
 const Projects = memo(() => {
   const { t } = useTranslation();
   
-  // Appliquer les traductions ici
   const slideData = baseSlideData.map(slide => ({
     ...slide,
     button: t("More details")
