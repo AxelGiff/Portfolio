@@ -5,8 +5,10 @@ import {
   useSpring,
   useTransform,
 } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 export const MovingLine = () => {
+  const { t } = useTranslation();
   const transition = {
     duration: 14,
     ease: "easeInOut",
@@ -14,11 +16,13 @@ export const MovingLine = () => {
 
   const ref = useRef(null);
 
+  // Track scroll progress, lies between 0 and 1.
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["end end", "start start"],
   });
 
+  // when scroll progress reached 1, path length becomes 0.
   const pathLengthValue = useTransform(scrollYProgress, [0, 1], [1, 0]);
 
   const PATH = "M0.5 0.980671L0.5 1566.02";
@@ -50,6 +54,7 @@ export const MovingLine = () => {
           </linearGradient>
         </defs>
         <motion.path
+          // animating pathLength value, goes from 1 to 0
           style={{
             pathLength: useSpring(pathLengthValue, {
               stiffness: 500,
@@ -66,38 +71,41 @@ export const MovingLine = () => {
       </svg>
 
       <div className="flex flex-col w-full">
+        {/* Première section */}
         <Content
-          title="Data distribution visualizations"
-          description="Showing the gender balance and age distribution within the dataset UTKFace."
+          title={t('cnn.content.section1.title')}
+          description={t('cnn.content.section1.description')}
           image1={new URL("./images/Image20.png", import.meta.url).href}
-          alt1="Distribution Graph 1"
+          alt1={t('cnn.content.section1.alt1')}
           image2={new URL("./images/Image19.png", import.meta.url).href}
-          alt2="Distribution Graph 2"
+          alt2={t('cnn.content.section1.alt2')}
         />
 
+        {/* Deuxième section */}
         <Content
-          title="Middle Section: Error Analysis & Scatter Plots"
-          description="These plots illustrate the prediction errors and compare predicted vs. actual values."
+          title={t('cnn.content.section2.title')}
+          description={t('cnn.content.section2.description')}
           image1={new URL("./images/distribb2.png", import.meta.url).href}
-          alt1="Error Distribution"
+          alt1={t('cnn.content.section2.alt1')}
           image2={new URL("./images/predagevalidb2.png", import.meta.url).href}
-          alt2="Age Prediction Validation"
+          alt2={t('cnn.content.section2.alt2')}
         />
 
         {/* Troisième section */}
         <Content
-          title="Bottom Section: Sample Predictions"
-          description="Real-world inference on sample images for age and gender prediction."
+          title={t('cnn.content.section3.title')}
+          description={t('cnn.content.section3.description')}
           image1={new URL("./images/imageAxel.png", import.meta.url).href}
-          alt1="Sample Face 1"
+          alt1={t('cnn.content.section3.alt1')}
           image2={new URL("./images/imageStatham.png", import.meta.url).href}
-          alt2="Sample Face 2"
+          alt2={t('cnn.content.section3.alt2')}
         />
       </div>
     </div>
   );
 };
 
+/* Composant Content réutilisable avec des props personnalisées */
 export const Content = ({
   title = "Default Title",
   description = "Default Description",
