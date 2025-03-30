@@ -1,16 +1,20 @@
 import React from 'react';
 import ButtonRotatingBackgroundGradient from '../../ButtonRotatingBackgroundGradient.tsx';
+import { useTranslation } from 'react-i18next';
 
-export default function AboutQualoto() {
+export default function AboutCnn() {
+  const { t } = useTranslation();
+  
   return (
     <section id="about-container">
       <h1 className="about-title text-white text-5xl block text-center mt-24 mb-32">
-        Zoom-in
+        {t('Zoom-in')}
       </h1>
 
       <div className="flex flex_responsive flex-col xl:flex-row items-center gap-12 m-48 sm:mt-0 sm:gap-24">
         <div className="gradient-qualabout z-[-10000] right-1/4 -top-1/8 w-1/2 h-full opacity-30"></div>
 
+        {/* Image on the left */}
         <div className="relative w-full sm:w-1/2 h-auto">
           <div className="gradient-03 right-1/4 -top-1/8 w-1/2 h-full z-[-10000] opacity-70"></div>
           <img
@@ -25,6 +29,7 @@ export default function AboutQualoto() {
           />
         </div>
 
+        {/* Text on the right with columns */}
         <div className="text flex flex-col items-center justify-center z-50 sm:w-1/2">
           <div
             className="
@@ -42,35 +47,36 @@ export default function AboutQualoto() {
             "
           >
             <p>
-              <strong>Project Overview</strong><br/>
-              This project uses the UTKFace dataset to train Convolutional Neural Networks (CNNs) for age and gender classification. The dataset covers diverse facial images, enabling robust model performance.
+              <strong>{t('cnn.overview.title')}</strong><br/>
+              {t('cnn.overview.description')}
             </p>
 
             <p>
-              <strong>Goal & Approach</strong><br/>
-              The aim is to accurately predict both age and gender from a single image. Iterative refinements focus on boosting accuracy while ensuring efficient deployment.
+              <strong>{t('cnn.goal.title')}</strong><br/>
+              {t('cnn.goal.description')}
             </p>
 
             <p>
-              <strong>Full Stack with Gradio</strong><br/>
-              A Gradio interface was developed for a smooth user experience, reinforcing my full stack skills in front-end design and back-end integration.
+              <strong>{t('cnn.fullstack.title')}</strong><br/>
+              {t('cnn.fullstack.description')}
             </p>
 
             <p>
-              <strong>Future Improvements</strong><br/>
-              Possible enhancements include real-time video inference, additional facial attributes (e.g., expression), and scaling for higher traffic.
+              <strong>{t('cnn.future.title')}</strong><br/>
+              {t('cnn.future.description')}
             </p>
           </div>
 
           <div className="mt-8">
             <ButtonRotatingBackgroundGradient
-              text="View on GitHub"
+              text={t('Github')}
               link="https://github.com/SamiaOuchallal/BUT3-INFO-SAE-S5-IA-Classification-de-genre-et-d-age-"
             />
           </div>
         </div>
       </div>
 
+      {/* Decorative elements */}
       <img
         alt="left gradient"
         loading="lazy"
@@ -96,7 +102,7 @@ export default function AboutQualoto() {
       </div>
 
       <h1 className="about-title text-white text-5xl block text-center mt-24 mb-32">
-        Features
+        {t('Features')}
       </h1>
     </section>
   );
