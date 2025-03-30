@@ -3,7 +3,12 @@
     "Home":"Accueil",
     "About":"A propos",
     "Projects":"Projets",
-    "Contact":"Contact"
+    "Contact":"Contact",
+    "Hover me":"Survolez-moi",
+    "Hi! I'm":"Bonjour ! Je suis",
+    "Full Stack Developer":"Développeur Full Stack",
+    "card_container":"Je suis un développeur web passionné par la création d'expériences interactives !",
+    "Brief presentation":"Brève présentation"
 
 
 }
