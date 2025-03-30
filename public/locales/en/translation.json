@@ -161,7 +161,30 @@
         "title": "Future Improvements",
         "description": "Possible enhancements include real-time video inference, additional facial attributes (e.g., expression), and scaling for higher traffic."
       }
-    }
+    },
+
+    "netcards": {
+        "description": "NetCards is an engaging online flashcard platform that I developed for effective learning and knowledge retention. The platform provides a dynamic and interactive way for users to create, share, and study digital flashcards on various subjects. Users can easily customize their decks, incorporating multimedia elements like images and audio, to enhance the learning experience.",
+        "demo": "View a demo",
+        "deck": {
+            "title": "Deck system",
+            "description": "The deck system empowers users to effortlessly create, organize, and study their personalized flashcards, fostering a dynamic learning environment tailored to individual needs and preferences.",
+            "imageAlt": "NetCards deck interface screenshot"
+          },
+          "auth": {
+            "title": "Authentication system",
+            "description": "An authentication system has been designed and deployed with the primary objective of enabling users to securely log in and access their personalized decks of flashcards. By incorporating this system, users can enjoy a seamless experience, tailored to their individual preferences and learning needs. Additionally, this authentication mechanism ensures the privacy and security of user data, fostering trust and reliability within the platform.",
+            "imageAlt": "NetCards authentication screen"
+          }
+      },
+
+      "todolist":{
+        "description": "The purpose of creating a todo list was to practice assimilating React hooks (useEffect and useState) to understand their logic. Additionally, I love the concept of productivity, so creating projects like a todo list is just a joyous part of it.",
+        "oneweek": "One week",
+        "editTask": "Edit a Task",
+        "checkDeleteTask": "Check & Delete a Task"
+      }
+      
     
   
 
