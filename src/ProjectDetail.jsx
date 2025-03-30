@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, memo, lazy, Suspense } from 'react';
 import { useParams } from 'react-router-dom';
 
-// Lazy load project components avec priorité élevée
 const PerformVision = lazy(() => import(/* webpackPrefetch: true */ './projects/PerformVision/PerformVision.jsx'));
 const LUTC = lazy(() => import(/* webpackPrefetch: true */ './projects/LUTC/LUTC.jsx'));
 const TodoList = lazy(() => import(/* webpackPrefetch: true */ './projects/TodoList/TodoList.jsx'));
@@ -10,7 +9,6 @@ const SafePage = lazy(() => import(/* webpackPrefetch: true */ './projects/SafeP
 const Qualoto = lazy(() => import(/* webpackPrefetch: true */ './projects/Qualoto/Qualoto.jsx'));
 const Cnn = lazy(() => import(/* webpackPrefetch: true */ './projects/CNN/cnn.jsx'));
 
-// Map project IDs to components à l'extérieur pour éviter les recréations
 const projectComponents = {
   '1': Qualoto,
   '2': Cnn,
