@@ -3,13 +3,13 @@ import BadgeTextGradient from '../../BadgeGradient.tsx';
 import ButtonRotatingBackgroundGradient from '../../ButtonRotatingBackgroundGradient.tsx';
 import { TextGenerateEffect } from '../../text-generate-effect.tsx';
 import VideoComponent from '../VideoComponent.jsx';
-import { useTranslation } from 'react-i18next'; // Ajoutez cet import
+import { useTranslation } from 'react-i18next'; 
 import Video from "./images/todolist.mp4";
 import Edit from "./images/edittodo.mp4";
 import Delete from "./images/deletetodo.mp4";
 
 export default function AboutTodoList() {
-  const { t } = useTranslation(); // Utilisez le hook de traduction
+  const { t } = useTranslation(); 
   
   return (
     <section id="about-container">
@@ -30,7 +30,6 @@ export default function AboutTodoList() {
     src={new URL("./images/todolist2.png", import.meta.url).href} 
   /> 
 </div>
-        {/* Text on the right */}
         <div className="text flex flex-col items-center justify-center z-50 sm:w-1/2">
           <p className="text-white text-lg">{t('todolist.description')}</p>                 
           <div className="mt-12 sm:mt-24 items-center"> 
