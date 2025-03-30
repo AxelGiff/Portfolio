@@ -1,47 +1,60 @@
 "use client";
 import React, { memo } from "react";
 import { LayoutGrid } from "./layout-grid.tsx";
+import { useTranslation } from 'react-i18next';
 
 import gestionnaireListeImg from "./images/gestionnaireliste.png";
 import ajouterImg from "./images/Ajouter.png";
 import creneauxImg from "./images/creneaux.png";
 import tableauBdlImg from "./images/Tableau_bdl.png";
 
-const SkeletonOne = memo(() => (
-  <div>
-    <p className="font-bold text-4xl text-white">Roles</p>
-    <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-      As a manager and administrator, these roles can add different members such as: service providers, contacts, sales representatives, and clients.
-    </p>
-  </div>
-));
+const SkeletonOne = memo(() => {
+  const { t } = useTranslation();
+  return (
+    <div>
+      <p className="font-bold text-4xl text-white">{t('performvision.role.title')}</p>
+      <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
+        {t('performvision.role.description')}
+      </p>
+    </div>
+  );
+});
 
-const SkeletonTwo = memo(() => (
-  <div>
-    <p className="font-bold text-4xl text-white">Create a client</p>
-    <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-      We can also create a client by providing their contact details as well as assigning the client to one or more sales representatives
-    </p>
-  </div>
-));
+const SkeletonTwo = memo(() => {
+  const { t } = useTranslation();
+  return (
+    <div>
+      <p className="font-bold text-4xl text-white">{t('performvision.client.title')}</p>
+      <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
+        {t('performvision.client.description')}
+      </p>
+    </div>
+  );
+});
 
-const SkeletonThree = memo(() => (
-  <div>
-    <p className="font-bold text-4xl text-white">Delivery Note</p>
-    <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-      The primary objective is to be able to create delivery notes per month, with different periods: Day, Half-day, and Time slots. The half-day must be indicated by the morning or evening period, while the time slot must be specified between a departure and arrival time.
-    </p>
-  </div>
-));
+const SkeletonThree = memo(() => {
+  const { t } = useTranslation();
+  return (
+    <div>
+      <p className="font-bold text-4xl text-white">{t('performvision.deliveryNote.title')}</p>
+      <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
+        {t('performvision.deliveryNote.description')}
+      </p>
+    </div>
+  );
+});
 
-const SkeletonFour = memo(() => (
-  <div>
-    <p className="font-bold text-4xl text-white">Delivery Note History</p>
-    <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-      To analyze delivery notes effectively, it is necessary to have a history of the latest delivery notes where we can view the delivery notes over the course of the month.
-    </p>
-  </div>
-));
+const SkeletonFour = memo(() => {
+  const { t } = useTranslation();
+  return (
+    <div>
+      <p className="font-bold text-4xl text-white">{t('performvision.history.title')}</p>
+      <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
+        {t('performvision.history.description')}
+      </p>
+    </div>
+  );
+});
 
 const cards = [
   {
