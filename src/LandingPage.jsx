@@ -91,9 +91,7 @@ const LandingPage = memo(() => {
       <SpotlightPreview fill="white" />
       <h2 className="subtitle">
         <span className="subtitle-content">
-          <span>
-            <AnimatedSquare />
-          </span>
+      
           <span className="line">{t('Hover me')}</span>
         </span>
       </h2>
