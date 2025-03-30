@@ -5,7 +5,6 @@ import ButtonRotatingBackgroundGradient from './ButtonRotatingBackgroundGradient
 import { CardHoverEffect } from './Skills-card.tsx';
 import { TextGenerateEffect } from './text-generate-effect.tsx';
 import History from './History.jsx';
-import LanguageSelector from './LanguageSelector';
 
 export default function About() {
   const { t } = useTranslation();
@@ -13,7 +12,6 @@ export default function About() {
   return (
     <section id="about-container">
       <BadgeTextGradient text={t('About')} />
-      <LanguageSelector />
       <h1 className='about-title text-white text-5xl block text-center block mb-32'>{t('Discover me')}</h1>
       <div className="flex flex_responsive flex-col items-center gap-12 m-48 sm:mt-0 sm:gap-24">
         <div className="flex flex-col sm:flex-row">
@@ -32,7 +30,7 @@ export default function About() {
         </div>
         <img alt="left gradient" loading="lazy" width="500" height="500" decoding="async" data-nimg="1" className="absolute right-0 top-1/8" style={{color:"transparent"}} src={new URL("./images/glow.png", import.meta.url).href} />
       </div>
-      <BadgeTextGradient text="Skills" />
+      <BadgeTextGradient text={t('Skills')} />
       <div className="relative">
         <img alt="gradient" loading="lazy" decoding="async" data-nimg="fill" className="h-[1000px] w-[1000px] inset-0 object-cover absolute pointer-events-none select-none" style={{height:"200vh",width:"auto",left:"0",right:"0",top:"-540px",color:"transparent"}} sizes="100vw" src={new URL("./images/tech-features-gradient.webp", import.meta.url).href} />
         <CardHoverEffect />
