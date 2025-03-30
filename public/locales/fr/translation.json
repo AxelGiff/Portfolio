@@ -69,7 +69,43 @@
     "Academic Experience":"Expérience académique",
     "Professional Experience":"Expérience professionnelle",
     "Discover me":"Découvrez-moi",
-    "Contact me":"Contactez-moi"
+    "Contact me":"Contactez-moi",
+    "Skills":"Compétences",
+    "My work":"Mise en pratique",
+    "More details":"Plus de détails",
+    "Want to discuss ?":"Envie de discuter ?",
+    "Age & gender classiffication (CNN)":"Classification de genre et d'âge (CNN)",
+
+    "skills_card": {
+        "react": {
+            "description": "Développeur React autodidacte, spécialisé dans la création d'interfaces utilisateur interactives avec des composants réutilisables et une gestion d'état optimisée"
+        },
+        "tailwind": {
+            "description": "Utilisation de Tailwind CSS depuis 2022 pour créer des designs réactifs et efficaces avec un flux de développement optimisé"
+        },
+        "vue": {
+            "description": "Maîtrise de Vue.js pour le développement d'applications web dynamiques et performantes avec des expériences utilisateur élégantes"
+        },
+        "php": {
+            "description": "Solide expertise en PHP pour le développement backend, avec expérience dans la création d'applications serveur robustes et d'API"
+        },
+        "postgresql": {
+            "description": "Expérience en conception et optimisation de bases de données PostgreSQL, exploitant ses fonctionnalités avancées pour des solutions de gestion de données complexes"
+        },
+        "node": {
+            "description": "Développement d'applications serveur évolutives avec Node.js, en tirant parti de son architecture événementielle pour des API performantes"
+        },
+        "nuxt": {
+            "description": "Approfondissement de mon expertise Vue.js avec Nuxt pour créer des applications optimisées pour le SEO avec rendu côté serveur"
+        },
+        "symfony": {
+            "description": "Spécialisé dans le framework Symfony pour construire des applications PHP structurées et maintenables, avec un accent sur les bonnes pratiques et la sécurité"
+        },
+        "docker": {
+            "description": "Mise en œuvre de Docker pour la conteneurisation des workflows de développement et de déploiement, garantissant des environnements cohérents entre développement et production"
+        }
+    }
+
  
 
 }
