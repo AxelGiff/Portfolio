@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom'; // Importez Link depuis react-router-dom
+import { Link } from 'react-router-dom'; 
 
 import IconBxlReact from "./lib/icons/react.jsx";
 import IconBxlMySQL from "./lib/icons/mySQL.jsx";
