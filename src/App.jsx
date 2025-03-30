@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import './index.css';
 import Header from './Header.jsx';
+import LanguageSelector from './LanguageSelector'; 
 
 const Routage = lazy(() => {
   const img = new Image();
@@ -54,6 +55,8 @@ const App = memo(() => {
   return (
     <div className="font-apple">
       <Header />
+      <LanguageSelector /> 
+
       <ErrorBoundary>
         <Suspense fallback={<BackgroundFallback />}>
           <Routes>
