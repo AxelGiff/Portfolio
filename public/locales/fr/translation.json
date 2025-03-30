@@ -74,7 +74,7 @@
     "My work":"Mise en pratique",
     "More details":"Plus de détails",
     "Want to discuss ?":"Envie de discuter ?",
-    "Age & gender classiffication (CNN)":"Classification de genre et d'âge (CNN)",
+    "Age & gender classification (CNN)":"Classification (CNN) : Genre et âge ", 
     "One month":"Un mois",
     "Group work":"Membre(s)",
     "Zoom-in":"Focus",
@@ -113,7 +113,7 @@
       "description": "Pour analyser efficacement les bons de livraison, il est nécessaire d'avoir un historique des derniers bons de livraison où nous pouvons visualiser les bons de livraison au cours du mois."
     }
   },
-        
+        "Five months":"Cinq mois",
       
     "skills_card": {
         "react": {
@@ -143,7 +143,45 @@
         "docker": {
             "description": "Mise en œuvre de Docker pour la conteneurisation des workflows de développement et de déploiement, garantissant des environnements cohérents entre développement et production"
         }
-    }
+    },
+    "cnn": {
+        "overview": {
+          "title": "Aperçu du Projet",
+          "description": "Ce projet utilise le jeu de données UTKFace pour entraîner des Réseaux de Neurones Convolutifs (CNN) pour la classification d'âge et de genre. Le jeu de données couvre diverses images faciales, permettant des performances robustes du modèle."
+        },
+        "goal": {
+          "title": "Objectif & Approche",
+          "description": "L'objectif est de prédire avec précision à la fois l'âge et le genre à partir d'une seule image. Les améliorations itératives se concentrent sur l'augmentation de la précision tout en assurant un déploiement efficace."
+        },
+        "fullstack": {
+          "title": "Full Stack avec Gradio",
+          "description": "Une interface Gradio a été développée pour une expérience utilisateur fluide, renforçant mes compétences full stack en conception front-end et intégration back-end."
+        },
+        "future": {
+          "title": "Améliorations Futures",
+          "description": "Les améliorations possibles incluent l'inférence vidéo en temps réel, des attributs faciaux supplémentaires (ex: expression), et une mise à l'échelle pour un trafic plus important."
+        },
+        "content": {
+            "section1": {
+              "title": "Visualisations de distribution des données",
+              "description": "Présentation de l'équilibre des genres et de la distribution des âges dans le jeu de données UTKFace.",
+              "alt1": "Graphique de distribution 1",
+              "alt2": "Graphique de distribution 2"
+            },
+            "section2": {
+              "title": "Analyse d'erreurs et nuages de points",
+              "description": "Ces graphiques illustrent les erreurs de prédiction et comparent les valeurs prédites avec les valeurs réelles.",
+              "alt1": "Distribution des erreurs",
+              "alt2": "Validation des prédictions d'âge"
+            },
+            "section3": {
+              "title": "Exemples de prédictions",
+              "description": "Inférence en conditions réelles sur des exemples d'images pour la prédiction de l'âge et du genre.",
+              "alt1": "Exemple de visage 1",
+              "alt2": "Exemple de visage 2"
+            }
+          }
+      }
 
  
 
