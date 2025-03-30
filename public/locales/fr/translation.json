@@ -76,7 +76,7 @@
     "Want to discuss ?":"Envie de discuter ?",
     "Age & gender classiffication (CNN)":"Classification de genre et d'âge (CNN)",
     "One month":"Un mois",
-    "Group work":"Membres",
+    "Group work":"Membre(s)",
     "Zoom-in":"Focus",
     "Github":"Voir sur GitHub",
     "Features":"Fonctionnalités",
@@ -93,6 +93,28 @@
     "Ranking_title":"Un système de classement avec un algorithme de répartition des gains",
     "Ranking_description":"Après chaque tirage de loterie, Qualoto calcule un classement pour identifier les meilleurs gagnants. L'algorithme de classement compare les tickets des joueurs avec les numéros tirés—indépendamment de l'ordre—et attribue les gains selon des distributions de pourcentage prédéfinies (par exemple, 40%, 20%, etc.). Dans les cas où des joueurs partagent des numéros gagnants identiques, le système répartit équitablement le pourcentage de gain entre eux, garantissant une distribution équitable des gains. Ce processus de classement robuste assure transparence et équité à chaque tirage.",
 
+    "performvision_description": "Perform Vision est un site intranet développé dans le cadre de ma formation à l'I.U.T de Villetaneuse. L'objectif était de créer, avec l'aide de mes 4 coéquipiers, un site de service de temps et matériel permettant la gestion des bons de livraison.",
+
+    "performvision": {
+    "role": {
+      "title": "Rôles",
+      "description": "En tant que gestionnaire et administrateur, ces rôles peuvent ajouter différents membres tels que : prestataires, contacts, commerciaux et clients."
+    },
+    "client": {
+      "title": "Créer un client",
+      "description": "Nous pouvons également créer un client en fournissant ses coordonnées ainsi qu'en assignant le client à un ou plusieurs commerciaux."
+    },
+    "deliveryNote": {
+      "title": "Bon de livraison",
+      "description": "L'objectif principal est de pouvoir créer des bons de livraison par mois, avec différentes périodes : Jour, Demi-journée et Créneaux horaires. La demi-journée doit être indiquée par la période du matin ou du soir, tandis que le créneau horaire doit être spécifié entre une heure de départ et d'arrivée."
+    },
+    "history": {
+      "title": "Historique des bons de livraison",
+      "description": "Pour analyser efficacement les bons de livraison, il est nécessaire d'avoir un historique des derniers bons de livraison où nous pouvons visualiser les bons de livraison au cours du mois."
+    }
+  },
+        
+      
     "skills_card": {
         "react": {
             "description": "Développeur React autodidacte, spécialisé dans la création d'interfaces utilisateur interactives avec des composants réutilisables et une gestion d'état optimisée"
