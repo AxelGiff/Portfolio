@@ -181,7 +181,29 @@
               "alt2": "Exemple de visage 2"
             }
           }
-      }
+      },
+
+      "netcards": {
+        "description": "NetCards est une plateforme de flashcards en ligne captivante que j'ai développée pour un apprentissage efficace et une meilleure rétention des connaissances. La plateforme offre une façon dynamique et interactive aux utilisateurs de créer, partager et étudier des flashcards numériques sur divers sujets. Les utilisateurs peuvent facilement personnaliser leurs Decks de cartes, en y incorporant des éléments multimédias comme des images et de l'audio, afin d'améliorer l'expérience d'apprentissage.",
+        "demo": "Voir une démo",
+        "deck": {
+            "title": "Système de Decks",
+            "description": "Le système de Decks permet aux utilisateurs de créer, organiser et étudier sans effort leurs flashcards personnalisées, favorisant un environnement d'apprentissage dynamique adapté aux besoins et préférences individuels.",
+            "imageAlt": "Capture d'écran de l'interface des Decks NetCards"
+          },
+          "auth": {
+            "title": "Système d'authentification",
+            "description": "Un système d'authentification a été conçu et déployé avec l'objectif principal de permettre aux utilisateurs de se connecter en toute sécurité et d'accéder à leurs Decks de flashcards personnalisés. En intégrant ce système, les utilisateurs peuvent profiter d'une expérience fluide, adaptée à leurs préférences individuelles et à leurs besoins d'apprentissage. De plus, ce mécanisme d'authentification garantit la confidentialité et la sécurité des données des utilisateurs, favorisant la confiance et la fiabilité au sein de la plateforme.",
+            "imageAlt": "Écran d'authentification NetCards"
+          }
+      },
+      "todolist": {
+    "description": "Le but de créer une liste de tâches était de pratiquer l'assimilation des hooks React (useEffect et useState) pour comprendre leur logique. De plus, j'adore le concept de productivité, donc créer des projets comme une liste de tâches est simplement une partie plaisante de cela.",
+    "demo": "Voir une démo",
+    "editTask": "Modifier une tâche",
+    "oneweek": "Une semaine",
+    "checkDeleteTask": "Valider & supprimer une tâche"
+  }
 
  
 
