@@ -12,9 +12,9 @@ export default function About() {
  
   return (
     <section id="about-container">
-      <BadgeTextGradient text="About" />
+      <BadgeTextGradient text={t('About')} />
       <LanguageSelector />
-      <h1 className='about-title text-white text-5xl block text-center block mb-32'>Discover me</h1>
+      <h1 className='about-title text-white text-5xl block text-center block mb-32'>{t('Discover me')}</h1>
       <div className="flex flex_responsive flex-col items-center gap-12 m-48 sm:mt-0 sm:gap-24">
         <div className="flex flex-col sm:flex-row">
           <div className="gradient-01 right-1/4 -top-1/8 w-1/2 h-full opacity-30"></div>
