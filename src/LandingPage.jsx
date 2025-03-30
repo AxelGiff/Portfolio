@@ -1,4 +1,6 @@
 import React, { memo } from 'react';
+import { useTranslation } from 'react-i18next';
+
 import Avatar from './Avatar.jsx';
 import { SpotlightPreview } from './pageSpotlight.tsx';
 import TextShine from './TextShine.tsx';
@@ -6,9 +8,11 @@ import BlurryBackground from "./BlurryBackground.jsx";
 import BadgeAnimatedGradientBorder from "./BadgeAnimated.tsx";
 import ScrollDownButton from "./ScrollDownButton.jsx";
 import ButtonGithub from "./ButtonGithub.jsx";
-
 import gradientBackground from './images/tech-features-gradient.webp';
 
+
+
+ 
 const AnimatedSquare = memo(() => (
   <svg
     viewBox="0 0 24 24"
@@ -72,6 +76,7 @@ const socialLinks = [
 ];
 
 const LandingPage = memo(() => {
+  const { t } = useTranslation();
   return (
     <div className="flex mb-40 font-inter flex-col items-center justify-center h-screen z-10">
       <img
@@ -89,12 +94,12 @@ const LandingPage = memo(() => {
           <span>
             <AnimatedSquare />
           </span>
-          <span className="line">Hover me</span>
+          <span className="line">{t('Hover me')}</span>
         </span>
       </h2>
       <Avatar />
       <p className="text-gradient-primary1 text-[1rem] font-bold relative right-2 mt-6">
-        Hi! I'm<br />
+      {t('Hi! I\'m')}<br />
         <TextShine text="Axel" />
       </p>
       <BadgeAnimatedGradientBorder />
