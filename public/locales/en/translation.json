@@ -82,6 +82,28 @@
   "Draw_description":"Qualoto features a dynamic drawing system where real players and randomized bots receive lottery numbers. When a draw is initiated, every participant is assigned a ticket containing their main and bonus numbers. A dedicated form lets players manually select their numbers or use a “Flash” option for random generation. The system then simulates the draw, ensuring fair assignment of numbers and adherence to the game’s strict rules.",
   "Ranking_title":"A ranking system with an equitable prize distribution algorithm",
   "Ranking_description":"After each lottery draw, Qualoto computes a ranking to identify the top winners. The ranking algorithm compares players’ tickets with the drawn numbers—regardless of order—and allocates prizes based on predefined percentage distributions (e.g., 40%, 20%, etc.). In cases where players share identical winning numbers, the system fairly splits the prize percentage between them, ensuring an equitable distribution of gains. This robust ranking process guarantees transparency and fairness in every draw.",
+
+  "performvision_description": "Perform Vision is an intranet site developed as part of my training at I.U.T De Villetaneuse. The objective was to create, with the help of my 4 teammates, a time and material service site allowing the management of delivery notes.",
+ 
+ "performvision": {
+          "role": {
+            "title": "Roles",
+            "description": "As a manager and administrator, these roles can add different members such as: service providers, contacts, sales representatives, and clients."
+          },
+          "client": {
+            "title": "Create a client",
+            "description": "We can also create a client by providing their contact details as well as assigning the client to one or more sales representatives."
+          },
+          "deliveryNote": {
+            "title": "Delivery Note",
+            "description": "The primary objective is to be able to create delivery notes per month, with different periods: Day, Half-day, and Time slots. The half-day must be indicated by the morning or evening period, while the time slot must be specified between a departure and arrival time."
+          },
+          "history": {
+            "title": "Delivery Note History",
+            "description": "To analyze delivery notes effectively, it is necessary to have a history of the latest delivery notes where we can view the delivery notes over the course of the month."
+          }
+        },
+ 
   "skills_card": {
     "react": {
         "title": "React",
