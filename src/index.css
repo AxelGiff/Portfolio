@@ -528,48 +528,43 @@ transition-timing-function: ease;
   background-color: rgba(156, 156, 156, 0.466);
   backdrop-filter: blur(4px);
 }
-
-
 #parcours {
-  
-  background:radial-gradient(ellipse at 40% 0%, #387bdf10, transparent 75%), radial-gradient(ellipse at 60% 0%, #387bdf10, transparent 75%);
+  background: radial-gradient(ellipse at 40% 0%, #387bdf10, transparent 75%), radial-gradient(ellipse at 60% 0%, #387bdf10, transparent 75%);
   max-width: 800px;
   margin: -42px auto;
   z-index: 2;
   padding: 40px 30px 100px 30px;
   background-size: cover;
-  /* Pour la classe shadow-lg */
-box-shadow: 100px 100px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 100px 100px 10px rgba(0, 0, 0, 0.2);
 
-/* Pour la classe invisible */
-visibility: hidden;
+  visibility: hidden;
 
-/* Pour la classe sm:visible */
-@media (min-width: 340px) {
-  visibility: visible;
-}
+  @media (min-width: 340px) {
+    visibility: visible;
+  }
 
-/* Pour la classe [mask-image:linear-gradient(to_bottom,white,white,transparent)] */
-mask-image: linear-gradient(to bottom, white, white, transparent);
+  mask-image: linear-gradient(to bottom, 
+    white 0%, 
+    white 75%, 
+    rgba(255, 255, 255, 0.85) 80%,
+    rgba(255, 255, 255, 0.7) 85%,
+    rgba(255, 255, 255, 0.5) 90%,
+    rgba(255, 255, 255, 0.2) 95%,
+    transparent 100%);
 
-/* Pour la classe transition duration-1000 */
-transition-duration: 1000ms;
+  /* Pour la classe transition duration-1000 */
+  transition-duration: 1000ms;
 
-/* Pour la classe relative */
-position: relative;
+  position: relative;
 
-/* Pour la classe z-40 */
-z-index: 40;
-
-/* Pour la classe opacity-100 */
-opacity: 1;
-
-/* Pour la classe transforme (je suppose qu'il y a une faute de frappe, je corrige en transform) */
-transform: none; /* Réinitialise toute transformation appliquée précédemment */
-
-  margin-bottom: 200px; /* Fait empiéter légèrement sur la section suivante */
+  z-index: 40;
 
 
+  opacity: 1;
+
+  transform: none;
+
+  margin-bottom: 200px; 
 }
 
 #parcours h3 {
@@ -1163,39 +1158,7 @@ font-size: 1.2rem;
   grid-template-rows: repeat(auto-fill,minmax(600px,1fr));
 
 } */
-/* Ajouter à la fin du fichier */
-.page-transition-enter {
-  opacity: 0;
-}
 
-.page-transition-enter-active {
-  opacity: 1;
-  transition: opacity 300ms;
-}
-
-.page-transition-exit {
-  opacity: 1;
-}
-
-.page-transition-exit-active {
-  opacity: 0;
-  transition: opacity 300ms;
-}
-
-.background-fallback {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #000000;
-  background-image: radial-gradient(circle at center,rgba(255,255,255,0.008)0,rgba(255,255,255,0.005) 1px, transparent 1px),
-    linear-gradient(to right, rgba(255,255,255,0.01) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255,255,255,0.01) 1px, transparent 1px);
-  background-size: 30px 30px;
-  background-attachment: fixed;
-  z-index: 10;
-}
 .container-project img{
   display: inline-block;
   width: 100%;
@@ -1322,3 +1285,36 @@ font-size: 1.2rem;
 }
 }
 
+/* Ajouter à la fin du fichier */
+.page-transition-enter {
+  opacity: 0;
+}
+
+.page-transition-enter-active {
+  opacity: 1;
+  transition: opacity 300ms;
+}
+
+.page-transition-exit {
+  opacity: 1;
+}
+
+.page-transition-exit-active {
+  opacity: 0;
+  transition: opacity 300ms;
+}
+
+.background-fallback {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #000000;
+  background-image: radial-gradient(circle at center,rgba(255,255,255,0.008)0,rgba(255,255,255,0.005) 1px, transparent 1px),
+    linear-gradient(to right, rgba(255,255,255,0.01) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.01) 1px, transparent 1px);
+  background-size: 30px 30px;
+  background-attachment: fixed;
+  z-index: 10;
+}
