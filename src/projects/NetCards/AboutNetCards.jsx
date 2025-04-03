@@ -27,7 +27,7 @@ export default function AboutNetCards() {
         </div>
         <div className="text flex flex-col items-center justify-center z-50 sm:w-1/2">
         <p className="text-white text-lg ">{words}</p>                 <div className="mt-24 items-center "> 
-            <ButtonRotatingBackgroundGradient text={t('Github')} link="https://2dolist-axl.netlify.app/" />
+            <ButtonRotatingBackgroundGradient text={t('Github')} link="https://github.com/AxelGiff/NetCards/tree/main" />
           </div>
         </div>
       </div>
