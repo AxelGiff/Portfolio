@@ -7,6 +7,34 @@ import diplomaIcon from './images/icons8-chapeau-de-diplôme-30.png';
 import schoolIcon from './images/icons8-école-50.png';
 import { useTranslation } from 'react-i18next';
 
+// Icônes pour chaque compétence
+const skillIcons = {
+  "Réaliser": "🛠️",
+  "Realize": "🛠️",
+  "Optimiser": "⚡",
+  "Optimize": "⚡",
+  "Administrer": "🗄️",
+  "Administrate": "🗄️",
+  "Gérer": "📋",
+  "Manage": "📋",
+  "Conduire": "🚀",
+  "Lead": "🚀"
+};
+
+// Composant SkillBox amélioré
+const SkillBox = ({ skill, summary, modules }) => (
+  <div className="rounded-xl px-6 py-5 text-white flex flex-col gap-2 bg-transparent">
+    <div className="flex items-center gap-2 mb-1">
+      <span className="text-2xl">{skillIcons[skill] || "💡"}</span>
+      <span className="font-bold text-lg tracking-wide">{skill}</span>
+    </div>
+    <div className="text-sm mb-2 italic font-light">{summary}</div>
+    <ul className="list-disc ml-6 text-sm">
+      {modules.map((m, i) => <li key={i}>{m}</li>)}
+    </ul>
+  </div>
+);
+
 const HighlightedText = memo(function HighlightedText({ children }) {
   return <span className='text-gradient-primary3'>{children}</span>;
 });
@@ -66,24 +94,38 @@ export default function History() {
           icon={bookmarkIcon}
           iconStyle={{ width: '5%', marginLeft: '10px' }}
         >
-          <p className="mt-2 font-semibold">{t("Key Courses")} :</p>
-          <div className="grid grid-cols-2 gap-4 text-white text-xl ml-10 italic">
-            <ul className="list-none space-y-2">
-            <li>{t("Software Architecture")}</li>
-            <li>{t("Automation")}</li>
-            <li>{t("Web Development")}</li>
-            <li>{t("Mobile Development")}</li>
-            <li>{t("Probabilities")}</li>
-            <li>{t("Project Management / Communication")}</li>
-
-            </ul>
-            <ul className="list-none space-y-2">
-            <li>{t("Databases")}</li>
-            <li>{t("Machine Learning / Deep Learning")}</li>
-            <li>{t("Networking / Containerization")}</li>
-            <li>{t("Algorithms / Data Structures")}</li>
-            </ul>
-          </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+              <SkillBox
+                skill={t("Réaliser")}
+                summary={t("RealiserSummary")}
+                modules={[t("Web Development"), t("Mobile Development"), t("Software Architecture")]}
+              />
+              <SkillBox
+                skill={t("Optimiser")}
+                summary={t("OptimiserSummary")}
+                modules={[t("Algorithms / Data Structures"), t("Machine Learning / Deep Learning")]}
+              />
+              <SkillBox
+                skill={t("Administrer")}
+                summary={t("AdministrerSummary")}
+                modules={[t("Databases"), t("Networking / Containerization")]}
+              />
+              <SkillBox
+                skill={t("Gérer")}
+                summary={t("GérerSummary")}
+                modules={[t("Project Management / Communication")]}
+              />
+              <SkillBox
+                skill={t("Conduire")}
+                summary={t("ConduireSummary")}
+                modules={[t("Automation"), t("Probabilities")]}
+              />
+               <SkillBox
+                skill={t("SAE")}
+                summary={t("SAESummary")}
+                modules={[t("devweb"), t("ia"),t("virtua")]}
+              />
+            </div>
         </TimelineSection>
         
          <TimelineSection 
