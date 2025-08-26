@@ -11,11 +11,11 @@ export default function AboutMedicial() {
         {t('Zoom-in')}
       </h1>
 
-      <div className="flex flex_responsive flex-col xl:flex-row items-center gap-12 m-48 sm:mt-0 sm:gap-24">
+  <div className="flex flex-col xl:flex-row items-center gap-8 xl:gap-16 px-2 xl:px-12 py-8 w-full">
         <div className="gradient-qualabout z-[-10000] right-1/4 -top-1/8 w-1/2 h-full opacity-30"></div>
 
         {/* Image on the left */}
-        <div className="relative w-full sm:w-1/2 h-auto">
+  <div className="relative w-full xl:w-2/5 h-auto flex-shrink-0">
           <div className="gradient-03 right-1/4 -top-1/8 w-1/2 h-full z-[-10000] opacity-70"></div>
           <img
             alt="Product Preview"
@@ -30,7 +30,7 @@ export default function AboutMedicial() {
         </div>
 
         {/* Text on the right with columns */}
-        <div className="text flex flex-col items-center justify-center z-50 sm:w-1/2">
+  <div className="text flex flex-col items-center justify-center z-50 w-full xl:w-3/5 xl:pl-8 mt-8 xl:mt-0">
           <div
             className="
               p-8 
