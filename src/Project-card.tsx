@@ -12,6 +12,9 @@ import IconBxlPostgresql from "./lib/icons/postgreSQL.jsx";
 import IconBxlTailwindCss from "./lib/icons/tailwind.jsx";
 import IconFigma from "./lib/icons/figma.jsx";
 import IconNotion from "./lib/icons/notion.jsx";
+import IconBxlMongoDB from "./lib/icons/mongoDB.jsx";
+import IconBxlFastAPI from "./lib/icons/fastApi.jsx";
+import IconBxlDocker from "./lib/icons/docker.jsx";
 
 export default function ProjectCard({ id, img, alt, title, desc,iconsToShow }) {
 
@@ -72,6 +75,21 @@ export default function ProjectCard({ id, img, alt, title, desc,iconsToShow }) {
       key: 11,
       name: "Notion",
       image: <IconNotion />
+    },
+    {
+      key:12,
+      name: "MongoDB",
+      image: <IconBxlMongoDB />
+    },
+    {
+      key:13,
+      name: "FastAPI",
+      image: <IconBxlFastAPI />
+    },
+    {
+      key: 14,
+      name: "Docker",
+      image: <IconBxlDocker />
     }
   ]
 

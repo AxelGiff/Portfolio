@@ -15,6 +15,7 @@ import IconFigma from "./lib/icons/figma.jsx";
 import IconNotion from "./lib/icons/notion.jsx";
 import IconNodejs from "./lib/icons/node.jsx";
 import IconBxlVuejs from "./lib/icons/vue.jsx";
+import IconBxlDocker from "./lib/icons/docker.jsx";
 
 
 export const HoverEffect = ({
@@ -53,7 +54,8 @@ export const HoverEffect = ({
                   {
                     'bg-neutral-200 dark:bg-gray-200/[0.3]': true, // Fallback background
                     'bg-green-500 dark:bg-[#149ECA]/[0.5]': item.title === 'React', // Green background for "React"
-                    'bg-blue-500 dark:bg-[#7A86B8]/[0.8]': item.title === 'PHP', // Blue background for "PHP"
+                    'bg-green-500 dark:bg-[#149ECD]/[0.5]': item.title === 'Symfony', // Green background for "React"
+
                     'bg-blue-500 dark:bg-[#38BDF8]/[0.8]': item.title === 'Tailwind CSS', // Blue background for "PHP"
                     'bg-blue-500 dark:bg-[#327859]/[0.8]': item.title === 'Vue.js', // Blue background for "PHP"
                     'bg-blue-500 dark:bg-[#6598C2]/[0.8]': item.title === 'PostgreSQL', // Blue background for "PHP"
@@ -115,7 +117,7 @@ export const CardTitle = ({
   children: React.ReactNode;
 }) => {
   const isSpecialTitle =
-    children === 'React' || children === 'PHP' || children === 'PostgreSQL' || children === 'Tailwind CSS';
+    children === 'React' || children === 'PHP' || children === 'PostgreSQL' || children==='Symfony' || children==='Docker' || children==='Nuxt' || children === 'Tailwind CSS';
 
   let logo;
 
@@ -149,8 +151,8 @@ export const CardTitle = ({
       case 'Notion':
       logo = <IconNotion />;
       break;
-    
-    default:
+     
+      default:
       break;
   }
 

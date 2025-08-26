@@ -9,6 +9,7 @@ import cnnPortfolioImage from './images/cnnPortfolio.png';
 import screenDashAdminImage from './images/screen_dash_admin_pres.png';
 import netcardsImage from './images/netcards.png';
 import todolistImage from './images/todolist.png';
+import chatbotImage from './images/mainChatbot.png';
 
 const baseSlideData = [
   {
@@ -40,6 +41,12 @@ const baseSlideData = [
     title: "Todo List",
     src: todolistImage,
     iconsToShow: ["React", "JS", "CSS"],
+  },
+  {
+    id: "6",
+    title: "Medic.ial",
+    src: chatbotImage,
+    iconsToShow: ["React", "MongoDB", "TensorFlow","FastAPI","Docker","HuggingFace"],
   },
 ];
 

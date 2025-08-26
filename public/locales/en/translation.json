@@ -1,5 +1,5 @@
 {
-    "about_description": "From Paris to VSCode, I am a passionate Full Stack developer who crafts complete web applications with my personal touch in both UI/UX design and back-end architecture. I've been honing my skills across all aspects of web development since 2021. My natural affinity for creativity combined with logical thinking has led me to pursue Full Stack development, where I can leverage my entire technical skillset to build robust and engaging end-to-end applications.",
+    "about_description": "From Paris to VSCode, I am a passionate Full Stack developer creating complete web applications, bringing my personal touch to both UI/UX and back-end architecture. Since 2021, I have been perfecting my skills in all aspects of web development. My passion for creativity and logical rigor naturally led me to Full Stack development, where I can leverage my technical expertise to build robust and attractive end-to-end applications. Moving forward, my goal is to gain in-depth expertise to lead a team of developers on complex projects.",
     "Home":"Home",
     "About":"About",
     "Projects":"Projects",
@@ -61,7 +61,8 @@
   "first_year": "First year of Bachelor's degree in ",
   "computer_science": "Computer Science",
   "at_sorbonne": " at Sorbonne University in Villetaneuse",
-  
+  "linkedinChatbot": "See more on this video!",
+
   "highschool_title": "Destination : High school",
   "highschool_period": "2018-2021",
   "during_highschool": "During high school, I studied ",
@@ -100,6 +101,8 @@
 
   "performvision_description": "Perform Vision is an intranet site developed as part of my training at I.U.T De Villetaneuse. The objective was to create, with the help of my 4 teammates, a time and material service site allowing the management of delivery notes.",
   "Five months":"Five months",
+"Three months":"Three months",
+"Two months":"Two months",
 
  "performvision": {
           "role": {
@@ -129,21 +132,24 @@
         "title": "Tailwind CSS",
         "description": "Leveraging Tailwind CSS since 2022 to create efficient, responsive designs with a streamlined development workflow"
     },
-    "vue": {
-        "title": "Vue.js",
-        "description": "Proficient in Vue.js for developing dynamic, high-performance web applications with elegant user experiences"
+    "Proactif": {
+        "title": "Proactive",
+        "description": "Ability to anticipate needs and take proactive steps to address issues before they arise"
     },
     "php": {
         "title": "PHP",
         "description": "Strong expertise in PHP for backend development with experience in creating robust server-side applications and APIs"
     },
+    "teamwork": {
+            "description": "Effective collaboration within multidisciplinary teams to achieve common goals and deliver quality projects"
+        },
     "postgresql": {
         "title": "PostgreSQL",
         "description": "Experienced in PostgreSQL database design and optimization, leveraging advanced features for complex data management solutions"
     },
-    "node": {
-        "title": "Node.js",
-        "description": "Building scalable server-side applications with Node.js, utilizing its event-driven architecture for efficient API development"
+    "Autodidacte": {
+        "title": "Autodidacte",
+        "description": "Self-taught developer with a strong ability to learn new technologies and frameworks quickly"
     },
     "nuxt": {
         "title": "Nuxt",
@@ -175,8 +181,69 @@
       "future": {
         "title": "Future Improvements",
         "description": "Possible enhancements include real-time video inference, additional facial attributes (e.g., expression), and scaling for higher traffic."
-      }
+      },
+       "content": {
+            "section1": {
+              "title": "Data Distribution Visualizations",
+              "description": "Presentation of gender balance and age distribution in the UTKFace dataset.",
+              "alt1": "Distribution Chart 1",
+              "alt2": "Distribution Chart 2"
+            },
+            "section2": {
+              "title": "Error Analysis and Scatter Plots",
+              "description": "These charts illustrate prediction errors and compare predicted values with actual values.",
+              "alt1": "Error Distribution",
+              "alt2": "Age Prediction Validation"
+            },
+            "section3": {
+              "title": "Prediction Examples",
+              "description": "Real-world inference on image examples for age and gender prediction.",
+              "alt1": "Face Example 1",
+              "alt2": "Face Example 2"
+            }
+          }
     },
+
+     "medicial": {
+        "overview": {
+          "title": "Project Overview",
+          "description": "This chatbot aims to provide accurate answers to questions about schizophrenia in general, a specialization that is very underdeveloped within technological innovation."
+        },
+        "goal": {
+          "title": "Goal & Approach",
+          "description": "The goal is to provide reliable and accessible information about schizophrenia, using advanced natural language processing techniques like RAG."
+        },
+        "fullstack": {
+          "title": "Full Stack with React, MongoDB, and FastAPI",
+          "description": "This project uses a full stack architecture, combining React for the front-end, MongoDB for the database, and FastAPI for the back-end."
+        },
+        "future": {
+          "title": "Future Improvements",
+          "description": "Possible enhancements include real-time audio transcription, as well as image import for analysis purposes."
+        },
+        "content": {
+            "section1": {
+              "title": "Data Distribution Visualizations",
+              "description": "Presentation of gender balance and age distribution in the UTKFace dataset.",
+              "alt1": "Distribution Chart 1",
+              "alt2": "Distribution Chart 2"
+            },
+            "section2": {
+              "title": "Error Analysis and Scatter Plots",
+              "description": "These charts illustrate prediction errors and compare predicted values with actual values.",
+              "alt1": "Error Distribution",
+              "alt2": "Age Prediction Validation"
+            },
+            "section3": {
+              "title": "Prediction Examples",
+              "description": "Real-world inference on image examples for age and gender prediction.",
+              "alt1": "Face Example 1",
+              "alt2": "Face Example 2"
+            }
+          }
+      },
+      
+    
 
     "netcards": {
         "description": "NetCards is an engaging online flashcard platform that I developed for effective learning and knowledge retention. The platform provides a dynamic and interactive way for users to create, share, and study digital flashcards on various subjects. Users can easily customize their decks, incorporating multimedia elements like images and audio, to enhance the learning experience.",
@@ -200,8 +267,7 @@
         "checkDeleteTask": "Check & Delete a Task"
       }
       
-    
-  
+
 
 
 

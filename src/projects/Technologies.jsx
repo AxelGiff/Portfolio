@@ -73,8 +73,20 @@ export default function Technologies({iconsToShow,bgcolor}) {
       name: "HuggingFace",
     },
     {
-      key: 16,
+      key: 17,
       name: "Scikit-Learn",
+    },
+    {
+      key: 18,
+      name:"FastAPI",
+    },
+    {
+      key: 19,
+      name:"MongoDB",
+    },
+    {
+      key: 20,
+      name:"Docker",
     }
   ]
 

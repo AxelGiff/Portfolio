@@ -18,14 +18,14 @@ export function CardHoverEffect() {
       link: "https://tailwindcss.com"
     },
     {
-      title: "Vue.js",
-      description: t('skills_card.vue.description'),
+      title: t('skills_card.Proactif.title'),
+      description: t('skills_card.Proactif.description'),
       link: "https://vuejs.org"
     },
     {
-      title: "PHP",
-      description: t('skills_card.php.description'),
-      link: "https://www.php.net"
+      title: "Symfony",
+      description: t('skills_card.symfony.description'),
+      link: "https://symfony.com/doc/current/index.html"
     },
     {
       title: "PostgreSQL",
@@ -33,8 +33,8 @@ export function CardHoverEffect() {
       link: "https://www.postgresql.org"
     },
     {
-      title: "Node.js",
-      description: t('skills_card.node.description'),
+      title: "Autodidacte",
+      description: t('skills_card.Autodidacte.description'),
       link: "https://nodejs.org/en"
     },
     {
@@ -43,13 +43,13 @@ export function CardHoverEffect() {
       link: "https://nuxt.com"
     },
     {
-      title: "Symfony",
-      description: t('skills_card.symfony.description'),
-      link: "https://symfony.com/doc/current/index.html"
-    },
-    {
       title: "Docker",
       description: t('skills_card.docker.description'),
+      link: "https://www.docker.com/"
+    },
+    {
+      title: t('skills_card.teamwork.title'),
+      description: t('skills_card.teamwork.description'),
       link: "https://www.docker.com/"
     }
   ];

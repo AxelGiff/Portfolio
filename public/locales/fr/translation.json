@@ -1,5 +1,5 @@
 {
-    "about_description": "De Paris à VSCode, je suis un développeur Full Stack passionné qui crée des applications web complètes en apportant ma touche personnelle tant au niveau UI/UX qu'à l'architecture back-end. Je me perfectionne dans tous les aspects du développement web depuis 2021. Mon attrait pour la création et la rigueur logique m'a naturellement dirigé vers le développement Full Stack, où je peux exploiter l'ensemble de mes compétences techniques pour construire des applications robustes et attrayantes de bout en bout.",
+    "about_description": "De Paris à VSCode, je suis un développeur Full Stack passionné créant des applications web complètes en apportant ma touche personnelle tant au niveau UI/UX qu'à l'architecture back-end. Je me perfectionne dans tous les aspects du développement web depuis 2021. Mon attrait pour la création et la rigueur logique m'a naturellement dirigé vers le développement Full Stack, où je peux exploiter l'ensemble de mes compétences techniques pour construire des applications robustes et attrayantes de bout en bout. Par la suite, j'aurai pour objectif d'acquérir une expertise approfondie afin de gérer une équipe de développeurs sur des projets complexes.",
     "Home":"Accueil",
     "About":"A propos",
     "Projects":"Projets",
@@ -15,6 +15,8 @@
     "Key Courses":"Enseignements",
     "Administrer":"Administrer",
     "Réaliser":"Réaliser",
+    "linkedinChatbot": "Voir plus sur cette vidéo !",
+
     "Optimiser":"Optimiser",
     "RealiserSummary":"Développement web & mobile, projets concrets, frameworks JS, Python, Java.",
     "OptimiserSummary":"Optimisation d’algorithmes, gestion des performances, data structures.",
@@ -128,7 +130,9 @@
     }
   },
         "Five months":"Cinq mois",
-      
+      "Three months":"Trois mois",
+"Two months":"Deux mois",
+
     "skills_card": {
         "react": {
             "description": "Développeur React autodidacte, spécialisé dans la création d'interfaces utilisateur interactives avec des composants réutilisables et une gestion d'état optimisée"
@@ -136,8 +140,9 @@
         "tailwind": {
             "description": "Utilisation de Tailwind CSS depuis 2022 pour créer des designs réactifs et efficaces avec un flux de développement optimisé"
         },
-        "vue": {
-            "description": "Maîtrise de Vue.js pour le développement d'applications web dynamiques et performantes avec des expériences utilisateur élégantes"
+        "Proactif": {
+          "title":"Proactif",
+            "description": "Capacité à anticiper les besoins et à agir de manière proactive pour résoudre les problèmes avant qu'ils ne surviennent"
         },
         "php": {
             "description": "Solide expertise en PHP pour le développement backend, avec expérience dans la création d'applications serveur robustes et d'API"
@@ -145,14 +150,18 @@
         "postgresql": {
             "description": "Expérience en conception et optimisation de bases de données PostgreSQL, exploitant ses fonctionnalités avancées pour des solutions de gestion de données complexes"
         },
-        "node": {
-            "description": "Développement d'applications serveur évolutives avec Node.js, en tirant parti de son architecture événementielle pour des API performantes"
+        "Autodidacte": {
+            "description": "Apprentissage autonome des technologies et des frameworks, avec une forte capacité à s'adapter et à acquérir de nouvelles compétences rapidement"
         },
         "nuxt": {
             "description": "Approfondissement de mon expertise Vue.js avec Nuxt pour créer des applications optimisées pour le SEO avec rendu côté serveur"
         },
         "symfony": {
             "description": "Spécialisé dans le framework Symfony pour construire des applications PHP structurées et maintenables, avec un accent sur les bonnes pratiques et la sécurité"
+        },
+        "teamwork": {
+          "title": "Travail en équipe",
+            "description": "Collaboration efficace au sein d'équipes multidisciplinaires pour atteindre des objectifs communs et livrer des projets de qualité"
         },
         "docker": {
             "description": "Mise en œuvre de Docker pour la conteneurisation des workflows de développement et de déploiement, garantissant des environnements cohérents entre développement et production"
@@ -196,6 +205,45 @@
             }
           }
       },
+ "medicial": {
+        "overview": {
+          "title": "Aperçu du Projet",
+          "description": "Ce chatbot a pour solution de donner des réponses précises relatives aux questions sur la schizophrénie de manière générale, spécialisation étant très peu développé au sein de l'innovation technologique."
+        },
+        "goal": {
+          "title": "Objectif & Approche",
+          "description": "L'objectif est de fournir des informations fiables et accessibles sur la schizophrénie, en utilisant des techniques avancées de traitement du langage naturel comme le RAG."
+        },
+        "fullstack": {
+          "title": "Full Stack avec React, MongoDB et FastAPI",
+          "description": "Ce projet utilise une architecture full stack, combinant React pour le front-end, MongoDB pour la base de données, et FastAPI pour le back-end."
+        },
+        "future": {
+          "title": "Améliorations Futures",
+          "description": "Les améliorations possibles incluent la possibilité de retranscrire des conversations audio en texte, mais aussi d'importer des images à des fins d'analyse."
+        },
+        "content": {
+            "section1": {
+              "title": "Visualisations de distribution des données",
+              "description": "Présentation de l'équilibre des genres et de la distribution des âges dans le jeu de données UTKFace.",
+              "alt1": "Graphique de distribution 1",
+              "alt2": "Graphique de distribution 2"
+            },
+            "section2": {
+              "title": "Analyse d'erreurs et nuages de points",
+              "description": "Ces graphiques illustrent les erreurs de prédiction et comparent les valeurs prédites avec les valeurs réelles.",
+              "alt1": "Distribution des erreurs",
+              "alt2": "Validation des prédictions d'âge"
+            },
+            "section3": {
+              "title": "Exemples de prédictions",
+              "description": "Inférence en conditions réelles sur des exemples d'images pour la prédiction de l'âge et du genre.",
+              "alt1": "Exemple de visage 1",
+              "alt2": "Exemple de visage 2"
+            }
+          }
+      },
+      
 
       "netcards": {
         "description": "NetCards est une plateforme de flashcards en ligne captivante que j'ai développée pour un apprentissage efficace et une meilleure rétention des connaissances. La plateforme offre une façon dynamique et interactive aux utilisateurs de créer, partager et étudier des flashcards numériques sur divers sujets. Les utilisateurs peuvent facilement personnaliser leurs Decks de cartes, en y incorporant des éléments multimédias comme des images et de l'audio, afin d'améliorer l'expérience d'apprentissage.",

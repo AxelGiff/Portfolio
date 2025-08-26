@@ -7,6 +7,7 @@ const TodoList = lazy(() => import(/* webpackPrefetch: true */ './projects/TodoL
 const NetCards = lazy(() => import(/* webpackPrefetch: true */ './projects/NetCards/NetCards.jsx'));
 const SafePage = lazy(() => import(/* webpackPrefetch: true */ './projects/SafePage/SafePage.jsx'));
 const Qualoto = lazy(() => import(/* webpackPrefetch: true */ './projects/Qualoto/Qualoto.jsx'));
+const Medicial=lazy(() => import(/* webpackPrefetch: true */ './projects/Medicial/Medicial.jsx'));
 const Cnn = lazy(() => import(/* webpackPrefetch: true */ './projects/CNN/cnn.jsx'));
 
 const projectComponents = {
@@ -15,6 +16,7 @@ const projectComponents = {
   '3': PerformVision,
   '4': NetCards,
   '5': TodoList,
+  '6': Medicial,
 };
 
 // Composant fallback invisible
