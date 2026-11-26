@@ -253,9 +253,35 @@ export default memo(function History() {
     <section
       id="parcours-section"
       aria-label="Road Trip"
-      className="relative my-16 sm:my-28 lg:my-36 px-4 sm:px-8"
+      className="relative overflow-x-clip my-16 sm:my-28 lg:my-36 py-8 sm:py-12 px-4 sm:px-8"
     >
-      <div className="max-w-[92rem] mx-auto">
+      {/* Ambient radial lights */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none select-none absolute -top-16 -left-24 w-[420px] h-[420px] sm:w-[680px] sm:h-[460px] rounded-full blur-3xl opacity-80 -z-10"
+        style={{
+          background:
+            'radial-gradient(ellipse at center, rgba(56, 189, 248, 0.24) 0%, rgba(167, 139, 250, 0.1) 45%, transparent 72%)',
+        }}
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none select-none absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 w-[90%] max-w-5xl h-[260px] rounded-full blur-3xl opacity-70 -z-10"
+        style={{
+          background:
+            'radial-gradient(ellipse at center, rgba(56, 189, 248, 0.18) 0%, rgba(167, 139, 250, 0.14) 45%, rgba(251, 191, 36, 0.1) 75%, transparent 100%)',
+        }}
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none select-none absolute -bottom-16 -right-24 w-[380px] h-[380px] sm:w-[620px] sm:h-[420px] rounded-full blur-3xl opacity-75 -z-10"
+        style={{
+          background:
+            'radial-gradient(ellipse at center, rgba(251, 191, 36, 0.18) 0%, rgba(167, 139, 250, 0.12) 45%, transparent 72%)',
+        }}
+      />
+
+      <div className="max-w-[92rem] mx-auto relative">
         {/* Header + Interactive Filter Legend */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10 lg:mb-14">
           <div className="flex items-center gap-3">
@@ -365,13 +391,13 @@ export default memo(function History() {
             >
               <defs>
                 <linearGradient id="roadtrip-wave-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="rgba(255,255,255,0.22)" />
-                  <stop offset="45%" stopColor="#38BDF8" />
-                  <stop offset="80%" stopColor="#A78BFA" />
+                  <stop offset="0%" stopColor="rgba(56,189,248,0.65)" />
+                  <stop offset="40%" stopColor="#38BDF8" />
+                  <stop offset="75%" stopColor="#C084FC" />
                   <stop offset="100%" stopColor="#FBBF24" />
                 </linearGradient>
-                <filter id="roadtrip-wave-glow" x="-10%" y="-40%" width="120%" height="180%">
-                  <feGaussianBlur stdDeviation="5" result="blur" />
+                <filter id="roadtrip-wave-glow" x="-15%" y="-60%" width="130%" height="220%">
+                  <feGaussianBlur stdDeviation="9" result="blur" />
                   <feMerge>
                     <feMergeNode in="blur" />
                     <feMergeNode in="SourceGraphic" />
@@ -383,8 +409,8 @@ export default memo(function History() {
                 d={wavePathD}
                 fill="none"
                 stroke="url(#roadtrip-wave-grad)"
-                strokeWidth="4"
-                strokeOpacity="0.35"
+                strokeWidth="10"
+                strokeOpacity="0.55"
                 filter="url(#roadtrip-wave-glow)"
                 vectorEffect="non-scaling-stroke"
               />
@@ -392,7 +418,7 @@ export default memo(function History() {
                 d={wavePathD}
                 fill="none"
                 stroke="url(#roadtrip-wave-grad)"
-                strokeWidth="2.5"
+                strokeWidth="3"
                 strokeLinecap="round"
                 vectorEffect="non-scaling-stroke"
               />
@@ -419,11 +445,11 @@ export default memo(function History() {
                   <span
                     aria-hidden="true"
                     className={`block rounded-full border-2 bg-black transition-all duration-200 ${
-                      isSelected ? 'h-5 w-5 scale-110 ring-4 ring-white/20' : 'h-3.5 w-3.5 hover:scale-125'
+                      isSelected ? 'h-5 w-5 scale-110 ring-4 ring-white/30' : 'h-3.5 w-3.5 hover:scale-125'
                     } ${
                       isPro
-                        ? 'border-amber-400 shadow-[0_0_16px_rgba(251,191,36,0.95)]'
-                        : 'border-violet-400 shadow-[0_0_16px_rgba(167,139,250,0.95)]'
+                        ? 'border-amber-300 shadow-[0_0_24px_rgba(251,191,36,1)]'
+                        : 'border-violet-300 shadow-[0_0_24px_rgba(167,139,250,1)]'
                     }`}
                   />
                 </button>
@@ -529,7 +555,7 @@ export default memo(function History() {
         </div>
 
         {/* Mobile / Tablet: interactive vertical timeline cards */}
-        <ol className="lg:hidden relative border-l-2 border-white/15 ml-2.5 space-y-4">
+        <ol className="lg:hidden relative border-l-2 border-sky-400/35 ml-2.5 space-y-4">
           {visibleMilestones.map((item) => {
             const isPro = item.type === 'pro';
             const isSelected = activeId === item.id;
