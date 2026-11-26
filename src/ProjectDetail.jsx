@@ -14,11 +14,11 @@ const projectComponents = {
 
 const projectMeta = [
   { id: '6', index: '01', title: 'Medic.ial' },
-  { id: '1', index: '02', title: 'Qualoto' },
-  { id: '2', index: '03', title: 'Classification CNN' },
-  { id: '3', index: '04', title: 'Perform Vision' },
-  { id: '4', index: '05', title: 'NetCards' },
-  { id: '5', index: '06', title: 'Todo List' },
+  { id: '5', index: '02', title: 'RustAgent' },
+  { id: '3', index: '03', title: 'LogsAnalyzer' },
+  { id: '1', index: '04', title: 'Qualoto' },
+  { id: '2', index: '05', title: 'Classification CNN' },
+  { id: '4', index: '06', title: 'NetCards' },
 ];
 
 // Composant fallback invisible

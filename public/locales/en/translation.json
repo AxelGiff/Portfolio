@@ -133,29 +133,69 @@
   "Ranking_title":"A ranking system with an equitable prize distribution algorithm",
   "Ranking_description":"After each lottery draw, Qualoto computes a ranking to identify the top winners. The ranking algorithm compares players’ tickets with the drawn numbers—regardless of order—and allocates prizes based on predefined percentage distributions (e.g., 40%, 20%, etc.). In cases where players share identical winning numbers, the system fairly splits the prize percentage between them, ensuring an equitable distribution of gains. This robust ranking process guarantees transparency and fairness in every draw.",
 
-  "performvision_description": "Perform Vision is an intranet site developed as part of my training at I.U.T De Villetaneuse. The objective was to create, with the help of my 4 teammates, a time and material service site allowing the management of delivery notes.",
   "Five months":"Five months",
-"Three months":"Three months",
-"Two months":"Two months",
+  "Three months":"Three months",
+  "Two months":"Two months",
 
- "performvision": {
-          "role": {
-            "title": "Roles",
-            "description": "As a manager and administrator, these roles can add different members such as: service providers, contacts, sales representatives, and clients."
-          },
-          "client": {
-            "title": "Create a client",
-            "description": "We can also create a client by providing their contact details as well as assigning the client to one or more sales representatives."
-          },
-          "deliveryNote": {
-            "title": "Delivery Note",
-            "description": "The primary objective is to be able to create delivery notes per month, with different periods: Day, Half-day, and Time slots. The half-day must be indicated by the morning or evening period, while the time slot must be specified between a departure and arrival time."
-          },
-          "history": {
-            "title": "Delivery Note History",
-            "description": "To analyze delivery notes effectively, it is necessary to have a history of the latest delivery notes where we can view the delivery notes over the course of the month."
-          }
-        },
+  "logsanalyzer": {
+    "status": "Rust CLI Tool",
+    "tagline": "Command-line utility written in Rust to parse, colorize, filter, and tail log files in real time.",
+    "imageAlt": "LogsAnalyzer terminal output preview",
+    "stats": {
+      "edition": { "value": "Rust 2024", "label": "Fast native binary" },
+      "formats": { "value": "4+ formats", "label": "Symfony · HTTP · Syslog" },
+      "filters": { "value": "5 fields", "label": "Targeted --filter queries" },
+      "mode": { "value": "Real-time", "label": "Live --tail via notify" }
+    },
+    "overview": {
+      "title": "Overview",
+      "description": "LogsAnalyzer is a CLI tool written in Rust (2024 edition) that turns raw log files (Symfony, Syslog, SSH, HTTP, and custom formats) into structured, color-coded terminal output."
+    },
+    "goal": {
+      "title": "Goal",
+      "description": "Speed up debugging in development and production by highlighting timestamps, severity levels, HTTP methods, and status codes while providing targeted field filtering and live tail -f monitoring."
+    },
+    "architecture": {
+      "title": "Technical Architecture",
+      "description": "Declarative CLI with Clap v4, multi-format parsing using once-compiled regular expressions (regex + once_cell), ANSI styling via colored, timestamp handling with chrono, and live file watching with notify."
+    },
+    "future": {
+      "title": "Planned Improvements",
+      "description": "Streaming line-by-line filtering for massive log files without loading all entries in memory, CSV/JSON exports, custom regex filter patterns, and an interactive TUI."
+    },
+    "features": {
+      "formats": {
+        "tag": "Multi-Format",
+        "title": "Symfony, HTTP & Syslog Parsing",
+        "description": "Automatically recognizes Symfony logs ([date] LEVEL [channel]), custom timestamped formats, Syslog/SSH entries, and HTTP methods/URLs embedded in raw lines."
+      },
+      "coloring": {
+        "tag": "Readability",
+        "title": "Semantic ANSI Coloring",
+        "description": "Highlights severity levels (red ERROR, yellow WARNING, blue INFO, green SUCCESS, cyan DEBUG), HTTP verbs (GET, POST, PUT, DELETE, PATCH), and status codes (green 200, red 404/500)."
+      },
+      "filtering": {
+        "tag": "--filter",
+        "title": "Field-Level Filtering",
+        "description": "Filters entries by level, request, endpoint, httpmethod, or message using case-insensitive substring matching (e.g. -f level ERROR or -f endpoint /api/users)."
+      },
+      "tail": {
+        "tag": "Real-Time",
+        "title": "Live --tail Watching (notify)",
+        "description": "Watches log files continuously using the native notify filesystem watcher and refreshes output on every update, seamlessly combinable with filters."
+      },
+      "cli": {
+        "tag": "Clap v4",
+        "title": "Ergonomic CLI & Cargo Install",
+        "description": "Short and long flags (-l/--logfile, -f/--filter, -t/--tail), auto-generated help, and one-command global installation via cargo install --path ."
+      },
+      "performance": {
+        "tag": "Rust 2024",
+        "title": "Fast, Lightweight Native Binary",
+        "description": "Compiles to a standalone native executable with zero runtime dependencies and lazily compiled regexes (once_cell) for instant startup."
+      }
+    }
+  },
  
   "skills_card": {
     "react": {
@@ -295,11 +335,64 @@
           }
       },
 
-      "todolist":{
-        "description": "The purpose of creating a todo list was to practice assimilating React hooks (useEffect and useState) to understand their logic. Additionally, I love the concept of productivity, so creating projects like a todo list is just a joyous part of it.",
-        "oneweek": "One week",
-        "editTask": "Edit a Task",
-        "checkDeleteTask": "Check & Delete a Task"
+      "rustagent": {
+        "status": "Active development",
+        "tagline": "Native Rust desktop application combining streaming AI chat, Tree-sitter code editor, diff review, and an integrated terminal.",
+        "imageAlt": "RustAgent application interface",
+        "stats": {
+          "stack": { "value": "Rust 2024", "label": "Freya GUI + Tokio" },
+          "tools": { "value": "10 tools", "label": "Native function calling" },
+          "tests": { "value": "131 tests", "label": "GitHub Actions CI" },
+          "languages": { "value": "10 languages", "label": "Tree-sitter + rio-vt" }
+        },
+        "overview": {
+          "title": "Overview",
+          "description": "RustAgent is a native coding assistant written in Rust (2024 edition) using the Freya GUI framework. It brings together an AI chat connected to the Albert API (OpenAI-compatible), a multi-language editor, a diff viewer, and a virtual terminal in a single window."
+        },
+        "goal": {
+          "title": "Goal & Security by Design",
+          "description": "Build an autonomous yet controlled coding agent: Spec mode (architecture & security questions followed by a plan.md) or Quick Edit mode, mandatory diff review before writing to disk, and a command approval sandbox."
+        },
+        "architecture": {
+          "title": "Architecture & Quality",
+          "description": "Asynchronous Tokio agent loop with 10 native function-calling tools (file reading, indentation-tolerant editing, search, temporary-copy verification…), 131 unit tests, GitHub Actions CI (fmt, clippy, test), and .deb / .app packaging."
+        },
+        "future": {
+          "title": "Roadmap",
+          "description": "Automated end-to-end validation of the full chat → editor → terminal workflow, structured logging, and expanding the experimental MCP (Model Context Protocol) client."
+        },
+        "features": {
+          "streaming": {
+            "tag": "LLM & SSE",
+            "title": "Streaming AI Chat",
+            "description": "Connected to the French government's Albert API (OpenAI-compatible) with real-time SSE streaming, instant cancellation, timeouts, and exponential backoff retries."
+          },
+          "agent": {
+            "tag": "Function Calling",
+            "title": "Autonomous Multi-Step Agent",
+            "description": "Builds a task plan (update_tasks), explores the codebase, and chains 10 native tools (read_file, edit_file, search_files, verify_project…) until completion."
+          },
+          "security": {
+            "tag": "Sandbox",
+            "title": "Spec Mode & Command Sandbox",
+            "description": "Asks architecture and security questions before generating plan.md. Destructive shell commands are blocked and write commands require explicit user confirmation."
+          },
+          "diffs": {
+            "tag": "Myers Diff",
+            "title": "Pre-Write Diff Review",
+            "description": "Every file creation or edit generates a Myers diff (via similar) for review: nothing touches the filesystem until you explicitly accept the changes."
+          },
+          "editor": {
+            "tag": "10 Languages",
+            "title": "Tree-sitter Editor & Terminal",
+            "description": "Native syntax highlighting across 10 languages (Rust, Python, TS/JS, C/C++, Java, Go, HTML, CSS) paired with a cross-platform rio-vt virtual terminal and one-click run."
+          },
+          "ci": {
+            "tag": "131 Tests",
+            "title": "Self-Verification & CI/CD",
+            "description": "The agent compiles and tests its own changes in a temporary working copy without altering the real workspace. Full GitHub Actions CI and Linux (.deb) / macOS (.app) builds."
+          }
+        }
       }
       
 

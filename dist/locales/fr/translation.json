@@ -143,26 +143,65 @@
     "Ranking_title":"Un système de classement avec un algorithme de répartition des gains",
     "Ranking_description":"Après chaque tirage de loterie, Qualoto calcule un classement pour identifier les meilleurs gagnants. L'algorithme de classement compare les tickets des joueurs avec les numéros tirés—indépendamment de l'ordre—et attribue les gains selon des distributions de pourcentage prédéfinies (par exemple, 40%, 20%, etc.). Dans les cas où des joueurs partagent des numéros gagnants identiques, le système répartit équitablement le pourcentage de gain entre eux, garantissant une distribution équitable des gains. Ce processus de classement robuste assure transparence et équité à chaque tirage.",
 
-    "performvision_description": "Perform Vision est un site intranet développé dans le cadre de ma formation à l'I.U.T de Villetaneuse. L'objectif était de créer, avec l'aide de mes 4 coéquipiers, un site de service de temps et matériel permettant la gestion des bons de livraison.",
-
-    "performvision": {
-    "role": {
-      "title": "Rôles",
-      "description": "En tant que gestionnaire et administrateur, ces rôles peuvent ajouter différents membres tels que : prestataires, contacts, commerciaux et clients."
+    "logsanalyzer": {
+      "status": "Outil CLI Rust",
+      "tagline": "Utilitaire en ligne de commande écrit en Rust pour parser, colorer, filtrer et suivre des fichiers de logs en temps réel.",
+      "imageAlt": "Aperçu terminal de LogsAnalyzer en exécution",
+      "stats": {
+        "edition": { "value": "Rust 2024", "label": "Binaire natif rapide" },
+        "formats": { "value": "4+ formats", "label": "Symfony · HTTP · Syslog" },
+        "filters": { "value": "5 champs", "label": "Filtrage --filter ciblé" },
+        "mode": { "value": "Temps réel", "label": "Mode --tail via notify" }
+      },
+      "overview": {
+        "title": "Présentation",
+        "description": "LogsAnalyzer est un outil CLI écrit en Rust (édition 2024) qui transforme des fichiers de logs bruts (Symfony, Syslog, SSH, HTTP et formats personnalisés) en une sortie terminal structurée, lisible et immédiatement exploitable."
+      },
+      "goal": {
+        "title": "Objectif",
+        "description": "Accélérer le diagnostic en production et en développement en mettant visuellement en évidence les dates, niveaux de sévérité, verbes HTTP et codes de statut, tout en permettant un filtrage ciblé et un suivi temps réel façon tail -f."
+      },
+      "architecture": {
+        "title": "Architecture technique",
+        "description": "Interface CLI déclarative avec Clap, parsing multi-formats par expressions régulières compilées une seule fois (regex + once_cell), coloration ANSI via colored, gestion des dates avec chrono et surveillance temps réel du système de fichiers avec notify."
+      },
+      "future": {
+        "title": "Améliorations envisagées",
+        "description": "Streaming ligne à ligne pour les fichiers massifs sans chargement complet en mémoire, exports CSV/JSON, filtrage par regex personnalisées et interface TUI interactive."
+      },
+      "features": {
+        "formats": {
+          "tag": "Multi-formats",
+          "title": "Parsing Symfony, HTTP & Syslog",
+          "description": "Détecte automatiquement les logs Symfony ([date] LEVEL [channel]), les formats horodatés personnalisés, Syslog/SSH et les requêtes HTTP embarquées dans des lignes brutes."
+        },
+        "coloring": {
+          "tag": "Lisibilité",
+          "title": "Coloration sémantique ANSI",
+          "description": "Met en valeur les niveaux (ERROR rouge, WARNING jaune, INFO bleu, SUCCESS vert, DEBUG cyan), les verbes HTTP (GET, POST, PUT, DELETE, PATCH) et les statuts (200 vert, 404/500 rouge)."
+        },
+        "filtering": {
+          "tag": "--filter",
+          "title": "Filtrage précis par champ",
+          "description": "Filtre les entrées par level, request, endpoint, httpmethod ou message avec recherche insensible à la casse et par sous-chaîne (ex. -f level ERROR ou -f endpoint /api/users)."
+        },
+        "tail": {
+          "tag": "Temps réel",
+          "title": "Mode suivi --tail (notify)",
+          "description": "Surveille le fichier de logs en continu grâce au watcher natif notify et rafraîchit l'affichage à chaque écriture, combinable directement avec les filtres."
+        },
+        "cli": {
+          "tag": "Clap v4",
+          "title": "Ergonomie CLI & installation Cargo",
+          "description": "Options courtes et longues (-l/--logfile, -f/--filter, -t/--tail), aide générée automatiquement et installation globale en une commande via cargo install --path ."
+        },
+        "performance": {
+          "tag": "Rust 2024",
+          "title": "Binaire natif léger et rapide",
+          "description": "Compilé en binaire natif sans dépendance runtime, avec compilation paresseuse des regex (once_cell) pour un démarrage instantané et une faible empreinte."
+        }
+      }
     },
-    "client": {
-      "title": "Créer un client",
-      "description": "Nous pouvons également créer un client en fournissant ses coordonnées ainsi qu'en assignant le client à un ou plusieurs commerciaux."
-    },
-    "deliveryNote": {
-      "title": "Bon de livraison",
-      "description": "L'objectif principal est de pouvoir créer des bons de livraison par mois, avec différentes périodes : Jour, Demi-journée et Créneaux horaires. La demi-journée doit être indiquée par la période du matin ou du soir, tandis que le créneau horaire doit être spécifié entre une heure de départ et d'arrivée."
-    },
-    "history": {
-      "title": "Historique des bons de livraison",
-      "description": "Pour analyser efficacement les bons de livraison, il est nécessaire d'avoir un historique des derniers bons de livraison où nous pouvons visualiser les bons de livraison au cours du mois."
-    }
-  },
         "Five months":"Cinq mois",
       "Three months":"Trois mois",
 "Two months":"Deux mois",
@@ -293,13 +332,65 @@
             "imageAlt": "Écran d'authentification NetCards"
           }
       },
-      "todolist": {
-    "description": "Le but de créer une liste de tâches était de pratiquer l'assimilation des hooks React (useEffect et useState) pour comprendre leur logique. De plus, j'adore le concept de productivité, donc créer des projets comme une liste de tâches est simplement une partie plaisante de cela.",
-    "demo": "Voir une démo",
-    "editTask": "Modifier une tâche",
-    "oneweek": "Une semaine",
-    "checkDeleteTask": "Valider & supprimer une tâche"
-  }
+      "rustagent": {
+        "status": "Développement actif",
+        "tagline": "Application de bureau native en Rust combinant chat IA en streaming, éditeur Tree-sitter, revue de diffs et terminal intégré.",
+        "imageAlt": "Interface de l'application RustAgent",
+        "stats": {
+          "stack": { "value": "Rust 2024", "label": "Freya GUI + Tokio" },
+          "tools": { "value": "10 outils", "label": "Function calling natif" },
+          "tests": { "value": "131 tests", "label": "CI GitHub Actions" },
+          "languages": { "value": "10 langages", "label": "Tree-sitter + rio-vt" }
+        },
+        "overview": {
+          "title": "Présentation",
+          "description": "RustAgent est un assistant de codage natif écrit en Rust (édition 2024) avec le framework GUI Freya. Il réunit dans une seule fenêtre un chat IA connecté à l'API Albert (compatible OpenAI), un éditeur multi-langages, un viewer de diffs et un terminal virtuel."
+        },
+        "goal": {
+          "title": "Objectif & Security by Design",
+          "description": "Construire un agent autonome mais maîtrisé : mode Spec (questions d'architecture/sécurité puis génération d'un plan.md) ou Quick Edit, revue obligatoire des diffs avant écriture sur disque et sandbox d'approbation pour les commandes shell."
+        },
+        "architecture": {
+          "title": "Architecture & Qualité",
+          "description": "Boucle d'agent asynchrone sous Tokio avec 10 outils natifs en function calling (lecture, édition tolérante à l'indentation, recherche, vérification sur copie temporaire…), 131 tests unitaires, CI GitHub Actions (fmt, clippy, test) et packaging .deb / .app."
+        },
+        "future": {
+          "title": "Perspectives",
+          "description": "Validation E2E automatisée du flux complet chat → éditeur → terminal, mise en place d'une journalisation structurée et enrichissement du client MCP (Model Context Protocol)."
+        },
+        "features": {
+          "streaming": {
+            "tag": "LLM & SSE",
+            "title": "Chat IA en streaming",
+            "description": "Connecté à l'API Albert (DINUM, compatible OpenAI) avec streaming SSE temps réel, annulation instantanée, timeouts et reprises automatiques par backoff exponentiel."
+          },
+          "agent": {
+            "tag": "Function Calling",
+            "title": "Agent multi-étapes autonome",
+            "description": "Planifie ses tâches (update_tasks), explore le projet et enchaîne 10 outils natifs (read_file, edit_file, search_files, verify_project…) jusqu'à complétion."
+          },
+          "security": {
+            "tag": "Sandbox",
+            "title": "Mode Spec & sécurité",
+            "description": "Pose des questions d'architecture/sécurité avant d'écrire un plan.md. Les commandes shell destructrices sont bloquées et les commandes sensibles requièrent une confirmation."
+          },
+          "diffs": {
+            "tag": "Myers Diff",
+            "title": "Revue de diffs avant écriture",
+            "description": "Chaque création ou modification passe par un diff calculé via l'algorithme de Myers (similar) : rien n'est écrit sur disque tant que l'utilisateur n'a pas validé."
+          },
+          "editor": {
+            "tag": "10 langages",
+            "title": "Éditeur Tree-sitter & Terminal",
+            "description": "Coloration syntaxique native pour 10 langages (Rust, Python, TS/JS, C/C++, Java, Go, HTML, CSS) couplée à un terminal virtuel (rio-vt) avec exécution en un clic."
+          },
+          "ci": {
+            "tag": "131 tests",
+            "title": "Vérification auto & CI/CD",
+            "description": "L'agent compile et teste son propre code sur une copie temporaire sans toucher au projet réel. Pipeline GitHub Actions complet et empaquetage Linux (.deb) / macOS (.app)."
+          }
+        }
+      }
 
  
 
