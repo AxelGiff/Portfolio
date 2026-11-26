@@ -1,323 +1,583 @@
-import React, { memo, useRef } from 'react';
-import { motion, useScroll, useSpring } from 'framer-motion';
+import React, { memo, useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import prefectureIcon from './images/prefecture.webp';
-import bookmarkIcon from './images/icons8-add-bookmark-64.webp';
 import paperPlaneIcon from './images/icons8-paper-plane-50.webp';
-import levelUpIcon from './images/Capsule-244-×-244-px-244-×-100-px-3.webp';
-import diplomaIcon from './images/icons8-chapeau-de-diplôme-30.webp';
-import schoolIcon from './images/icons8-école-50.webp';
 
-const HighlightedText = memo(function HighlightedText({ children }) {
-  return (
-    <span className="text-white font-semibold underline decoration-sky-400/80 decoration-2 underline-offset-[3px]">
-      {children}
-    </span>
-  );
-});
-
-const SkillItem = memo(({ skill, summary, modules }) => (
-  <div>
-    <div className="text-sm font-semibold text-white">{skill}</div>
-    <div className="text-xs text-neutral-400 mt-0.5 leading-snug">{summary}</div>
-    <div className="text-xs text-sky-300 font-medium mt-1 leading-relaxed">
-      {modules.join(' · ')}
-    </div>
-  </div>
-));
-
-const TimelineStep = memo(function TimelineStep({
-  isAcademic,
-  title,
-  period,
-  icon,
-  isWideLogo = false,
-  children,
-}) {
-  const { t } = useTranslation();
-  const badgeText = isAcademic ? t('Academic Experience') : t('Professional Experience');
-
-  return (
-    <article className="relative pl-9 sm:pl-12 pb-10 mb-10 border-b border-white/[0.07] last:border-b-0 last:pb-0 last:mb-0">
-      {/* Node on the scroll beam */}
-      <span
-        aria-hidden="true"
-        className={`absolute left-3 sm:left-4 top-2 -translate-x-1/2 h-3 w-3 rounded-full border-2 bg-neutral-950 ${
-          isAcademic
-            ? 'border-violet-400 shadow-[0_0_8px_rgba(167,139,250,0.6)]'
-            : 'border-amber-400 shadow-[0_0_8px_rgba(251,191,36,0.6)]'
-        }`}
-      />
-
-      {/* Header: Title + Logo on left, Period on right (CV-style scannability) */}
-      <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 mb-1.5">
-        <div className="flex flex-wrap items-center gap-3">
-          <span className="text-lg sm:text-xl font-semibold text-white tracking-tight">
-            {title}
-          </span>
-          {icon && (
-            <img
-              src={icon}
-              alt=""
-              loading="lazy"
-              decoding="async"
-              className={
-                isWideLogo
-                  ? 'h-6 sm:h-7 w-auto object-contain'
-                  : 'h-5 w-5 object-contain'
-              }
-            />
-          )}
-        </div>
-        <span className="text-xs font-mono text-neutral-400 shrink-0">{period}</span>
-      </div>
-
-      {/* Subtle category tag under title */}
-      <div className="mb-4">
-        <span
-          className={`inline-block text-[11px] font-medium px-2 py-0.5 rounded ${
-            isAcademic
-              ? 'bg-violet-500/15 text-violet-200'
-              : 'bg-amber-500/15 text-amber-200'
-          }`}
+function renderHighlightedLine(text) {
+  const parts = text.split(/(\*\*[^*]+\*\*)/g);
+  return parts.map((part, i) => {
+    if (part.startsWith('**') && part.endsWith('**')) {
+      return (
+        <strong
+          key={i}
+          className="text-white font-semibold underline decoration-sky-400/85 decoration-2 underline-offset-[3px]"
         >
-          {badgeText}
-        </span>
-      </div>
-
-      {/* Body with comfortable measure */}
-      <div className="text-sm sm:text-[15px] text-neutral-400 leading-relaxed max-w-[65ch]">
-        {children}
-      </div>
-    </article>
-  );
-});
-
-export default function History() {
-  const { t } = useTranslation();
-
-  const timelineRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: timelineRef,
-    offset: ['start 75%', 'end 75%'],
+          {part.slice(2, -2)}
+        </strong>
+      );
+    }
+    return <React.Fragment key={i}>{part}</React.Fragment>;
   });
-  const beamScaleY = useSpring(scrollYProgress, {
-    stiffness: 180,
-    damping: 30,
-    restDelta: 0.001,
-  });
+}
+
+const milestones = [
+  {
+    id: 'highschool',
+    dateFr: '2018 – 2021',
+    dateEn: '2018 – 2021',
+    type: 'academic',
+    titleFr: 'Lycée',
+    titleEn: 'High School',
+    placeFr: 'Informatique & Hardware',
+    placeEn: 'IT & Hardware',
+    keywordsFr: 'PC · Premiers pas en code',
+    keywordsEn: 'PC · First steps in code',
+    detailsFr: [
+      '**Montage et dépannage PC**, création de **montages photo/vidéo**.',
+      'Découverte approfondie de l’**informatique** et premiers pas vers la **programmation**.',
+    ],
+    detailsEn: [
+      '**PC hardware building**, troubleshooting, and **photo/video editing**.',
+      'Deep interest in **computing** and first steps into **programming**.',
+    ],
+    y: 155,
+    side: 'bottom',
+  },
+  {
+    id: 'l1',
+    dateFr: '2022 – 2023',
+    dateEn: '2022 – 2023',
+    type: 'academic',
+    titleFr: 'Licence 1 Info',
+    titleEn: 'BSc CS (Y1)',
+    placeFr: 'Sorbonne Paris Nord',
+    placeEn: 'Sorbonne Paris Nord',
+    keywordsFr: 'C · Algo · Unix · Web',
+    keywordsEn: 'C · Algo · Unix · Web',
+    detailsFr: [
+      'Bases solides en **programmation C**, **algorithmique** et **algèbre linéaire**.',
+      'Environnement **Unix** et premières bases du **développement web**.',
+    ],
+    detailsEn: [
+      'Core foundations in **C programming**, **algorithms**, and **linear algebra**.',
+      '**Unix** environment and **web development** fundamentals.',
+    ],
+    y: 62,
+    side: 'top',
+  },
+  {
+    id: 'but',
+    dateFr: '2023 – 2025',
+    dateEn: '2023 – 2025',
+    type: 'academic',
+    titleFr: 'BUT Informatique',
+    titleEn: 'BUT Computer Science',
+    placeFr: 'IUT Villetaneuse',
+    placeEn: 'IUT Villetaneuse',
+    keywordsFr: 'Full-Stack · IA · BDD',
+    keywordsEn: 'Full-Stack · AI · DB',
+    detailsFr: [
+      'Parcours Réalisation d’applications : **développement web/mobile**, **architecture logicielle** et **tests**.',
+      '**Bases de données**, **réseaux/conteneurisation**, **Machine Learning & Deep Learning**.',
+      'Nombreux projets en équipe (**SAE**) en conditions réelles.',
+    ],
+    detailsEn: [
+      'Application Engineering track: **web/mobile development**, **software architecture**, and **testing**.',
+      '**Databases**, **networking/containerization**, **Machine Learning & Deep Learning**.',
+      'Hands-on team projects (**SAE**) simulating production delivery.',
+    ],
+    y: 178,
+    side: 'bottom',
+  },
+  {
+    id: 'levelup',
+    dateFr: 'Jan. – Mars 2024',
+    dateEn: 'Jan – Mar 2024',
+    type: 'pro',
+    titleFr: 'Stage Dév. Web',
+    titleEn: 'Web Dev Intern',
+    shortPlaceFr: 'Level Up Tech',
+    shortPlaceEn: 'Level Up Tech',
+    placeFr: 'Level Up Tech Consulting · Paris',
+    placeEn: 'Level Up Tech Consulting · Paris',
+    keywordsFr: 'RPA IA · Refonte web',
+    keywordsEn: 'AI RPA · Web redesign',
+    detailsFr: [
+      'Intégration de solutions **RPA par IA**.',
+      '**Refonte** et maintenance du site web, **gestion de projet** (**Notion**, **Slack**, **WordPress**).',
+    ],
+    detailsEn: [
+      'Integration of **AI-assisted RPA** workflows.',
+      'Company website **redesign**, maintenance, and **project management** (**Notion**, **Slack**, **WordPress**).',
+    ],
+    y: 44,
+    side: 'top',
+  },
+  {
+    id: 'pref-2024',
+    dateFr: 'Sept. 2024 – Sept. 2025',
+    dateEn: 'Sept. 2024 – Sept. 2025',
+    type: 'pro',
+    titleFr: 'Apprenti Chargé de Projet Web',
+    titleEn: 'Web Project Apprentice',
+    shortPlaceFr: 'Préfecture de Police',
+    shortPlaceEn: 'Préfecture de Police',
+    placeFr: 'Préfecture de Police (EM-DSPAP) · Paris',
+    placeEn: 'Préfecture de Police (EM-DSPAP) · Paris',
+    keywordsFr: 'Symfony · Nuxt / TS · ETL',
+    keywordsEn: 'Symfony · Nuxt / TS · ETL',
+    detailsFr: [
+      'Développement **front-end et back-end** d’une application web d’aide à la décision (**Symfony 6.4**, **API Platform**, **Nuxt / TypeScript**).',
+      'Extraction, traitement et modélisation des données (**ETL**) pour alimenter les outils de pilotage.',
+      'Recueil des **besoins métiers et techniques** avec les services transverses.',
+    ],
+    detailsEn: [
+      '**Full-stack** development of a decision-support web app (**Symfony 6.4**, **API Platform**, **Nuxt / TypeScript**).',
+      '**ETL** data extraction, processing, and modeling for executive dashboards.',
+      'Cross-functional **business & technical requirements** gathering.',
+    ],
+    y: 162,
+    side: 'bottom',
+  },
+  {
+    id: 'master',
+    dateFr: 'Depuis sept. 2025',
+    dateEn: 'Since Sept. 2025',
+    type: 'academic',
+    titleFr: 'Master Logiciels Sûrs',
+    titleEn: 'MSc Reliable Software',
+    shortPlaceFr: 'UPEC · Créteil',
+    shortPlaceEn: 'UPEC · Créteil',
+    placeFr: 'UPEC · Créteil (LACL)',
+    placeEn: 'UPEC · Créteil (LACL)',
+    keywordsFr: 'Systèmes critiques · Preuves',
+    keywordsEn: 'Critical systems · Proofs',
+    detailsFr: [
+      'Formation adossée au laboratoire **LACL** : conception et validation de **logiciels à haute fiabilité**.',
+      '**Programmation bas niveau**, **concurrence**, **systèmes répartis** et architectures réseau.',
+      '**Vérification formelle**, **preuve de programmes** et paradigmes de langages sûrs.',
+    ],
+    detailsEn: [
+      'Backed by the **LACL** research lab: designing and verifying **high-reliability software**.',
+      '**Low-level programming**, **concurrency**, **distributed systems**, and network architectures.',
+      '**Formal verification**, **program proofs**, and safe language paradigms.',
+    ],
+    y: 58,
+    side: 'top',
+    current: true,
+  },
+  {
+    id: 'pref-2025',
+    dateFr: 'Depuis sept. 2025',
+    dateEn: 'Since Sept. 2025',
+    type: 'pro',
+    titleFr: 'Apprenti Concepteur-Développeur',
+    titleEn: 'Software Engineer Apprentice',
+    shortPlaceFr: 'Préfecture de Police',
+    shortPlaceEn: 'Préfecture de Police',
+    placeFr: 'Préfecture de Police (EM-DSPAP/SATN/BALD) · Paris',
+    placeEn: 'Préfecture de Police (EM-DSPAP/SATN/BALD) · Paris',
+    keywordsFr: 'PHP 8 / Symfony 7 · SSO · CI/CD',
+    keywordsEn: 'PHP 8 / Symfony 7 · SSO · CI/CD',
+    detailsFr: [
+      '**Sécurité applicative** : authentification **SSO et JWT**, contrôle d’accès, **chiffrement des secrets** et conformité **SSI**.',
+      'Migration de **monolithes legacy** vers des architectures d’API modernes sous **PHP 8 / Symfony 7**.',
+      'Cycle **Agile**, revue de code, pipelines **CI/CD GitLab** (build, tests, déploiement) et mise en production.',
+    ],
+    detailsEn: [
+      '**Application security**: **SSO & JWT** authentication, access control, **secrets encryption**, and **InfoSec** compliance.',
+      'Migration of **legacy monoliths** to modern **PHP 8 / Symfony 7** API architectures.',
+      '**Agile** workflow, code reviews, **GitLab CI/CD** pipelines (build, tests, deployment), and production rollouts.',
+    ],
+    y: 142,
+    side: 'bottom',
+    current: true,
+  },
+];
+
+const VIEW_W = 1400;
+const VIEW_H = 220;
+
+function buildWavePath(points) {
+  if (points.length === 0) return '';
+  if (points.length === 1) return `M 0 ${points[0].y} L ${VIEW_W} ${points[0].y}`;
+  let d = `M ${points[0].x} ${points[0].y}`;
+  for (let i = 0; i < points.length - 1; i += 1) {
+    const p0 = points[i];
+    const p1 = points[i + 1];
+    const midX = (p0.x + p1.x) / 2;
+    d += ` C ${midX} ${p0.y}, ${midX} ${p1.y}, ${p1.x} ${p1.y}`;
+  }
+  return d;
+}
+
+export default memo(function History() {
+  const { i18n } = useTranslation();
+  const isFr = i18n.language?.startsWith('fr');
+  const [filter, setFilter] = useState('all'); // 'all' | 'academic' | 'pro'
+  const [activeId, setActiveId] = useState('pref-2025');
+
+  const toggleFilter = (type) => {
+    setFilter((prev) => (prev === type ? 'all' : type));
+  };
+
+  const visibleMilestones =
+    filter === 'all'
+      ? milestones
+      : milestones.filter((m) => m.type === filter);
+
+  const colW = VIEW_W / Math.max(1, visibleMilestones.length);
+  const wavePoints = visibleMilestones.map((m, idx) => ({
+    ...m,
+    side: filter === 'all' ? m.side : idx % 2 === 0 ? 'bottom' : 'top',
+    y:
+      filter === 'all'
+        ? m.y
+        : idx % 2 === 0
+          ? idx === 0
+            ? 155
+            : 165
+          : idx === 1
+            ? 55
+            : 65,
+    x: (idx + 0.5) * colW,
+  }));
+  const wavePathD = buildWavePath(wavePoints);
+
+  const activeItem =
+    visibleMilestones.find((m) => m.id === activeId) ??
+    visibleMilestones[visibleMilestones.length - 1];
+  const isActivePro = activeItem.type === 'pro';
 
   return (
-    <div className="relative">
-      <div className="gradient-02 z-[-1] right-1/4 top-[1240px] w-1/2 h-full opacity-30 pointer-events-none" />
+    <section
+      id="parcours-section"
+      aria-label="Road Trip"
+      className="relative my-24 sm:my-36 px-4 sm:px-8"
+    >
+      <div className="max-w-[92rem] mx-auto">
+        {/* Header + Interactive Filter Legend */}
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12 lg:mb-14">
+          <div className="flex items-center gap-3">
+            <img src={paperPlaneIcon} alt="" width="32" height="32" />
+            <h2 className="text-4xl sm:text-5xl font-bold text-white tracking-tight">
+              Road Trip
+            </h2>
+          </div>
 
-      <div
-        id="parcours"
-        style={{
-          maskImage:
-            'linear-gradient(to bottom, white 0%, white 92%, rgba(255,255,255,0.6) 97%, transparent 100%)',
-        }}
-        className="backdrop-blur-xl px-6 sm:px-10 py-10 border border-gray-800 rounded-2xl min-h-[800px]"
-      >
-        <div className="flex flex-col items-center mb-10">
-          <img
-            src={paperPlaneIcon}
-            alt=""
-            width="30"
-            height="30"
-            className="mb-1"
-          />
-          <h3 className="!pb-0">Road Trip</h3>
+          <div className="flex flex-wrap items-center gap-3 text-sm">
+            <button
+              type="button"
+              onClick={() => toggleFilter('academic')}
+              aria-pressed={filter === 'academic'}
+              className={`inline-flex items-center gap-2 rounded-full border px-3.5 py-1.5 text-xs sm:text-sm font-medium transition cursor-pointer ${
+                filter === 'academic'
+                  ? 'border-violet-400/80 bg-violet-500/25 text-white'
+                  : 'border-white/20 bg-white/[0.04] text-white hover:border-violet-400/60'
+              }`}
+            >
+              <span className="h-2.5 w-2.5 rounded-full bg-violet-400" aria-hidden="true" />
+              {isFr ? 'Formation' : 'Education'}
+            </button>
+
+            <button
+              type="button"
+              onClick={() => toggleFilter('pro')}
+              aria-pressed={filter === 'pro'}
+              className={`inline-flex items-center gap-2 rounded-full border px-3.5 py-1.5 text-xs sm:text-sm font-medium transition cursor-pointer ${
+                filter === 'pro'
+                  ? 'border-amber-400/80 bg-amber-500/25 text-white'
+                  : 'border-white/20 bg-white/[0.04] text-white hover:border-amber-400/60'
+              }`}
+            >
+              <span className="h-2.5 w-2.5 rounded-full bg-amber-400" aria-hidden="true" />
+              {isFr ? 'Expérience pro' : 'Experience'}
+            </button>
+
+            <span className="hidden lg:inline text-xs text-neutral-500 ml-1">
+              {isFr ? 'Survolez une étape pour les détails' : 'Hover a step for details'}
+            </span>
+          </div>
         </div>
 
-        <div ref={timelineRef} className="relative">
-          {/* Background track */}
+        {/* Desktop: Full-width non-constant wave (zero horizontal scroll) */}
+        <div className="hidden lg:block relative">
+          {/* Top labels (positioned directly over each crest with generous width) */}
+          <div className="relative w-full h-[116px] mb-1">
+            {wavePoints.map((item, idx) => {
+              if (item.side !== 'top') return null;
+              const isPro = item.type === 'pro';
+              const isSelected = activeId === item.id;
+              const leftPct = (item.x / VIEW_W) * 100;
+              const alignClass =
+                idx === 0
+                  ? 'left-0 translate-x-0 text-left'
+                  : idx === wavePoints.length - 1
+                    ? 'right-0 translate-x-0 text-right'
+                    : '-translate-x-1/2 text-center';
+              const posStyle =
+                idx === 0
+                  ? { left: '0%' }
+                  : idx === wavePoints.length - 1
+                    ? { right: '0%' }
+                    : { left: `${leftPct}%` };
+              return (
+                <button
+                  key={item.id}
+                  type="button"
+                  onMouseEnter={() => setActiveId(item.id)}
+                  onFocus={() => setActiveId(item.id)}
+                  onClick={() => setActiveId(item.id)}
+                  aria-pressed={isSelected}
+                  style={posStyle}
+                  className={`absolute bottom-0 w-[250px] px-2 py-2 rounded-xl transition cursor-pointer ${alignClass} ${
+                    isSelected ? '-translate-y-1' : 'hover:-translate-y-1'
+                  }`}
+                >
+                  <span className="block font-mono text-[11px] text-neutral-400 mb-1">
+                    {isFr ? item.dateFr : item.dateEn}
+                  </span>
+                  <span className="block text-[15px] font-semibold leading-snug text-white [text-wrap:balance]">
+                    {isFr ? item.titleFr : item.titleEn}
+                  </span>
+                  <span className="block text-xs text-neutral-300 mt-0.5">
+                    {isFr ? (item.shortPlaceFr || item.placeFr) : (item.shortPlaceEn || item.placeEn)}
+                  </span>
+                  <span
+                    className={`block text-[11px] font-medium mt-1 ${
+                      isPro ? 'text-amber-300' : 'text-sky-300'
+                    }`}
+                  >
+                    {isFr ? item.keywordsFr : item.keywordsEn}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Wave SVG + interactive nodes */}
+          <div className="relative w-full h-[220px]">
+            <svg
+              viewBox={`0 0 ${VIEW_W} ${VIEW_H}`}
+              preserveAspectRatio="none"
+              className="w-full h-full overflow-visible"
+              aria-hidden="true"
+            >
+              <defs>
+                <linearGradient id="roadtrip-wave-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="rgba(255,255,255,0.22)" />
+                  <stop offset="45%" stopColor="#38BDF8" />
+                  <stop offset="80%" stopColor="#A78BFA" />
+                  <stop offset="100%" stopColor="#FBBF24" />
+                </linearGradient>
+                <filter id="roadtrip-wave-glow" x="-10%" y="-40%" width="120%" height="180%">
+                  <feGaussianBlur stdDeviation="5" result="blur" />
+                  <feMerge>
+                    <feMergeNode in="blur" />
+                    <feMergeNode in="SourceGraphic" />
+                  </feMerge>
+                </filter>
+              </defs>
+
+              <path
+                d={wavePathD}
+                fill="none"
+                stroke="url(#roadtrip-wave-grad)"
+                strokeWidth="4"
+                strokeOpacity="0.35"
+                filter="url(#roadtrip-wave-glow)"
+                vectorEffect="non-scaling-stroke"
+              />
+              <path
+                d={wavePathD}
+                fill="none"
+                stroke="url(#roadtrip-wave-grad)"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                vectorEffect="non-scaling-stroke"
+              />
+            </svg>
+
+            {/* Interactive milestone nodes pinned on the wave */}
+            {wavePoints.map((item) => {
+              const isPro = item.type === 'pro';
+              const isSelected = activeId === item.id;
+              const leftPct = (item.x / VIEW_W) * 100;
+              const topPct = (item.y / VIEW_H) * 100;
+              return (
+                <button
+                  key={item.id}
+                  type="button"
+                  onMouseEnter={() => setActiveId(item.id)}
+                  onFocus={() => setActiveId(item.id)}
+                  onClick={() => setActiveId(item.id)}
+                  aria-label={`${isFr ? item.titleFr : item.titleEn} (${isFr ? item.dateFr : item.dateEn})`}
+                  aria-pressed={isSelected}
+                  style={{ left: `${leftPct}%`, top: `${topPct}%` }}
+                  className="absolute -translate-x-1/2 -translate-y-1/2 p-3 flex items-center justify-center cursor-pointer rounded-full"
+                >
+                  <span
+                    aria-hidden="true"
+                    className={`block rounded-full border-2 bg-black transition-all duration-200 ${
+                      isSelected ? 'h-5 w-5 scale-110 ring-4 ring-white/20' : 'h-3.5 w-3.5 hover:scale-125'
+                    } ${
+                      isPro
+                        ? 'border-amber-400 shadow-[0_0_16px_rgba(251,191,36,0.95)]'
+                        : 'border-violet-400 shadow-[0_0_16px_rgba(167,139,250,0.95)]'
+                    }`}
+                  />
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Bottom labels (positioned directly under each trough with generous width) */}
+          <div className="relative w-full h-[120px] mt-1">
+            {wavePoints.map((item, idx) => {
+              if (item.side !== 'bottom') return null;
+              const isPro = item.type === 'pro';
+              const isSelected = activeId === item.id;
+              const leftPct = (item.x / VIEW_W) * 100;
+              const alignClass =
+                idx === 0
+                  ? 'translate-x-0 text-left'
+                  : idx === wavePoints.length - 1
+                    ? 'translate-x-0 text-right'
+                    : '-translate-x-1/2 text-center';
+              const posStyle =
+                idx === 0
+                  ? { left: '0%' }
+                  : idx === wavePoints.length - 1
+                    ? { right: '0%' }
+                    : { left: `${leftPct}%` };
+              return (
+                <button
+                  key={item.id}
+                  type="button"
+                  onMouseEnter={() => setActiveId(item.id)}
+                  onFocus={() => setActiveId(item.id)}
+                  onClick={() => setActiveId(item.id)}
+                  aria-pressed={isSelected}
+                  style={posStyle}
+                  className={`absolute top-0 w-[260px] px-2 py-2 rounded-xl transition cursor-pointer ${alignClass} ${
+                    isSelected ? 'translate-y-1' : 'hover:translate-y-1'
+                  }`}
+                >
+                  <span className="block font-mono text-[11px] text-neutral-400 mb-1">
+                    {isFr ? item.dateFr : item.dateEn}
+                  </span>
+                  <span className="block text-[15px] font-semibold leading-snug text-white [text-wrap:balance]">
+                    {isFr ? item.titleFr : item.titleEn}
+                  </span>
+                  <span className="block text-xs text-neutral-300 mt-0.5">
+                    {isFr ? (item.shortPlaceFr || item.placeFr) : (item.shortPlaceEn || item.placeEn)}
+                  </span>
+                  <span
+                    className={`block text-[11px] font-medium mt-1 ${
+                      isPro ? 'text-amber-300' : 'text-sky-300'
+                    }`}
+                  >
+                    {isFr ? item.keywordsFr : item.keywordsEn}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Live hover/focus detail bar */}
           <div
-            aria-hidden="true"
-            className="absolute left-3 sm:left-4 top-2 bottom-2 w-[2px] -translate-x-1/2 bg-white/10"
-          />
-          {/* Scroll-driven glowing beam */}
-          <motion.div
-            aria-hidden="true"
-            style={{ scaleY: beamScaleY }}
-            className="absolute left-3 sm:left-4 top-2 bottom-2 w-[2px] -translate-x-1/2 origin-top bg-gradient-to-b from-sky-400 via-blue-500 to-violet-500"
-          />
-
-          <TimelineStep
-            isAcademic={false}
-            title={t('prefecture_2025_title')}
-            period={t('prefecture_2025_period')}
-            icon={prefectureIcon}
-            isWideLogo={true}
+            aria-live="polite"
+            className="mt-10 border-t border-white/10 pt-6 max-w-4xl mx-auto min-h-[130px]"
           >
-            <ul className="list-disc list-outside pl-5 space-y-2 marker:text-amber-400/70">
-              <li>
-                {t('pref25_sec_prefix')} <HighlightedText>{t('pref25_sec_hl1')}</HighlightedText>
-                {t('pref25_sec_mid')} <HighlightedText>{t('pref25_sec_hl2')}</HighlightedText>{' '}
-                {t('pref25_sec_suffix')}
-              </li>
-              <li>
-                {t('pref25_agile_prefix')} <HighlightedText>{t('pref25_agile_hl1')}</HighlightedText>{' '}
-                {t('pref25_agile_suffix')}
-              </li>
-              <li>
-                {t('pref25_ssi_prefix')} <HighlightedText>{t('pref25_ssi_hl1')}</HighlightedText>{' '}
-                {t('pref25_ssi_suffix')}
-              </li>
-              <li>
-                {t('pref25_legacy_prefix')} <HighlightedText>{t('pref25_legacy_hl1')}</HighlightedText>{' '}
-                {t('pref25_legacy_suffix')}
-              </li>
-              <li>
-                {t('pref25_fullstack_prefix')} <HighlightedText>{t('pref25_fullstack_hl1')}</HighlightedText>{' '}
-                {t('pref25_fullstack_suffix')}
-              </li>
-            </ul>
-          </TimelineStep>
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeItem.id}
+                initial={{ opacity: 0, y: 6 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -6 }}
+                transition={{ duration: 0.18 }}
+                className="grid grid-cols-1 md:grid-cols-[260px_1fr] gap-6 items-start"
+              >
+                <div>
+                  <div className="flex items-center gap-2.5 mb-1.5">
+                    <span
+                      className={`h-2 w-2 rounded-full ${
+                        isActivePro ? 'bg-amber-400' : 'bg-violet-400'
+                      }`}
+                      aria-hidden="true"
+                    />
+                    <span className="font-mono text-xs text-neutral-400">
+                      {isFr ? activeItem.dateFr : activeItem.dateEn}
+                    </span>
+                  </div>
+                  <h3 className="text-lg font-semibold text-white">
+                    {isFr ? activeItem.titleFr : activeItem.titleEn}
+                  </h3>
+                  <p className="text-sm text-neutral-400 mt-0.5">
+                    {isFr ? activeItem.placeFr : activeItem.placeEn}
+                  </p>
+                </div>
 
-          <TimelineStep
-            isAcademic={true}
-            title={t('master_upec_title')}
-            period={t('master_upec_period')}
-            icon={diplomaIcon}
-          >
-            <div className="mb-4 text-neutral-300">
-              {t('master_upec_intro')}
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4">
-              <SkillItem
-                skill={t('master_lowlevel')}
-                summary={t('master_lowlevel_summary')}
-                modules={[t('master_lowlevel_modules')]}
-              />
-              <SkillItem
-                skill={t('master_distributed')}
-                summary={t('master_distributed_summary')}
-                modules={[t('master_distributed_modules')]}
-              />
-              <SkillItem
-                skill={t('master_verification')}
-                summary={t('master_verification_summary')}
-                modules={[t('master_verification_modules')]}
-              />
-              <SkillItem
-                skill={t('master_paradigms')}
-                summary={t('master_paradigms_summary')}
-                modules={[t('master_paradigms_modules')]}
-              />
-            </div>
-          </TimelineStep>
-
-          <TimelineStep
-            isAcademic={true}
-            title={t('but3')}
-            period={t('datebut3')}
-            icon={bookmarkIcon}
-          >
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4">
-              <SkillItem
-                skill={t('Réaliser')}
-                summary={t('RealiserSummary')}
-                modules={[t('Web Development'), t('Mobile Development'), t('Software Architecture')]}
-              />
-              <SkillItem
-                skill={t('Optimiser')}
-                summary={t('OptimiserSummary')}
-                modules={[t('Algorithms / Data Structures'), t('Machine Learning / Deep Learning')]}
-              />
-              <SkillItem
-                skill={t('Administrer')}
-                summary={t('AdministrerSummary')}
-                modules={[t('Databases'), t('Networking / Containerization')]}
-              />
-              <SkillItem
-                skill={t('Gérer')}
-                summary={t('GérerSummary')}
-                modules={[t('Project Management / Communication')]}
-              />
-              <SkillItem
-                skill={t('Conduire')}
-                summary={t('ConduireSummary')}
-                modules={[t('Automation'), t('Probabilities')]}
-              />
-              <SkillItem
-                skill={t('SAE')}
-                summary={t('SAESummary')}
-                modules={[t('devweb'), t('ia'), t('virtua')]}
-              />
-            </div>
-          </TimelineStep>
-
-          <TimelineStep
-            isAcademic={false}
-            title={t('prefecture_title')}
-            period={t('prefecture_period')}
-            icon={prefectureIcon}
-            isWideLogo={true}
-          >
-            <ul className="list-disc list-outside pl-5 space-y-2 marker:text-amber-400/70">
-              <li>
-                {t('software_engineering')} : <HighlightedText>{t('requirements_analysis')}</HighlightedText>,{' '}
-                <HighlightedText>{t('conception')}</HighlightedText> {t('and')}{' '}
-                <HighlightedText>{t('tests')}</HighlightedText>
-              </li>
-              <li>
-                {t('migration_php')} <HighlightedText>{t('symfony')}</HighlightedText> {t('and')}{' '}
-                <HighlightedText>{t('nuxt_typescript')}</HighlightedText>
-              </li>
-              <li>
-                {t('development_of')} <HighlightedText>{t('statistical_production')}</HighlightedText>
-              </li>
-              <li>
-                {t('rest_api')} <HighlightedText>{t('api_platform')}</HighlightedText>, {t('communicating_with')}{' '}
-                <HighlightedText>{t('nuxt')}</HighlightedText>
-              </li>
-            </ul>
-          </TimelineStep>
-
-          <TimelineStep
-            isAcademic={false}
-            title={t('levelup_title')}
-            period={t('levelup_period')}
-            icon={levelUpIcon}
-            isWideLogo={true}
-          >
-            <div>
-              {t('during_internship')} <HighlightedText>{t('skills')}</HighlightedText> {t('in')}{' '}
-              <HighlightedText>{t('project_management')}</HighlightedText> &{' '}
-              <HighlightedText>{t('team_management')}</HighlightedText>, {t('using_tools')}{' '}
-              <HighlightedText>{t('web_developer')}</HighlightedText>
-            </div>
-          </TimelineStep>
-
-          <TimelineStep
-            isAcademic={true}
-            title={t('university_title')}
-            period={t('university_period')}
-            icon={diplomaIcon}
-          >
-            <div>
-              {t('first_year')} <HighlightedText>{t('computer_science')}</HighlightedText> {t('at_sorbonne')}
-            </div>
-          </TimelineStep>
-
-          <TimelineStep
-            isAcademic={true}
-            title={t('highschool_title')}
-            period={t('highschool_period')}
-            icon={schoolIcon}
-          >
-            <div>
-              {t('during_highschool')} <HighlightedText>{t('computer_science')}</HighlightedText>{' '}
-              {t('extensively_engaging')} <HighlightedText>{t('building_pc')}</HighlightedText>, {t('creating')}{' '}
-              <HighlightedText>{t('media_edits')}</HighlightedText>, {t('troubleshooting_however')}{' '}
-              <span className="text-amber-300 font-semibold underline decoration-amber-400/80 decoration-2 underline-offset-[3px]">
-                {t('coding')}
-              </span>.
-            </div>
-          </TimelineStep>
+                <ul className="list-disc list-outside pl-5 space-y-2 text-sm text-neutral-400 leading-relaxed marker:text-sky-400/70">
+                  {(isFr ? activeItem.detailsFr : activeItem.detailsEn).map((line, i) => (
+                    <li key={i}>{renderHighlightedLine(line)}</li>
+                  ))}
+                </ul>
+              </motion.div>
+            </AnimatePresence>
+          </div>
         </div>
+
+        {/* Mobile / Tablet: interactive vertical list */}
+        <ol className="lg:hidden relative border-l-2 border-white/15 ml-3 space-y-6">
+          {visibleMilestones.map((item) => {
+            const isPro = item.type === 'pro';
+            const isSelected = activeId === item.id;
+            return (
+              <li key={item.id} className="relative pl-6">
+                <span
+                  aria-hidden="true"
+                  className={`absolute -left-[9px] top-1.5 h-4 w-4 rounded-full border-2 bg-black ${
+                    isPro
+                      ? 'border-amber-400 shadow-[0_0_10px_rgba(251,191,36,0.75)]'
+                      : 'border-violet-400 shadow-[0_0_10px_rgba(167,139,250,0.75)]'
+                  }`}
+                />
+                <button
+                  type="button"
+                  onClick={() => setActiveId(item.id)}
+                  aria-expanded={isSelected}
+                  className="text-left w-full cursor-pointer"
+                >
+                  <span className="block font-mono text-xs text-neutral-400">
+                    {isFr ? item.dateFr : item.dateEn}
+                  </span>
+                  <h3 className="text-base font-semibold text-white mt-0.5">
+                    {isFr ? item.titleFr : item.titleEn}
+                  </h3>
+                  <p className="text-xs text-neutral-400">
+                    {isFr ? item.placeFr : item.placeEn}
+                  </p>
+                  <p
+                    className={`text-xs font-medium mt-1 ${
+                      isPro ? 'text-amber-300' : 'text-sky-300'
+                    }`}
+                  >
+                    {isFr ? item.keywordsFr : item.keywordsEn}
+                  </p>
+                </button>
+                {isSelected && (
+                  <ul className="mt-3 list-disc list-outside pl-4 space-y-1.5 text-xs text-neutral-400 leading-relaxed">
+                    {(isFr ? item.detailsFr : item.detailsEn).map((line, i) => (
+                      <li key={i}>{renderHighlightedLine(line)}</li>
+                    ))}
+                  </ul>
+                )}
+              </li>
+            );
+          })}
+        </ol>
       </div>
-    </div>
+    </section>
   );
-}
+});

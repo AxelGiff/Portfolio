@@ -16,10 +16,10 @@ export default function Deck() {
       />
 
       <div>
-        <h2 className='about-title text-white text-5xl block mr-24 xl:mr-48 text-center block mt-24 mb-12'>
+        <h2 className='about-title text-white text-5xl block  text-center block mt-24 mb-12'>
           {t('netcards.deck.title')}
         </h2>
-        <h2 className='about-title text-white italic text-xl xl:mr-12 leading-snug mb-24'>
+        <h2 className='about-title text-white italic text-xl  leading-snug mb-24'>
           {t('netcards.deck.description')}
         </h2>
       </div>

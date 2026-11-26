@@ -52,8 +52,19 @@ const techIcons = {
 
 const projectsData = [
   {
-    id: '1',
+    id: '6',
     index: '01',
+    featured: true,
+    category: 'ai',
+    title: 'Medic.ial',
+    summaryFr: 'Assistant médical conversationnel propulsé par IA, FastAPI et Docker.',
+    summaryEn: 'AI-powered medical conversational assistant built with FastAPI and Docker.',
+    src: chatbotImage,
+    iconsToShow: ['React', 'MongoDB', 'TensorFlow', 'FastAPI', 'Docker', 'HuggingFace'],
+  },
+  {
+    id: '1',
+    index: '02',
     category: 'web',
     title: 'Qualoto',
     summaryFr: 'Plateforme de loto en ligne avec gestion de grilles, tirages en direct et classement.',
@@ -63,7 +74,7 @@ const projectsData = [
   },
   {
     id: '2',
-    index: '02',
+    index: '03',
     category: 'ai',
     title: 'Classification CNN',
     summaryFr: 'Réseau de neurones convolutif pour prédire l’âge et le genre à partir de visages.',
@@ -73,7 +84,7 @@ const projectsData = [
   },
   {
     id: '3',
-    index: '03',
+    index: '04',
     category: 'web',
     title: 'Perform Vision',
     summaryFr: 'Tableau de bord de gestion d’adhérents, créneaux et suivi administratif.',
@@ -83,7 +94,7 @@ const projectsData = [
   },
   {
     id: '4',
-    index: '04',
+    index: '05',
     category: 'web',
     title: 'NetCards',
     summaryFr: 'Application web de révision par flashcards et partage de paquets de cartes.',
@@ -93,23 +104,13 @@ const projectsData = [
   },
   {
     id: '5',
-    index: '05',
+    index: '06',
     category: 'web',
     title: 'Todo List',
     summaryFr: 'Gestionnaire de tâches réactif en React avec édition et filtrage instantané.',
     summaryEn: 'Reactive React task manager with inline editing and instant filtering.',
     src: todolistImage,
     iconsToShow: ['React', 'JS', 'CSS'],
-  },
-  {
-    id: '6',
-    index: '06',
-    category: 'ai',
-    title: 'Medic.ial',
-    summaryFr: 'Assistant médical conversationnel propulsé par IA, FastAPI et Docker.',
-    summaryEn: 'AI-powered medical conversational assistant built with FastAPI and Docker.',
-    src: chatbotImage,
-    iconsToShow: ['React', 'MongoDB', 'TensorFlow', 'FastAPI', 'Docker', 'HuggingFace'],
   },
 ];
 
@@ -190,7 +191,9 @@ const Projects = memo(() => {
             to={`/projects/${project.id}`}
             onMouseEnter={() => prefetchProject(project.id)}
             onFocus={() => prefetchProject(project.id)}
-            className="group relative flex flex-col rounded-3xl border border-white/10 bg-neutral-950/75 overflow-hidden backdrop-blur-xl shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] transition duration-300 hover:border-sky-400/40 hover:-translate-y-1"
+            className={`group relative flex flex-col rounded-3xl border bg-neutral-950/75 overflow-hidden backdrop-blur-xl shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] transition duration-300 hover:border-sky-400/50 hover:-translate-y-1 ${
+              project.featured ? 'border-sky-400/35' : 'border-white/10'
+            }`}
           >
             {/* Preview image */}
             <div className="relative aspect-[16/10] w-full overflow-hidden bg-neutral-900">

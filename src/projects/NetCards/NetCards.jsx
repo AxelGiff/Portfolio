@@ -11,7 +11,7 @@ export default function PerformVision() {
     <div className="flex flex-col items-center justify-center ">
     <LandingNetCards />
     
-    <img src={new URL("./images/Netcards-main.webp", import.meta.url).href}  alt="capture d'écran de la landing page de netcards" loading="lazy" className="-mt-16 sm:-mt-36 lg:-mt-64 -z-[-10] shadow-lg w-[92%] max-w-5xl h-auto object-cover  sm:visible [mask-image:linear-gradient(to_bottom,white,white,transparent)] transition duration-1000 rounded-xl" />
+    <img src={new URL("./images/Netcards-main.webp", import.meta.url).href}  alt="capture d'écran de la landing page de netcards" loading="lazy" className="-mt-6 sm:-mt-12 lg:-mt-16 -z-[-10] shadow-lg w-[92%] max-w-5xl h-auto object-cover  sm:visible [mask-image:linear-gradient(to_bottom,white,white,transparent)] transition duration-1000 rounded-xl" />
     <Technologies iconsToShow={["HTML","CSS","MySQL","PHP","Figma"]} />
     <AboutNetCards />
     <Others />

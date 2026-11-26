@@ -92,17 +92,18 @@ export default function Technologies({iconsToShow,bgcolor}) {
 
   const filteredIcons = icons.filter(icon => iconsToShow.includes(icon.name));
 
-  const iconList = filteredIcons.map((icon, index) => (
-    <li key={index} className='px-3 py-2 rounded-md text-sm capitalize font-bold mr-2'><BadgeTextGradient text={icon.name} />
+  const iconList = filteredIcons.map((icon) => (
+    <li key={icon.key} className="px-1.5 py-1 rounded-md text-sm capitalize font-bold">
+      <BadgeTextGradient text={icon.name} />
     </li>
   ));
-  const iconlenght=iconList.length>4 ?  "flex-col" : "flex-row"
+
   return (
-    <div className="flex flex-col items-center">
-        <h2 className="text-white text-center text-[1.1rem]">Technologies</h2>
-        <ul className={`flex  items-center ${iconlenght} justify-center  mt-4`}>
-          {iconList}
-        </ul>
+    <div className="flex flex-col items-center px-4 mt-8">
+      <h2 className="text-white text-center text-[1.1rem]">Technologies</h2>
+      <ul className="flex flex-col sm:flex-row sm:flex-wrap items-center justify-center gap-2 mt-4">
+        {iconList}
+      </ul>
     </div>
   );
 }

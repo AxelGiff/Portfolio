@@ -49,8 +49,8 @@ const Header = memo(() => {
       if (location.pathname !== '/') return;
       const sections = [
         { id: 'contact-container', name: 'Contact' },
-        { id: 'project-container', name: 'Projects' },
         { id: 'about-container', name: 'About' },
+        { id: 'project-container', name: 'Projects' },
       ];
       const offset = window.innerHeight * 0.35;
       let matched = 'Home';
