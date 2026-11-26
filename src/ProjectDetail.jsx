@@ -1,22 +1,14 @@
 import React, { useEffect, useRef, memo, lazy, Suspense } from 'react';
 import { useParams } from 'react-router-dom';
-
-const PerformVision = lazy(() => import(/* webpackPrefetch: true */ './projects/PerformVision/PerformVision.jsx'));
-const LUTC = lazy(() => import(/* webpackPrefetch: true */ './projects/LUTC/LUTC.jsx'));
-const TodoList = lazy(() => import(/* webpackPrefetch: true */ './projects/TodoList/TodoList.jsx'));
-const NetCards = lazy(() => import(/* webpackPrefetch: true */ './projects/NetCards/NetCards.jsx'));
-const SafePage = lazy(() => import(/* webpackPrefetch: true */ './projects/SafePage/SafePage.jsx'));
-const Qualoto = lazy(() => import(/* webpackPrefetch: true */ './projects/Qualoto/Qualoto.jsx'));
-const Medicial=lazy(() => import(/* webpackPrefetch: true */ './projects/Medicial/Medicial.jsx'));
-const Cnn = lazy(() => import(/* webpackPrefetch: true */ './projects/CNN/cnn.jsx'));
+import { projectLoaders } from './utils/assetPreloader.js';
 
 const projectComponents = {
-  '1': Qualoto,
-  '2': Cnn,
-  '3': PerformVision,
-  '4': NetCards,
-  '5': TodoList,
-  '6': Medicial,
+  '1': lazy(projectLoaders['1']),
+  '2': lazy(projectLoaders['2']),
+  '3': lazy(projectLoaders['3']),
+  '4': lazy(projectLoaders['4']),
+  '5': lazy(projectLoaders['5']),
+  '6': lazy(projectLoaders['6']),
 };
 
 // Composant fallback invisible

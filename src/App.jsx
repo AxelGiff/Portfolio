@@ -3,13 +3,10 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import './index.css';
 import Header from './Header.jsx';
-import LanguageSelector from './LanguageSelector'; 
+import LanguageSelector from './LanguageSelector';
+import { scheduleIdleAssetPreload } from './utils/assetPreloader.js';
 
-const Routage = lazy(() => {
-  const img = new Image();
-  img.src = './images/tech-features-gradient.webp';
-  return import('./Routage.jsx');
-});
+const Routage = lazy(() => import('./Routage.jsx'));
 const Projects = lazy(() => import('./Projects.jsx'));
 const ProjectDetail = lazy(() => import('./ProjectDetail.jsx'));
 
@@ -48,7 +45,10 @@ const App = memo(() => {
       }
     };
     
-    const timer = setTimeout(preloadComponents, 1000);
+    const timer = setTimeout(() => {
+      preloadComponents();
+      scheduleIdleAssetPreload();
+    }, 800);
     return () => clearTimeout(timer);
   }, []);
 

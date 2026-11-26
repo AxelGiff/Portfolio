@@ -28,7 +28,7 @@ const PATH = "M0.5 0.980671L0.5 1566.02";
 return (
 
 <div
-  className="max-w-4xl mx-auto flex flex-row space-x-10 items-start w-full "
+  className="relative max-w-4xl mx-auto flex flex-row space-x-10 items-start w-full "
   ref={ref}
 >
   <svg
@@ -49,8 +49,8 @@ return (
         y2="1566.02"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#3879E7" stop-opacity="0" />
-        <stop offset="1" stop-color="#3879E7" />
+        <stop stopColor="#3879E7" stopOpacity="0" />
+        <stop offset="1" stopColor="#3879E7" />
       </linearGradient>
     </defs>
     <motion.path

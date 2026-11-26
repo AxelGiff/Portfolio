@@ -29,9 +29,9 @@ const LandingPage = memo(() => {
         src={techPsBlue}
       />
       <SpotlightPreview fill="#ABE7F6" />
-      <p className="text-gradient-primary1 text-[0.8rem] lg:text-[1.3rem] font-bold relative right-2 mt-6">
+      <div className="text-gradient-primary1 text-[0.8rem] lg:text-[1.3rem] font-bold relative right-2 mt-6">
         2023 - 2024 | {t('One month')} <br /> <TextShine text="Perform Vision" />
-      </p>
+      </div>
       <h2 className="text-[1.1rem] bg-gradient-to-b from-white via-white to-white bg-clip-text text-transparent mt-16">
         {t('Group work')}
       </h2>
