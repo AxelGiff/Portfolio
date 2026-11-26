@@ -98,10 +98,10 @@ const LandingPage = memo(() => {
         </span>
       </h2>
       <Avatar />
-      <p className="text-gradient-primary1 text-[1rem] font-bold relative right-2 mt-6">
+      <div className="text-gradient-primary1 text-[1rem] font-bold relative right-2 mt-6">
       {t('Hi! I\'m')}<br />
         <TextShine text="Axel" />
-      </p>
+      </div>
       <BadgeAnimatedGradientBorder />
       <div className="flex justify-between gap-4">
         {socialLinks.map((social, index) => (

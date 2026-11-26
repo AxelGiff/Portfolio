@@ -2,6 +2,7 @@
 import { IconArrowNarrowRight } from "@tabler/icons-react";
 import { useState, useRef, useId, useEffect } from "react";
 import { Link } from 'react-router-dom';
+import { prefetchProject } from "./utils/assetPreloader.js";
 
 import IconBxlReact from "./lib/icons/react.jsx";
 import IconBxlMySQL from "./lib/icons/mySQL.jsx";
@@ -159,7 +160,11 @@ current === index ? "opacity-100 visible" : "opacity-0 invisible"
             ))}
           </ul>
 <div className="flex justify-center">
-<Link to={`/projects/${id}`}>
+<Link
+  to={`/projects/${id}`}
+  onMouseEnter={() => prefetchProject(id)}
+  onFocus={() => prefetchProject(id)}
+>
 <button className="mt-6 px-4 py-2 w-fit mx-auto sm:text-sm text-black bg-white h-12 border border-transparent text-xs flex justify-center items-center rounded-2xl hover:shadow-lg transition duration-200 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]">
 {button}
 </button>

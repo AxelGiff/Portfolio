@@ -35,7 +35,7 @@ const AboutPv = memo(() => {
         </div>
         {/* Text on the right */}
         <div className="text flex flex-col items-center justify-center z-50 sm:w-1/2">
-          <p className="text-white text-lg">{words}</p>                 
+          <div className="text-white text-lg">{words}</div>                 
           <div className="mt-24 items-center "> 
             <ButtonRotatingBackgroundGradient text={t('Github')} link="https://github.com/AxelGiff/SAE_PerformVision" />
           </div>

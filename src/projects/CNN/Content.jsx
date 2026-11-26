@@ -28,7 +28,7 @@ export const MovingLine = () => {
   const PATH = "M0.5 0.980671L0.5 1566.02";
   return (
     <div
-      className="max-w-4xl mx-auto flex flex-row space-x-10 items-start w-full"
+      className="relative max-w-4xl mx-auto flex flex-row space-x-10 items-start w-full"
       ref={ref}
     >
       <svg

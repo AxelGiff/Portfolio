@@ -9,16 +9,16 @@ function IconGradio(props) {
     <title>gradio</title>
     <defs>
         <linearGradient x1="-6.4516129%" y1="49.7835498%" x2="85.235732%" y2="49.7835498%" id="linearGradient-1">
-            <stop stop-color="#F9D100" offset="0%"></stop>
-            <stop stop-color="#F97700" offset="100%"></stop>
+            <stop stopColor="#F9D100" offset="0%"></stop>
+            <stop stopColor="#F97700" offset="100%"></stop>
         </linearGradient>
         <linearGradient x1="106.079404%" y1="49.7835498%" x2="14.2679901%" y2="49.7835498%" id="linearGradient-2">
-            <stop stop-color="#F9D100" offset="0%"></stop>
-            <stop stop-color="#F97700" offset="100%"></stop>
+            <stop stopColor="#F9D100" offset="0%"></stop>
+            <stop stopColor="#F97700" offset="100%"></stop>
         </linearGradient>
         <linearGradient x1="-12.8712871%" y1="75.8627995%" x2="169.795545%" y2="74.878214%" id="linearGradient-3">
-            <stop stop-color="#F9D100" offset="0%"></stop>
-            <stop stop-color="#F97700" offset="100%"></stop>
+            <stop stopColor="#F9D100" offset="0%"></stop>
+            <stop stopColor="#F97700" offset="100%"></stop>
         </linearGradient>
     </defs>
     <g>
