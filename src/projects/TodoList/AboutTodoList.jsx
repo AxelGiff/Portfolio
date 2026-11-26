@@ -13,7 +13,7 @@ export default function AboutTodoList() {
   
   return (
     <section id="about-container">
-      <h1 className='about-title text-white text-5xl block text-center block mt-24 mb-32'>{t('Zoom-in')}</h1>
+      <h1 className='about-title text-white text-3xl sm:text-4xl lg:text-5xl block text-center mt-16 sm:mt-24 mb-12 sm:mb-20 px-4'>{t('Zoom-in')}</h1>
       <div className="flex flex_responsive flex-col xl:flex-row items-center gap-12 mx-4 sm:mx-12 lg:mx-24 xl:mx-36 my-12 sm:mt-0 sm:gap-24">
         <div className="gradient-pv z-[-10000] right-1/4 -top-1/8 w-1/2 h-full opacity-30"></div>
 

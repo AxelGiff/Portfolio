@@ -13,12 +13,12 @@ const projectComponents = {
 };
 
 const projectMeta = [
-  { id: '1', index: '01', title: 'Qualoto' },
-  { id: '2', index: '02', title: 'Classification CNN' },
-  { id: '3', index: '03', title: 'Perform Vision' },
-  { id: '4', index: '04', title: 'NetCards' },
-  { id: '5', index: '05', title: 'Todo List' },
-  { id: '6', index: '06', title: 'Medic.ial' },
+  { id: '6', index: '01', title: 'Medic.ial' },
+  { id: '1', index: '02', title: 'Qualoto' },
+  { id: '2', index: '03', title: 'Classification CNN' },
+  { id: '3', index: '04', title: 'Perform Vision' },
+  { id: '4', index: '05', title: 'NetCards' },
+  { id: '5', index: '06', title: 'Todo List' },
 ];
 
 // Composant fallback invisible
@@ -59,7 +59,7 @@ const ProjectDetail = memo(() => {
 
   return (
     <div ref={targetRef} className="relative">
-      <div className="fixed top-20 left-4 sm:left-8 z-50">
+      <div className="fixed top-20 sm:top-24 left-4 sm:left-8 z-[1001]">
         <Link
           to="/#project-container"
           state={{ scrollTo: 'project-container' }}

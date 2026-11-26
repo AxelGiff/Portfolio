@@ -7,7 +7,7 @@ export default function AboutCnn() {
   
   return (
     <section id="about-container">
-      <h1 className="about-title text-white text-5xl block text-center mt-24 mb-32">
+      <h1 className="about-title text-white text-3xl sm:text-4xl lg:text-5xl block text-center mt-16 sm:mt-24 mb-12 sm:mb-20 px-4">
         {t('Zoom-in')}
       </h1>
 
@@ -101,7 +101,7 @@ export default function AboutCnn() {
         />
       </div>
 
-      <h1 className="about-title text-white text-5xl block text-center mt-24 mb-32">
+      <h1 className="about-title text-white text-3xl sm:text-4xl lg:text-5xl block text-center mt-16 sm:mt-24 mb-12 sm:mb-20 px-4">
         {t('Features')}
       </h1>
     </section>

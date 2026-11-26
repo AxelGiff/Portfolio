@@ -15,7 +15,7 @@ const PerformVision = memo(() => {
         src={screenDashAdminPres} 
         alt="screen dashboard perform vision" 
         loading="lazy" 
-        className="-mt-16 sm:-mt-36 lg:-mt-64 w-[92%] max-w-5xl h-auto object-cover -z-[-10] shadow-lg sm:visible [mask-image:linear-gradient(to_bottom,white,white,transparent)] transition duration-1000 rounded-xl" 
+        className="-mt-6 sm:-mt-12 lg:-mt-16 w-[92%] max-w-5xl h-auto object-cover -z-[-10] shadow-lg sm:visible [mask-image:linear-gradient(to_bottom,white,white,transparent)] transition duration-1000 rounded-xl" 
       />
       <Technologies iconsToShow={technologies} />
       <AboutPv />

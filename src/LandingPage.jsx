@@ -124,9 +124,35 @@ const LandingPage = memo(() => {
       </div>
 
       <p className="mt-5 max-w-xl text-sm sm:text-base text-neutral-300 leading-relaxed">
-        {isFr
-          ? "Concepteur-Développeur en Master Logiciels Sûrs (UPEC) · 3 ans d'alternance à la Préfecture de Police de Paris."
-          : "Software Engineer in MSc Reliable Software (UPEC) · 3 years of apprenticeship at Préfecture de Police de Paris."}
+        {isFr ? (
+          <>
+            Apprenti Concepteur-Développeur à la{' '}
+            <strong className="text-white font-semibold underline decoration-sky-400/85 decoration-2 underline-offset-[4px]">
+              Préfecture de Police de Paris
+            </strong>
+            <br className="hidden sm:block" />
+            <span className="sm:hidden"> · </span>
+            Étudiant en{' '}
+            <strong className="text-white font-semibold underline decoration-sky-400/85 decoration-2 underline-offset-[4px]">
+              Master informatique - Logiciels Sûrs (UPEC)
+            </strong>
+            .
+          </>
+        ) : (
+          <>
+            Software Engineer Apprentice at{' '}
+            <strong className="text-white font-semibold underline decoration-sky-400/85 decoration-2 underline-offset-[4px]">
+              Préfecture de Police de Paris
+            </strong>
+            <br className="hidden sm:block" />
+            <span className="sm:hidden"> · </span>
+            Student in{' '}
+            <strong className="text-white font-semibold underline decoration-sky-400/85 decoration-2 underline-offset-[4px]">
+              MSc Reliable Software (UPEC)
+            </strong>
+            .
+          </>
+        )}
       </p>
 
       {/* Primary actions for instant recruiter access */}

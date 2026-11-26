@@ -33,8 +33,8 @@ const Routage = memo(() => {
     <>
       <LandingPage />
       <History />
-      <About />
       <Projects />
+      <About />
       <Contact />
     </>
   );
