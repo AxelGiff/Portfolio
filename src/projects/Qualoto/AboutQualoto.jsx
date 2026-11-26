@@ -21,7 +21,7 @@ export default function AboutQualoto() {
         {/* Image on the left */}
         <div className="relative w-full sm:w-1/2 h-auto">
           <div className="gradient-03 right-1/4 -top-1/8 w-1/2  h-full z-[-10000] opacity-70"></div>
-          <img alt="Product Preview" loading="lazy" width="2500vw" height="150vw" className="shadow-lg z-50 sm:visible [mask-image:linear-gradient(to_bottom,white,white,transparent)] transition duration-1000  rounded-lg relative z-100 bottom-8 opacity-100" style={{color:"transparent"}}  src={new URL("./images/accueilregles.png", import.meta.url).href} /> 
+          <img alt="Product Preview" loading="lazy" width="2500vw" height="150vw" className="shadow-lg z-50 sm:visible [mask-image:linear-gradient(to_bottom,white,white,transparent)] transition duration-1000  rounded-lg relative z-100 bottom-8 opacity-100" style={{color:"transparent"}}  src={new URL("./images/accueilregles.webp", import.meta.url).href} /> 
         </div>
         {/* Text on the right */}
         <div className="text flex flex-col items-center justify-center z-50 sm:w-1/2">
@@ -33,7 +33,7 @@ export default function AboutQualoto() {
       </div>
       {/* <VideoComponent video={Video} size="w-[80%] rounded-lg" /> */}
 
-      <img alt="left gradient" loading="lazy" width="500" height="500" decoding="async" data-nimg="1" className="absolute right-0 top-1/8" style={{color:"transparent"}} src={new URL("../../images/glow.png", import.meta.url).href} />
+      <img alt="left gradient" loading="lazy" width="500" height="500" decoding="async" data-nimg="1" className="absolute right-0 top-1/8" style={{color:"transparent"}} src={new URL("../../images/glow.webp", import.meta.url).href} />
       <div className="relative">
         <img alt="gradient" loading="lazy" decoding="async" data-nimg="fill" className="h-[1000px] w-[1000px] z-[-1000] inset-0 object-cover absolute pointer-events-none select-none" style={{height:"200vh",width:"auto",left:"0",right:"0",top:"-540px",color:"transparent"}} sizes="100vw" src={new URL("../../images/tech-features-gradient.webp", import.meta.url).href} />
       </div>

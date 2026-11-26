@@ -27,7 +27,7 @@ export default function AboutTodoList() {
     className="shadow-lg rounded-lg sm:visible rounded-lg [mask-image:linear-gradient(to_bottom,white,white,transparent)] 
              transition duration-1000 relative z-40 opacity-100 scale-110 object-cover" 
     style={{color:"transparent"}} 
-    src={new URL("./images/todolist2.png", import.meta.url).href} 
+    src={new URL("./images/todolist2.webp", import.meta.url).href} 
   /> 
 </div>
         <div className="text flex flex-col items-center justify-center z-50 sm:w-1/2">
@@ -48,7 +48,7 @@ export default function AboutTodoList() {
         data-nimg="1" 
         className="absolute right-0 top-1/8" 
         style={{color:"transparent"}} 
-        src={new URL("../../images/glow.png", import.meta.url).href} 
+        src={new URL("../../images/glow.webp", import.meta.url).href} 
       />
       <div className="relative">
         <img 

@@ -3,10 +3,10 @@ import React, { memo } from "react";
 import { LayoutGrid } from "./layout-grid.tsx";
 import { useTranslation } from 'react-i18next';
 
-import gestionnaireListeImg from "./images/gestionnaireliste.png";
-import ajouterImg from "./images/Ajouter.png";
-import creneauxImg from "./images/creneaux.png";
-import tableauBdlImg from "./images/Tableau_bdl.png";
+import gestionnaireListeImg from "./images/gestionnaireliste.webp";
+import ajouterImg from "./images/Ajouter.webp";
+import creneauxImg from "./images/creneaux.webp";
+import tableauBdlImg from "./images/Tableau_bdl.webp";
 
 const SkeletonOne = memo(() => {
   const { t } = useTranslation();

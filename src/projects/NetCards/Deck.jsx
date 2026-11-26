@@ -7,7 +7,7 @@ export default function Deck() {
   return (
     <div className='flex flex-col items-center justify-center sm:flex-row items-center gap-12 sm:m-48 sm:mt-0 sm:gap-24'>
       <img 
-        src={new URL("./images/netcards4.png", import.meta.url).href} 
+        src={new URL("./images/netcards4.webp", import.meta.url).href} 
         width={1000} 
         height={650} 
         alt={t('netcards.deck.imageAlt')} 

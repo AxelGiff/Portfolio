@@ -9,7 +9,7 @@ export default function Qualoto() {
     <div className="flex flex-col items-center justify-center ">
       <LandingQualoto />
       <img
-        src={new URL("./images/Qualoto.png", import.meta.url).href}
+        src={new URL("./images/Qualoto.webp", import.meta.url).href}
         alt="screen todo list"
         loading="lazy"
         className="-mt-96 -z-[-10] w-[100%] h-[100%] sm:w-[1200px] sm:h-[650px] shadow-lg sm:visible [mask-image:linear-gradient(to_bottom,white,white,transparent)] transition duration-1000 rounded-xl"

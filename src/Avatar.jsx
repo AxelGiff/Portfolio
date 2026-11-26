@@ -2,7 +2,7 @@ import React, { useState, memo, useCallback } from 'react';
 import CardContainer from './CardContainer.jsx';
 
 // Direct import instead of URL constructor
-import avatarImage from './images/IMAGEAUTRE.png';
+import avatarImage from './images/IMAGEAUTRE.webp';
 
 const Avatar = memo(() => {
   const [isHovered, setIsHovered] = useState(false);

@@ -16,7 +16,7 @@ export default function Others() {
       </div>
       
       <img 
-        src={new URL("./images/sinscrire.png", import.meta.url).href} 
+        src={new URL("./images/sinscrire.webp", import.meta.url).href} 
         width={1100} 
         height={650} 
         alt={t('netcards.auth.imageAlt')} 

@@ -12,7 +12,7 @@ export function TracingBeamDemo() {
         <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-l md:text-4xl font-bold text-white bg-gradient-to-br from-[#1B3A6B] to-[#2C5282]">
           <p>1. Authentication</p>
           <img
-            src={new URL("./images/auth.png", import.meta.url).href}
+            src={new URL("./images/auth.webp", import.meta.url).href}
             alt="screen todo list"
             loading="lazy"
             className="object-contain object-top w-full -bottom-2 inset-x-0 rounded-xl mx-auto absolute h-auto"
@@ -27,7 +27,7 @@ export function TracingBeamDemo() {
         <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-l md:text-4xl font-bold text-white bg-gradient-to-br from-[#1B3A6B] to-[#2C5282]">
           <p>2. Grid choice</p>
           <img
-            src={new URL("./images/grille.png", import.meta.url).href}
+            src={new URL("./images/grille.webp", import.meta.url).href}
             alt="screen todo list"
             loading="lazy"
             className="object-contain object-top w-full -bottom-2 inset-x-0 rounded-xl mx-auto absolute h-auto"
@@ -42,7 +42,7 @@ export function TracingBeamDemo() {
         <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-l md:text-4xl font-bold text-white bg-gradient-to-br from-[#1B3A6B] to-[#2C5282]">
           <p>3. Player list</p>
           <img
-            src={new URL("./images/tiragesort.png", import.meta.url).href}
+            src={new URL("./images/tiragesort.webp", import.meta.url).href}
             alt="screen todo list"
             loading="lazy"
             className="object-contain object-top w-full -bottom-2 inset-x-0 rounded-xl mx-auto absolute h-auto"
@@ -57,7 +57,7 @@ export function TracingBeamDemo() {
         <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-l md:text-4xl font-bold text-white bg-gradient-to-br from-[#1B3A6B] to-[#2C5282]">
           <p>4. Draw</p>
           <img
-            src={new URL("./images/tirage.png", import.meta.url).href}
+            src={new URL("./images/tirage.webp", import.meta.url).href}
             alt="screen todo list"
             loading="lazy"
             className="object-contain object-top w-full -bottom-2 inset-x-0 rounded-xl mx-auto absolute h-auto"
@@ -72,7 +72,7 @@ export function TracingBeamDemo() {
         <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-l md:text-4xl font-bold text-white bg-gradient-to-br from-[#1B3A6B] to-[#2C5282]">
           <p>5. Ranking</p>
           <img
-            src={new URL("./images/classement.png", import.meta.url).href}
+            src={new URL("./images/classement.webp", import.meta.url).href}
             alt="screen todo list"
             loading="lazy"
             className="object-contain object-top w-full -bottom-2 inset-x-0 rounded-xl mx-auto absolute h-auto"
@@ -139,7 +139,7 @@ const dummyContent = [
       </>
     ),
     badge: "Authentication",
-    image: new URL("./images/auth.png", import.meta.url).href,
+    image: new URL("./images/auth.webp", import.meta.url).href,
   },
   {
     title: "A drawing system with real players or bots",
@@ -158,7 +158,7 @@ const dummyContent = [
       </>
     ),
     badge: "Drawn",
-    image: new URL("./images/tiragesort.png", import.meta.url).href,
+    image: new URL("./images/tiragesort.webp", import.meta.url).href,
   },
   {
     title: "A ranking system with an equitable prize distribution algorithm",
@@ -176,6 +176,6 @@ const dummyContent = [
       </>
     ),
     badge: "Ranking",
-    image: new URL("./images/classement.png", import.meta.url).href,
+    image: new URL("./images/classement.webp", import.meta.url).href,
   },
 ];

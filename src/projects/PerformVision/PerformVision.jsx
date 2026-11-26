@@ -3,7 +3,7 @@ import LandingPV from './LandingPV.jsx';
 import Technologies from '../Technologies.jsx';
 import AboutPv from './AboutPV.jsx';
 
-import screenDashAdminPres from './images/screen_dash_admin_pres.png';
+import screenDashAdminPres from './images/screen_dash_admin_pres.webp';
 
 const PerformVision = memo(() => {
   const technologies = ["HTML", "Tailwind", "PHP", "Javascript", "PostgreSQL", "Figma"];

@@ -6,8 +6,8 @@ import { LayoutGridDemo } from './layout.tsx';
 import { useTranslation } from 'react-i18next';
 
 // Import images directly
-import dashboardBdlAdmin from './images/dashboard_bdl_admin.png';
-import glowImage from '../../images/glow.png';
+import dashboardBdlAdmin from './images/dashboard_bdl_admin.webp';
+import glowImage from '../../images/glow.webp';
 import techFeaturesGradient from '../../images/tech-features-gradient.webp';
 
 const AboutPv = memo(() => {

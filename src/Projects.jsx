@@ -4,12 +4,12 @@ import ProjectCard from './Project-card.tsx';
 import { Carousel } from './Carousel.tsx';
 import { useTranslation } from 'react-i18next';
 
-import qualotoImage from './images/Qualoto.png';
-import cnnPortfolioImage from './images/cnnPortfolio.png';
+import qualotoImage from './images/Qualoto.webp';
+import cnnPortfolioImage from './images/cnnPortfolio.webp';
 import screenDashAdminImage from './images/screen_dash_admin_pres.png';
-import netcardsImage from './images/netcards.png';
-import todolistImage from './images/todolist.png';
-import chatbotImage from './images/mainChatbot.png';
+import netcardsImage from './images/netcards.webp';
+import todolistImage from './images/todolist.webp';
+import chatbotImage from './images/mainChatbot.webp';
 
 const baseSlideData = [
   {

@@ -9,7 +9,7 @@ export default function Cnn() {
     <div className="flex flex-col items-center justify-center ">
       <LandingCnn />
       <img
-        src={new URL("./images/linus.png", import.meta.url).href}
+        src={new URL("./images/linus.webp", import.meta.url).href}
         alt="screen todo list"
         loading="lazy"
         className="-mt-96 -z-[-10] w-[100%] h-[100%] sm:w-[60%] sm:h-[650px] shadow-lg sm:visible [mask-image:linear-gradient(to_bottom,white,white,transparent)] transition duration-1000 rounded-xl"

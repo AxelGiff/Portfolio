@@ -16,7 +16,7 @@ export default function AboutLUTC() {
         {/* Image on the left */}
         <div className="relative w-full sm:w-1/2 h-auto">
           <div className="gradient-01 right-1/4 -top-1/8 w-1/2 h-full opacity-30"></div>
-          <img alt="Product Preview" loading="lazy" width="2500vw" height="100vw" className="shadow-lg rounded-lg  sm:visible rounded-lg [mask-image:linear-gradient(to_bottom,white,white,transparent)] transition duration-1000 relative z-40 opacity-100" style={{color:"transparent"}}  src={require("./images/Figma.png")} /> 
+          <img alt="Product Preview" loading="lazy" width="2500vw" height="100vw" className="shadow-lg rounded-lg  sm:visible rounded-lg [mask-image:linear-gradient(to_bottom,white,white,transparent)] transition duration-1000 relative z-40 opacity-100" style={{color:"transparent"}}  src={require("./images/Figma.webp")} /> 
         </div>
         {/* Text on the right */}
         <div className="text flex flex-col items-center justify-center z-50 sm:w-1/2">
@@ -25,7 +25,7 @@ export default function AboutLUTC() {
           </div>
         </div>
       </div>
-      <img alt="left gradient" loading="lazy" width="500" height="500" decoding="async" data-nimg="1" className="absolute right-0 top-1/8" style={{color:"transparent"}} src={require("../../images/glow.png")} />
+      <img alt="left gradient" loading="lazy" width="500" height="500" decoding="async" data-nimg="1" className="absolute right-0 top-1/8" style={{color:"transparent"}} src={require("../../images/glow.webp")} />
       <div className="relative">
         <img alt="gradient" loading="lazy" decoding="async" data-nimg="fill" className="h-[1000px] w-[1000px] inset-0 object-cover absolute pointer-events-none select-none" style={{height:"200vh",width:"auto",left:"0",right:"0",top:"-540px",color:"transparent"}} sizes="100vw" src={require("../../images/tech-features-gradient.webp")} />
       </div>

@@ -1,10 +1,10 @@
 import React, { memo } from 'react';
-import prefectureIcon from './images/prefecture.png';
-import bookmarkIcon from './images/icons8-add-bookmark-64.png';
-import paperPlaneIcon from './images/icons8-paper-plane-50.png';
-import levelUpIcon from './images/Capsule-244-×-244-px-244-×-100-px-3.png';
-import diplomaIcon from './images/icons8-chapeau-de-diplôme-30.png';
-import schoolIcon from './images/icons8-école-50.png';
+import prefectureIcon from './images/prefecture.webp';
+import bookmarkIcon from './images/icons8-add-bookmark-64.webp';
+import paperPlaneIcon from './images/icons8-paper-plane-50.webp';
+import levelUpIcon from './images/Capsule-244-×-244-px-244-×-100-px-3.webp';
+import diplomaIcon from './images/icons8-chapeau-de-diplôme-30.webp';
+import schoolIcon from './images/icons8-école-50.webp';
 import { useTranslation } from 'react-i18next';
 
 // Icônes pour chaque compétence
