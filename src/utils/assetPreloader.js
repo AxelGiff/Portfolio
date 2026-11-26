@@ -5,18 +5,18 @@
 export const projectLoaders = {
   '1': () => import('../projects/Qualoto/Qualoto.jsx'),
   '2': () => import('../projects/CNN/cnn.jsx'),
-  '3': () => import('../projects/PerformVision/PerformVision.jsx'),
+  '3': () => import('../projects/LogsAnalyzer/LogsAnalyzer.jsx'),
   '4': () => import('../projects/NetCards/NetCards.jsx'),
-  '5': () => import('../projects/TodoList/TodoList.jsx'),
+  '5': () => import('../projects/RustAgent/RustAgent.jsx'),
   '6': () => import('../projects/Medicial/Medicial.jsx'),
 };
 
 const projectImageFolders = {
   '1': '/projects/Qualoto/',
   '2': '/projects/CNN/',
-  '3': '/projects/PerformVision/',
+  '3': '/projects/LogsAnalyzer/',
   '4': '/projects/NetCards/',
-  '5': '/projects/TodoList/',
+  '5': '/projects/RustAgent/',
   '6': '/projects/Medicial/',
 };
 

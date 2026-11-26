@@ -1,11 +1,12 @@
 import React, { useEffect, useState, useCallback, memo } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const NavLink = memo(({ to, onClick, isActive, children }) => (
   <li className="nav-li">
-    <Link 
-      to={to} 
-      className={`a-list ${isActive ? 'active' : ''}`} 
+    <Link
+      to={to}
+      className={`a-list ${isActive ? 'active' : ''}`}
       aria-current={isActive ? 'page' : undefined}
       onClick={onClick}
     >
@@ -14,14 +15,52 @@ const NavLink = memo(({ to, onClick, isActive, children }) => (
   </li>
 ));
 
+const MobileDockIcon = ({ name }) => {
+  switch (name) {
+    case 'Home':
+      return (
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+          <path d="M3 10.5 12 3l9 7.5" />
+          <path d="M5 9.5V20a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V9.5" />
+        </svg>
+      );
+    case 'Projects':
+      return (
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+          <rect x="3" y="3" width="7" height="7" rx="1.5" />
+          <rect x="14" y="3" width="7" height="7" rx="1.5" />
+          <rect x="14" y="14" width="7" height="7" rx="1.5" />
+          <rect x="3" y="14" width="7" height="7" rx="1.5" />
+        </svg>
+      );
+    case 'About':
+      return (
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+          <circle cx="12" cy="8" r="4" />
+          <path d="M4 20c1.6-3.8 5-6 8-6s6.4 2.2 8 6" />
+        </svg>
+      );
+    case 'Contact':
+      return (
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+          <rect x="3" y="5" width="18" height="14" rx="2" />
+          <path d="m3 7 9 6 9-6" />
+        </svg>
+      );
+    default:
+      return null;
+  }
+};
+
 const Header = memo(() => {
   const location = useLocation();
   const navigate = useNavigate();
-  
+  const { i18n } = useTranslation();
+  const isFr = i18n.language?.startsWith('fr');
+
   const [isBlurred, setIsBlurred] = useState(false);
   const [activeLink, setActiveLink] = useState('Home');
 
-  // Ajuster l'onglet actif en fonction de l'URL
   useEffect(() => {
     if (location.pathname === '/') {
       if (location.hash === '#about-container') {
@@ -33,14 +72,11 @@ const Header = memo(() => {
       } else {
         setActiveLink('Home');
       }
-    } else if (location.pathname.startsWith('/projects/')) {
-      setActiveLink('Projects');
-    } else if (location.pathname === '/projects') {
+    } else if (location.pathname.startsWith('/projects')) {
       setActiveLink('Projects');
     }
   }, [location]);
 
-  // Effet de flou sur défilement + suivi de section active
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY || document.documentElement.scrollTop;
@@ -68,7 +104,6 @@ const Header = memo(() => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [location.pathname]);
 
-  // Fonction optimisée pour la navigation
   const handleLinkClick = useCallback((e, link, target) => {
     e.preventDefault();
     setActiveLink(link);
@@ -96,41 +131,78 @@ const Header = memo(() => {
     }
   }, [location.pathname, navigate]);
 
+  const mobileItems = [
+    { id: 'Home', to: '/', target: 'body', label: isFr ? 'Accueil' : 'Home' },
+    { id: 'Projects', to: '/#project-container', target: '#project-container', label: isFr ? 'Projets' : 'Projects' },
+    { id: 'About', to: '/#about-container', target: '#about-container', label: isFr ? 'À propos' : 'About' },
+    { id: 'Contact', to: '/#contact-container', target: '#contact-container', label: 'Contact' },
+  ];
+
   return (
     <header>
-      <nav className="nav" aria-label="Navigation principale">
+      {/* Desktop top pill navbar */}
+      <nav className="nav hidden md:flex" aria-label="Navigation principale">
         <ul className={`ul-nav ${isBlurred ? 'blur_class' : ''}`}>
-          <NavLink 
-            to="/" 
+          <NavLink
+            to="/"
             isActive={activeLink === 'Home'}
             onClick={(e) => handleLinkClick(e, 'Home', 'body')}
           >
             Home <span className="slash">/</span>
           </NavLink>
-          
-          <NavLink 
-            to="/#about-container" 
-            isActive={activeLink === 'About'}
-            onClick={(e) => handleLinkClick(e, 'About', '#about-container')}
-          >
-            About
-          </NavLink>
-          
-          <NavLink 
-            to="/#project-container" 
+
+          <NavLink
+            to="/#project-container"
             isActive={activeLink === 'Projects'}
             onClick={(e) => handleLinkClick(e, 'Projects', '#project-container')}
           >
             Projects
           </NavLink>
-          
-          <NavLink 
-            to="/#contact-container" 
+
+          <NavLink
+            to="/#about-container"
+            isActive={activeLink === 'About'}
+            onClick={(e) => handleLinkClick(e, 'About', '#about-container')}
+          >
+            About
+          </NavLink>
+
+          <NavLink
+            to="/#contact-container"
             isActive={activeLink === 'Contact'}
             onClick={(e) => handleLinkClick(e, 'Contact', '#contact-container')}
           >
             Contact
           </NavLink>
+        </ul>
+      </nav>
+
+      {/* Mobile thumb-reachable floating bottom dock */}
+      <nav
+        className="mobile-dock md:hidden fixed bottom-3 inset-x-3 z-[1000] pb-[env(safe-area-inset-bottom)]"
+        aria-label={isFr ? 'Navigation mobile' : 'Mobile navigation'}
+      >
+        <ul className="mobile-dock-bar grid grid-cols-4 items-center rounded-2xl border border-white/15 bg-neutral-950/88 p-1.5 backdrop-blur-xl shadow-[0_12px_36px_rgba(0,0,0,0.55),inset_0_1px_0_rgba(255,255,255,0.08)]">
+          {mobileItems.map((item) => {
+            const isActive = activeLink === item.id;
+            return (
+              <li key={item.id}>
+                <Link
+                  to={item.to}
+                  aria-current={isActive ? 'page' : undefined}
+                  onClick={(e) => handleLinkClick(e, item.id, item.target)}
+                  className={`mobile-dock-link flex flex-col items-center justify-center gap-1 rounded-xl py-2 min-h-[52px] text-[11px] font-medium transition active:scale-95 ${
+                    isActive
+                      ? 'mobile-dock-active bg-sky-500/20 text-sky-300'
+                      : 'text-neutral-400 hover:text-white'
+                  }`}
+                >
+                  <MobileDockIcon name={item.id} />
+                  <span>{item.label}</span>
+                </Link>
+              </li>
+            );
+          })}
         </ul>
       </nav>
     </header>

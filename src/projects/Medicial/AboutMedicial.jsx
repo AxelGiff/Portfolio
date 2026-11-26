@@ -33,16 +33,18 @@ export default function AboutMedicial() {
   <div className="text flex flex-col items-center justify-center z-50 w-full xl:w-3/5 xl:pl-8 mt-8 xl:mt-0">
           <div
             className="
-              p-8 
-              bg-black/60 
-              backdrop-blur-md 
-              rounded-lg 
-              shadow-lg 
-              w-full 
-              sm:w-[800px]
-              text-white 
-              columns-2 
-              space-y-4
+              p-6 sm:p-8
+              bg-black/60
+              backdrop-blur-md
+              rounded-2xl
+              shadow-lg
+              w-full
+              max-w-3xl
+              text-white
+              grid
+              grid-cols-1
+              md:grid-cols-2
+              gap-6
               leading-relaxed
             "
           >

@@ -87,6 +87,46 @@ export default function Technologies({iconsToShow,bgcolor}) {
     {
       key: 20,
       name:"Docker",
+    },
+    {
+      key: 21,
+      name: "Rust",
+    },
+    {
+      key: 22,
+      name: "Freya",
+    },
+    {
+      key: 23,
+      name: "Tokio",
+    },
+    {
+      key: 24,
+      name: "Tree-sitter",
+    },
+    {
+      key: 25,
+      name: "LLM / SSE",
+    },
+    {
+      key: 26,
+      name: "GitHub Actions",
+    },
+    {
+      key: 27,
+      name: "Clap",
+    },
+    {
+      key: 28,
+      name: "Regex",
+    },
+    {
+      key: 29,
+      name: "Notify",
+    },
+    {
+      key: 30,
+      name: "Chrono",
     }
   ]
 

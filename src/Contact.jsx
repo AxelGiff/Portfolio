@@ -18,13 +18,13 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact-container" className="relative mt-48 pb-16 px-4">
+    <section id="contact-container" className="relative mt-20 sm:mt-36 lg:mt-48 pb-28 md:pb-16 px-4">
       <BadgeTextGradient text={t('Contact')} />
-      <h1 className="about-title text-white text-4xl sm:text-5xl block text-center mb-8">
+      <h1 className="about-title text-white text-3xl sm:text-5xl block text-center mb-6 sm:mb-8">
         {t('Want to discuss ?')}
       </h1>
 
-      <div className="flex justify-center mb-14">
+      <div className="flex justify-center mb-10 sm:mb-14">
         <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-3.5 py-1 text-xs font-medium text-neutral-300 backdrop-blur-md">
           <span className="relative flex h-2 w-2" aria-hidden="true">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />

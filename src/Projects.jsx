@@ -22,12 +22,13 @@ import IconGradio from './lib/icons/gradio.jsx';
 import IconMongoDB from './lib/icons/mongoDB.jsx';
 import IconFastAPI from './lib/icons/fastApi.jsx';
 import IconBxlDocker from './lib/icons/docker.jsx';
+import IconRust from './lib/icons/rust.jsx';
 
 import qualotoImage from './images/Qualoto.webp';
 import cnnPortfolioImage from './images/cnnPortfolio.webp';
-import screenDashAdminImage from './images/screen_dash_admin_pres.png';
+import logsanalyzerImage from './images/logsanalyzer.webp';
 import netcardsImage from './images/netcards.webp';
-import todolistImage from './images/todolist.webp';
+import rustagentImage from './images/rustagent.webp';
 import chatbotImage from './images/mainChatbot.webp';
 
 const techIcons = {
@@ -48,6 +49,7 @@ const techIcons = {
   MongoDB: { label: 'MongoDB', icon: <IconMongoDB /> },
   FastAPI: { label: 'FastAPI', icon: <IconFastAPI /> },
   Docker: { label: 'Docker', icon: <IconBxlDocker /> },
+  Rust: { label: 'Rust', icon: <IconRust /> },
 };
 
 const projectsData = [
@@ -63,8 +65,28 @@ const projectsData = [
     iconsToShow: ['React', 'MongoDB', 'TensorFlow', 'FastAPI', 'Docker', 'HuggingFace'],
   },
   {
-    id: '1',
+    id: '5',
     index: '02',
+    category: 'ai',
+    title: 'RustAgent',
+    summaryFr: 'Assistant de codage IA natif en Rust (Freya) avec chat streaming, éditeur Tree-sitter, diffs et terminal intégré.',
+    summaryEn: 'Native Rust AI coding assistant (Freya) with streaming chat, Tree-sitter editor, diff review, and integrated terminal.',
+    src: rustagentImage,
+    iconsToShow: ['Rust'],
+  },
+  {
+    id: '3',
+    index: '03',
+    category: 'systems',
+    title: 'LogsAnalyzer',
+    summaryFr: 'Outil CLI en Rust pour parser, colorer, filtrer et suivre des fichiers de logs en temps réel (--tail).',
+    summaryEn: 'Rust CLI tool to parse, colorize, filter, and tail log files in real time (--tail).',
+    src: logsanalyzerImage,
+    iconsToShow: ['Rust'],
+  },
+  {
+    id: '1',
+    index: '04',
     category: 'web',
     title: 'Qualoto',
     summaryFr: 'Plateforme de loto en ligne avec gestion de grilles, tirages en direct et classement.',
@@ -74,7 +96,7 @@ const projectsData = [
   },
   {
     id: '2',
-    index: '03',
+    index: '05',
     category: 'ai',
     title: 'Classification CNN',
     summaryFr: 'Réseau de neurones convolutif pour prédire l’âge et le genre à partir de visages.',
@@ -83,34 +105,14 @@ const projectsData = [
     iconsToShow: ['Gradio', 'TensorFlow', 'Keras', 'HuggingFace', 'ScikitLearn'],
   },
   {
-    id: '3',
-    index: '04',
-    category: 'web',
-    title: 'Perform Vision',
-    summaryFr: 'Tableau de bord de gestion d’adhérents, créneaux et suivi administratif.',
-    summaryEn: 'Management dashboard for members, time slots, and administration.',
-    src: screenDashAdminImage,
-    iconsToShow: ['HTML', 'Tailwind', 'PHP', 'PostgreSQL', 'JS'],
-  },
-  {
     id: '4',
-    index: '05',
+    index: '06',
     category: 'web',
     title: 'NetCards',
     summaryFr: 'Application web de révision par flashcards et partage de paquets de cartes.',
     summaryEn: 'Flashcard learning web app with deck creation and sharing.',
     src: netcardsImage,
     iconsToShow: ['HTML', 'Tailwind', 'JS', 'PHP', 'MySQL'],
-  },
-  {
-    id: '5',
-    index: '06',
-    category: 'web',
-    title: 'Todo List',
-    summaryFr: 'Gestionnaire de tâches réactif en React avec édition et filtrage instantané.',
-    summaryEn: 'Reactive React task manager with inline editing and instant filtering.',
-    src: todolistImage,
-    iconsToShow: ['React', 'JS', 'CSS'],
   },
 ];
 
@@ -121,8 +123,9 @@ const Projects = memo(() => {
 
   const filters = [
     { id: 'all', label: isFr ? 'Tous' : 'All', count: projectsData.length },
-    { id: 'web', label: 'Full-Stack & Web', count: projectsData.filter((p) => p.category === 'web').length },
     { id: 'ai', label: isFr ? 'IA & Machine Learning' : 'AI & Machine Learning', count: projectsData.filter((p) => p.category === 'ai').length },
+    { id: 'web', label: 'Full-Stack & Web', count: projectsData.filter((p) => p.category === 'web').length },
+    { id: 'systems', label: isFr ? 'Rust & CLI' : 'Rust & CLI', count: projectsData.filter((p) => p.category === 'systems').length },
   ];
 
   const visibleProjects =
@@ -131,22 +134,22 @@ const Projects = memo(() => {
       : projectsData.filter((p) => p.category === filter);
 
   return (
-    <section id="project-container" className="relative mt-48 px-4 sm:px-8">
+    <section id="project-container" className="relative mt-20 sm:mt-32 lg:mt-48 px-4 sm:px-8">
       <BadgeTextGradient text={t('Projects')} />
-      <h1 className="about-title text-white text-4xl sm:text-5xl block text-center mb-6">
+      <h1 className="about-title text-white text-3xl sm:text-5xl block text-center mb-4 sm:mb-6">
         {t('My work')}
       </h1>
-      <p className="text-center text-neutral-400 text-sm sm:text-base max-w-xl mx-auto mb-12">
+      <p className="text-center text-neutral-400 text-sm sm:text-base max-w-xl mx-auto mb-8 sm:mb-12">
         {isFr
           ? 'Sélectionnez un projet pour explorer son architecture, ses choix techniques et ses écrans.'
           : 'Select any project to explore its architecture, technical stack, and previews.'}
       </p>
 
-      {/* Filter bar */}
+      {/* Filter bar (swipeable single row on mobile) */}
       <div
         role="tablist"
         aria-label={isFr ? 'Filtrer les projets par catégorie' : 'Filter projects by category'}
-        className="flex flex-wrap items-center justify-center gap-2 mb-12"
+        className="flex flex-nowrap sm:flex-wrap items-center justify-start sm:justify-center gap-2 mb-8 sm:mb-12 overflow-x-auto no-scrollbar -mx-4 px-4 sm:mx-0 sm:px-0 pb-1"
       >
         {filters.map((item) => {
           const isActive = filter === item.id;
@@ -157,7 +160,7 @@ const Projects = memo(() => {
               role="tab"
               aria-selected={isActive}
               onClick={() => setFilter(item.id)}
-              className={`relative inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs sm:text-sm font-medium transition cursor-pointer ${
+              className={`project-filter-tab shrink-0 relative inline-flex items-center gap-2 rounded-full px-4 py-2 min-h-[40px] text-xs sm:text-sm font-medium transition cursor-pointer active:scale-95 ${
                 isActive
                   ? 'text-white'
                   : 'text-neutral-400 hover:text-white border border-white/10 bg-white/[0.02]'
@@ -167,11 +170,17 @@ const Projects = memo(() => {
                 <motion.span
                   layoutId="project-filter-pill"
                   transition={{ type: 'spring', stiffness: 320, damping: 28 }}
-                  className="absolute inset-0 rounded-full bg-white/15 border border-white/25 backdrop-blur-md"
+                  className="project-filter-pill absolute inset-0 rounded-full bg-sky-500/25 border border-sky-400/70 shadow-[0_0_20px_rgba(56,189,248,0.28)] backdrop-blur-md"
                 />
               )}
               <span className="relative z-10">{item.label}</span>
-              <span className="relative z-10 rounded-full bg-white/10 px-1.5 py-0.5 text-[11px] text-neutral-300">
+              <span
+                className={`project-filter-count relative z-10 rounded-full px-1.5 py-0.5 text-[11px] ${
+                  isActive
+                    ? 'bg-sky-400/25 text-sky-100'
+                    : 'bg-white/10 text-neutral-300'
+                }`}
+              >
                 {item.count}
               </span>
             </button>
@@ -212,7 +221,7 @@ const Projects = memo(() => {
                 {project.index}
               </span>
               <span className="absolute top-3 right-3 rounded-full border border-white/15 bg-black/60 px-2.5 py-1 text-[10px] uppercase tracking-wider text-neutral-300 backdrop-blur-md">
-                {project.category === 'ai' ? 'AI / ML' : 'Web'}
+                {project.category === 'ai' ? 'AI / ML' : project.category === 'systems' ? 'Rust / CLI' : 'Web'}
               </span>
             </div>
 
