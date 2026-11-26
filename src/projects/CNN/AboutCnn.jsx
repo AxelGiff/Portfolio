@@ -11,7 +11,7 @@ export default function AboutCnn() {
         {t('Zoom-in')}
       </h1>
 
-      <div className="flex flex_responsive flex-col xl:flex-row items-center gap-12 m-48 sm:mt-0 sm:gap-24">
+      <div className="flex flex_responsive flex-col xl:flex-row items-center gap-12 mx-4 sm:mx-12 lg:mx-24 xl:mx-36 my-12 sm:mt-0 sm:gap-24">
         <div className="gradient-qualabout z-[-10000] right-1/4 -top-1/8 w-1/2 h-full opacity-30"></div>
 
         {/* Image on the left */}
@@ -25,7 +25,7 @@ export default function AboutCnn() {
             className="shadow-lg z-50 sm:visible [mask-image:linear-gradient(to_bottom,white,white,transparent)] 
                        transition duration-1000 rounded-lg relative bottom-8 opacity-100"
             style={{ color: 'transparent' }}
-            src={new URL('./images/faces.png', import.meta.url).href}
+            src={new URL('./images/faces.webp', import.meta.url).href}
           />
         </div>
 
@@ -86,7 +86,7 @@ export default function AboutCnn() {
         data-nimg="1"
         className="absolute right-0 top-1/8"
         style={{ color: 'transparent' }}
-        src={new URL('../../images/glow.png', import.meta.url).href}
+        src={new URL('../../images/glow.webp', import.meta.url).href}
       />
       <div className="relative">
         <img

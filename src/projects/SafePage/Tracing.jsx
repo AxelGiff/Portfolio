@@ -64,7 +64,7 @@ const dummyContent = [
       </>
     ),
     badge: "Blog",
-    image: new URL("./images/capt3ArticleSagePagePresent.png", import.meta.url).href,
+    image: new URL("./images/capt3ArticleSagePagePresent.webp", import.meta.url).href,
   },
   {
     title: "An evolving project",
@@ -76,6 +76,6 @@ const dummyContent = [
       </>
     ),
     badge: "Remaster",
-    image: new URL('./images/capt4SafePagePresent.png', import.meta.url).href,
+    image: new URL('./images/capt4SafePagePresent.webp', import.meta.url).href,
   },
 ];

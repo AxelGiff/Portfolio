@@ -18,7 +18,7 @@ export function TracingBeamDemo() {
             </>
           ),
           badge: t('Authentication'),
-          image: new URL("./images/auth.png", import.meta.url).href,
+          image: new URL("./images/auth.webp", import.meta.url).href,
         },
         {
           title: t('Draw_title'),
@@ -30,7 +30,7 @@ export function TracingBeamDemo() {
             </>
           ),
           badge: t('Draw'),
-          image: new URL("./images/tiragesort.png", import.meta.url).href,
+          image: new URL("./images/tiragesort.webp", import.meta.url).href,
         },
         {
           title: t('Ranking_title'),
@@ -42,7 +42,7 @@ export function TracingBeamDemo() {
             </>
           ),
           badge: t('Ranking'),
-          image: new URL("./images/classement.png", import.meta.url).href,
+          image: new URL("./images/classement.webp", import.meta.url).href,
         },
       ];
   const tabs = [
@@ -53,7 +53,7 @@ export function TracingBeamDemo() {
         <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-l md:text-4xl font-bold text-white bg-gradient-to-br from-[#1B3A6B] to-[#2C5282]">
           <p>1. {t('Authentication')}</p> 
           <img
-            src={new URL("./images/auth.png", import.meta.url).href}
+            src={new URL("./images/auth.webp", import.meta.url).href}
             alt="screen todo list"
             loading="lazy"
             className="object-contain object-top w-full -bottom-2 inset-x-0 rounded-xl mx-auto absolute h-auto"
@@ -68,7 +68,7 @@ export function TracingBeamDemo() {
         <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-l md:text-4xl font-bold text-white bg-gradient-to-br from-[#1B3A6B] to-[#2C5282]">
           <p>2. {t('Grid choice')}</p>
           <img
-            src={new URL("./images/grille.png", import.meta.url).href}
+            src={new URL("./images/grille.webp", import.meta.url).href}
             alt="screen todo list"
             loading="lazy"
             className="object-contain object-top w-full -bottom-2 inset-x-0 rounded-xl mx-auto absolute h-auto"
@@ -83,7 +83,7 @@ export function TracingBeamDemo() {
         <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-l md:text-4xl font-bold text-white bg-gradient-to-br from-[#1B3A6B] to-[#2C5282]">
           <p>3. {t('Player list')}</p>
           <img
-            src={new URL("./images/tiragesort.png", import.meta.url).href}
+            src={new URL("./images/tiragesort.webp", import.meta.url).href}
             alt="screen todo list"
             loading="lazy"
             className="object-contain object-top w-full -bottom-2 inset-x-0 rounded-xl mx-auto absolute h-auto"
@@ -98,7 +98,7 @@ export function TracingBeamDemo() {
         <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-l md:text-4xl font-bold text-white bg-gradient-to-br from-[#1B3A6B] to-[#2C5282]">
           <p>4. {t('Draw')}</p>
           <img
-            src={new URL("./images/tirage.png", import.meta.url).href}
+            src={new URL("./images/tirage.webp", import.meta.url).href}
             alt="screen todo list"
             loading="lazy"
             className="object-contain object-top w-full -bottom-2 inset-x-0 rounded-xl mx-auto absolute h-auto"
@@ -113,7 +113,7 @@ export function TracingBeamDemo() {
         <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-l md:text-4xl font-bold text-white bg-gradient-to-br from-[#1B3A6B] to-[#2C5282]">
           <p>5. {t('Ranking')}</p>
           <img
-            src={new URL("./images/classement.png", import.meta.url).href}
+            src={new URL("./images/classement.webp", import.meta.url).href}
             alt="screen todo list"
             loading="lazy"
             className="object-contain object-top w-full -bottom-2 inset-x-0 rounded-xl mx-auto absolute h-auto"
@@ -125,7 +125,7 @@ export function TracingBeamDemo() {
 
   return (
     <>
-      <div className="h-[20rem] md:h-[40rem] [perspective:1000px] relative b flex flex-col max-w-5xl mx-auto w-full items-start justify-start my-40">
+      <div className="h-[24rem] md:h-[40rem] relative z-30 flex flex-col max-w-5xl mx-auto w-full items-start justify-start my-40 px-4">
       <Tabs tabs={tabs} tabClassName="text-white" />
       </div>
       <TracingBeam className="px-6">

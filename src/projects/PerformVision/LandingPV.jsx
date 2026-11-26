@@ -4,7 +4,7 @@ import TextShine from '../../TextShine.tsx';
 import { AnimatedTooltipPreview } from "./tooltip.tsx";
 import { useTranslation } from 'react-i18next';
 
-import techPsBlue from '../PerformVision/images/tech_ps_blue.png';
+import techPsBlue from '../PerformVision/images/tech_ps_blue.webp';
 
 const LandingPage = memo(() => {
       const { t } = useTranslation();

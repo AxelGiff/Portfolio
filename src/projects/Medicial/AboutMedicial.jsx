@@ -25,7 +25,7 @@ export default function AboutMedicial() {
             className="shadow-lg z-50 sm:visible [mask-image:linear-gradient(to_bottom,white,white,transparent)] 
                        transition duration-1000 rounded-lg relative bottom-8 opacity-100"
             style={{ color: 'transparent' }}
-            src={new URL('./images/main3Chatbot.png', import.meta.url).href}
+            src={new URL('./images/main3Chatbot.webp', import.meta.url).href}
           />
         </div>
 
@@ -86,7 +86,7 @@ export default function AboutMedicial() {
         data-nimg="1"
         className="absolute right-0 top-1/8"
         style={{ color: 'transparent' }}
-        src={new URL('../../images/glow.png', import.meta.url).href}
+        src={new URL('../../images/glow.webp', import.meta.url).href}
       />
       <div className="relative">
         <img

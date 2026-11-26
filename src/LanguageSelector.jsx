@@ -1,28 +1,33 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
-import './LanguageSelector.css'; 
+import './LanguageSelector.css';
 
 const LanguageSelector = () => {
   const { i18n } = useTranslation();
-  const [currentLang, setCurrentLang] = useState(i18n.language);
+  const activeLang = (i18n.resolvedLanguage || i18n.language || 'en').slice(0, 2);
 
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
-    setCurrentLang(lng);
   };
 
   return (
-    <div className="language-selector">
-      <button 
+    <div className="language-selector" role="group" aria-label="Language selector">
+      <button
+        type="button"
         onClick={() => changeLanguage('en')}
-        className={currentLang === 'en' ? 'active-lang' : ''}
+        className={activeLang === 'en' ? 'active-lang' : ''}
+        aria-pressed={activeLang === 'en'}
+        aria-label="Switch language to English"
       >
         EN
       </button>
-      <span className="lang-separator">|</span>
-      <button 
+      <span className="lang-separator" aria-hidden="true">|</span>
+      <button
+        type="button"
         onClick={() => changeLanguage('fr')}
-        className={currentLang === 'fr' ? 'active-lang' : ''}
+        className={activeLang === 'fr' ? 'active-lang' : ''}
+        aria-pressed={activeLang === 'fr'}
+        aria-label="Passer la langue en français"
       >
         FR
       </button>

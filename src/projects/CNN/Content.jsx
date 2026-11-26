@@ -75,9 +75,9 @@ export const MovingLine = () => {
         <Content
           title={t('cnn.content.section1.title')}
           description={t('cnn.content.section1.description')}
-          image1={new URL("./images/Image20.png", import.meta.url).href}
+          image1={new URL("./images/Image20.webp", import.meta.url).href}
           alt1={t('cnn.content.section1.alt1')}
-          image2={new URL("./images/Image19.png", import.meta.url).href}
+          image2={new URL("./images/Image19.webp", import.meta.url).href}
           alt2={t('cnn.content.section1.alt2')}
         />
 
@@ -85,9 +85,9 @@ export const MovingLine = () => {
         <Content
           title={t('cnn.content.section2.title')}
           description={t('cnn.content.section2.description')}
-          image1={new URL("./images/distribb2.png", import.meta.url).href}
+          image1={new URL("./images/distribb2.webp", import.meta.url).href}
           alt1={t('cnn.content.section2.alt1')}
-          image2={new URL("./images/predagevalidb2.png", import.meta.url).href}
+          image2={new URL("./images/predagevalidb2.webp", import.meta.url).href}
           alt2={t('cnn.content.section2.alt2')}
         />
 
@@ -95,9 +95,9 @@ export const MovingLine = () => {
         <Content
           title={t('cnn.content.section3.title')}
           description={t('cnn.content.section3.description')}
-          image1={new URL("./images/imageAxel.png", import.meta.url).href}
+          image1={new URL("./images/imageAxel.webp", import.meta.url).href}
           alt1={t('cnn.content.section3.alt1')}
-          image2={new URL("./images/imageStatham.png", import.meta.url).href}
+          image2={new URL("./images/imageStatham.webp", import.meta.url).href}
           alt2={t('cnn.content.section3.alt2')}
         />
       </div>

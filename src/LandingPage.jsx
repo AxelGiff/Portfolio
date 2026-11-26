@@ -9,6 +9,7 @@ import BadgeAnimatedGradientBorder from "./BadgeAnimated.tsx";
 import ScrollDownButton from "./ScrollDownButton.jsx";
 import ButtonGithub from "./ButtonGithub.jsx";
 import gradientBackground from './images/tech-features-gradient.webp';
+import cvPdf from './images/AXEL-GIFFARD_CV.pdf';
 
 
 
@@ -50,6 +51,7 @@ const AnimatedSquare = memo(() => (
 
 const socialLinks = [
   {
+    label: "GitHub — Axel Giffard",
     link: "https://github.com/AxelGiff",
     svg: (
       <svg fill="white" viewBox="0 0 496 512" height="1.6em">
@@ -58,6 +60,7 @@ const socialLinks = [
     )
   },
   {
+    label: "LinkedIn — Axel Giffard",
     link: "https://www.linkedin.com/in/axel-giffard-b45208220/",
     svg: (
       <svg
@@ -76,12 +79,22 @@ const socialLinks = [
 ];
 
 const LandingPage = memo(() => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const isFr = i18n.language?.startsWith('fr');
+
+  const scrollToProjects = () => {
+    const el = document.getElementById('project-container');
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
-    <div className="flex mb-40 font-inter flex-col items-center justify-center h-screen z-10">
+    <section
+      aria-label={isFr ? 'Présentation' : 'Introduction'}
+      className="relative overflow-x-clip flex mb-32 pt-24 pb-16 px-4 font-inter flex-col items-center justify-center min-h-screen z-10 text-center"
+    >
       <img
-        alt="gradient"
-        loading="lazy"
+        alt=""
+        aria-hidden="true"
         decoding="async"
         className="h-[1000px] w-[1000px] absolute inset-0 object-cover pointer-events-none select-none"
         style={{ position: "absolute", height: "100%", width: "100%", left: "0", top: "0", right: "0", bottom: "0" }}
@@ -89,31 +102,74 @@ const LandingPage = memo(() => {
         src={gradientBackground}
       />
       <SpotlightPreview fill="white" />
-      <h2 className="subtitle">
+
+      <div className="subtitle" aria-hidden="true">
         <span className="subtitle-content">
           <span>
             <AnimatedSquare />
           </span>
           <span className="line">{t('Hover me')}</span>
         </span>
-      </h2>
+      </div>
+
       <Avatar />
-      <div className="text-gradient-primary1 text-[1rem] font-bold relative right-2 mt-6">
-      {t('Hi! I\'m')}<br />
+
+      <div className="text-gradient-primary1 text-[1rem] font-bold mt-6">
+        <span className="block mb-1">{t("Hi! I'm")}</span>
         <TextShine text="Axel" />
       </div>
-      <BadgeAnimatedGradientBorder />
-      <div className="flex justify-between gap-4">
+
+      <div className="mt-4">
+        <BadgeAnimatedGradientBorder />
+      </div>
+
+      <p className="mt-5 max-w-xl text-sm sm:text-base text-neutral-300 leading-relaxed">
+        {isFr
+          ? "Concepteur-Développeur en Master Logiciels Sûrs (UPEC) · 3 ans d'alternance à la Préfecture de Police de Paris."
+          : "Software Engineer in MSc Reliable Software (UPEC) · 3 years of apprenticeship at Préfecture de Police de Paris."}
+      </p>
+
+      {/* Primary actions for instant recruiter access */}
+      <div className="mt-7 flex flex-wrap items-center justify-center gap-3">
+        <button
+          type="button"
+          onClick={scrollToProjects}
+          className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-2.5 text-sm font-semibold text-black transition hover:bg-neutral-200 cursor-pointer"
+        >
+          <span>{isFr ? 'Voir mes projets' : 'View projects'}</span>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <polyline points="9 18 15 12 9 6" />
+          </svg>
+        </button>
+
+        <a
+          href={cvPdf}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/[0.04] px-6 py-2.5 text-sm font-medium text-white backdrop-blur-md transition hover:border-white/40 hover:bg-white/[0.08]"
+        >
+          <span>{isFr ? 'Télécharger mon CV' : 'Download CV'}</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+            <polyline points="7 10 12 15 17 10" />
+            <line x1="12" y1="15" x2="12" y2="3" />
+          </svg>
+        </a>
+      </div>
+
+      <div className="flex justify-center gap-4">
         {socialLinks.map((social, index) => (
           <ButtonGithub
             key={index}
             link={social.link}
             svg={social.svg}
+            label={social.label}
           />
         ))}
       </div>
+
       <ScrollDownButton />
-    </div>
+    </section>
   );
 });
 
