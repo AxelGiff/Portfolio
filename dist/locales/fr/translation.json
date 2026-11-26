@@ -1,9 +1,272 @@
 {
-    "about_description": "De Paris à VsCode, je suis un développeur web professionnel qui aime coder n'importe quel site web, application web avec ma touche personnelle de design UI/UX. J'étudie le front/back end depuis 2021. J'ai toujours été quelqu'un qui a un goût pour la création et le côté logique. C'est pourquoi j'ai décidé de devenir développeur front-end pour utiliser la puissance de mes compétences intellectuelles.",
+    "about_description": "De Paris à VSCode, je suis un développeur Full Stack passionné créant des applications web complètes en apportant ma touche personnelle tant au niveau UI/UX qu'à l'architecture back-end. Je me perfectionne dans tous les aspects du développement web depuis 2021. Mon attrait pour la création et la rigueur logique m'a naturellement dirigé vers le développement Full Stack, où je peux exploiter l'ensemble de mes compétences techniques pour construire des applications robustes et attrayantes de bout en bout. Par la suite, j'aurai pour objectif d'acquérir une expertise approfondie afin de gérer une équipe de développeurs sur des projets complexes.",
     "Home":"Accueil",
     "About":"A propos",
     "Projects":"Projets",
-    "Contact":"Contact"
+    "Contact":"Contact",
+    "Hover me":"Survolez-moi",
+    "Hi! I'm":"Bonjour ! Je suis",
+    "Full Stack Developer":"Développeur Full Stack",
+    "card_container":"Je suis un développeur web passionné par la création d'expériences interactives !",
+    "Brief presentation":"Brève présentation",
+    "but3":"BUT info (Alternance) - I.U.T Villetaneuse",
+    "levelUp":"Durant mon stage en tant que développeur Web, J'ai acquis des compétences en Gestion de Projet & Gestion d'équipe, en utilisant des outils comme Notion, Slack et Wordpress",
+    "datebut3":"Sept. 2023 à Sept. 2025",
+    "Key Courses":"Enseignements",
+    "Administrer":"Administrer",
+    "Réaliser":"Réaliser",
+    "linkedinChatbot": "Voir plus sur cette vidéo !",
 
+    "Optimiser":"Optimiser",
+    "RealiserSummary":"Développement web & mobile, projets concrets, frameworks JS, Python, Java.",
+    "OptimiserSummary":"Optimisation d’algorithmes, gestion des performances, data structures.",
+    "AdministrerSummary":"Gestion de bases de données, administration réseaux, sécurité.",
+    "GérerSummary":"Gestion de projet, communication, travail en équipe.",
+    "ConduireSummary":"Pilotage de projets, automatisation, mise en production.",
+    "Gérer":"Gérer / Collaborer",
+    "SAESummary":"Situation d'apprentissage et d'évaluation en équipe",
+    "Conduire":"Conduire",
+    "datelevelUp":"De Janvier à Mars 2024",
+     "Software Architecture":"Architecture logicielle",
+     "Automation":"Automatisation",
+     "Web Development":"Développement Web",
+     "Mobile Development":"Développement Mobile",
+     "Probabilities":"Modélisations mathématiques",
+     "devweb":"Développement d'applications web",
+     "virtua":"Virtualisation",
+     "ia":"Création de modèles d'IA",
+     "Databases":"Bases de données",
+     "Machine Learning, Deep Learning":"Machine Learning / Deep Learning",
+     "Project Management / Communication":"Gestion de projet / communication",
+     "Networking / Containerization":"Réseaux / Conteneurisation",
+     "Algorithms / Data Structures":"Algorithmes / Structures de données",
+     "prefecture_title": "Alternance Développeur Full Stack à la Préfecture de Police de Paris (DSPAP)",
+    "prefecture_period": "De Sept. 2024 à Sept. 2025",
+    "software_engineering": "Ingénierie logicielle",
+    "requirements_analysis": "Analyse des besoins",
+    "conception": "Conception",
+    "tests": "Tests",
+    "and": "et",
+    "migration_php": "Migration de PHP 5.4 vers",
+    "symfony": "Symfony 6.4",
+    "nuxt_typescript": "Nuxt + TypeScript",
+    "development_of": "Développement d'une page web de",
+    "statistical_production": "production statistique",
+
+    "rest_api": "Développement d'API REST avec",
+    "api_platform": "API Platform",
+    "communicating_with": "communiquant avec",
+    "nuxt": "Nuxt",
+    "levelup_title": "Stage chez Level Up Tech Consulting",
+    "levelup_period": "De Janvier à Mars 2024",
+    "during_internship": "Durant mon stage, j'ai acquis des ",
+    "skills": "compétences",
+    "in": "en",
+    "project_management": "Gestion de Projet",
+    "team_management": "Gestion d'Équipe",
+    "using_tools": " utilisant des outils comme Notion, Slack et Wordpress en tant que ",
+    "web_developer": "Développeur Web",
+    
+    "university_title": "Destination : Université",
+    "university_period": "2021-2022 & 2022-2023",
+    "first_year": "Première année de Licence ",
+    "computer_science": "Informatique",
+    "at_sorbonne": " à l'Université Sorbonne Paris Nord à Villetaneuse. Modules abordés : Programmation C, Algorithmique, Algèbre linéaire, Unix, Web",
+    
+    "highschool_title": "Destination : Lycée",
+    "highschool_period": "2018-2021",
+    "during_highschool": "Durant mes années de lycée, j'ai étudié l'",
+    "extensively_engaging": " de manière approfondie, m'investissant dans diverses activités comme ",
+    "building_pc": "construire mon propre PC",
+    "creating": " créer des ",
+    "media_edits": "montages photo/vidéo",
+    "troubleshooting_however": " & dépannage informatique. Cependant, il y avait encore un domaine que je n'avais pas exploré : La programmation",
+    "coding": "la programmation",
+    "Academic Experience":"Expérience académique",
+    "Professional Experience":"Expérience professionnelle",
+    "Discover me":"Découvrez-moi",
+    "Contact me":"Contactez-moi",
+    "Skills":"Compétences",
+    "My work":"Mise en pratique",
+    "More details":"Plus de détails",
+    "Want to discuss ?":"Envie de discuter ?",
+    "Age & gender classification (CNN)":"Classification (CNN) : Genre et âge ", 
+    "One month":"Un mois",
+    "Group work":"Membre(s)",
+    "Zoom-in":"Focus",
+    "Github":"Voir sur GitHub",
+    "Features":"Fonctionnalités",
+   "Qualoto_description":"Qualoto est une application web réalisée fin 2024 comme projet universitaire et qui permet aux utilisateurs de participer à un jeu de loterie virtuelle. Le jeu est conçu pour être accessible à tous les joueurs, avec un accent mis sur la notion de qualité de développement. L'application est développée avec Django, un framework Python populaire pour la création d'applications Full Stack, ainsi qu'avec d'autres technologies comme Tailwind CSS et MySQL pour la base de données. Cela m'a permis d'adopter une approche conceptualisante du projet, qui m'a permis de développer une compréhension approfondie des technologies utilisées et de mieux comprendre les différentes étapes du développement d'une application web.",
+    "Authentication":"Authentification",
+    "Grid choice":"Choix de grille",
+    "Player list":"Liste de joueurs",
+    "Draw":"Tirage",
+    "Ranking":"Classement",
+    "Authentication_title":"Un système d'authentification pour suivre sa progression via son profil",
+    "Authentication_description":"Sur Qualoto, les joueurs commencent par s'inscrire avec un nom d'utilisateur unique. Le système applique une validation stricte — rejetant les doublons ou les entrées vides (même celles avec uniquement des espaces) et renvoyant des messages d'erreur descriptifs en JSON. Une fois inscrits, chaque joueur reçoit un ticket qui enregistre sa participation au tirage, incluant la date du tirage et les numéros choisis, garantissant un accès sécurisé et traçable tout au long du jeu.",
+    "Draw_title":"Un système de tirage avec de vrais joueurs ou des bots",
+    "Draw_description":"Qualoto dispose d'un système de tirage dynamique où joueurs réels et bots générés aléatoirement reçoivent des numéros de loterie. Lorsqu'un tirage est lancé, chaque participant se voit attribuer un ticket contenant ses numéros principaux et complémentaires. Un formulaire dédié permet aux joueurs de sélectionner manuellement leurs numéros ou d'utiliser une option \"Flash\" pour une génération aléatoire. Le système simule ensuite le tirage, garantissant une attribution équitable des numéros et le respect des règles strictes du jeu.",
+    "Ranking_title":"Un système de classement avec un algorithme de répartition des gains",
+    "Ranking_description":"Après chaque tirage de loterie, Qualoto calcule un classement pour identifier les meilleurs gagnants. L'algorithme de classement compare les tickets des joueurs avec les numéros tirés—indépendamment de l'ordre—et attribue les gains selon des distributions de pourcentage prédéfinies (par exemple, 40%, 20%, etc.). Dans les cas où des joueurs partagent des numéros gagnants identiques, le système répartit équitablement le pourcentage de gain entre eux, garantissant une distribution équitable des gains. Ce processus de classement robuste assure transparence et équité à chaque tirage.",
+
+    "performvision_description": "Perform Vision est un site intranet développé dans le cadre de ma formation à l'I.U.T de Villetaneuse. L'objectif était de créer, avec l'aide de mes 4 coéquipiers, un site de service de temps et matériel permettant la gestion des bons de livraison.",
+
+    "performvision": {
+    "role": {
+      "title": "Rôles",
+      "description": "En tant que gestionnaire et administrateur, ces rôles peuvent ajouter différents membres tels que : prestataires, contacts, commerciaux et clients."
+    },
+    "client": {
+      "title": "Créer un client",
+      "description": "Nous pouvons également créer un client en fournissant ses coordonnées ainsi qu'en assignant le client à un ou plusieurs commerciaux."
+    },
+    "deliveryNote": {
+      "title": "Bon de livraison",
+      "description": "L'objectif principal est de pouvoir créer des bons de livraison par mois, avec différentes périodes : Jour, Demi-journée et Créneaux horaires. La demi-journée doit être indiquée par la période du matin ou du soir, tandis que le créneau horaire doit être spécifié entre une heure de départ et d'arrivée."
+    },
+    "history": {
+      "title": "Historique des bons de livraison",
+      "description": "Pour analyser efficacement les bons de livraison, il est nécessaire d'avoir un historique des derniers bons de livraison où nous pouvons visualiser les bons de livraison au cours du mois."
+    }
+  },
+        "Five months":"Cinq mois",
+      "Three months":"Trois mois",
+"Two months":"Deux mois",
+
+    "skills_card": {
+        "react": {
+            "description": "Développeur React autodidacte, spécialisé dans la création d'interfaces utilisateur interactives avec des composants réutilisables et une gestion d'état optimisée"
+        },
+        "tailwind": {
+            "description": "Utilisation de Tailwind CSS depuis 2022 pour créer des designs réactifs et efficaces avec un flux de développement optimisé"
+        },
+        "Proactif": {
+          "title":"Proactif",
+            "description": "Capacité à anticiper les besoins et à agir de manière proactive pour résoudre les problèmes avant qu'ils ne surviennent"
+        },
+        "php": {
+            "description": "Solide expertise en PHP pour le développement backend, avec expérience dans la création d'applications serveur robustes et d'API"
+        },
+        "postgresql": {
+            "description": "Expérience en conception et optimisation de bases de données PostgreSQL, exploitant ses fonctionnalités avancées pour des solutions de gestion de données complexes"
+        },
+        "Autodidacte": {
+            "description": "Apprentissage autonome des technologies et des frameworks, avec une forte capacité à s'adapter et à acquérir de nouvelles compétences rapidement"
+        },
+        "nuxt": {
+            "description": "Approfondissement de mon expertise Vue.js avec Nuxt pour créer des applications optimisées pour le SEO avec rendu côté serveur"
+        },
+        "symfony": {
+            "description": "Spécialisé dans le framework Symfony pour construire des applications PHP structurées et maintenables, avec un accent sur les bonnes pratiques et la sécurité"
+        },
+        "teamwork": {
+          "title": "Travail en équipe",
+            "description": "Collaboration efficace au sein d'équipes multidisciplinaires pour atteindre des objectifs communs et livrer des projets de qualité"
+        },
+        "docker": {
+            "description": "Mise en œuvre de Docker pour la conteneurisation des workflows de développement et de déploiement, garantissant des environnements cohérents entre développement et production"
+        }
+    },
+    "cnn": {
+        "overview": {
+          "title": "Aperçu du Projet",
+          "description": "Ce projet utilise le jeu de données UTKFace pour entraîner des Réseaux de Neurones Convolutifs (CNN) pour la classification d'âge et de genre. Le jeu de données couvre diverses images faciales, permettant des performances robustes du modèle."
+        },
+        "goal": {
+          "title": "Objectif & Approche",
+          "description": "L'objectif est de prédire avec précision à la fois l'âge et le genre à partir d'une seule image. Les améliorations itératives se concentrent sur l'augmentation de la précision tout en assurant un déploiement efficace."
+        },
+        "fullstack": {
+          "title": "Full Stack avec Gradio",
+          "description": "Une interface Gradio a été développée pour une expérience utilisateur fluide, renforçant mes compétences full stack en conception front-end et intégration back-end."
+        },
+        "future": {
+          "title": "Améliorations Futures",
+          "description": "Les améliorations possibles incluent l'inférence vidéo en temps réel, des attributs faciaux supplémentaires (ex: expression), et une mise à l'échelle pour un trafic plus important."
+        },
+        "content": {
+            "section1": {
+              "title": "Visualisations de distribution des données",
+              "description": "Présentation de l'équilibre des genres et de la distribution des âges dans le jeu de données UTKFace.",
+              "alt1": "Graphique de distribution 1",
+              "alt2": "Graphique de distribution 2"
+            },
+            "section2": {
+              "title": "Analyse d'erreurs et nuages de points",
+              "description": "Ces graphiques illustrent les erreurs de prédiction et comparent les valeurs prédites avec les valeurs réelles.",
+              "alt1": "Distribution des erreurs",
+              "alt2": "Validation des prédictions d'âge"
+            },
+            "section3": {
+              "title": "Exemples de prédictions",
+              "description": "Inférence en conditions réelles sur des exemples d'images pour la prédiction de l'âge et du genre.",
+              "alt1": "Exemple de visage 1",
+              "alt2": "Exemple de visage 2"
+            }
+          }
+      },
+ "medicial": {
+        "overview": {
+          "title": "Aperçu du Projet",
+          "description": "Ce chatbot a pour solution de donner des réponses précises relatives aux questions sur la schizophrénie de manière générale, spécialisation étant très peu développé au sein de l'innovation technologique."
+        },
+        "goal": {
+          "title": "Objectif & Approche",
+          "description": "L'objectif est de fournir des informations fiables et accessibles sur la schizophrénie, en utilisant des techniques avancées de traitement du langage naturel comme le RAG."
+        },
+        "fullstack": {
+          "title": "Full Stack avec React, MongoDB et FastAPI",
+          "description": "Ce projet utilise une architecture full stack, combinant React pour le front-end, MongoDB pour la base de données, et FastAPI pour le back-end."
+        },
+        "future": {
+          "title": "Améliorations Futures",
+          "description": "Les améliorations possibles incluent la possibilité de retranscrire des conversations audio en texte, mais aussi d'importer des images à des fins d'analyse."
+        },
+        "content": {
+            "section1": {
+              "title": "Visualisations de distribution des données",
+              "description": "Présentation de l'équilibre des genres et de la distribution des âges dans le jeu de données UTKFace.",
+              "alt1": "Graphique de distribution 1",
+              "alt2": "Graphique de distribution 2"
+            },
+            "section2": {
+              "title": "Analyse d'erreurs et nuages de points",
+              "description": "Ces graphiques illustrent les erreurs de prédiction et comparent les valeurs prédites avec les valeurs réelles.",
+              "alt1": "Distribution des erreurs",
+              "alt2": "Validation des prédictions d'âge"
+            },
+            "section3": {
+              "title": "Exemples de prédictions",
+              "description": "Inférence en conditions réelles sur des exemples d'images pour la prédiction de l'âge et du genre.",
+              "alt1": "Exemple de visage 1",
+              "alt2": "Exemple de visage 2"
+            }
+          }
+      },
+      
+
+      "netcards": {
+        "description": "NetCards est une plateforme de flashcards en ligne captivante que j'ai développée pour un apprentissage efficace et une meilleure rétention des connaissances. La plateforme offre une façon dynamique et interactive aux utilisateurs de créer, partager et étudier des flashcards numériques sur divers sujets. Les utilisateurs peuvent facilement personnaliser leurs Decks de cartes, en y incorporant des éléments multimédias comme des images et de l'audio, afin d'améliorer l'expérience d'apprentissage.",
+        "demo": "Voir une démo",
+        "deck": {
+            "title": "Système de Decks",
+            "description": "Le système de Decks permet aux utilisateurs de créer, organiser et étudier sans effort leurs flashcards personnalisées, favorisant un environnement d'apprentissage dynamique adapté aux besoins et préférences individuels.",
+            "imageAlt": "Capture d'écran de l'interface des Decks NetCards"
+          },
+          "auth": {
+            "title": "Système d'authentification",
+            "description": "Un système d'authentification a été conçu et déployé avec l'objectif principal de permettre aux utilisateurs de se connecter en toute sécurité et d'accéder à leurs Decks de flashcards personnalisés. En intégrant ce système, les utilisateurs peuvent profiter d'une expérience fluide, adaptée à leurs préférences individuelles et à leurs besoins d'apprentissage. De plus, ce mécanisme d'authentification garantit la confidentialité et la sécurité des données des utilisateurs, favorisant la confiance et la fiabilité au sein de la plateforme.",
+            "imageAlt": "Écran d'authentification NetCards"
+          }
+      },
+      "todolist": {
+    "description": "Le but de créer une liste de tâches était de pratiquer l'assimilation des hooks React (useEffect et useState) pour comprendre leur logique. De plus, j'adore le concept de productivité, donc créer des projets comme une liste de tâches est simplement une partie plaisante de cela.",
+    "demo": "Voir une démo",
+    "editTask": "Modifier une tâche",
+    "oneweek": "Une semaine",
+    "checkDeleteTask": "Valider & supprimer une tâche"
+  }
+
+ 
 
 }

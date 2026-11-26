@@ -1,0 +1,16 @@
+node_modules
+dist
+.git
+.gitignore
+*.log
+.vscode
+.idea
+.DS_Store
+
+# Never copy local secrets or env files into Docker images
+.infrastructure/secrets/*
+!.infrastructure/secrets/README.md
+!.infrastructure/secrets/.gitkeep
+.infrastructure/env/.env
+.env
+.env.*

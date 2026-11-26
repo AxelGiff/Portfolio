@@ -8,7 +8,15 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
+dist
 
+# Environment & Secrets
+.env
+.env.*
+.infrastructure/env/.env
+.infrastructure/secrets/*
+!.infrastructure/secrets/.gitkeep
+!.infrastructure/secrets/README.md
 
 # Editor directories and files
 .vscode/*
