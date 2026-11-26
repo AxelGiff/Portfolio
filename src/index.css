@@ -2,6 +2,50 @@
 @tailwind components;
 @tailwind utilities;
 
+html,
+body {
+  overflow-x: clip;
+  max-width: 100%;
+}
+
+/* Accessibility: Skip link, keyboard focus-visible, and reduced motion */
+.skip-link {
+  position: fixed;
+  top: -100px;
+  left: 16px;
+  z-index: 9999;
+  padding: 10px 16px;
+  border-radius: 9999px;
+  background: #111827;
+  color: #ffffff;
+  border: 1px solid rgba(56, 189, 248, 0.7);
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 16px;
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid #38bdf8;
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 :root {
   --rgb-primary-color: 130,130,130;
   --rgb-primary-color2: 40,241,254;
@@ -60,59 +104,52 @@
 .fr-badge--info:active {
   background-color: var(--background-contrast-info-active);
 }
+.gradient-01,
+.gradient-02,
+.gradient-03,
+.gradient-qualabout,
+.gradient-pv,
+.gradient-nc,
+.gradient-sp,
+.gradient-qual,
+.gradient-cnn,
+.gradient-lutc {
+  position: absolute;
+  filter: blur(115px);
+  pointer-events: none;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  will-change: transform;
+}
 .gradient-01 {
   background-image: linear-gradient(to top, #3033d0 0%, #330867 100%);
-     filter: blur(115px);
-  position: absolute;
 }
 .gradient-02 {
-/*   
- */  background-image: linear-gradient(to top, #c3673ccf 0%, #2f38ae 100%);
-     filter: blur(115px);
-  position: absolute;
+  background-image: linear-gradient(to top, #c3673ccf 0%, #2f38ae 100%);
 }
 .gradient-03 {
   background-image: linear-gradient(to top, #996324 0%, #db7b0d 100%);
-     filter: blur(115px);
-  position: absolute;
 }
-.gradient-qualabout{
+.gradient-qualabout {
   background-image: linear-gradient(to top, #3033d0 0%, #226592 100%);
-  filter: blur(115px);
-position: absolute;
 }
 .gradient-pv {
   background-image: linear-gradient(to top, #202C2E 0%, #427D9D 100%);
-     filter: blur(115px);
-  position: absolute;
 }
 .gradient-nc {
   background-image: linear-gradient(to top, #202C2E 0%, #036bff 100%);
-     filter: blur(115px);
-  position: absolute;
 }
-.gradient-sp{
+.gradient-sp {
   background-image: linear-gradient(to top, #ffc90686 0%, #6200ff 100%);
-     filter: blur(115px);
-  position: absolute;
 }
-
-.gradient-qual{
+.gradient-qual {
   background-image: linear-gradient(to top, #163b8bbb 0%, #e7810c 100%);
-  filter: blur(115px);
-position: absolute;
 }
-
-.gradient-cnn{
-  background-image: linear-gradient(to top, #163b8bbb  0%, #0c94e7  100%);
-  filter: blur(115px);
-position: absolute;
+.gradient-cnn {
+  background-image: linear-gradient(to top, #163b8bbb 0%, #0c94e7 100%);
 }
-
-.gradient-lutc{
+.gradient-lutc {
   background-image: linear-gradient(to top, #742020 0%, #C48C49 100%);
-     filter: blur(115px);
-  position: absolute;
 }
 
 
@@ -241,15 +278,13 @@ html{
 
   list-style-type: none;
   display: flex;
-  right: 30px;
-  position:relative;
+  position: relative;
   margin: 0;
   border-radius: 50px;
   transition: all .2s linear;
   padding: calc(16px - 10px) calc(16px - 6px);
-  margin: 0 3px;
-  align-items: center; /* Ajustement pour aligner verticalement les éléments */
-
+  align-items: center;
+  max-width: calc(100vw - 16px);
 }
 
 .ul-nav li{
@@ -535,7 +570,7 @@ transition-timing-function: ease;
   z-index: 2;
   padding: 40px 30px 100px 30px;
   background-size: cover;
-  box-shadow: 100px 100px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
 
   visibility: hidden;
 
@@ -1053,22 +1088,39 @@ font-size: 1.2rem;
   transform: scaleX(1);
 }
   /* Styles spécifiques pour les appareils mobiles */
+  .nav {
+    margin: 0.75rem auto 0;
+    padding: 0 0.5rem;
+  }
+  .ul-nav {
+    padding: 4px 6px;
+  }
   .nav a {
     text-decoration: none;
     color: rgb(255, 255, 255);
     transition: all .2s ease-in-out;
-    font-size: clamp(.1rem, 1.1rem - 0.5vw, .7rem); /* Utiliser une taille de police adaptable */
-    padding: 10px 15px; /* Ajuster l'espacement intérieur des éléments */
+    font-size: 0.85rem;
+    padding: 6px 10px;
     border-radius: 1.5rem;
+    white-space: nowrap;
   }
-  .ul-nav li{
-    padding: 10px 0 10px 0;
-    margin: 0px 7px 0px 7px;
+  .active {
+    font-size: 0.85rem;
+    padding: 6px 12px;
+  }
+  .ul-nav li {
+    padding: 4px 0;
+    margin: 0 2px;
     text-decoration: none;
     display: flex;
     position: relative;
-    display: list-item;
-    text-align: -webkit-match-parent;
+  }
+  #parcours {
+    margin: 0 12px 100px 12px;
+    padding: 28px 18px 64px 18px;
+  }
+  #parcours h3 {
+    font-size: clamp(2rem, 8vw, 3.2rem);
   }
   
 .project {

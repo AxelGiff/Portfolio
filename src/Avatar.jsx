@@ -1,36 +1,37 @@
 import React, { useState, memo, useCallback } from 'react';
 import CardContainer from './CardContainer.jsx';
-
-// Direct import instead of URL constructor
 import avatarImage from './images/IMAGEAUTRE.webp';
 
 const Avatar = memo(() => {
-  const [isHovered, setIsHovered] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
-  const handleMouseOver = useCallback(() => {
-    setIsHovered(true);
-  }, []);
-
-  const handleMouseOut = useCallback(() => {
-    setIsHovered(false);
-  }, []);
+  const handleOpen = useCallback(() => setIsOpen(true), []);
+  const handleClose = useCallback(() => setIsOpen(false), []);
+  const handleToggle = useCallback(() => setIsOpen((prev) => !prev), []);
 
   return (
-    <div className="flex items-center justify-center">
-      {isHovered && <CardContainer />}
+    <div className="flex items-center justify-center relative">
+      {isOpen && <CardContainer />}
 
-      <div
-        className="w-48 h-48 overflow-hidden rounded-full shadow-md cursor-pointer transition-transform duration-300 transform hover:scale-110 hover:grayscale"
-        onMouseOver={handleMouseOver}
-        onMouseOut={handleMouseOut}
+      <button
+        type="button"
+        aria-label="Afficher la présentation rapide d'Axel Giffard"
+        aria-expanded={isOpen}
+        className="w-40 h-40 sm:w-48 sm:h-48 overflow-hidden rounded-full border border-white/15 shadow-lg cursor-pointer transition-transform duration-300 transform hover:scale-105 focus-visible:scale-105 hover:grayscale"
+        onMouseEnter={handleOpen}
+        onMouseLeave={handleClose}
+        onFocus={handleOpen}
+        onBlur={handleClose}
+        onClick={handleToggle}
       >
         <img
           className="circular--portrait-img"
-          alt="me"
+          alt="Portrait d'Axel Giffard"
           src={avatarImage}
-          loading="lazy"
+          decoding="async"
+          fetchPriority="high"
         />
-      </div>
+      </button>
     </div>
   );
 });

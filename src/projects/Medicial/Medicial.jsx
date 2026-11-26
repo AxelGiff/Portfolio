@@ -20,7 +20,7 @@ export default function Medicial() {
         src={new URL("./images/main2chatbot.webp", import.meta.url).href}
         alt="screen todo list"
         loading="lazy"
-        className="-mt-96 -z-[-10] w-[100%] h-[100%] sm:w-[60%] sm:h-[650px] shadow-lg sm:visible [mask-image:linear-gradient(to_bottom,white,white,transparent)] transition duration-1000 rounded-xl"
+        className="-mt-16 sm:-mt-36 lg:-mt-64 -z-[-10] w-[92%] max-w-4xl h-auto object-cover shadow-lg sm:visible [mask-image:linear-gradient(to_bottom,white,white,transparent)] transition duration-1000 rounded-xl"
       />
       <Technologies iconsToShow={["React", "Tensorflow", "FastAPI", "HuggingFace", "MongoDB","Docker"]} />
       <AboutMedicial />

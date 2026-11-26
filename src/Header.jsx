@@ -6,6 +6,7 @@ const NavLink = memo(({ to, onClick, isActive, children }) => (
     <Link 
       to={to} 
       className={`a-list ${isActive ? 'active' : ''}`} 
+      aria-current={isActive ? 'page' : undefined}
       onClick={onClick}
     >
       {children}
@@ -39,38 +40,65 @@ const Header = memo(() => {
     }
   }, [location]);
 
-  // Effet de flou sur défilement
+  // Effet de flou sur défilement + suivi de section active
   useEffect(() => {
     const handleScroll = () => {
-      const { scrollTop } = document.documentElement;
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
       setIsBlurred(scrollTop > 50);
+
+      if (location.pathname !== '/') return;
+      const sections = [
+        { id: 'contact-container', name: 'Contact' },
+        { id: 'project-container', name: 'Projects' },
+        { id: 'about-container', name: 'About' },
+      ];
+      const offset = window.innerHeight * 0.35;
+      let matched = 'Home';
+      for (const sec of sections) {
+        const el = document.getElementById(sec.id);
+        if (el && el.getBoundingClientRect().top <= offset) {
+          matched = sec.name;
+          break;
+        }
+      }
+      setActiveLink(matched);
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [location.pathname]);
 
   // Fonction optimisée pour la navigation
   const handleLinkClick = useCallback((e, link, target) => {
     e.preventDefault();
     setActiveLink(link);
-    
+
     if (location.pathname !== '/') {
-      navigate('/');
-      // Attendre que la navigation soit terminée
-      setTimeout(() => {
-        const element = document.querySelector(target);
-        if (element) element.scrollIntoView({ behavior: 'smooth' });
-      }, 50);
+      const targetId = target === 'body' ? null : target.replace('#', '');
+      navigate(targetId ? `/#${targetId}` : '/', {
+        state: targetId ? { scrollTo: targetId } : undefined,
+      });
+      if (!targetId) {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+      return;
+    }
+
+    if (target === 'body') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      window.history.replaceState(null, '', '/');
     } else {
       const element = document.querySelector(target);
-      if (element) element.scrollIntoView({ behavior: 'smooth' });
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+        window.history.replaceState(null, '', `/${target}`);
+      }
     }
   }, [location.pathname, navigate]);
 
   return (
     <header>
-      <nav className="nav">
+      <nav className="nav" aria-label="Navigation principale">
         <ul className={`ul-nav ${isBlurred ? 'blur_class' : ''}`}>
           <NavLink 
             to="/" 
