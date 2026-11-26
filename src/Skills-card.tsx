@@ -53,20 +53,20 @@ const skills = [
 
 export const CardHoverEffect = memo(function CardHoverEffect() {
   return (
-    <div className="relative z-20 max-w-5xl mx-auto px-4 sm:px-8 py-14">
-      <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+    <div className="relative z-20 max-w-5xl mx-auto px-4 sm:px-8 py-10 sm:py-14">
+      <ul className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-2.5 sm:gap-4">
         {skills.map((skill) => (
           <li
             key={skill.name}
-            className={`group flex flex-col items-center justify-center gap-3 rounded-2xl border border-white/10 bg-neutral-950/90 px-4 py-6 transition-all duration-300 hover:-translate-y-1 hover:bg-black ${skill.glow}`}
+            className={`group flex flex-col items-center justify-center gap-2 sm:gap-3 rounded-2xl border border-white/10 bg-neutral-950/90 px-2 py-4 sm:px-4 sm:py-6 transition-all duration-300 hover:-translate-y-1 hover:bg-black ${skill.glow}`}
           >
             <span
               aria-hidden="true"
-              className="w-10 h-10 flex items-center justify-center [&>svg]:w-10 [&>svg]:h-10 transition-transform duration-300 group-hover:scale-110"
+              className="w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center [&>svg]:w-8 [&>svg]:h-8 sm:[&>svg]:w-10 sm:[&>svg]:h-10 transition-transform duration-300 group-hover:scale-110"
             >
               {skill.icon}
             </span>
-            <span className="text-xs font-medium text-neutral-300 group-hover:text-white transition-colors text-center">
+            <span className="text-[11px] sm:text-xs font-medium text-neutral-300 group-hover:text-white transition-colors text-center leading-tight">
               {skill.name}
             </span>
           </li>

@@ -59,12 +59,12 @@ const ProjectDetail = memo(() => {
 
   return (
     <div ref={targetRef} className="relative">
-      <div className="fixed top-20 sm:top-24 left-4 sm:left-8 z-[1001]">
+      <div className="fixed top-3 left-3 md:top-24 md:left-8 z-[1001]">
         <Link
           to="/#project-container"
           state={{ scrollTo: 'project-container' }}
           aria-label={isFr ? 'Retour aux projets' : 'Back to projects'}
-          className="group inline-flex items-center gap-2 rounded-full border border-white/15 bg-neutral-950/75 px-3.5 py-2 text-xs sm:text-sm font-medium text-neutral-200 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-xl transition hover:border-white/30 hover:text-white"
+          className="group inline-flex items-center gap-2 rounded-full border border-white/15 bg-neutral-950/80 px-3.5 py-2 min-h-[40px] md:min-h-0 text-xs sm:text-sm font-medium text-neutral-200 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-xl transition hover:border-white/30 hover:text-white active:scale-95"
         >
           <svg className="transition-transform group-hover:-translate-x-0.5" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
             <polyline points="15 18 9 12 15 6" />
@@ -92,7 +92,7 @@ const ProjectDetail = memo(() => {
       {ProjectComponent && (
         <nav
           aria-label={isFr ? 'Navigation entre projets' : 'Project navigation'}
-          className="max-w-4xl mx-auto px-6 py-20 grid grid-cols-1 sm:grid-cols-2 gap-4 border-t border-white/10"
+          className="max-w-4xl mx-auto px-4 sm:px-6 pt-16 pb-28 md:py-20 grid grid-cols-1 sm:grid-cols-2 gap-4 border-t border-white/10"
         >
           {prevProject ? (
             <Link

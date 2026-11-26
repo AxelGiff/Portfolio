@@ -1570,6 +1570,35 @@ html[data-theme="light"] .project-filter-tab[aria-selected="true"] .project-filt
   color: #ffffff !important;
 }
 
+/* Hide top pill navbar on mobile where the bottom dock is active */
+@media (max-width: 767px) {
+  .nav {
+    display: none !important;
+  }
+}
+
+/* Mobile dock light mode + horizontal filter scrollbar hide */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+html[data-theme="light"] .mobile-dock-bar {
+  background-color: rgba(255, 255, 255, 0.94) !important;
+  border-color: rgba(15, 23, 42, 0.14) !important;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
+}
+html[data-theme="light"] .mobile-dock-link {
+  color: #475569 !important;
+}
+html[data-theme="light"] .mobile-dock-active {
+  background-color: #dbeafe !important;
+  color: #0369a1 !important;
+}
+
 /* Skip link */
 html[data-theme="light"] .skip-link {
   background: #0f172a;

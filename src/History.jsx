@@ -253,24 +253,24 @@ export default memo(function History() {
     <section
       id="parcours-section"
       aria-label="Road Trip"
-      className="relative my-24 sm:my-36 px-4 sm:px-8"
+      className="relative my-16 sm:my-28 lg:my-36 px-4 sm:px-8"
     >
       <div className="max-w-[92rem] mx-auto">
         {/* Header + Interactive Filter Legend */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12 lg:mb-14">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10 lg:mb-14">
           <div className="flex items-center gap-3">
-            <img src={paperPlaneIcon} alt="" width="32" height="32" />
-            <h2 className="text-4xl sm:text-5xl font-bold text-white tracking-tight">
+            <img src={paperPlaneIcon} alt="" width="30" height="30" />
+            <h2 className="text-3xl sm:text-5xl font-bold text-white tracking-tight">
               Road Trip
             </h2>
           </div>
 
-          <div className="flex flex-wrap items-center gap-3 text-sm">
+          <div className="flex flex-wrap items-center gap-2.5 text-sm">
             <button
               type="button"
               onClick={() => toggleFilter('academic')}
               aria-pressed={filter === 'academic'}
-              className={`inline-flex items-center gap-2 rounded-full border px-3.5 py-1.5 text-xs sm:text-sm font-medium transition cursor-pointer ${
+              className={`inline-flex items-center gap-2 rounded-full border px-4 py-2 min-h-[40px] text-xs sm:text-sm font-medium transition cursor-pointer active:scale-95 ${
                 filter === 'academic'
                   ? 'border-violet-400/80 bg-violet-500/25 text-white'
                   : 'border-white/20 bg-white/[0.04] text-white hover:border-violet-400/60'
@@ -284,7 +284,7 @@ export default memo(function History() {
               type="button"
               onClick={() => toggleFilter('pro')}
               aria-pressed={filter === 'pro'}
-              className={`inline-flex items-center gap-2 rounded-full border px-3.5 py-1.5 text-xs sm:text-sm font-medium transition cursor-pointer ${
+              className={`inline-flex items-center gap-2 rounded-full border px-4 py-2 min-h-[40px] text-xs sm:text-sm font-medium transition cursor-pointer active:scale-95 ${
                 filter === 'pro'
                   ? 'border-amber-400/80 bg-amber-500/25 text-white'
                   : 'border-white/20 bg-white/[0.04] text-white hover:border-amber-400/60'
@@ -528,51 +528,81 @@ export default memo(function History() {
           </div>
         </div>
 
-        {/* Mobile / Tablet: interactive vertical list */}
-        <ol className="lg:hidden relative border-l-2 border-white/15 ml-3 space-y-6">
+        {/* Mobile / Tablet: interactive vertical timeline cards */}
+        <ol className="lg:hidden relative border-l-2 border-white/15 ml-2.5 space-y-4">
           {visibleMilestones.map((item) => {
             const isPro = item.type === 'pro';
             const isSelected = activeId === item.id;
             return (
-              <li key={item.id} className="relative pl-6">
+              <li key={item.id} className="relative pl-5">
                 <span
                   aria-hidden="true"
-                  className={`absolute -left-[9px] top-1.5 h-4 w-4 rounded-full border-2 bg-black ${
+                  className={`absolute -left-[9px] top-5 h-4 w-4 rounded-full border-2 bg-black transition-transform ${
+                    isSelected ? 'scale-110' : ''
+                  } ${
                     isPro
                       ? 'border-amber-400 shadow-[0_0_10px_rgba(251,191,36,0.75)]'
                       : 'border-violet-400 shadow-[0_0_10px_rgba(167,139,250,0.75)]'
                   }`}
                 />
-                <button
-                  type="button"
-                  onClick={() => setActiveId(item.id)}
-                  aria-expanded={isSelected}
-                  className="text-left w-full cursor-pointer"
+                <div
+                  className={`rounded-2xl border transition backdrop-blur-md ${
+                    isSelected
+                      ? isPro
+                        ? 'border-amber-400/50 bg-neutral-950/75'
+                        : 'border-violet-400/50 bg-neutral-950/75'
+                      : 'border-white/10 bg-neutral-950/50'
+                  }`}
                 >
-                  <span className="block font-mono text-xs text-neutral-400">
-                    {isFr ? item.dateFr : item.dateEn}
-                  </span>
-                  <h3 className="text-base font-semibold text-white mt-0.5">
-                    {isFr ? item.titleFr : item.titleEn}
-                  </h3>
-                  <p className="text-xs text-neutral-400">
-                    {isFr ? item.placeFr : item.placeEn}
-                  </p>
-                  <p
-                    className={`text-xs font-medium mt-1 ${
-                      isPro ? 'text-amber-300' : 'text-sky-300'
-                    }`}
+                  <button
+                    type="button"
+                    onClick={() => setActiveId(item.id)}
+                    aria-expanded={isSelected}
+                    className="flex items-start justify-between gap-3 text-left w-full p-4 cursor-pointer active:opacity-80"
                   >
-                    {isFr ? item.keywordsFr : item.keywordsEn}
-                  </p>
-                </button>
-                {isSelected && (
-                  <ul className="mt-3 list-disc list-outside pl-4 space-y-1.5 text-xs text-neutral-400 leading-relaxed">
-                    {(isFr ? item.detailsFr : item.detailsEn).map((line, i) => (
-                      <li key={i}>{renderHighlightedLine(line)}</li>
-                    ))}
-                  </ul>
-                )}
+                    <div className="min-w-0">
+                      <span className="block font-mono text-[11px] text-neutral-400">
+                        {isFr ? item.dateFr : item.dateEn}
+                      </span>
+                      <h3 className="text-[15px] font-semibold text-white mt-0.5 leading-snug">
+                        {isFr ? item.titleFr : item.titleEn}
+                      </h3>
+                      <p className="text-xs text-neutral-400 mt-0.5">
+                        {isFr ? item.placeFr : item.placeEn}
+                      </p>
+                      <p
+                        className={`text-xs font-medium mt-1.5 ${
+                          isPro ? 'text-amber-300' : 'text-sky-300'
+                        }`}
+                      >
+                        {isFr ? item.keywordsFr : item.keywordsEn}
+                      </p>
+                    </div>
+                    <svg
+                      className={`shrink-0 mt-1 text-neutral-400 transition-transform duration-200 ${
+                        isSelected ? 'rotate-180 text-sky-400' : ''
+                      }`}
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      aria-hidden="true"
+                    >
+                      <polyline points="6 9 12 15 18 9" />
+                    </svg>
+                  </button>
+                  {isSelected && (
+                    <ul className="px-4 pb-4 pt-1 border-t border-white/10 list-disc list-outside ml-4 space-y-2 text-[13px] text-neutral-300 leading-relaxed marker:text-sky-400/80">
+                      {(isFr ? item.detailsFr : item.detailsEn).map((line, i) => (
+                        <li key={i}>{renderHighlightedLine(line)}</li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
               </li>
             );
           })}

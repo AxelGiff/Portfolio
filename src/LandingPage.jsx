@@ -90,7 +90,7 @@ const LandingPage = memo(() => {
   return (
     <section
       aria-label={isFr ? 'Présentation' : 'Introduction'}
-      className="relative overflow-x-clip flex mb-32 pt-24 pb-16 px-4 font-inter flex-col items-center justify-center min-h-screen z-10 text-center"
+      className="relative overflow-x-clip flex mb-12 sm:mb-28 pt-16 sm:pt-24 pb-10 sm:pb-16 px-5 sm:px-4 font-inter flex-col items-center justify-center min-h-[100svh] z-10 text-center"
     >
       <img
         alt=""
@@ -103,7 +103,7 @@ const LandingPage = memo(() => {
       />
       <SpotlightPreview fill="white" />
 
-      <div className="subtitle" aria-hidden="true">
+      <div className="subtitle hidden md:block" aria-hidden="true">
         <span className="subtitle-content">
           <span>
             <AnimatedSquare />
@@ -156,11 +156,11 @@ const LandingPage = memo(() => {
       </p>
 
       {/* Primary actions for instant recruiter access */}
-      <div className="mt-7 flex flex-wrap items-center justify-center gap-3">
+      <div className="mt-7 w-full max-w-xs sm:max-w-none sm:w-auto flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3">
         <button
           type="button"
           onClick={scrollToProjects}
-          className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-2.5 text-sm font-semibold text-black transition hover:bg-neutral-200 cursor-pointer"
+          className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3 sm:py-2.5 min-h-[48px] sm:min-h-0 text-sm font-semibold text-black transition hover:bg-neutral-200 active:scale-[0.98] cursor-pointer"
         >
           <span>{isFr ? 'Voir mes projets' : 'View projects'}</span>
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -172,7 +172,7 @@ const LandingPage = memo(() => {
           href={cvPdf}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/[0.04] px-6 py-2.5 text-sm font-medium text-white backdrop-blur-md transition hover:border-white/40 hover:bg-white/[0.08]"
+          className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/[0.04] px-6 py-3 sm:py-2.5 min-h-[48px] sm:min-h-0 text-sm font-medium text-white backdrop-blur-md transition hover:border-white/40 hover:bg-white/[0.08] active:scale-[0.98]"
         >
           <span>{isFr ? 'Télécharger mon CV' : 'Download CV'}</span>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -194,7 +194,9 @@ const LandingPage = memo(() => {
         ))}
       </div>
 
-      <ScrollDownButton />
+      <div className="hidden sm:block">
+        <ScrollDownButton />
+      </div>
     </section>
   );
 });

@@ -134,22 +134,22 @@ const Projects = memo(() => {
       : projectsData.filter((p) => p.category === filter);
 
   return (
-    <section id="project-container" className="relative mt-48 px-4 sm:px-8">
+    <section id="project-container" className="relative mt-20 sm:mt-32 lg:mt-48 px-4 sm:px-8">
       <BadgeTextGradient text={t('Projects')} />
-      <h1 className="about-title text-white text-4xl sm:text-5xl block text-center mb-6">
+      <h1 className="about-title text-white text-3xl sm:text-5xl block text-center mb-4 sm:mb-6">
         {t('My work')}
       </h1>
-      <p className="text-center text-neutral-400 text-sm sm:text-base max-w-xl mx-auto mb-12">
+      <p className="text-center text-neutral-400 text-sm sm:text-base max-w-xl mx-auto mb-8 sm:mb-12">
         {isFr
           ? 'Sélectionnez un projet pour explorer son architecture, ses choix techniques et ses écrans.'
           : 'Select any project to explore its architecture, technical stack, and previews.'}
       </p>
 
-      {/* Filter bar */}
+      {/* Filter bar (swipeable single row on mobile) */}
       <div
         role="tablist"
         aria-label={isFr ? 'Filtrer les projets par catégorie' : 'Filter projects by category'}
-        className="flex flex-wrap items-center justify-center gap-2 mb-12"
+        className="flex flex-nowrap sm:flex-wrap items-center justify-start sm:justify-center gap-2 mb-8 sm:mb-12 overflow-x-auto no-scrollbar -mx-4 px-4 sm:mx-0 sm:px-0 pb-1"
       >
         {filters.map((item) => {
           const isActive = filter === item.id;
@@ -160,7 +160,7 @@ const Projects = memo(() => {
               role="tab"
               aria-selected={isActive}
               onClick={() => setFilter(item.id)}
-              className={`project-filter-tab relative inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs sm:text-sm font-medium transition cursor-pointer ${
+              className={`project-filter-tab shrink-0 relative inline-flex items-center gap-2 rounded-full px-4 py-2 min-h-[40px] text-xs sm:text-sm font-medium transition cursor-pointer active:scale-95 ${
                 isActive
                   ? 'text-white'
                   : 'text-neutral-400 hover:text-white border border-white/10 bg-white/[0.02]'

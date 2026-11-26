@@ -24,7 +24,7 @@ const LanguageSelector = () => {
 
     const metaTheme = document.querySelector('meta[name="theme-color"]');
     if (metaTheme) {
-      metaTheme.setAttribute('content', theme === 'light' ? '#f8fafc' : '#000000');
+      metaTheme.setAttribute('content', theme === 'light' ? '#e6ebf2' : '#000000');
     }
   }, [theme]);
 
