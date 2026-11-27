@@ -2,6 +2,7 @@ import React, { useEffect, useRef, memo, lazy, Suspense } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { projectLoaders, prefetchProject } from './utils/assetPreloader.js';
+import { smoothScrollTo } from './utils/smoothScroll.js';
 
 const projectComponents = {
   '1': lazy(projectLoaders['1']),
@@ -38,7 +39,7 @@ const ProjectDetail = memo(() => {
 
   // Défiler vers le haut instantanément
   useEffect(() => {
-    window.scrollTo(0, 0);
+    smoothScrollTo(0, { immediate: true });
   }, [id]);
 
   // Raccourci clavier Esc pour revenir aux projets
@@ -64,7 +65,7 @@ const ProjectDetail = memo(() => {
           to="/#project-container"
           state={{ scrollTo: 'project-container' }}
           aria-label={isFr ? 'Retour aux projets' : 'Back to projects'}
-          className="group inline-flex items-center gap-2 rounded-full border border-white/15 bg-neutral-950/80 px-3.5 py-2 min-h-[40px] md:min-h-0 text-xs sm:text-sm font-medium text-neutral-200 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-xl transition hover:border-white/30 hover:text-white active:scale-95"
+          className="group inline-flex items-center gap-2 rounded-full border border-white/15 bg-neutral-950/90 px-3.5 py-2 min-h-[40px] md:min-h-0 text-xs sm:text-sm font-medium text-neutral-200 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] transition hover:border-white/30 hover:text-white active:scale-95"
         >
           <svg className="transition-transform group-hover:-translate-x-0.5" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
             <polyline points="15 18 9 12 15 6" />
@@ -99,7 +100,7 @@ const ProjectDetail = memo(() => {
               to={`/projects/${prevProject.id}`}
               onMouseEnter={() => prefetchProject(prevProject.id)}
               onFocus={() => prefetchProject(prevProject.id)}
-              className="group flex flex-col items-start rounded-2xl border border-white/10 bg-neutral-950/60 p-5 backdrop-blur-md shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] transition hover:border-white/25 hover:bg-white/[0.04]"
+              className="group flex flex-col items-start rounded-2xl border border-white/10 bg-neutral-950/90 p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] transition hover:border-white/25 hover:bg-white/[0.04]"
             >
               <span className="inline-flex items-center gap-1.5 text-[11px] uppercase tracking-[0.2em] text-neutral-500 group-hover:text-sky-400 transition">
                 <svg className="transition-transform group-hover:-translate-x-0.5" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -120,7 +121,7 @@ const ProjectDetail = memo(() => {
               to={`/projects/${nextProject.id}`}
               onMouseEnter={() => prefetchProject(nextProject.id)}
               onFocus={() => prefetchProject(nextProject.id)}
-              className="group flex flex-col items-end text-right rounded-2xl border border-white/10 bg-neutral-950/60 p-5 backdrop-blur-md shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] transition hover:border-white/25 hover:bg-white/[0.04]"
+              className="group flex flex-col items-end text-right rounded-2xl border border-white/10 bg-neutral-950/90 p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] transition hover:border-white/25 hover:bg-white/[0.04]"
             >
               <span className="inline-flex items-center gap-1.5 text-[11px] uppercase tracking-[0.2em] text-neutral-500 group-hover:text-sky-400 transition">
                 {nextProject.index} · {isFr ? 'Suivant' : 'Next'}

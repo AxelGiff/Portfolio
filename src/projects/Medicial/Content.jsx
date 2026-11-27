@@ -63,7 +63,7 @@ export const MovingLine = () => {
           }}
           transition={transition}
           d={PATH}
-          stroke="var(--blue-500)"
+          stroke="#3b82f6"
           strokeOpacity="1"
           strokeLinecap={"round"}
           strokeWidth="3"
@@ -126,11 +126,15 @@ export const Content = ({
         <img
           src={image1}
           alt={alt1}
+          loading="lazy"
+          decoding="async"
           className="w-full h-40 md:h-96 rounded-md mt-4 object-cover shadow-lg"
         />
         <img
           src={image2}
           alt={alt2}
+          loading="lazy"
+          decoding="async"
           className="w-full h-40 md:h-96 rounded-md mt-4 object-cover shadow-lg"
         />
       </div>

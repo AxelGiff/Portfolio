@@ -3,13 +3,13 @@
     top: 20px;
     right: 20px;
     z-index: 1000;
-    background-color: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(10px);
+    background-color: rgba(15, 17, 23, 0.88);
+    border: 1px solid rgba(255, 255, 255, 0.12);
     padding: 8px 12px;
     border-radius: 20px;
     display: flex;
     align-items: center;
-    transition: all 0.3s ease;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
   }
   
   .language-selector button {

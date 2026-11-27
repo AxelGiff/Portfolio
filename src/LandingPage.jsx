@@ -4,49 +4,19 @@ import { useTranslation } from 'react-i18next';
 import Avatar from './Avatar.jsx';
 import { SpotlightPreview } from './pageSpotlight.tsx';
 import TextShine from './TextShine.tsx';
-import BlurryBackground from "./BlurryBackground.jsx";
 import BadgeAnimatedGradientBorder from "./BadgeAnimated.tsx";
 import ScrollDownButton from "./ScrollDownButton.jsx";
 import ButtonGithub from "./ButtonGithub.jsx";
-import gradientBackground from './images/tech-features-gradient.webp';
 import cvPdf from './images/AXEL-GIFFARD_CV.pdf';
-
-
-
+import { smoothScrollTo } from './utils/smoothScroll.js';
  
 const AnimatedSquare = memo(() => (
-  <svg
-    viewBox="0 0 24 24"
-    xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
-    fill="none"
-  >
-    <style>
-      {`
-        @keyframes loader13-1 {
-          0% { transform: rotate(0); }
-          to { transform: rotate(360deg); }
-        }
-        @keyframes loader13-2 {
-          0% { transform: rotate(0); }
-          to { transform: rotate(-360deg); }
-        }
-      `}
-    </style>
-    <path
-      stroke="#387ADF"
-      strokeWidth=".8"
-      d="M7.157 7.157h10v10h-10z"
-      style={{ animation: 'loader13-1 3s linear infinite both', transformOrigin: 'center center' }}
-    />
-    <path
-      stroke="#387ADF"
-      strokeWidth=".8"
-      d="M12 5.151l7.071 7.071L12 19.293l-7.071-7.071z"
-      style={{ animation: 'loader13-2 3s linear infinite both', transformOrigin: 'center center' }}
-    />
-  </svg>
+  <span className="relative inline-flex items-center justify-center w-6 h-6" aria-hidden="true">
+    <span className="absolute w-3.5 h-3.5 border border-[#387ADF]/90 animate-[spin_3s_linear_infinite] will-change-transform" />
+    <span className="absolute inset-0 flex items-center justify-center rotate-45">
+      <span className="w-3.5 h-3.5 border border-[#387ADF]/90 animate-[spin_3s_linear_infinite_reverse] will-change-transform" />
+    </span>
+  </span>
 ));
 
 const socialLinks = [
@@ -83,8 +53,7 @@ const LandingPage = memo(() => {
   const isFr = i18n.language?.startsWith('fr');
 
   const scrollToProjects = () => {
-    const el = document.getElementById('project-container');
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
+    smoothScrollTo('#project-container');
   };
 
   return (
@@ -92,15 +61,7 @@ const LandingPage = memo(() => {
       aria-label={isFr ? 'Présentation' : 'Introduction'}
       className="relative overflow-x-clip flex mb-12 sm:mb-28 pt-16 sm:pt-24 pb-10 sm:pb-16 px-5 sm:px-4 font-inter flex-col items-center justify-center min-h-[100svh] z-10 text-center"
     >
-      <img
-        alt=""
-        aria-hidden="true"
-        decoding="async"
-        className="h-[1000px] w-[1000px] absolute inset-0 object-cover pointer-events-none select-none"
-        style={{ position: "absolute", height: "100%", width: "100%", left: "0", top: "0", right: "0", bottom: "0" }}
-        sizes="100vw"
-        src={gradientBackground}
-      />
+      <div aria-hidden="true" className="ambient-tech-glow absolute -inset-y-16 inset-x-0 -z-10" />
       <SpotlightPreview fill="white" />
 
       <div className="subtitle hidden md:block" aria-hidden="true">
@@ -172,7 +133,7 @@ const LandingPage = memo(() => {
           href={cvPdf}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/[0.04] px-6 py-3 sm:py-2.5 min-h-[48px] sm:min-h-0 text-sm font-medium text-white backdrop-blur-md transition hover:border-white/40 hover:bg-white/[0.08] active:scale-[0.98]"
+          className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/[0.04] px-6 py-3 sm:py-2.5 min-h-[48px] sm:min-h-0 text-sm font-medium text-white transition hover:border-white/40 hover:bg-white/[0.08] active:scale-[0.98]"
         >
           <span>{isFr ? 'Télécharger mon CV' : 'Download CV'}</span>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">

@@ -5,6 +5,7 @@ import About from './About.jsx';
 import History from './History.jsx';
 import Projects from './Projects.jsx';
 import Contact from './Contact.jsx';
+import { smoothScrollTo } from './utils/smoothScroll.js';
 
 const Routage = memo(() => {
   const location = useLocation();
@@ -17,7 +18,7 @@ const Routage = memo(() => {
     const scrollWhenReady = () => {
       const el = document.getElementById(targetId);
       if (el) {
-        el.scrollIntoView({ behavior: 'smooth' });
+        smoothScrollTo(el);
         return;
       }
       if (attempts < 10) {

@@ -20,18 +20,21 @@ const projectImageFolders = {
   '6': '/projects/Medicial/',
 };
 
-// Collects resolved URLs for all images at build time without executing component code.
+// Collects resolved URLs only for active project folders without executing component code.
 const imageModules = import.meta.glob(
   [
-    '../images/*.{png,jpg,jpeg,webp,gif}',
-    '../projects/*/images/*.{png,jpg,jpeg,webp,gif}',
+    '../projects/Qualoto/images/*.{png,jpg,jpeg,webp,gif}',
+    '../projects/CNN/images/*.{png,jpg,jpeg,webp,gif}',
+    '../projects/LogsAnalyzer/images/*.{png,jpg,jpeg,webp,gif}',
+    '../projects/NetCards/images/*.{png,jpg,jpeg,webp,gif}',
+    '../projects/RustAgent/images/*.{png,jpg,jpeg,webp,gif}',
+    '../projects/Medicial/images/*.{png,jpg,jpeg,webp,gif}',
   ],
   { eager: true, import: 'default' }
 );
 
 const preloadedUrls = new Set();
 const prefetchedProjects = new Set();
-let idlePreloadScheduled = false;
 
 /**
  * Preloads a single image URL once with async decoding.
@@ -52,7 +55,7 @@ export function preloadImage(url) {
 }
 
 /**
- * Prefetches a project's JS chunk and its images before navigation.
+ * Prefetches a project's JS chunk and its first 2 preview images on user intent.
  */
 export function prefetchProject(id) {
   const loader = projectLoaders[id];
@@ -66,44 +69,14 @@ export function prefetchProject(id) {
   const folder = projectImageFolders[id];
   if (!folder) return;
 
+  let count = 0;
   for (const [modulePath, url] of Object.entries(imageModules)) {
     if (modulePath.includes(folder)) {
       preloadImage(url);
+      count += 1;
+      if (count >= 2) break;
     }
   }
 }
 
-/**
- * Warms route chunks and image assets during browser idle time in small batches.
- */
-export function scheduleIdleAssetPreload() {
-  if (idlePreloadScheduled || typeof window === 'undefined') return;
-  idlePreloadScheduled = true;
-
-  const schedule =
-    typeof window.requestIdleCallback === 'function'
-      ? (cb) => window.requestIdleCallback(cb, { timeout: 2000 })
-      : (cb) => window.setTimeout(cb, 300);
-
-  const urls = Object.values(imageModules);
-  const chunkLoaders = Object.entries(projectLoaders);
-
-  schedule(async () => {
-    // Warm route chunks first so Suspense transitions are instant.
-    for (const [id, loader] of chunkLoaders) {
-      if (!prefetchedProjects.has(id)) {
-        prefetchedProjects.add(id);
-        loader().catch(() => {
-          prefetchedProjects.delete(id);
-        });
-      }
-    }
-
-    // Preload images in small batches to avoid saturating bandwidth or main thread.
-    const batchSize = 3;
-    for (let i = 0; i < urls.length; i += batchSize) {
-      const batch = urls.slice(i, i + batchSize);
-      await Promise.all(batch.map((url) => preloadImage(url)));
-    }
-  });
-}
+export function scheduleIdleAssetPreload() {}

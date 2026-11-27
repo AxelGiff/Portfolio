@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import BadgeTextGradient from './BadgeGradient.tsx';
+import { smoothScrollTo } from './utils/smoothScroll.js';
 
 export default function Contact() {
   const { t, i18n } = useTranslation();
@@ -18,25 +19,22 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact-container" className="relative mt-20 sm:mt-36 lg:mt-48 pb-28 md:pb-16 px-4">
+    <section id="contact-container" className="relative overflow-x-clip [contain:layout_style] mt-20 sm:mt-36 lg:mt-48 pb-28 md:pb-16 px-4">
       <BadgeTextGradient text={t('Contact')} />
       <h1 className="about-title text-white text-3xl sm:text-5xl block text-center mb-6 sm:mb-8">
         {t('Want to discuss ?')}
       </h1>
 
       <div className="flex justify-center mb-10 sm:mb-14">
-        <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-3.5 py-1 text-xs font-medium text-neutral-300 backdrop-blur-md">
-          <span className="relative flex h-2 w-2" aria-hidden="true">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400" />
-          </span>
+        <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-3.5 py-1 text-xs font-medium text-neutral-300">
+          <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400 ring-4 ring-emerald-400/20" aria-hidden="true" />
           {isFr ? 'Disponible pour de nouvelles opportunités' : 'Open to new opportunities'}
         </span>
       </div>
 
       <div className="gradient-02 absolute z-[-1] right-3/4 left-1/4 bottom-0 w-1/2 h-[80%] opacity-30 pointer-events-none" />
 
-      <div className="max-w-3xl mx-auto rounded-3xl border border-white/10 bg-neutral-950/60 backdrop-blur-xl shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] overflow-hidden">
+      <div className="max-w-3xl mx-auto rounded-3xl border border-white/10 bg-neutral-950/75 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] overflow-hidden">
         <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-white/10">
           <button
             type="button"
@@ -113,7 +111,7 @@ export default function Contact() {
         <span>© {new Date().getFullYear()} Axel Giffard</span>
         <button
           type="button"
-          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          onClick={() => smoothScrollTo(0)}
           className="inline-flex items-center gap-1.5 text-neutral-400 hover:text-white transition"
         >
           <span>{isFr ? 'Haut de page' : 'Back to top'}</span>

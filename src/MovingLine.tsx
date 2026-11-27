@@ -63,7 +63,7 @@ return (
       }}
       transition={transition}
       d={PATH}
-      stroke="var(--blue-500)"
+      stroke="#3b82f6"
       strokeOpacity="1"
       strokeLinecap={"round"}
       strokeWidth="3"

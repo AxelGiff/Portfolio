@@ -2,7 +2,6 @@ import React from 'react';
 import Technologies from '../Technologies.jsx';
 import LandingMedicial from './LandingMedicial.jsx';
 import AboutMedicial from './AboutMedicial.jsx';
-import { MovingLine } from './Content.jsx'; // Ajout de l'import
 import { useTranslation } from 'react-i18next';
 
 /**

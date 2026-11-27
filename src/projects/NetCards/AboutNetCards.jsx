@@ -16,7 +16,7 @@ export default function AboutNetCards() {
   const words = t('netcards.description');
 
   return (
-    <section id="about-container">
+    <section id="about-container" className="relative overflow-x-clip w-full">
       <h1 className='about-title text-white text-3xl sm:text-4xl lg:text-5xl block text-center mt-16 sm:mt-24 mb-12 sm:mb-20 px-4'>{t('Zoom-in')}</h1>
       <div className="flex  flex_responsive flex-col xl:flex-row items-center gap-12 mx-4 sm:mx-12 lg:mx-24 xl:mx-36 my-12 sm:mt-0 sm:gap-24">
       <div className="gradient-nc z-[-10000] right-1/4 -top-1/8 w-1/2 h-full opacity-30"></div>
@@ -35,7 +35,7 @@ export default function AboutNetCards() {
 
       <img alt="left gradient" loading="lazy" width="500" height="500" decoding="async" data-nimg="1" className="absolute right-0 top-1/8" style={{color:"transparent"}} src={new URL("../../images/glow.webp", import.meta.url).href} />
       <div className="relative">
-        <img alt="gradient" loading="lazy" decoding="async" data-nimg="fill" className="h-[1000px] w-[1000px] z-[-1000] inset-0 object-cover absolute pointer-events-none select-none" style={{height:"200vh",width:"auto",left:"0",right:"0",top:"-540px",color:"transparent"}} sizes="100vw" src={new URL("../../images/tech-features-gradient.webp", import.meta.url).href} />
+        <div aria-hidden="true" className="ambient-tech-glow absolute -top-64 inset-x-0 mx-auto w-full max-w-6xl h-[620px] -z-10" />
       </div>
 
      {/* <div className="flex flex-row items-center justify-center mt-8 ">

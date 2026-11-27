@@ -6,7 +6,7 @@ export default function AboutMedicial() {
   const { t } = useTranslation();
   
   return (
-    <section id="about-container">
+    <section id="about-container" className="relative overflow-x-clip w-full">
       <h1 className="about-title text-white text-3xl sm:text-4xl lg:text-5xl block text-center mt-16 sm:mt-24 mb-12 sm:mb-20 px-4">
         {t('Zoom-in')}
       </h1>
@@ -20,10 +20,9 @@ export default function AboutMedicial() {
           <img
             alt="Product Preview"
             loading="lazy"
-            width="2500"
-            height="150"
+            decoding="async"
             className="shadow-lg z-50 sm:visible [mask-image:linear-gradient(to_bottom,white,white,transparent)] 
-                       transition duration-1000 rounded-lg relative bottom-8 opacity-100"
+                       transition duration-1000 rounded-lg relative bottom-8 opacity-100 w-full h-auto"
             style={{ color: 'transparent' }}
             src={new URL('./images/main3Chatbot.webp', import.meta.url).href}
           />
@@ -34,8 +33,7 @@ export default function AboutMedicial() {
           <div
             className="
               p-6 sm:p-8
-              bg-black/60
-              backdrop-blur-md
+              bg-black/80
               rounded-2xl
               shadow-lg
               w-full
@@ -91,16 +89,7 @@ export default function AboutMedicial() {
         src={new URL('../../images/glow.webp', import.meta.url).href}
       />
       <div className="relative">
-        <img
-          alt="gradient"
-          loading="lazy"
-          decoding="async"
-          data-nimg="fill"
-          className="h-[1000px] w-[1000px] z-[-1000] inset-0 object-cover absolute pointer-events-none select-none"
-          style={{ height: '200vh', width: 'auto', left: '0', right: '0', top: '-540px', color: 'transparent' }}
-          sizes="100vw"
-          src={new URL('../../images/tech-features-gradient.webp', import.meta.url).href}
-        />
+        <div aria-hidden="true" className="ambient-tech-glow absolute -top-64 inset-x-0 mx-auto w-full max-w-6xl h-[620px] -z-10" />
       </div>
 
       <h1 className="about-title text-white text-3xl sm:text-4xl lg:text-5xl block text-center mt-16 sm:mt-24 mb-12 sm:mb-20 px-4">

@@ -1,4 +1,4 @@
-const CACHE_NAME = 'portfolio-assets-v1';
+const CACHE_NAME = 'portfolio-assets-v2';
 
 self.addEventListener('install', (event) => {
   event.waitUntil(self.skipWaiting());
