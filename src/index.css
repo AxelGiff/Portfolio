@@ -7,6 +7,19 @@ html {
   max-width: 100%;
 }
 
+@keyframes scroll-progress-scale {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+@supports (animation-timeline: scroll()) {
+  .scroll-progress-bar {
+    transform: scaleX(0);
+    animation: scroll-progress-scale linear both;
+    animation-timeline: scroll(root block);
+  }
+}
+
 /* Accessibility: Skip link, keyboard focus-visible, and reduced motion */
 .skip-link {
   position: fixed;
@@ -114,41 +127,47 @@ html {
 .gradient-cnn,
 .gradient-lutc {
   position: absolute;
-  filter: blur(115px);
   pointer-events: none;
-  transform: translate3d(0, 0, 0);
-  backface-visibility: hidden;
-  will-change: transform;
+  transform: scale(2.7);
 }
 .gradient-01 {
-  background-image: linear-gradient(to top, #3033d0 0%, #330867 100%);
+  background-image: radial-gradient(ellipse 50% 50% at 50% 50%, rgba(48, 51, 208, 0.72) 0%, rgba(48, 51, 208, 0.56) 18%, rgba(48, 51, 208, 0.36) 36%, rgba(51, 8, 103, 0.19) 54%, rgba(51, 8, 103, 0.08) 72%, rgba(51, 8, 103, 0.02) 88%, transparent 100%);
 }
 .gradient-02 {
-  background-image: linear-gradient(to top, #c3673ccf 0%, #2f38ae 100%);
+  background-image: radial-gradient(ellipse 46% 36% at 50% 62%, rgba(195, 103, 60, 0.65) 0%, rgba(195, 103, 60, 0.48) 18%, rgba(195, 103, 60, 0.29) 36%, rgba(195, 103, 60, 0.14) 54%, rgba(195, 103, 60, 0.055) 72%, rgba(195, 103, 60, 0.015) 88%, transparent 100%), radial-gradient(ellipse 48% 40% at 50% 42%, rgba(47, 56, 174, 0.74) 0%, rgba(47, 56, 174, 0.56) 18%, rgba(47, 56, 174, 0.34) 36%, rgba(47, 56, 174, 0.17) 54%, rgba(47, 56, 174, 0.07) 72%, rgba(47, 56, 174, 0.018) 88%, transparent 100%);
 }
 .gradient-03 {
-  background-image: linear-gradient(to top, #996324 0%, #db7b0d 100%);
+  background-image: radial-gradient(ellipse 50% 50% at 50% 50%, rgba(219, 123, 13, 0.72) 0%, rgba(219, 123, 13, 0.54) 18%, rgba(219, 123, 13, 0.34) 36%, rgba(153, 99, 36, 0.17) 54%, rgba(153, 99, 36, 0.07) 72%, rgba(153, 99, 36, 0.018) 88%, transparent 100%);
 }
 .gradient-qualabout {
-  background-image: linear-gradient(to top, #3033d0 0%, #226592 100%);
+  background-image: radial-gradient(ellipse 50% 50% at 50% 50%, rgba(48, 51, 208, 0.72) 0%, rgba(34, 101, 146, 0.55) 18%, rgba(34, 101, 146, 0.34) 36%, rgba(34, 101, 146, 0.17) 54%, rgba(34, 101, 146, 0.07) 72%, rgba(34, 101, 146, 0.018) 88%, transparent 100%);
 }
 .gradient-pv {
-  background-image: linear-gradient(to top, #202C2E 0%, #427D9D 100%);
+  background-image: radial-gradient(ellipse 50% 50% at 50% 50%, rgba(66, 125, 157, 0.72) 0%, rgba(66, 125, 157, 0.54) 18%, rgba(66, 125, 157, 0.33) 36%, rgba(32, 44, 46, 0.16) 54%, rgba(32, 44, 46, 0.06) 72%, rgba(32, 44, 46, 0.015) 88%, transparent 100%);
 }
 .gradient-nc {
-  background-image: linear-gradient(to top, #202C2E 0%, #036bff 100%);
+  background-image: radial-gradient(ellipse 50% 50% at 50% 50%, rgba(3, 107, 255, 0.72) 0%, rgba(3, 107, 255, 0.54) 18%, rgba(3, 107, 255, 0.33) 36%, rgba(32, 44, 46, 0.16) 54%, rgba(32, 44, 46, 0.06) 72%, rgba(32, 44, 46, 0.015) 88%, transparent 100%);
 }
 .gradient-sp {
-  background-image: linear-gradient(to top, #ffc90686 0%, #6200ff 100%);
+  background-image: radial-gradient(ellipse 46% 36% at 50% 62%, rgba(255, 201, 6, 0.5) 0%, rgba(255, 201, 6, 0.36) 18%, rgba(255, 201, 6, 0.21) 36%, rgba(255, 201, 6, 0.1) 54%, rgba(255, 201, 6, 0.035) 72%, rgba(255, 201, 6, 0.01) 88%, transparent 100%), radial-gradient(ellipse 48% 40% at 50% 42%, rgba(98, 0, 255, 0.72) 0%, rgba(98, 0, 255, 0.54) 18%, rgba(98, 0, 255, 0.33) 36%, rgba(98, 0, 255, 0.16) 54%, rgba(98, 0, 255, 0.06) 72%, rgba(98, 0, 255, 0.015) 88%, transparent 100%);
 }
 .gradient-qual {
-  background-image: linear-gradient(to top, #163b8bbb 0%, #e7810c 100%);
+  background-image: radial-gradient(ellipse 46% 36% at 50% 38%, rgba(231, 129, 12, 0.72) 0%, rgba(231, 129, 12, 0.54) 18%, rgba(231, 129, 12, 0.33) 36%, rgba(231, 129, 12, 0.16) 54%, rgba(231, 129, 12, 0.06) 72%, rgba(231, 129, 12, 0.015) 88%, transparent 100%), radial-gradient(ellipse 48% 40% at 50% 58%, rgba(22, 59, 139, 0.68) 0%, rgba(22, 59, 139, 0.5) 18%, rgba(22, 59, 139, 0.3) 36%, rgba(22, 59, 139, 0.14) 54%, rgba(22, 59, 139, 0.055) 72%, rgba(22, 59, 139, 0.015) 88%, transparent 100%);
 }
 .gradient-cnn {
-  background-image: linear-gradient(to top, #163b8bbb 0%, #0c94e7 100%);
+  background-image: radial-gradient(ellipse 50% 50% at 50% 50%, rgba(12, 148, 231, 0.72) 0%, rgba(12, 148, 231, 0.54) 18%, rgba(12, 148, 231, 0.33) 36%, rgba(22, 59, 139, 0.17) 54%, rgba(22, 59, 139, 0.07) 72%, rgba(22, 59, 139, 0.018) 88%, transparent 100%);
 }
 .gradient-lutc {
-  background-image: linear-gradient(to top, #742020 0%, #C48C49 100%);
+  background-image: radial-gradient(ellipse 50% 50% at 50% 50%, rgba(196, 140, 73, 0.72) 0%, rgba(196, 140, 73, 0.54) 18%, rgba(196, 140, 73, 0.33) 36%, rgba(116, 32, 32, 0.17) 54%, rgba(116, 32, 32, 0.07) 72%, rgba(116, 32, 32, 0.018) 88%, transparent 100%);
+}
+
+.ambient-tech-glow {
+  pointer-events: none;
+  user-select: none;
+  background-image:
+    radial-gradient(ellipse 48% 46% at 50% 50%, rgba(29, 78, 216, 0.26) 0%, rgba(30, 64, 175, 0.19) 20%, rgba(30, 58, 138, 0.11) 40%, rgba(23, 37, 84, 0.05) 62%, rgba(15, 23, 42, 0.015) 82%, transparent 100%),
+    radial-gradient(ellipse 30% 38% at 68% 48%, rgba(56, 189, 248, 0.14) 0%, rgba(56, 189, 248, 0.08) 30%, rgba(56, 189, 248, 0.025) 62%, transparent 100%),
+    radial-gradient(ellipse 28% 36% at 30% 54%, rgba(99, 102, 241, 0.14) 0%, rgba(99, 102, 241, 0.08) 30%, rgba(99, 102, 241, 0.025) 62%, transparent 100%);
 }
 
 
@@ -160,11 +179,8 @@ html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  -webkit-font-smoothing:antialiased;
+  -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-scroll-behavior: smooth;
-  text-rendering:optimizeLegibility;
-
 }
 
 
@@ -228,8 +244,7 @@ html {
   min-height: 100%;
   margin: 0;
   padding: 0;
-  background-size: cover;
-  scroll-behavior: smooth;
+  background-color: #000000;
 }
 
   .scrolled {
@@ -251,26 +266,27 @@ html {
     margin: 0;
     padding: 0;
     min-height: 100vh;
-    background-size: cover;
-    
+    background-color: transparent;
+  }
 
-  background-image: radial-gradient(circle at center,rgba(255,255,255,0.008)0,rgba(255,255,255,0.005) 1px, transparent 1px),
-  linear-gradient(to right, rgba(255,255,255,0.01) 1px, transparent 1px),
-  linear-gradient(to bottom, rgba(255,255,255,0.01) 1px, transparent 1px);
-
-  
-  background-size: 30px 30px;
-  background-attachment: fixed;
-  background-color: #000000;
-
-
-  
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: -20000;
+    pointer-events: none;
+    background-image:
+      radial-gradient(circle at center, rgba(255, 255, 255, 0.015) 0, rgba(255, 255, 255, 0.008) 1px, transparent 1px),
+      linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+    background-size: 30px 30px;
+    transform: translateZ(0);
+    contain: strict;
   }
   
 
 
 .ul-nav{
-  backdrop-filter: blur(12px) saturate(1.7);
   pointer-events: auto;
 
   list-style-type: none;
@@ -278,7 +294,7 @@ html {
   position: relative;
   margin: 0;
   border-radius: 50px;
-  transition: all .2s linear;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
   padding: calc(16px - 10px) calc(16px - 6px);
   align-items: center;
   max-width: calc(100vw - 16px);
@@ -330,11 +346,9 @@ html {
 }
 
 .blur_class{
-  background: hsla(0, 0%, 13%, 0.8);
-/*   background: hsla(45, 17%, 95%, .8);
- */
-  -webkit-backdrop-filter: blur(20px) saturate(1.7);
-  
+  background: rgba(15, 17, 23, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
 }
 
 
@@ -465,21 +479,10 @@ transition-timing-function: ease;
 
 
 
-@font-face {
-  font-family: "Aeonik Pro Medium";
-  src: url("https://db.onlinewebfonts.com/t/81c9cfcec66a1bb46e90e184f4d04641.eot");
-  src: url("https://db.onlinewebfonts.com/t/81c9cfcec66a1bb46e90e184f4d04641.eot?#iefix")format("embedded-opentype"),
-  url("https://db.onlinewebfonts.com/t/81c9cfcec66a1bb46e90e184f4d04641.woff2")format("woff2"),
-  url("https://db.onlinewebfonts.com/t/81c9cfcec66a1bb46e90e184f4d04641.woff")format("woff"),
-  url("https://db.onlinewebfonts.com/t/81c9cfcec66a1bb46e90e184f4d04641.ttf")format("truetype"),
-  url("https://db.onlinewebfonts.com/t/81c9cfcec66a1bb46e90e184f4d04641.svg#Aeonik Pro Medium")format("svg");
-}
 .badge{
   isolation: isolate;
   overflow: hidden;
   align-items: center;
-  -webkit-backdrop-filter: blur(6px);
-  backdrop-filter: blur(6px);
   border-radius: 32px;
   box-shadow: inset 0px -2px 11px #2700d21f;
   display: flex;
@@ -521,7 +524,7 @@ transition-timing-function: ease;
   margin-top: 30px;
   border-radius: 7px;
   cursor: pointer;
-  transition: all .3s;
+  transition: transform 0.2s ease;
 }
 
 .svgContainer {
@@ -531,10 +534,9 @@ transition-timing-function: ease;
   align-items: center;
   justify-content: center;
   background-color: transparent;
-  backdrop-filter: blur(0px);
   letter-spacing: 0.8px;
   border-radius: 10px;
-  transition: all .3s;
+  transition: background-color 0.2s ease;
   border: 1px solid rgba(156, 156, 156, 0.466);
 }
 
@@ -547,7 +549,7 @@ transition-timing-function: ease;
   z-index: -1;
   border-radius: 10px;
   pointer-events: none;
-  transition: all .3s;
+  transition: transform 0.2s ease;
 }
 
 .Btn:hover .BG {
@@ -557,7 +559,6 @@ transition-timing-function: ease;
 
 .Btn:hover .svgContainer {
   background-color: rgba(156, 156, 156, 0.466);
-  backdrop-filter: blur(4px);
 }
 #parcours {
   background: radial-gradient(ellipse at 40% 0%, #387bdf10, transparent 75%), radial-gradient(ellipse at 60% 0%, #387bdf10, transparent 75%);
@@ -1363,7 +1364,6 @@ font-size: 1.2rem;
     linear-gradient(to right, rgba(255,255,255,0.01) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(255,255,255,0.01) 1px, transparent 1px);
   background-size: 30px 30px;
-  background-attachment: fixed;
   z-index: 10;
 }
 
@@ -1371,9 +1371,17 @@ font-size: 1.2rem;
 /* ==========================================================================
    LIGHT MODE THEME (html[data-theme="light"])
    ========================================================================== */
-html[data-theme="light"] body {
+html[data-theme="light"] {
   background-color: #e6ebf2;
   color: #0f172a;
+}
+
+html[data-theme="light"] body {
+  background-color: transparent;
+  color: #0f172a;
+}
+
+html[data-theme="light"] body::before {
   background-image:
     radial-gradient(circle at center, rgba(15, 23, 42, 0.06) 0, rgba(15, 23, 42, 0.035) 1px, transparent 1px),
     linear-gradient(to right, rgba(15, 23, 42, 0.045) 1px, transparent 1px),
@@ -1423,7 +1431,8 @@ html[data-theme="light"] .bg-gradient-to-br.from-\[\#1B3A6B\] * {
 }
 
 /* Hero TextShine metallic dark gradient in light mode */
-html[data-theme="light"] .animate-background-shine {
+html[data-theme="light"] .animate-background-shine,
+html[data-theme="light"] .text-shine-heading {
   background-image: linear-gradient(110deg, #0f172a, 45%, #3b82f6, 55%, #0f172a) !important;
   -webkit-background-clip: text !important;
   background-clip: text !important;
@@ -1532,6 +1541,9 @@ html[data-theme="light"] .gradient-lutc {
 }
 html[data-theme="light"] .animate-spotlight {
   opacity: 0.35 !important;
+}
+html[data-theme="light"] .ambient-tech-glow {
+  opacity: 0.4 !important;
 }
 html[data-theme="light"] img[src*="tech-features-gradient"],
 html[data-theme="light"] img[src*="glow"] {

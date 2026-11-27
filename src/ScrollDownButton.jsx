@@ -1,14 +1,13 @@
 
+import { smoothScrollTo } from './utils/smoothScroll.js';
+
 const ScrollDownButton = () => {
   const handleScrollDown = () => {
     const aboutEl = document.getElementById('about-container');
     if (aboutEl) {
-      aboutEl.scrollIntoView({ behavior: 'smooth' });
+      smoothScrollTo(aboutEl);
     } else {
-      window.scrollTo({
-        top: window.innerHeight,
-        behavior: 'smooth',
-      });
+      smoothScrollTo(window.innerHeight);
     }
   };
 

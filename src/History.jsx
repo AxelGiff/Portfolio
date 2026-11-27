@@ -253,31 +253,31 @@ export default memo(function History() {
     <section
       id="parcours-section"
       aria-label="Road Trip"
-      className="relative overflow-x-clip my-16 sm:my-28 lg:my-36 py-8 sm:py-12 px-4 sm:px-8"
+      className="relative overflow-x-clip [contain:layout_style] my-16 sm:my-28 lg:my-36 py-8 sm:py-12 px-4 sm:px-8"
     >
       {/* Ambient radial lights */}
       <div
         aria-hidden="true"
-        className="pointer-events-none select-none absolute -top-16 -left-24 w-[420px] h-[420px] sm:w-[680px] sm:h-[460px] rounded-full blur-3xl opacity-80 -z-10"
+        className="pointer-events-none select-none absolute -top-40 -left-52 w-[760px] h-[720px] sm:w-[1150px] sm:h-[820px] opacity-80 -z-10"
         style={{
           background:
-            'radial-gradient(ellipse at center, rgba(56, 189, 248, 0.24) 0%, rgba(167, 139, 250, 0.1) 45%, transparent 72%)',
+            'radial-gradient(ellipse 50% 50% at 50% 50%, rgba(56, 189, 248, 0.22) 0%, rgba(56, 189, 248, 0.18) 18%, rgba(56, 189, 248, 0.12) 36%, rgba(167, 139, 250, 0.065) 54%, rgba(167, 139, 250, 0.028) 72%, rgba(167, 139, 250, 0.008) 88%, transparent 100%)',
         }}
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none select-none absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 w-[90%] max-w-5xl h-[260px] rounded-full blur-3xl opacity-70 -z-10"
+        className="pointer-events-none select-none absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 w-[115%] max-w-[90rem] h-[660px] opacity-80 -z-10"
         style={{
           background:
-            'radial-gradient(ellipse at center, rgba(56, 189, 248, 0.18) 0%, rgba(167, 139, 250, 0.14) 45%, rgba(251, 191, 36, 0.1) 75%, transparent 100%)',
+            'radial-gradient(ellipse 50% 50% at 50% 50%, rgba(56, 189, 248, 0.14) 0%, rgba(125, 165, 250, 0.115) 20%, rgba(167, 139, 250, 0.08) 38%, rgba(167, 139, 250, 0.042) 56%, rgba(167, 139, 250, 0.016) 74%, rgba(56, 189, 248, 0.005) 88%, transparent 100%)',
         }}
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none select-none absolute -bottom-16 -right-24 w-[380px] h-[380px] sm:w-[620px] sm:h-[420px] rounded-full blur-3xl opacity-75 -z-10"
+        className="pointer-events-none select-none absolute -bottom-44 -right-52 w-[720px] h-[700px] sm:w-[1080px] sm:h-[800px] opacity-80 -z-10"
         style={{
           background:
-            'radial-gradient(ellipse at center, rgba(251, 191, 36, 0.18) 0%, rgba(167, 139, 250, 0.12) 45%, transparent 72%)',
+            'radial-gradient(ellipse 50% 50% at 50% 50%, rgba(251, 191, 36, 0.17) 0%, rgba(251, 191, 36, 0.135) 18%, rgba(251, 191, 36, 0.085) 36%, rgba(167, 139, 250, 0.045) 54%, rgba(167, 139, 250, 0.018) 72%, rgba(167, 139, 250, 0.005) 88%, transparent 100%)',
         }}
       />
 
@@ -396,22 +396,42 @@ export default memo(function History() {
                   <stop offset="75%" stopColor="#C084FC" />
                   <stop offset="100%" stopColor="#FBBF24" />
                 </linearGradient>
-                <filter id="roadtrip-wave-glow" x="-15%" y="-60%" width="130%" height="220%">
-                  <feGaussianBlur stdDeviation="9" result="blur" />
-                  <feMerge>
-                    <feMergeNode in="blur" />
-                    <feMergeNode in="SourceGraphic" />
-                  </feMerge>
-                </filter>
               </defs>
 
               <path
                 d={wavePathD}
                 fill="none"
                 stroke="url(#roadtrip-wave-grad)"
-                strokeWidth="10"
-                strokeOpacity="0.55"
-                filter="url(#roadtrip-wave-glow)"
+                strokeWidth="48"
+                strokeOpacity="0.045"
+                strokeLinecap="round"
+                vectorEffect="non-scaling-stroke"
+              />
+              <path
+                d={wavePathD}
+                fill="none"
+                stroke="url(#roadtrip-wave-grad)"
+                strokeWidth="26"
+                strokeOpacity="0.10"
+                strokeLinecap="round"
+                vectorEffect="non-scaling-stroke"
+              />
+              <path
+                d={wavePathD}
+                fill="none"
+                stroke="url(#roadtrip-wave-grad)"
+                strokeWidth="12"
+                strokeOpacity="0.22"
+                strokeLinecap="round"
+                vectorEffect="non-scaling-stroke"
+              />
+              <path
+                d={wavePathD}
+                fill="none"
+                stroke="url(#roadtrip-wave-grad)"
+                strokeWidth="5"
+                strokeOpacity="0.38"
+                strokeLinecap="round"
                 vectorEffect="non-scaling-stroke"
               />
               <path
@@ -572,12 +592,12 @@ export default memo(function History() {
                   }`}
                 />
                 <div
-                  className={`rounded-2xl border transition backdrop-blur-md ${
+                  className={`rounded-2xl border transition ${
                     isSelected
                       ? isPro
-                        ? 'border-amber-400/50 bg-neutral-950/75'
-                        : 'border-violet-400/50 bg-neutral-950/75'
-                      : 'border-white/10 bg-neutral-950/50'
+                        ? 'border-amber-400/50 bg-neutral-950/90'
+                        : 'border-violet-400/50 bg-neutral-950/90'
+                      : 'border-white/10 bg-neutral-950/75'
                   }`}
                 >
                   <button

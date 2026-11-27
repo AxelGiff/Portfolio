@@ -9,7 +9,7 @@ const TextShine = ({ text }) => {
 
   return (
     <h1
-      className={`block mx-auto text-center font-apple font-bold leading-[1.1] tracking-tight max-w-5xl px-2 ${sizeClass} animate-background-shine bg-[linear-gradient(110deg,#E1E1E1,45%,#939393,55%,#E1E1E1)] bg-[length:250%_100%] bg-clip-text text-transparent`}
+      className={`text-shine-heading block mx-auto text-center font-apple font-bold leading-[1.1] tracking-tight max-w-5xl px-2 ${sizeClass} bg-[linear-gradient(110deg,#f5f5f5_0%,#a3a3a3_45%,#ffffff_55%,#d4d4d4_100%)] bg-clip-text text-transparent`}
     >
       {text}
     </h1>

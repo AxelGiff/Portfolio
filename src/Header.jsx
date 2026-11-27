@@ -1,6 +1,7 @@
-import React, { useEffect, useState, useCallback, memo } from 'react';
+import React, { useEffect, useState, useCallback, useRef, memo } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { smoothScrollTo } from './utils/smoothScroll.js';
 
 const NavLink = memo(({ to, onClick, isActive, children }) => (
   <li className="nav-li">
@@ -60,52 +61,101 @@ const Header = memo(() => {
 
   const [isBlurred, setIsBlurred] = useState(false);
   const [activeLink, setActiveLink] = useState('Home');
+  const prevBlurredRef = useRef(false);
+  const prevActiveRef = useRef('Home');
 
   useEffect(() => {
+    let nextActive = 'Home';
     if (location.pathname === '/') {
       if (location.hash === '#about-container') {
-        setActiveLink('About');
+        nextActive = 'About';
       } else if (location.hash === '#project-container') {
-        setActiveLink('Projects');
+        nextActive = 'Projects';
       } else if (location.hash === '#contact-container') {
-        setActiveLink('Contact');
-      } else {
-        setActiveLink('Home');
+        nextActive = 'Contact';
       }
     } else if (location.pathname.startsWith('/projects')) {
-      setActiveLink('Projects');
+      nextActive = 'Projects';
     }
+    prevActiveRef.current = nextActive;
+    setActiveLink(nextActive);
   }, [location]);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.scrollY || document.documentElement.scrollTop;
-      setIsBlurred(scrollTop > 50);
+    let rafId = null;
 
-      if (location.pathname !== '/') return;
-      const sections = [
+    const updateBlurState = () => {
+      rafId = null;
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      const nextBlurred = scrollTop > 50;
+      if (nextBlurred !== prevBlurredRef.current) {
+        prevBlurredRef.current = nextBlurred;
+        setIsBlurred(nextBlurred);
+      }
+      if (location.pathname === '/' && scrollTop < 120 && prevActiveRef.current !== 'Home') {
+        prevActiveRef.current = 'Home';
+        setActiveLink('Home');
+      }
+    };
+
+    const handleScroll = () => {
+      if (rafId === null) {
+        rafId = requestAnimationFrame(updateBlurState);
+      }
+    };
+
+    updateBlurState();
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    let observer = null;
+    if (location.pathname === '/' && typeof IntersectionObserver === 'function') {
+      const sectionIds = [
         { id: 'contact-container', name: 'Contact' },
         { id: 'about-container', name: 'About' },
         { id: 'project-container', name: 'Projects' },
       ];
-      const offset = window.innerHeight * 0.35;
-      let matched = 'Home';
-      for (const sec of sections) {
-        const el = document.getElementById(sec.id);
-        if (el && el.getBoundingClientRect().top <= offset) {
-          matched = sec.name;
-          break;
-        }
-      }
-      setActiveLink(matched);
-    };
+      const intersecting = new Set();
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+      observer = new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) {
+            if (entry.isIntersecting) {
+              intersecting.add(entry.target.id);
+            } else {
+              intersecting.delete(entry.target.id);
+            }
+          }
+          let matched = 'Home';
+          for (const sec of sectionIds) {
+            if (intersecting.has(sec.id)) {
+              matched = sec.name;
+              break;
+            }
+          }
+          if (matched !== prevActiveRef.current) {
+            prevActiveRef.current = matched;
+            setActiveLink(matched);
+          }
+        },
+        { rootMargin: '0px 0px -55% 0px', threshold: 0 }
+      );
+
+      for (const sec of sectionIds) {
+        const el = document.getElementById(sec.id);
+        if (el) observer.observe(el);
+      }
+    }
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (rafId !== null) cancelAnimationFrame(rafId);
+      if (observer) observer.disconnect();
+    };
   }, [location.pathname]);
 
   const handleLinkClick = useCallback((e, link, target) => {
     e.preventDefault();
+    prevActiveRef.current = link;
     setActiveLink(link);
 
     if (location.pathname !== '/') {
@@ -114,18 +164,18 @@ const Header = memo(() => {
         state: targetId ? { scrollTo: targetId } : undefined,
       });
       if (!targetId) {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        smoothScrollTo(0);
       }
       return;
     }
 
     if (target === 'body') {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      smoothScrollTo(0);
       window.history.replaceState(null, '', '/');
     } else {
       const element = document.querySelector(target);
       if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
+        smoothScrollTo(element);
         window.history.replaceState(null, '', `/${target}`);
       }
     }
@@ -182,7 +232,7 @@ const Header = memo(() => {
         className="mobile-dock md:hidden fixed bottom-3 inset-x-3 z-[1000] pb-[env(safe-area-inset-bottom)]"
         aria-label={isFr ? 'Navigation mobile' : 'Mobile navigation'}
       >
-        <ul className="mobile-dock-bar grid grid-cols-4 items-center rounded-2xl border border-white/15 bg-neutral-950/88 p-1.5 backdrop-blur-xl shadow-[0_12px_36px_rgba(0,0,0,0.55),inset_0_1px_0_rgba(255,255,255,0.08)]">
+        <ul className="mobile-dock-bar grid grid-cols-4 items-center rounded-2xl border border-white/15 bg-neutral-950/95 p-1.5 shadow-[0_12px_36px_rgba(0,0,0,0.55),inset_0_1px_0_rgba(255,255,255,0.08)]">
           {mobileItems.map((item) => {
             const isActive = activeLink === item.id;
             return (

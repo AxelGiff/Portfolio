@@ -4,7 +4,6 @@ import {
   motion,
   useTransform,
   useScroll,
-  useVelocity,
   useSpring,
 } from "framer-motion";
 import { cn } from "./lib/utils.tsx";
@@ -26,9 +25,20 @@ export const TracingBeam = ({
   const [svgHeight, setSvgHeight] = useState(0);
 
   useEffect(() => {
-    if (contentRef.current) {
-      setSvgHeight(contentRef.current.offsetHeight);
+    const el = contentRef.current;
+    if (!el) return;
+
+    const updateHeight = () => {
+      setSvgHeight(el.offsetHeight);
+    };
+    updateHeight();
+
+    if (typeof ResizeObserver === "function") {
+      const ro = new ResizeObserver(updateHeight);
+      ro.observe(el);
+      return () => ro.disconnect();
     }
+    return undefined;
   }, []);
 
   const y1 = useSpring(
@@ -39,7 +49,7 @@ export const TracingBeam = ({
     }
   );
   const y2 = useSpring(
-    useTransform(scrollYProgress, [0, 1], [50, svgHeight - 200]),
+    useTransform(scrollYProgress, [0, 1], [50, Math.max(50, svgHeight - 200)]),
     {
       stiffness: 500,
       damping: 90,
@@ -52,133 +62,57 @@ export const TracingBeam = ({
       className={cn("relative mt-24 w-full max-w-4xl mx-auto h-full", className)}
     >
       <div className="absolute mt-24 -left-4 md:-left-20 top-3">
-        <motion.div
-          transition={{
-            duration: 0.2,
-            delay: 0.5,
-          }}
-          animate={{
-            boxShadow:
-              scrollYProgress.get() > 0
-                ? "none"
-                : "rgba(0, 0, 0, 0.24) 0px 3px 8px",
-          }}
-          className="ml-[27px] mt-24 h-4 w-4 rounded-full border border-neutral-200 shadow-sm flex items-center justify-center"
-        >
-          <motion.div
-            transition={{
-              duration: 0.2,
-              delay: 0.5,
-            }}
-            animate={{
-              backgroundColor:
-                scrollYProgress.get() > 0 ? "white" : "var(--emerald-500)",
-              borderColor:
-                scrollYProgress.get() > 0 ? "white" : "var(--emerald-600)",
-            }}
-            className="h-2 w-2  rounded-full border border-neutral-300 bg-white"
+        <div className="ml-[27px] mt-24 h-4 w-4 rounded-full border border-neutral-200 shadow-sm flex items-center justify-center">
+          <div
+            className="h-2 w-2 rounded-full border bg-white border-white"
+            style={{ backgroundColor: "#10b981", borderColor: "#059669" }}
           />
-          
-        </motion.div>
+        </div>
 
-         {/* 2eme Rond */}
-
-
-         <motion.div
-          transition={{
-            duration: 0.2,
-            delay: 0.5,
-          }}
-          animate={{
-            boxShadow:
-              scrollYProgress.get() > 0
-                ? "none"
-                : "rgba(0, 0, 0, 0.24) 0px 3px 8px",
-          }}
-          className="ml-[27px] absolute bottom-1/3 h-4 w-4 rounded-full border border-neutral-200 shadow-sm flex items-center justify-center"
-        >
-          <motion.div
-            transition={{
-              duration: 0.2,
-              delay: 0.5,
-            }}
-            animate={{
-              backgroundColor:
-                scrollYProgress.get() > 0 ? "white" : "var(--emerald-500)",
-              borderColor:
-                scrollYProgress.get() > 0 ? "white" : "var(--emerald-600)",
-            }}
-            className="h-2 w-2  rounded-full border border-neutral-300 bg-white"
+        {/* 2eme Rond */}
+        <div className="ml-[27px] absolute bottom-1/3 h-4 w-4 rounded-full border border-neutral-200 shadow-sm flex items-center justify-center">
+          <div
+            className="h-2 w-2 rounded-full border bg-white border-white"
+            style={{ backgroundColor: "#10b981", borderColor: "#059669" }}
           />
-          
-        </motion.div>
+        </div>
 
-
-              {/* 3eme Rond */}
-
-              <motion.div
-          transition={{
-            duration: 0.2,
-            delay: 0.5,
-          }}
-          animate={{
-            boxShadow:
-              scrollYProgress.get() > 0
-                ? "none"
-                : "rgba(0, 0, 0, 0.24) 0px 3px 8px",
-          }}
-          className="ml-[27px] absolute top-1/3 h-4 w-4 rounded-full border border-neutral-200 shadow-sm flex items-center justify-center"
-        >
-          <motion.div
-            transition={{
-              duration: 0.2,
-              delay: 0.5,
-            }}
-            animate={{
-              backgroundColor:
-                scrollYProgress.get() > 0 ? "white" : "var(--emerald-500)",
-              borderColor:
-                scrollYProgress.get() > 0 ? "white" : "var(--emerald-600)",
-            }}
-            className="h-2 w-2  rounded-full border border-neutral-300 bg-white"
+        {/* 3eme Rond */}
+        <div className="ml-[27px] absolute top-1/3 h-4 w-4 rounded-full border border-neutral-200 shadow-sm flex items-center justify-center">
+          <div
+            className="h-2 w-2 rounded-full border bg-white border-white"
+            style={{ backgroundColor: "#10b981", borderColor: "#059669" }}
           />
-          
-        </motion.div>
+        </div>
 
         <svg
-          viewBox={`0 0 20 ${svgHeight}`}
+          viewBox={`0 0 20 ${svgHeight || 1}`}
           width="20"
-          height={1783} // Set the SVG height
-          className=" ml-[1rem] block"
+          height={svgHeight || 1}
+          className="ml-[1rem] block"
           aria-hidden="true"
         >
-          <motion.path
+          <path
             d={`M 1 0V -36 l 18 24 V ${svgHeight * 0.8} l -18 24V ${svgHeight}`}
             fill="none"
             stroke="white"
-            strokeOpacity="0.6"
-            transition={{
-              duration: 10,
-            }}
-          ></motion.path>
-          <motion.path
+            strokeOpacity="0.4"
+          />
+          <path
             d={`M 1 0V -36 l 18 24 V ${svgHeight * 0.8} l -18 24V ${svgHeight}`}
             fill="none"
-            stroke="blue"
+            stroke="url(#gradient)"
             strokeWidth="1.25"
             className="motion-reduce:hidden"
-            transition={{
-              duration: 10,
-            }}
-          ></motion.path>
+          />
           <defs>
             <motion.linearGradient
               id="gradient"
               gradientUnits="userSpaceOnUse"
               x1="0"
               x2="0"
-              y1={y1} // set y1 for gradient
-              y2={y2} // set y2 for gradient
+              y1={y1}
+              y2={y2}
             >
               <stop stopColor="#18CCFC" stopOpacity="0"></stop>
               <stop stopColor="#18CCFC"></stop>

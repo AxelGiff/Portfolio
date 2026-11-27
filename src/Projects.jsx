@@ -134,7 +134,7 @@ const Projects = memo(() => {
       : projectsData.filter((p) => p.category === filter);
 
   return (
-    <section id="project-container" className="relative mt-20 sm:mt-32 lg:mt-48 px-4 sm:px-8">
+    <section id="project-container" className="relative overflow-x-clip [contain:layout_style] mt-20 sm:mt-32 lg:mt-48 px-4 sm:px-8">
       <BadgeTextGradient text={t('Projects')} />
       <h1 className="about-title text-white text-3xl sm:text-5xl block text-center mb-4 sm:mb-6">
         {t('My work')}
@@ -170,7 +170,7 @@ const Projects = memo(() => {
                 <motion.span
                   layoutId="project-filter-pill"
                   transition={{ type: 'spring', stiffness: 320, damping: 28 }}
-                  className="project-filter-pill absolute inset-0 rounded-full bg-sky-500/25 border border-sky-400/70 shadow-[0_0_20px_rgba(56,189,248,0.28)] backdrop-blur-md"
+                  className="project-filter-pill absolute inset-0 rounded-full bg-sky-500/25 border border-sky-400/70 shadow-[0_0_20px_rgba(56,189,248,0.28)]"
                 />
               )}
               <span className="relative z-10">{item.label}</span>
@@ -200,7 +200,7 @@ const Projects = memo(() => {
             to={`/projects/${project.id}`}
             onMouseEnter={() => prefetchProject(project.id)}
             onFocus={() => prefetchProject(project.id)}
-            className={`group relative flex flex-col rounded-3xl border bg-neutral-950/75 overflow-hidden backdrop-blur-xl shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] transition duration-300 hover:border-sky-400/50 hover:-translate-y-1 ${
+            className={`group relative flex flex-col rounded-3xl border bg-neutral-950/75 overflow-hidden shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] transition-[transform,border-color] duration-300 hover:border-sky-400/50 hover:-translate-y-1 ${
               project.featured ? 'border-sky-400/35' : 'border-white/10'
             }`}
           >
@@ -217,10 +217,10 @@ const Projects = memo(() => {
                 aria-hidden="true"
                 className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/20 to-transparent"
               />
-              <span className="absolute top-3 left-3 rounded-full border border-white/15 bg-black/60 px-2.5 py-1 text-[11px] font-mono text-neutral-300 backdrop-blur-md">
+              <span className="absolute top-3 left-3 rounded-full border border-white/15 bg-black/80 px-2.5 py-1 text-[11px] font-mono text-neutral-300">
                 {project.index}
               </span>
-              <span className="absolute top-3 right-3 rounded-full border border-white/15 bg-black/60 px-2.5 py-1 text-[10px] uppercase tracking-wider text-neutral-300 backdrop-blur-md">
+              <span className="absolute top-3 right-3 rounded-full border border-white/15 bg-black/80 px-2.5 py-1 text-[10px] uppercase tracking-wider text-neutral-300">
                 {project.category === 'ai' ? 'AI / ML' : project.category === 'systems' ? 'Rust / CLI' : 'Web'}
               </span>
             </div>
